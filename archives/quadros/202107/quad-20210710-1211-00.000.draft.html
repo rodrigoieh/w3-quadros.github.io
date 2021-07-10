@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title></title>
+    <style>
+        body {
+            background-color: rgb(62, 90, 44);
+        }
+
+        #demo {
+            margin: auto;
+            width: 600px;
+            height: 600px;
+            border: 1px white solid;
+            background-image: linear-gradient(
+                    90deg,
+                    transparent 50%,
+                    #4c8527ff 50%
+            );
+            background-size: 20% 20%;
+            background-position: center;
+            opacity: 30%;
+            z-index: 1;
+        }
+
+        table {
+            border: 1px white solid;
+            background-color: transparent;
+            /*opacity: 30%;*/
+            z-index: 2;
+        }
+
+        td.a {
+            background-color: transparent;
+        }
+
+        td.b {
+            background-color: #d52b1eff;
+        }
+
+        td.c {
+            background-color: #0039a6ff;
+        }
+    </style>
+</head>
+<body>
+<div id="field"></div>
+<script>
+    main(10, 10);
+
+    const classNames = ['a', 'b', 'c'];
+    let classNameIndex = 0;
+
+    let demo = document.getElementById('demo');
+    let table = document.getElementById('table');
+
+    table.addEventListener('click', (event) => {
+        console.debug(classNameIndex);
+        event.target.className = getClassName();
+        setBackground(table);
+    });
+
+    function getClassName() {
+        if (++classNameIndex === classNames.length) classNameIndex = 0;
+        return classNames[classNameIndex];
+    }
+
+    function setBackground(element) {
+        // element.style.backgroundImage = 'linear-gradient(90deg, transparent 50%, #4c8527ff 50%)'
+        // element.style.opacity = '90%';
+        element.style.border = '1px white solid';
+        element.style.backgroundSize = '20% 20%';
+    }
+
+    // TODO, map with classId and count to keep track of blocks, allow max 11 for each color.
+</script>
+</body>
+</html>

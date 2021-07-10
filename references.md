@@ -75,6 +75,7 @@
 - [CSS3 Patterns Gallery](https://projects.verou.me/css3patterns/#cicada-stripes)
 - [Gradient Generator Tool](https://learnui.design/tools/gradient-generator.html)
 - [Online Gradient Generator](https://angrytools.com/gradient/)
+- [CSS Gradient Generator](https://www.css-gradient.com/)
 - []()
 
 ## SVG

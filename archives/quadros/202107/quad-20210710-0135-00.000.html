@@ -23,12 +23,12 @@
                 to bottom,
                 #b3b3,
                 #b3b3 70%,
-                #26265f 70%,
-                #26265f 75%,
-                #c7c7c7 75%,
-                #c7c7c7 80%,
-                #26265f 80%,
-                #26265f 85%,
+                #1d436a 70%,
+                #1d436a 75%,
+                #d8d4c9 75%,
+                #d8d4c9 80%,
+                #1d436a 80%,
+                #1d436a 85%,
                 #b3b3 85%,
                 #b3b3);
     }
@@ -36,24 +36,42 @@
     .b {
         background-image: linear-gradient(
                 to bottom,
-                #b3b3b3,
-                #b3b3b3 70%,
-                #18185c 70%,
-                #18185c 75%,
-                #ce1212 75%,
-                #ce1212 80%,
-                #18185c 80%,
-                #18185c 85%,
-                #b3b3b3 85%,
-                #b3b3b3);
+                #d8d4c9,
+                #d8d4c9 70%,
+                #1d436a 70%,
+                #1d436a 75%,
+                #723a3d 75%,
+                #723a3d 80%,
+                #1d436a 80%,
+                #1d436a 85%,
+                #d8d4c9 85%,
+                #d8d4c9);
     }
+
+    .c {
+        background-image: linear-gradient(
+                to bottom,
+                #b3b3,
+                #b3b3 70%,
+                #723a3d 70%,
+                #723a3d 75%,
+                #c7c7c7 75%,
+                #c7c7c7 80%,
+                #723a3d 80%,
+                #723a3d 85%,
+                #b3b3 85%,
+                #b3b3);
+    }
+
 </style>
 <body>
 <script>
+    // const palette = ['#723a3d', '#1d436a', '#2f5788', '#d8d4c9', '#5e696d'];
+    const styles = ['a', 'b', 'c'];
     main(10, 10);
-    const randomSelector = new Date().getMinutes() & 1;
+    const randomSelector = getRandomIntBetweenMinAndMax(0, styles.length - 1);
     let table = document.getElementById('table');
-    table.className = randomSelector ? 'a' : 'b';
+    table.className = styles[randomSelector];
 </script>
 </body>
 </html>

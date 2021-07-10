@@ -20,12 +20,6 @@ function getUrlSearchParamsEntries() {
     return undefined;
 }
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 function getStringFromArrayOfArrays(arr, reverse = false) {
     if (reverse) return getStringFromArrayOfArrays(arr.reverse());
     return [].concat.apply([], arr).join('');

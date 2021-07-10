@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: #393935;
+    }
+
+    table {
+        /*border-collapse: separate;*/
+    }
+
+    td {
+        text-align: center;
+        /*border-collapse: separate;*/
+        /*border: 1px transparent solid;*/
+        border: 1px white solid;
+    }
+
+    td.color {
+        background-color: black;
+    }
+
+    .shape {
+        width: 40px;
+        height: 40px;
+        /*background-color: darkslategrey;*/
+        background-color: white;
+        /*border: 20px transparent double;*/
+        /*-webkit-transform: rotate(45deg);*/
+        /*-moz-transform: rotate(45deg);*/
+        /*-ms-transform: rotate(45deg);*/
+        /*-o-transform: rotate(45deg);*/
+        transform: rotate(45deg);
+        transform: rotate(15deg);
+        transform: rotate(1deg);
+        transform: rotate(-15deg);
+    }
+
+</style>
+<body>
+<script>
+    let shapeWidth = 40;
+    let shapeHeight = 40;
+    let shapeRotationInDegrees = 0;
+    const shapeRotationDirection = (new Date().getSeconds() & 1) ? 1 : -1;
+    const cellStyle = 'td color';
+
+    setCellContentOverride = (td, i, j, y, x) => {
+        let div = document.createElement('div');
+        if (shapeRotationInDegrees !== 0) {
+            div.style.backgroundColor = 'white';
+            div.style.width = `${shapeWidth}px`;
+            div.style.height = `${shapeHeight}px`;
+            div.style.opacity = `${Math.abs(shapeRotationInDegrees) / 5}%`
+            div.style.transform = `rotate(${shapeRotationInDegrees}deg)`;
+        } else div.setAttribute('class', 'shape');
+        td.appendChild(div);
+        td.setAttribute('class', `${cellStyle}`);
+    }
+
+    let i = 0;
+    const shapeRotationInDegreesIncrement = 10 * shapeRotationDirection;
+    const shapeWidthIncrement = 1;
+    const shapeHeightIncrement = 1;
+
+    function loop() {
+        setTimeout(() => {
+            console.log('iteration',
+                i,
+                shapeRotationInDegrees += shapeRotationInDegreesIncrement,
+                shapeWidth += shapeWidthIncrement,
+                shapeHeight += shapeHeightIncrement);
+            render();
+            if (++i < 36) loop();
+        }, 60)
+    }
+
+    main();
+    loop();
+</script>
+</body>
+</html>

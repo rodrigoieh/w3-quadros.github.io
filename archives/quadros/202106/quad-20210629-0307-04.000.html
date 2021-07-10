@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title></title>
+    <style>
+        body {
+            background-color: rgba(97, 99, 86, 0.5);
+        }
+
+        td.a {
+            background: rgba(15, 72, 133, 1);
+        }
+
+        td.b {
+            background: #b35118;
+        }
+
+        td.c {
+            background: #970606;
+        }
+
+        td.d {
+            background: #1a5a09;
+        }
+    </style>
+</head>
+<body onload="main()">
+<script>
+    const n = 10;
+    const m = 10;
+
+    const options = ' ab';
+    let selector = [...options];
+    selector.push(go() ? 'c' : 'd');
+    if (go()) selector.push(' ');
+
+    function main() {
+        load();
+        render(n, m);
+    }
+
+    function go() {
+        return Math.round(Math.random()) === 1;
+    }
+
+    function load() {
+        let body = document.body,
+            table = document.createElement('table');
+        table.addEventListener('click',  () => {
+            render(n, m)
+        });
+        table.setAttribute('id', 'demo');
+        body.appendChild(table);
+        styleSetPositionCenter(table);
+    }
+
+    function render(n, m) {
+        let table = document.getElementById('demo');
+        table.innerHTML = '';
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < m; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                const selection = Math.floor(Math.random() * selector.length);
+                td.setAttribute('class', `td ${selector[selection]}`);
+            }
+        }
+    }
+</script>
+</body>
+</html>

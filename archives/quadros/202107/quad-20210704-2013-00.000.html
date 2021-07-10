@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        background-image: linear-gradient(30deg, grey 12%, transparent 12.5%, transparent 87%, grey 87.5%, grey),
+        linear-gradient(150deg, grey 12%, transparent 12.5%, transparent 87%, grey 87.5%, grey),
+        linear-gradient(30deg, grey 12%, transparent 12.5%, transparent 87%, grey 87.5%, grey),
+        linear-gradient(150deg, grey 12%, transparent 12.5%, transparent 87%, grey 87.5%, grey),
+        linear-gradient(60deg, white 25%, transparent 25.5%, transparent 75%, white 75%, white),
+        linear-gradient(60deg, white 25%, transparent 25.5%, transparent 75%, white 75%, white);
+        background-size: 80px 140px;
+        background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    td.background {
+        background-color: white;
+        border: 1px rgba(255, 255, 255, 0.1) solid;
+        opacity: 20%;
+    }
+</style>
+<body>
+<script>
+    const cellColor = 'background';
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main(10, 10);
+</script>
+</body>
+</html>

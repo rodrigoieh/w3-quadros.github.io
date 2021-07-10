@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: rgb(119, 136, 153);
+        background: grey;
+    }
+
+    td {
+        text-align: center;
+        /*border: 1px solid black ;*/
+    }
+</style>
+<body onload="main()">
+<script>
+    const N = -1;
+    let r = 0, g = 42, b = 119;
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.style.backgroundColor = `rgb(${r += N},${g += N},${b += N})`;
+    };
+</script>
+</body>
+</html>

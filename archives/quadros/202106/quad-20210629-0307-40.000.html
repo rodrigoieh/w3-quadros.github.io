@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <style>
+        body {
+            background-color: rgba(97, 99, 86, 0.5);
+        }
+
+        table {
+            font-size: 1em;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        td.a {
+            background-color: rgba(40, 39, 36, 1);
+        }
+
+        td.b {
+            background-color: rgba(114, 20, 20, 0.90);
+        }
+    </style>
+</head>
+<body>
+<script>
+    const limit = 100;
+    let factor = 5;
+
+    function main() {
+        let n = 10;
+        render(n);
+        document.addEventListener('click', () => {
+            factor++;
+            render(++n < limit ? n : limit);
+        });
+    }
+
+    function go() {
+        return Math.round(Math.random()) === 1;
+    }
+
+    function render(n) {
+        let body = document.body,
+            table = document.createElement('table'),
+            div = document.createElement('div');
+        body.innerHTML = '';
+        div.setAttribute('id', 'demo');
+        let selector = [...'aaaaa'];
+        selector.push(go() ? ' ' : 'b');
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < n; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                const selection = Math.floor(Math.random() * selector.length)
+                td.setAttribute("class", `td ${selector[selection]}`);
+                td.style.height = `${n * factor}px`;
+                td.style.width = `${n}px`;
+            }
+        }
+        div.appendChild(table);
+        body.appendChild(div);
+        center(div);
+    }
+
+    function center(element) {
+        element.style.position = 'absolute';
+        element.style.top = '0';
+        element.style.bottom = '0';
+        element.style.left = '0';
+        element.style.right = '0';
+        element.style.display = 'flex';
+        element.style.flexWrap = 'wrap';
+        element.style.alignItems = 'center';
+        element.style.justifyContent = 'center';
+    }
+
+    main();
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    td {
+        text-align: center;
+    }
+
+    td.background {
+        background-color: white;
+        border: 1px rgba(0, 0, 0, 0.1) solid;
+        opacity: 10%;
+    }
+</style>
+<body id="body">
+<script>
+    const cellColor = 'background';
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main(10, 10);
+
+    let count = 0;
+    const countLimit = 100;
+    let element = document.getElementById('body');
+    const loop = setInterval(() => {
+        styleUpdateElement(element);
+        if (count++ === countLimit) clearInterval(loop);
+    }, 100);
+
+    let linearGradientParameters = [
+        [90, 255, 255, 255, .07, 50, -1, -1, -1, -1, 50],  // (0.07,0.30]
+        [90, -1, -1, -1, -1, 50, 255, 255, 255, .17, 50]   // (0.17,0.30]
+    ];
+
+    const p = linearGradientParameters;
+
+    function styleUpdateElement(element) {
+        let linearGradients = [];
+        const k = 3;
+        for (let i = 0; i < k; i++) {
+            let av = p[0][4] + Math.random() / 10;
+            let bv = p[1][9] + Math.random() / 10;
+            let a = `linear-gradient(${p[0][0]}deg, rgba(${p[0][1]}, ${p[0][2]},${p[0][3]},${av}) ${p[0][5]}%, transparent ${p[0][10]}%)`;
+            let b = `linear-gradient(${p[1][0]}deg, transparent ${p[1][5]}%, rgba(${p[1][6]},${p[1][7]},${p[1][8]}, ${bv}) ${p[1][10]}%)`;
+            linearGradients.unshift(a);
+            if (i & 1) linearGradients.push(b);
+        }
+        element.style.backgroundColor = '#453910';
+        element.style.backgroundImage = linearGradients.join();
+        // element.style.backgroundSize = `13px, 29px, 37px, 53px`;
+        element.style.backgroundSize = `11px, 19px, 27px, 13px`;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <title></title>
+    <style>
+        body {
+            background: linear-gradient(to left,
+            rgba(54, 115, 144, 0.5) 100%,
+            rgba(17, 111, 184, 0.8) 100%),
+            linear-gradient(
+                    rgba(255, 153, 0, 0.7) 100%,
+                    rgba(10, 57, 61, 0.8) 100%);
+            filter: grayscale(80%);
+        }
+
+        table {
+            transform: rotate(45deg);
+            border-collapse: collapse;
+            margin-top: 20%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        td {
+            height: 60px;
+            width: 60px;
+            border: 0 solid red;
+        }
+
+        td.a {
+            background: rgba(15, 131, 133, 0.5);
+            border: 60px rgba(245, 245, 245, 0.4) double;
+        }
+
+        td.b {
+            background: rgba(248, 231, 231, 0.5);
+            border: 60px rgba(245, 245, 245, 0.4) double;
+        }
+    </style>
+</head>
+<body onload="main()">
+<script>
+    function main() {
+        let n = 8;
+        render(n);
+    }
+
+    function render(n) {
+        let body = document.body,
+            table = document.createElement('table'),
+            demo = document.createElement('div');
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < n; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                if (i < n / 2) {
+                    td.setAttribute('class', 'td a');
+                } else {
+                    td.setAttribute('class', 'td b');
+                }
+            }
+        }
+        demo.setAttribute('id', 'demo');
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
+    }
+</script>
+</body>
+</html>

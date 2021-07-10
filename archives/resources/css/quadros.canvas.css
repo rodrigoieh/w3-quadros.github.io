@@ -1,0 +1,17 @@
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    /*background-color: rgba(200, 200, 185, 0.95);*/
+    background-color: rgba(178, 167, 147, 0.95);
+    position: relative;
+}
+
+canvas {
+    width: 600px;
+    height: 600px;
+    border: 1px solid whitesmoke;
+    border-collapse: collapse;
+    margin: 50px;
+}

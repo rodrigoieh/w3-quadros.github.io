@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>tiles</title>
+</head>
+<style>
+    body {
+        background: #123a44;
+    }
+
+    table {
+        font-size: 1em;
+        border-collapse: collapse;
+        width: 520px;
+        border: 60px #fd0b0b50 double;
+    }
+
+    td {
+        text-align: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    .custom {
+        border: 50px double rgba(205, 177, 25, 0.3);
+        border: 50px double black;
+        border: 56px double #f6450460;
+    }
+</style>
+<body onload="main()">
+<script>
+    const N = -1;
+    let tdStyle = {"r": 246, "g": 69, "b": 4, "a": 0.38};
+    let tableStyle = {"r": 180, "g": 0, "b": 0, "a": 0.31};
+
+    function main() {
+        let n = 8;
+        render(n);
+    }
+
+    function render(n) {
+        let body = document.body,
+            table = document.createElement('table'),
+            demo = document.createElement('div');
+        const tableColor = `${tableStyle.r},${tableStyle.g},${tableStyle.b},${tableStyle.a}`;
+        table.style.border = `60px double rgba(${tableColor})`;
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < n; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                // td.className = 'custom';
+                // td.style.border = `56px double #f6450460`;
+                const tdColor = `${tdStyle.r += N},${tdStyle.g += N},${tdStyle.b += N},${tdStyle.a}`;
+                td.style.border = `56px double rgba(${tdColor})`;
+            }
+        }
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: rgb(119, 136, 153);
+        background: #093740;
+    }
+
+    td {
+        text-align: center;
+        /*border: 1px solid black ;*/
+    }
+
+    td.a {
+        background-color: #422f03;
+    }
+
+    td.b {
+        background-color: #12405B;
+    }
+</style>
+<body onload="main()">
+<script>
+    const colorPrimary = 'a';
+    const colorSecondary = 'b';
+    const randomSelector = new Date().getSeconds() & 1;
+    setCellContentOverride = (td, i, j, y, x) => {
+        let cellColor;
+        if (randomSelector) cellColor = (i > 2 && i < n - 3) ? colorPrimary : colorSecondary;
+        else cellColor = (i <= 2 || i >= n - 3) ? colorPrimary : colorSecondary;
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+</script>
+</body>
+</html>

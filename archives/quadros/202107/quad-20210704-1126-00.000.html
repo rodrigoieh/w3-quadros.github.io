@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: #393935;
+    }
+
+    table {
+        /*border-collapse: separate;*/
+    }
+
+    td {
+        text-align: center;
+        /*border-collapse: separate;*/
+        /*border: 1px white dashed;*/
+    }
+
+    td.a {
+        background-color: #F5F5F5FF;
+        background-color: #320f0f;
+        /*filter: brightness(70%) opacity(80%);*/
+    }
+
+    td.b {
+        background-color: #F5F5F5FF;
+        filter: brightness(70%);
+        opacity: 80%;
+    }
+
+</style>
+<body>
+<script>
+    n = 10, m = 10;
+    const cellClasses = ['td a', 'td a'];
+    const cellBorder = `3px ${'rgb(162,175,175)'} ridge`;
+    // let cellStyleBackgroundColors = {"r": 50, "g": 15, "b": 15, "a": 1};
+    let cellStyleBackgroundColors = {"r": 245, "g": 245, "b": 245, "a": 1};
+    let cellStyleBorderColors = {"r": 162, "g": 175, "b": 175, "a": 1};
+    let colors = cellStyleBackgroundColors;
+    let borders = cellStyleBorderColors;
+    setCellContentOverride = (td, i, j, y, x) => {
+        const cellType = (i > m / 2) ? 1 : 0;
+        const colorAddition = j * -2;
+        const cellStyleBackgroundColor = `rgb(${colors.r + colorAddition},${colors.g + colorAddition},${colors.b + colorAddition},${colors.a})`;
+        const cellStyleBorder = `1px ridge rgb(${borders.r + colorAddition},${borders.g + colorAddition},${borders.b + colorAddition},${borders.a})`;
+        td.setAttribute('class', cellClasses[cellType]);
+        td.style.borderTop = cellStyleBorder;
+        td.style.backgroundColor = cellStyleBackgroundColor;
+        if (i === n - 1) td.style.borderBottom = cellStyleBorder;
+        if (j === m - 1) td.style.borderRight = cellStyleBorder;
+        if (j === 0) td.style.borderLeft = cellStyleBorder;
+        if (i & 1 && j % 2 === 0) td.style.borderRight = cellStyleBorder;
+        else if (i % 2 === 0 && (j + 1) % 2 === 0) td.style.borderRight = cellStyleBorder;
+    }
+    main(n, m)
+</script>
+</body>
+</html>

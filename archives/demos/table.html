@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../resources/js/quadros.style.js"></script>
+    <script src="../resources/js/quadros.commons.js"></script>
+    <script src="../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: #393935;
+    }
+
+    table {
+    }
+
+    td {
+        text-align: center;
+        border: 1px ghostwhite solid;
+    }
+
+    td.color {
+        background-color: slategrey;
+    }
+</style>
+<body>
+<script>
+    const cellColor = 'color';
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main();
+</script>
+</body>
+</html>

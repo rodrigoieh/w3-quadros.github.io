@@ -1,0 +1,55 @@
+body {
+    font-family: 'JetBrains Mono', sans-serif;
+    background: #c8c8b9;
+}
+
+table {
+    font-size: 1em;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+td {
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
+
+.label {
+    writing-mode: vertical-rl;
+    float: right;
+    color: black;
+}
+
+/* Index Links */
+.index {
+    color: white;
+}
+
+.light a:link {
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.light a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.light a:hover {
+    color: black;
+    background-color: transparent;
+}
+
+.light a:active {
+    color: white;
+    background-color: transparent;
+}
+
+.light a:focus {
+    color: white;
+    background: black;
+}

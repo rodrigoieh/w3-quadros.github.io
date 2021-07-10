@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <title></title>
+    <style>
+        body {
+            font-family: 'JetBrains Mono', sans-serif;
+            background: #c8c8b9;
+        }
+
+        table {
+            font-size: 1em;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+        }
+
+        td {
+            text-align: center;
+            width: 60px;
+            height: 60px;
+        }
+
+        .label {
+            writing-mode: vertical-rl;
+            float: right;
+            color: #48563e;
+        }
+
+        td.b {
+            background: #48563e;
+            border: 30px solid rgba(131, 107, 46, 0.2);
+        }
+
+        td.a {
+            background: #2d3b2b;
+            border: 30px solid rgba(59, 47, 23, 0.3);
+        }
+    </style>
+</head>
+<body onload="main()">
+<script>
+    function main() {
+        let n = 10;
+        render(n);
+    }
+
+    function render(n) {
+        let body = document.body,
+            table = document.createElement('table'),
+            demo = document.createElement('div'),
+            label = document.createElement('p');
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < n; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                if (i % 2 === 1) {
+                    td.setAttribute('class', 'td a');
+                } else {
+                    td.setAttribute('class', 'td b');
+                }
+            }
+        }
+        label.innerText = '';
+        label.className = 'label';
+        // demo.appendChild(label);
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
+    }
+</script>
+</body>
+</html>

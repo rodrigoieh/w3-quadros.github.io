@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title></head>
+<style>
+    body {
+        background: #3a4462;
+    }
+
+    .label {
+        color: #d7cece;
+        opacity: 0.75;
+        /* vertical flip */
+        transform: scale(1, -1);
+        /* horizontal flip */
+        /*transform: scale(-1, 1);*/
+    }
+
+    .custom {
+        border: 15px solid rgba(255, 255, 255, 0.5);
+        /*box-shadow: -1px -1px 1px 0px rgba(0, 0, 0, 0.5);*/
+        box-shadow: -1px -1px 1px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    td:hover {
+        background-color: #bd0d0d;
+    }
+</style>
+<body onload="main()">
+<script>
+    function main() {
+        let n = 10;
+        render(n);
+    }
+
+    function render(n) {
+        let body = document.body,
+            table = document.createElement('table'),
+            demo = document.createElement('div'),
+            label = document.createElement('p');
+        let debug = false;
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < n; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(debug ? `${i}|${j}` : ''));
+                td.className = 'custom';
+            }
+        }
+        label.innerText = '';
+        label.className = 'label';
+        demo.setAttribute('id','demo');
+        //demo.appendChild(label);
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
+    }
+</script>
+</body>
+</html>

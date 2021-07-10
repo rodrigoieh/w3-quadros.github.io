@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <title>pivot</title>
+    <style>
+        body {
+            background-color: #404040;
+            filter: contrast(50%) blur(0px) invert(100%);
+        }
+
+        .qr {
+            font-size: 1em;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #demo {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body onload="load()">
+<script>
+    const width = 600;
+    const height = 500;
+    const url = 'https://rodrigoieh.github.io/w3-quadros.github.io/archives/';
+    const src = `https://chart.googleapis.com/chart?cht=qr&chl=${url}&chs=${width}x${height}&chld=L|0`;
+
+    function load() {
+        let body = document.body,
+            div = document.createElement('div'),
+            img = document.createElement('img');
+        div.setAttribute('id', 'demo');
+        div.setAttribute('class', 'qr');
+        img.setAttribute('src', src);
+        div.appendChild(img);
+        body.appendChild(div);
+    }
+</script>
+</body>
+</html>

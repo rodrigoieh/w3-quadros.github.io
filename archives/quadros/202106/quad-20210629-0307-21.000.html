@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.shuffler.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title></title>
+    <style>
+        body {
+            background-color: rgba(97, 99, 86, 0.5);
+            filter: grayscale(100%);
+        }
+
+        td.a {
+            background: rgba(15, 72, 133, 1);
+        }
+
+        td.b {
+            background: #b35118;
+        }
+
+        td.c {
+            background: #970606;
+        }
+
+        td.d {
+            background: #1a5a09;
+        }
+    </style>
+</head>
+<body>
+<script>
+    n = 10, m = 10;
+    options = ' abcd';
+    selector = [...options];
+    if (go()) selector.push(' ');
+    main();
+</script>
+</body>
+</html>

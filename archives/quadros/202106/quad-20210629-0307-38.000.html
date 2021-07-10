@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title></title>
+</head>
+<style>
+    body {
+        background: #1e1e20;
+        background: #2b262a;
+    }
+
+    table {
+        /*border: 15px solid #000000ff;*/
+    }
+
+    td {
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        background-color: #907833ff;
+        background-color: #a89d00ff;
+        background-color: #5d512bff;
+        background-color: #ac9d00ff;
+        background-color: #bfb400ff;
+        background-color: #9b900090;
+        /*opacity: 0.95;*/
+    }
+
+    td.border {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border: 1px solid #1E1E2080;
+        /*border-style: solid solid solid solid;*/
+        /*references: top right bottom left;*/
+    }
+
+</style>
+<body onload="main()">
+<script>
+    function main() {
+        let n = 10, m = 10;
+        render(n, m);
+    }
+
+    function render(n, m) {
+        let body = document.body,
+            table = document.createElement('table'),
+            demo = document.createElement('demo');
+        demo.setAttribute('id', 'demo');
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < m; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                td.setAttribute('class', 'td border');
+            }
+        }
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
+    }
+</script>
+</body>
+</html>

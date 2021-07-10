@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: conic-gradient(orange 180deg, transparent 0deg, transparent 0deg, orange 405deg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        /*background-size: cover;*/
+        background-size: 100% 100%;
+    }
+
+    table {
+        /*background: conic-gradient(#183d53 0deg 180deg, #e2a935 180deg 360deg);*/
+        border-radius: 50%;
+        /*background-image: conic-gradient(from 40deg, #fff, #000);*/
+        /*background: conic-gradient(from 0deg at 0% 0%, white, white, orange 180deg);*/
+        /*background: conic-gradient(white 0deg, white 90deg, white 120deg, orange 270deg, orange 320deg);*/
+        /*background: conic-gradient(#fff 0.25turn, #000 0.25turn 0.5turn, #fff 0.5turn 0.75turn, #000 0.75turn) top left / 5% 5% repeat;*/
+        background: conic-gradient(#fff 0.25turn, #000 0.25turn 0.5turn, #fff 0.5turn 0.75turn, #000 0.75turn) top left / 50% 50% repeat;
+        border: 1px solid;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    td.background {
+        background-color: rgb(226, 169, 53);
+        background-color: #183d5390;
+        background-color: #ffffff80;
+        border: 1px white solid;
+        opacity: 80%;
+    }
+</style>
+<body>
+<script>
+    const cellColor = 'background';
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main(4, 4);
+</script>
+</body>
+</html>

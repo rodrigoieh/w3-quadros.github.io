@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+#demo:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.box {
+    float: left;
+    padding: 10px;
+    z-index: 1;
+}
+
+.b {
+    background-color: gray;
+}
+
+.a {
+    background-color: black;
+}
+
+.c {
+}
+
+.d {
+    background-color: white;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 20px double #060e2a;
+    margin: 1em 0;
+    padding: 0;
+}

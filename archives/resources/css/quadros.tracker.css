@@ -1,0 +1,32 @@
+body {
+    background-color: rgba(178, 167, 147, 0.95);
+    background-color: rgba(10, 59, 104, 0.95);
+    position: relative;
+    height: auto;
+    cursor: none;
+}
+
+.y {
+    display: flex;
+    position: relative;
+    left: 0px;
+    width: 2px;
+    height: 100vh;
+    min-height: 100%;
+    background-color: rgba(99, 156, 59, 0.95);
+    background-color: #F5F5F580;
+}
+
+.x {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 2px;
+    background-color: rgba(99, 156, 59, 0.95);
+    background-color: #F5F5F580;
+}
+
+.circle {
+    display: flex;
+    position: absolute;
+}

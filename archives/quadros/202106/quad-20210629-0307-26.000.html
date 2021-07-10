@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.mirror.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>mirror</title>
+    <style>
+        body {
+            background-color: rgba(97, 99, 86, 0.5);
+        }
+
+        td.a {
+            background: black;
+        }
+
+        td.b {
+            background: white;
+        }
+    </style>
+</head>
+<body onload="main()">
+<script>
+    n = 13, m = 13, width = 48, height = 48;
+    classNameOverride = (y, x) => {
+        if (debugCoordinates) console.debug('classNameOverride ', n, m, y, x);
+        if (m & 1) return !(x & 1) ? 'td a' : 'td b';
+        else return (x < m / 2 && !(x & 1) || x >= m / 2 && x & 1) ? 'td a' : 'td b';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+        body {
+            font-family: 'JetBrains Mono', sans-serif;
+            background: #c8c8b9;
+            background: rgb(44, 51, 71);
+        }
+
+        table {
+            font-size: 1em;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            width: 50%;
+            border-top: 3px solid rgba(255, 3, 3, 0.5);
+            border-bottom: 3px solid rgba(255, 3, 3, 0.5);
+        }
+
+        td {
+            text-align: center;
+            width: 40px;
+            height: 30px;
+        }
+
+        .visible {
+            border-left: 3px solid rgba(255, 3, 3, 0.5);
+        }
+
+        .invisible {
+            /*border-left: 20px solid rgba(202, 220, 204, 0.5);*/
+            border-left: 15px solid rgb(44, 51, 71);
+        }
+
+        #demo {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body onload="main()">
+<script>
+    function main() {
+        let n = 10;
+        let m = 64;
+        render(n, m);
+    }
+
+    function render(n, m) {
+        let body = document.body,
+            table = document.createElement('table'),
+            div = document.createElement('div');
+        div.setAttribute('id', 'demo');
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0, k = 0, b = 0; j < m; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                if (k++ % 4 !== 0)
+                    td.setAttribute('class', 'visible');
+                else td.setAttribute('class', 'invisible');
+            }
+        }
+        div.appendChild(table);
+        body.appendChild(div);
+    }
+</script>
+</body>
+</html>

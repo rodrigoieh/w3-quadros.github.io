@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background-color: #f3f3f3;
+        background-image: radial-gradient(closest-side, transparent 90%, black),
+        radial-gradient(closest-side, transparent 90%, black);
+        background-size: 50px 50px;
+        background-position: 0 0, 25px 25px;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    td.background {
+        background-color: white;
+        border: 1px rgba(255, 255, 255, 0.1) solid;
+        opacity: 20%;
+    }
+</style>
+<body>
+<script>
+    const cellColor = 'background';
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main(10, 10);
+</script>
+</body>
+</html>

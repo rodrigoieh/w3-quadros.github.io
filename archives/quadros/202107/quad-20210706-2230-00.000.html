@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: #2b2b2b;
+    }
+
+    table {
+        background-image: linear-gradient(to bottom, #111140, #111140 50%, #cdcaca 50%);
+        border: 1px white solid;
+        opacity: 90%;
+    }
+
+    td {
+        text-align: center;
+        border: 1px #b4acac solid;
+        opacity: 90%;
+    }
+
+</style>
+<body>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td`);
+    }
+    main(10, 10);
+</script>
+</body>
+</html>

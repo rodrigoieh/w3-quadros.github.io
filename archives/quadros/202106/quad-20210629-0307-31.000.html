@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        background: #cbcac4;
+        background: #0e0e0e;
+        background: #262525;
+        background: #d57d0e;
+        background: #865718;
+        background: #714104;
+        background: #8e5819;
+        background: #42371d;
+        background: #6a5324;
+        background: #a16903;
+        background: #ceb88c;
+        background: #4c4a47;
+        background: #898279;
+        background: #9c8f72;
+        background: #494944;
+        background: #4e4e4c;
+        background: #7f7f7b;
+        /*background: #4e4e03;*/
+        /*background: #3e3b3b;*/
+    }
+
+    td.a {
+        background-color: #072623f0;
+        background-color: #0e6868ef;
+        background-color: rgba(5, 50, 50, 0.94);
+        border: 1px solid #f5f5f5ff;
+    }
+
+    td.b {
+        background-color: #072623f0;
+        /*filter: sepia(100%);*/
+    }
+</style>
+<body>
+<script>
+    const colorPrimary = 'a';
+    const colorSecondary = 'b';
+    setCellContentOverride = (td, i, j, y, x) => {
+        let cellColor;
+        cellColor = (i === j || i + j === m - 1) ? colorPrimary : colorSecondary;
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main();
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: rgb(119, 136, 153);
+        background: #2B2B2B;
+    }
+
+    table {
+        /*background-color: #ccc;*/
+        background: none;
+        /*border: 4px solid #fff;*/
+        border: 10px rgba(23, 61, 83, 0.5) double;
+        border: 10px rgba(234, 170, 5, 0.5) double;
+        border: 10px transparent double;
+        /*padding: 1px;*/
+        /*width: 10px;*/
+        /*height: 10px;*/
+        position: relative;
+        /*margin: 10px auto;*/
+    }
+
+    table:before {
+        background: none;
+        /*border: 4px solid #fff;*/
+        border: 20px rgba(234, 170, 5, 0.7) double;
+        border: 25px rgba(234, 170, 5, 0.3) solid;
+        content: '';
+        display: block;
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        right: -50px;
+        bottom: -50px;
+        pointer-events: none;
+    }
+
+
+    td {
+        text-align: center;
+        /*border: 1px solid black ;*/
+        /*border: 1px #dc9f0c solid;*/
+    }
+
+    td.a {
+        background-color: #422f03;
+        background-color: #AECF9A;
+        background-color: #728764;
+        background-color: #6d895b;
+    }
+
+    td.b {
+        background-color: #12405B;
+        background-color: #12405B;
+        background-color: #183d53;
+        background-color: #0d293999;
+    }
+</style>
+<body>
+<script>
+    const y = 8, x = 8;
+    const colorPrimary = 'b';
+    const colorSecondary = 'b';
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (i + j > y - 2) {
+            let cellColor = (i > y / 2) ? colorPrimary : colorSecondary;
+            td.setAttribute('class', `td ${cellColor}`);
+        }
+    }
+
+    main(y, x);
+    const randomSelector = new Date().getSeconds() & 1;
+    const rotation = randomSelector ? 0 : 90;
+    let demo = document.getElementById('demo');
+    demo.style.transform = `rotate(${rotation}deg)`;
+</script>
+</body>
+</html>

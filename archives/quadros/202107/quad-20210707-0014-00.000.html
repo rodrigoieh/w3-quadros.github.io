@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        /*background: linear-gradient(-105deg, orange, orangered);*/
+        background: #c2660e;
+        background: #a75504;
+        background: #b46008;
+    }
+
+    table {
+        /*background: linear-gradient(75deg, orange, orangered);*/
+        background: #c2660e;
+        background: #b45d08;
+        border: 1px white solid;
+        /*-moz-box-shadow: 0 0 50px #888;*/
+        /*-webkit-box-shadow: 0 0 30px #888;*/
+        box-shadow: 0px 0px 30px 0px #053b32;
+        box-shadow: 0px 0px 100px 0px #052a42;
+        box-shadow: 0px 0px 100px 0px #e2e8ec;
+        box-shadow: 0px 0px 50px 0px #d7ba13;
+        box-shadow: 0px 0px 50px 0px #89470e;
+        opacity: 90%;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    td.background {
+
+    }
+
+    td.line {
+        border-top: 2px rgba(245, 245, 245, 0.30) solid;
+        border-top: 40px rgba(4, 15, 26, 0.7) outset;
+        border-top: 40px rgba(6, 35, 64, 0.7) outset;
+        border-top: 40px rgba(6, 35, 64, 1) outset;
+        border-top: 40px rgb(8, 51, 90) outset;
+        border-top: 40px rgb(8, 51, 90) inset;
+        border-top: 40px rgb(8, 51, 90) ridge;
+        border-top: 40px rgb(8, 51, 90) groove;
+        border-top: 80px rgb(8, 51, 90) solid;
+    }
+</style>
+<body>
+<script>
+    const cellColor = 'background';
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (i === y - 2) td.setAttribute('class', `td ${cellColor} line`);
+        else td.setAttribute('class', `td ${cellColor}`);
+    }
+    main(10, 10);
+</script>
+</body>
+</html>

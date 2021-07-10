@@ -40,6 +40,8 @@
 - https://en.wikipedia.org/wiki/Hue
 - https://www.css3.info/preview/box-shadow/
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
+- [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
+- []()
 
 ## HTML
 
@@ -71,6 +73,9 @@
 
 - [HTML CSS Color Picker](https://www.htmlcsscolor.com)
 - [CSS3 Patterns Gallery](https://projects.verou.me/css3patterns/#cicada-stripes)
+- [Gradient Generator Tool](https://learnui.design/tools/gradient-generator.html)
+- [Online Gradient Generator](https://angrytools.com/gradient/)
+- []()
 
 ## SVG
 
@@ -81,3 +86,17 @@
 
 - https://favicon.io/favicon-converter/
 - [Favicon checker](https://realfavicongenerator.net/favicon_checker?protocol=https&site=rodrigoieh.github.io%2Fw3-quadros.github.io%2Farchives%2F#.YOjN9hNKhXh)
+
+## Repositories
+
+- [comehope / front-end-daily-challenges](https://github.com/comehope/front-end-daily-challenges)
+
+## Resources
+
+- [Hero Patterns](http://www.heropatterns.com/)
+- [Unsplash](https://unsplash.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [Font Awesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=solid&m=free)
+- [Material Design](https://material.io/design/color/the-color-system.html#color-usage-and-palettes)
+- []()
+

@@ -9,8 +9,8 @@
 </head>
 <style>
     .background {
-        --y:80;   /* rows    */
-        --x:80;   /* columns */
+        --y:2;    /* rows    */
+        --x:2;    /* columns */
         --b:1px;  /* border  */
 
         width: 400px;
@@ -37,8 +37,8 @@
 </style>
 <body>
 <div id='a' class="background"></div>
-<div id='b' class="background" style="--y:8;--x:16;--b:1px"></div>
-<div id='c' class="background"></div>
+<div id='b' class="background" style="--y:40;--x:40;--b:1px"></div>
+<div id='c' class="background" style="--y:80;--x:80;--b:1px"></div>
 <script>
     setCellContentOverride = (td, i, j, y, x) => {
         if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))

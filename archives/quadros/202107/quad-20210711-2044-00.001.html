@@ -12,6 +12,7 @@
         margin: 0 auto;
         /*--g:transparent calc(100% - 2px), #064f5c 0;*/
         --g:transparent calc(100% - 8px), #61c1d7 0;
+        --g:transparent calc(100% - 39px), #0a667b 0;
         background:
                 linear-gradient(to right, var(--g)),
                 linear-gradient(to bottom,var(--g)),
@@ -25,12 +26,14 @@
 <script>
     setCellContentOverride = (td, i, j, y, x) => {
         if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
-            td.style.backgroundColor = `#ffffff33`;
+            td.style.backgroundColor = `#ffffff10`;
         else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1) {
             td.style.backgroundColor = '#07fa27';
             td.style.backgroundColor = '#23a13d';
             td.style.backgroundColor = '#ffffff';
-            td.style.opacity = '40%';
+            td.style.backgroundColor = '#d27300';
+            td.style.opacity = '90%';
+            td.style.border = '1px white solid';
         }
     };
     main(4, 5);

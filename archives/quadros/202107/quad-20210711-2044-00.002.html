@@ -10,15 +10,10 @@
 <style>
     .background {
         margin: 0 auto;
-        /*--g:transparent calc(100% - 2px), #064f5c 0;*/
-        --g:transparent calc(100% - 8px), #61c1d7 0;
+        --g:transparent 0  calc(50px - 2px), #0e79d7 0 50px;
         background:
-                linear-gradient(to right, var(--g)),
-                linear-gradient(to bottom,var(--g)),
-                #ff8c00;
-        background-size:
-                50px 100%,
-                100% 50px;
+                repeating-linear-gradient(to right, var(--g)),
+                repeating-linear-gradient(to bottom,var(--g)) #00ff04;
     }
 </style>
 <body class="background">
@@ -33,7 +28,7 @@
             td.style.opacity = '40%';
         }
     };
-    main(4, 5);
+    main(6, 7);
 </script>
 </body>
 </html>

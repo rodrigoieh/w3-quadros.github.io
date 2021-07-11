@@ -39,6 +39,9 @@
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 - https://en.wikipedia.org/wiki/Hue
 - https://www.css3.info/preview/box-shadow/
+- https://www.w3schools.com/html/html5_draganddrop.asp
+- https://www.w3schools.com/howto/howto_js_draggable.asp
+- https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - []()
@@ -76,6 +79,8 @@
 - [Gradient Generator Tool](https://learnui.design/tools/gradient-generator.html)
 - [Online Gradient Generator](https://angrytools.com/gradient/)
 - [CSS Gradient Generator](https://www.css-gradient.com/)
+- [CSS Gradient](https://cssgradient.io/)
+- [Ultimate CSS Gradient Generator](https://www.colorzilla.com/gradient-editor/)
 - []()
 
 ## SVG

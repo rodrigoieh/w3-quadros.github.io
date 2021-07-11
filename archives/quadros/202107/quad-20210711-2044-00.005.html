@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+</head>
+<style>
+    .background {
+        width: 100%;
+        height: 100%;
+        --b: #808063;
+        background:
+                /* vertical   */
+                linear-gradient(var(--b),var(--b)) center/2px 100%,
+                linear-gradient(var(--b),var(--b)) 50% 0/2px 100%,
+                linear-gradient(var(--b),var(--b)) 50% 0/2px 100%,
+                /* horizontal */
+                linear-gradient(var(--b),var(--b)) 0 50%/100% 2px,
+                linear-gradient(var(--b),var(--b)) 0 50%/100% 2px,
+                #6f6f66;
+        background-repeat:no-repeat;
+    }
+</style>
+<body>
+<div id='a' class="background"></div>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
+            td.style.backgroundColor = `rgba(52, 50, 16, 0.2)`;
+        else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1) {
+            td.style.backgroundColor = '#ffffff';
+            td.style.opacity = '10%';
+        }
+    };
+    main(3, 3);
+    // Reference: https://stackoverflow.com/questions/53425836/css-square-background-image
+</script>
+</body>
+</html>
+

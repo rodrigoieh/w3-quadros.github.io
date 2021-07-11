@@ -12,13 +12,14 @@ const setCellContent = (td, i, j, y = n, x = m) => {
     else return 'black';
 };
 
-function main(y = 10, x = 10) {
+function main(y = 10, x = 10, cellSizeOverride = 0) {
     n = y, m = x;
-    cellSize = 60;
-    tableWidth = cellSize * n;
-    tableHeight = cellSize * m;
-    cellWidth = tableWidth / n;
-    cellHeight = tableHeight / m;
+    cellSize = cellSizeOverride !== 0 ? cellSizeOverride : 60;
+    tableWidth = cellSize * m;
+    tableHeight = cellSize * n;
+    cellWidth = tableWidth / m;
+    cellHeight = tableHeight / n;
+    cellSize = Math.min(Math.min(cellWidth, cellHeight), cellSize);
     render(n, m);
     document.body.style.zoom = '80%';
 }

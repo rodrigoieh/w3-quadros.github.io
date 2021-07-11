@@ -35,6 +35,7 @@
 - https://stackoverflow.com/questions/179355
 - https://stackoverflow.com/questions/1527803
 - https://stackoverflow.com/questions/49547157
+- https://stackoverflow.com/questions/53425836/css-square-background-image
 - https://www.30secondsofcode.org/js/s/parse-cookie
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 - https://en.wikipedia.org/wiki/Hue

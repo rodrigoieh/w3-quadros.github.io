@@ -13,7 +13,7 @@
         --g:transparent 0  calc(50px - 2px), #0e79d7 0 50px;
         background:
                 repeating-linear-gradient(to right, var(--g)),
-                repeating-linear-gradient(to bottom,var(--g)) #00ff04;
+                repeating-linear-gradient(to bottom,var(--g)) #cad4ca;
     }
 </style>
 <body class="background">
@@ -22,10 +22,8 @@
         if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
             td.style.backgroundColor = `#ffffff33`;
         else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1) {
-            td.style.backgroundColor = '#07fa27';
-            td.style.backgroundColor = '#23a13d';
             td.style.backgroundColor = '#ffffff';
-            td.style.opacity = '40%';
+            td.style.opacity = '33%';
         }
     };
     main(6, 7);

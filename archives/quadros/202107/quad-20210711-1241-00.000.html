@@ -14,8 +14,8 @@
         }
 
         #table {
-            border: 1px #E8070D solid;
-            border: 1px white solid;
+            /*border: 1px #E8070D solid;*/
+            /*border: 1px white solid;*/
         }
     </style>
 </head>
@@ -25,8 +25,10 @@
     setCellContentOverride = (td, i, j, y, x) => {
         if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
             td.style.backgroundColor = `rgba(${r++},${g++},${b++},${a})`;
+        else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1)
+            td.style.border = '1px white solid';
     };
-    n = 1, m = 3;
+    n = 3, m = 3;
     main(n, m);
 </script>
 </body>

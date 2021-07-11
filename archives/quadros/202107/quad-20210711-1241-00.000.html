@@ -28,8 +28,16 @@
         else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1)
             td.style.border = '1px white solid';
     };
-    n = 3, m = 3;
-    main(n, m);
+    y = 3, x = 3;
+    main(y, x);
+
+    document.addEventListener('click', (event) => {
+        let demo = document.getElementById('demo');
+        document.body.removeChild(demo);
+        let a = getRandomInt(y, getRandomInt(y, Math.pow(y, 2)));
+        let b = getRandomInt(x, getRandomInt(x, Math.pow(x, 2)));
+        main(a, b);
+    });
 </script>
 </body>
 </html>

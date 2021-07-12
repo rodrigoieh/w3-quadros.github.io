@@ -5,7 +5,7 @@
     <script src="../../resources/js/quadros.commons.js"></script>
     <script src="../../resources/js/quadros.table.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
-    <title>quad</title>
+    <title>gradient</title>
 </head>
 <style>
     * {
@@ -15,10 +15,11 @@
     .background {
         margin: 0 auto;
         --g: transparent 0 calc(50px - 1px), #073155 0 50px;
-        background: repeating-linear-gradient(to right, var(--g)),
-        repeating-linear-gradient(to bottom, var(--g)),
-        #cad4ce;
-        /*#cad4ca;*/
+        background:
+                repeating-linear-gradient(to right, var(--g)),
+                repeating-linear-gradient(to bottom, var(--g)),
+                #cad4ce;
+                /*#cad4ca;*/
     }
 </style>
 <body class="background">

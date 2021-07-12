@@ -38,6 +38,7 @@
 - https://stackoverflow.com/questions/53425836/css-square-background-image
 - https://www.30secondsofcode.org/js/s/parse-cookie
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a
 - https://en.wikipedia.org/wiki/Hue
 - https://www.css3.info/preview/box-shadow/
 - https://www.w3schools.com/html/html5_draganddrop.asp
@@ -107,3 +108,7 @@
 - [Material Design](https://material.io/design/color/the-color-system.html#color-usage-and-palettes)
 - []()
 
+## Compatibility
+
+- [Can I use linear-gradient?](https://caniuse.com/?search=linear-gradient)
+- []()

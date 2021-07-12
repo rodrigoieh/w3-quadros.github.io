@@ -44,6 +44,8 @@
 - https://www.w3schools.com/html/html5_draganddrop.asp
 - https://www.w3schools.com/howto/howto_js_draggable.asp
 - https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop
+- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr
+- https://www.w3schools.com/howto/howto_css_style_hr.asp  
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - []()

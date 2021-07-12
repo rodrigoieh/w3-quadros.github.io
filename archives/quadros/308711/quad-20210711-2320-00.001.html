@@ -109,6 +109,7 @@
     ];
     const superSet = 5;
     const reset = render;
+    const horizontalRules = [1, 10, 20, 40];
     const boxTypeSelector = [...boxTypes];
     let boxTypeSelection = 3;
 
@@ -126,9 +127,11 @@
                 let box = document.createElement('div');
                 box.style.width = `${100 / boxTypesOverride.length}%`;
                 box.setAttribute('class', `box ${boxType}`);
-                const sample = document.createElement('hr');
-                sample.style.borderTop = `20px double ${color}`;
-                box.appendChild(sample);
+                for (let horizontalRule of horizontalRules) {
+                    const sample = document.createElement('hr');
+                    sample.style.borderTop = `${horizontalRule}px ${color} solid`;
+                    box.appendChild(sample);
+                }
                 demo.appendChild(box);
             }
         }

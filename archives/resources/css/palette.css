@@ -14,26 +14,25 @@
     z-index: 1;
 }
 
-.b {
+.box.b {
     background-color: gray;
 }
 
-.a {
+.box.a {
     background-color: black;
 }
 
-.c {
+.box.c {
+    background-color: transparent;
 }
 
-.d {
+.box.d {
     background-color: white;
 }
 
 hr {
     display: block;
-    height: 1px;
     border: 0;
-    border-top: 20px double #060e2a;
     margin: 1em 0;
     padding: 0;
 }

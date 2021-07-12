@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <link rel="stylesheet" href="../../resources/css/palette.css"/>
+    <title>palette</title>
+    <style>
+        .demo {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="main()">
+<div id="demo" class="demo">
+</div>
+<script>
+    const isDebugEnabled = location.hostname === 'localhost';
+    const boxTypes = ['a', 'b', 'c', 'd'];
+
+    const colors = [
+        // Super Set 0x00
+        [
+            // Set 0x01
+            '#1d2755ff', '#1e1e20ff', '#2b262aff',
+            '#000000ff', '#1e1e2080', '#dca318ff',
+            '#907833ff', '#a89d00ff', '#5d512bff',
+            '#ac9d00ff', '#bfb400ff', '#9b900090',
+            '#9b9100ff', '#c4e5edff',
+
+            // Set 0x02
+            '#cbcac4ff', '#0e0e0eff', '#262525ff',
+            '#d57d0eff', '#865718ff', '#714104ff',
+            '#8e5819ff', '#42371dff', '#6a5324ff',
+            '#a16903ff', '#ceb88cff', '#4c4a47ff',
+            '#898279ff', '#9c8f72ff', '#494944ff',
+            '#4e4e4cff', '#7f7f7bff', '#4e4e03ff',
+            '#3e3b3bff', '#072623f0', '#0e6868ef',
+            '#072623f0',
+
+            // Set 0x03
+            '#5A3600', '#684400', '#351800',
+            '#141603', '#1D2100', '#141603',
+            '#737856', '#8D9572', '#484C2D',
+            '#B57300', '#FFFD5F', '#FFFD5F',
+            '#A5AD4B', '#6C7700', '#799F10',
+            '#597C12',
+
+            // Set 0x04
+            '#A5AD4B', '#6C7700', '#5A3600',
+
+            // Set 0x..
+            '#'
+        ],
+        // Super Set 0x01
+        [
+            // Set 0x01
+            '#4666FF',
+
+            // Set 0x04
+            '#A5AD4B', '#6C7700', '#5A3600',
+            '#8C6F00', '#15110C', '#B7869A',
+            '#'
+        ],
+        // Super Set 0x02
+        [
+            // Set 0x01
+            // HSLA - Hue-Saturation-Lightness-Alpha model
+            'hsla(100,100%,100%,0.9)', 'hsla(100,100%,100%,0.6)', 'hsla(100,100%,100%,0.3)',
+            'hsla(100,100%,75%,0.9)', 'hsla(100,100%,75%,0.6)', 'hsla(100,100%,75%,0.3)',
+            'hsla(100,100%,50%,0.9)', 'hsla(100,100%,50%,0.6)', 'hsla(100,100%,50%,0.3)',
+            'hsla(100,100%,25%,0.9)', 'hsla(100,100%,25%,0.6)', 'hsla(100,100%,25%,0.3)',
+            'hsla(100,100%,12%,0.9)', 'hsla(100,100%,12%,0.6)', 'hsla(100,100%,12%,0.3)',
+            'hsla(100,100%,0%,0.9)', 'hsla(100,100%,0%,0.6)', 'hsla(100,100%,0%,0.3)',
+
+            // Set 0x02
+            'hsla(100,100%,100%,0.9)', 'hsla(100,100%,100%,0.6)', 'hsla(100,100%,100%,0.3)',
+            'hsla(100,0%,100%,0.9)', 'hsla(100,0%,100%,0.6)', 'hsla(100,0%,100%,0.3)',
+
+        ],
+        // Super Set 0x03
+        [
+            'gainsboro', '#DCDCDC', 'rgb(220,220,220)',
+            'lightgray', 'lightgrey', '#D3D3D3', 'rgb(211,211,211)',
+            'silver', '#C0C0C0', 'rgb(192,192,192)',
+            'darkgray', 'darkgrey', '#A9A9A9', 'rgb(169,169,169)',
+            'gray', 'grey', '#808080', 'rgb(128,128,128)',
+            'dimgray', 'dimgrey', '#696969', 'rgb(105,105,105)',
+            'lightslategray', 'lightslategrey', '#778899', 'rgb(119,136,153)',
+            'slategray', 'slategrey', '#708090', 'rgb(112,128,144)',
+            'darkslategray', 'darkslategrey', '#2F4F4F', 'rgb(47,79,79)',
+            'black', '#000000', 'rgb(0,0,0)'
+        ],
+        // Super Set 0x04
+        [
+            '#83B8C1', '#48A2B3', '#12405B'
+        ],
+        // Super Set 0x05: Samples 202107
+        [
+            // Set 0x01
+            '#723A3D', '#1D436A', '#2F5788',
+            '#D8D4C9', '#5E696D',
+            // Set 0x02
+            '#223E54', '#4490C5', '#B80503', '#DE3B15',
+            // Set 0x3
+            '#b80503', '#de3b15', '#e5940c',
+            '#e8b007', '#9bad08', '#394204'
+        ]
+    ];
+    const superSet = 5;
+    const reset = render;
+    const boxTypeSelector = [...boxTypes];
+    let boxTypeSelection = 3;
+
+    function main() {
+        render();
+        addEventListeners();
+    }
+
+    function render(boxTypesOverride = null) {
+        let demo = document.getElementById('demo');
+        demo.innerHTML = '';
+        boxTypesOverride = boxTypesOverride !== null ? boxTypesOverride : boxTypes;
+        for (let color of colors[superSet]) {
+            for (let boxType of boxTypesOverride) {
+                let box = document.createElement('div');
+                box.style.width = `${100 / boxTypesOverride.length}%`;
+                box.setAttribute('class', `box ${boxType}`);
+                const sample = document.createElement('hr');
+                sample.style.borderTop = `20px double ${color}`;
+                box.appendChild(sample);
+                demo.appendChild(box);
+            }
+        }
+    }
+
+    function addEventListeners() {
+        let demo = document.getElementById('demo');
+        demo.addEventListener('click', (event) => {
+        });
+
+        document.addEventListener('keydown', event => {
+            if (isDebugEnabled) console.debug(`key: [${event.key}]`);
+            const key = event.key;
+            switch (key) {
+                case 'R':
+                case 'r':
+                    reset();
+                    break;
+                case 'T':
+                case 't':
+                    if (++boxTypeSelection === boxTypeSelector.length) boxTypeSelection = 0;
+                    render(new Array(boxTypeSelector[boxTypeSelection]));
+                    break;
+            }
+        });
+    }
+
+    document.addEventListener('mousemove', (event) => {
+        let demo = document.getElementById('demo');
+        demo.style.display = 'inline-block';
+    }, {once: true});
+</script>
+</body>
+</html>

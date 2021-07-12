@@ -1,0 +1,243 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+</head>
+<style>
+    body {
+        zoom: 80%;
+    }
+
+    #demo {
+        z-index: -1;
+    }
+
+    .vault {
+        display: none;
+    }
+
+    .container {
+        /*display:inline;*/
+        /*display:inline-block;*/
+        float: left;
+        z-index: 1;
+    }
+
+    .container:hover {
+        transform: scale(1.5) translate(20px, 20px);
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .container.a {
+        --id: 'a';
+        --description: '1 color, solid';
+        background: linear-gradient(#6487b1, #6487b1);
+    }
+
+    .container.b {
+        --id: 'b';
+        --description: 'linear gradient, 2 colors';
+        background: linear-gradient(white, black);
+    }
+
+    .container.c {
+        --id: 'c';
+        --description: 'linear gradient, 2 colors';
+        background: linear-gradient(black, white);
+    }
+
+    .container.d {
+        --id: 'd';
+        --description: 'linear gradient, 2 colors, rotated 0 degrees';
+        background: linear-gradient(0deg, black, white);
+    }
+
+    .container.e {
+        --id: 'd';
+        --description: 'linear gradient, 2 colors, rotated 90 degrees';
+        background: linear-gradient(90deg, black, white);
+    }
+
+    .container.f {
+        --id: 'f';
+        --description: 'linear gradient, 2 colors, rotated -90 degrees';
+        background: linear-gradient(-90deg, black, white);
+    }
+
+    .container.g {
+        --id: 'g';
+        --description: 'linear gradient, 2 colors, rotated 0 degrees, equal to: to top';
+        background: linear-gradient(0deg, black, #6487b1);
+        background: linear-gradient(to top, black, #6487b1);
+    }
+
+    .container.h {
+        --id: 'h';
+        --description: 'linear gradient, 2 colors, rotated 180 degrees, equal to: to bottom';
+        background: linear-gradient(180deg, black, #6487b1);
+        background: linear-gradient(to bottom, black, #6487b1);
+    }
+
+    .container.i {
+        --id: 'i';
+        --description: 'linear gradient, 2 colors, rotated 270 degrees, equal to: to left';
+        background: linear-gradient(270deg, black, #6487b1);
+        background: linear-gradient(to left, black, #6487b1);
+    }
+
+    .container.j {
+        --id: 'j';
+        --description: 'linear gradient, 2 colors, rotated 90 degrees, equal to: to right';
+        background: linear-gradient(90deg, black, #6487b1);
+        background: linear-gradient(to right, black, #6487b1);
+    }
+
+    .container.k {
+        --id: 'k';
+        --description: 'linear gradient, 2 colors, rotated 45 degrees, equal to: to top right';
+        background: linear-gradient(45deg, black, #6487b1);
+        background: linear-gradient(to top right, black, #6487b1);
+    }
+
+    .container.l {
+        --id: 'l';
+        --description: 'linear gradient, 2 colors, rotated 315 degrees, equal to: to top left';
+        background: linear-gradient(315deg, black, #6487b1);
+        background: linear-gradient(to top left, black, #6487b1);
+    }
+
+    .container.m {
+        --id: 'm';
+        --description: 'linear gradient, 2 colors, rotated 135 degrees, equal to: to bottom right';
+        background: linear-gradient(135deg, black, #6487b1);
+        background: linear-gradient(to bottom right, black, #6487b1);
+    }
+
+    .container.n {
+        --id: 'n';
+        --description: 'linear gradient, 2 colors, rotated 225 degrees, equal to: to bottom left';
+        background: linear-gradient(255deg, black, #6487b1);
+        background: linear-gradient(to bottom left, black, #6487b1);
+    }
+
+    .container.o {
+        --id: 'o';
+        --description: 'radial gradient, 2 colors, central point: center';
+        background: radial-gradient(black, #6487b1);
+    }
+
+    .container.p {
+        --id: 'p';
+        --description: 'radial gradient, 2 colors, elipse';
+        background: radial-gradient(ellipse 50% 30px, white 50%, black 80%, #6487b1);
+    }
+
+    .container.q {
+        --id: 'q';
+        --description: 'radial gradient, 2 colors, elipse';
+        background: radial-gradient(ellipse 50% 70px, white 50%, black 80%, #6487b1);
+    }
+
+    .container.r {
+        --id: 'r';
+        --description: 'conic gradient, 2 colors, 50% 50%';
+        background: conic-gradient(black, white);
+    }
+
+    .container.s {
+        --id: 's';
+        --description: 'conic gradient, 3 colors, 33% 33% 33%';
+        background: conic-gradient(black 0% 33%, grey 0% 66%, white 0% 100%);
+    }
+
+    .container.t {
+        --id: 't';
+        --description: 'linear gradient, 2 colors, limits';
+        background: linear-gradient(black 100px, grey 40%, white);
+    }
+
+    .container.u {
+        --id: 'u';
+        --description: 'linear gradient, 2 colors, limits';
+        background: linear-gradient(black 75px, white 75px);
+    }
+
+    .container.v {
+        --id: 'v';
+        --description: 'linear gradient, 2 colors, limits';
+        background: linear-gradient(black 50%, white 50%);
+    }
+
+    .container.w {
+        --id: 'w';
+        --description: 'linear gradient, 2 colors, rotated 45 degrees';
+        background: linear-gradient(45deg, black 50%, white 50%);
+    }
+
+    .container.x {
+        --id: 'x';
+        --description: 'linear gradient, 2 colors, rotated 135 degrees';
+        background: linear-gradient(225deg, black 50%, white 50%);
+    }
+
+    .container.y {
+        --id: 'y';
+        --description: 'repeating linear gradient, 2 colors, rotated 0 degrees';
+        background: repeating-linear-gradient(black, black 30px, white 30px, white 60px);
+    }
+
+    .container.z {
+        --id: 'z';
+        --description: 'repeating linear gradient, 2 colors, rotated 90 degrees';
+        background: repeating-linear-gradient(90deg, black, black 30px, white 30px, white 60px);
+    }
+</style>
+<body>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => td.style.backgroundColor = '#ffffff13';
+    main(10, 10);
+
+    let vault = document.createElement('div');
+    let nextChar = (c) => String.fromCharCode(c.charCodeAt(0) + 1);
+    let previousChar = (c) => String.fromCharCode(c.charCodeAt(0) - 1);
+
+    let k = 26;
+    let index = previousChar('a');
+    for (let i = 0; i < k; i++) {
+        let container = document.createElement('div');
+        index = nextChar(index);
+        container.id = `container-${index}`;
+        container.className = `container ${index}`;
+        container.style.width = '150px';
+        container.style.height = '150px';
+        container.style.margin = '20px';
+        container.style.border = '1px whitesmoke solid';
+        addLabel(container, index.toUpperCase());
+        vault.appendChild(container);
+    }
+
+    function addLabel(element, text) {
+        let label = document.createElement('p');
+        label.innerHTML += text;
+        label.style.color = '#ffffff90';
+        label.style.textAlign = 'right';
+        label.style.marginRight = '10px';
+        label.style.marginTop = '5px';
+        element.appendChild(label);
+    }
+
+    vault.id = 'vault';
+    vault.className = 'vault';
+    document.body.appendChild(vault);
+    document.addEventListener('mousemove', (event) => {
+        vault.style.display = 'inline-block';
+    }, {once: true});
+</script>
+</body>
+</html>
+

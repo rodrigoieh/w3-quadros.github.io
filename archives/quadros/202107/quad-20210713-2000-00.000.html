@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>svg</title>
+</head>
+<style>
+    :root {
+        --svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='red'><circle cx='15' cy='15' r='10' /></svg>");
+    }
+
+    body {
+        background: var(--svg);
+        background-color: #efeff9;
+    }
+
+    #demo {
+        margin: auto;
+        width: 700px;
+        height: 300px;
+        background: linear-gradient(-37deg, black 50%, transparent 50%);
+        opacity: 20%;
+    }
+</style>
+<body>
+<script>
+    main(1, 1);
+</script>
+</body>
+</html>

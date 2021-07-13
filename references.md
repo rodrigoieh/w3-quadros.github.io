@@ -95,6 +95,7 @@
 - [INKSCAPE Draw Freely.](https://inkscape.org/)
 - [Using SVG](https://css-tricks.com/using-svg/)
 - [Applying SVG effects to HTML content](https://developer.mozilla.org/en-US/docs/Web/SVG/Applying_SVG_effects_to_HTML_content)
+- [Fills and Strokes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Fills_and_Strokes)
 
 ## Favicon
 

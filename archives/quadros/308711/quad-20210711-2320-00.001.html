@@ -107,11 +107,24 @@
             '#e8b007', '#9bad08', '#394204'
         ]
     ];
+
+    // colors arr index
     const superSet = 5;
+
+    // back to initial state or pseudo page reload
     const reset = render;
+
+    // height of horizontal lines, hr tags
     const horizontalRules = [1, 10, 20, 40];
+
+    // css classes
     const boxTypeSelector = [...boxTypes];
     let boxTypeSelection = 3;
+
+    // css filter properties
+    const filterTypes = ['invert', 'sepia', 'opacity'];
+    const filterValues = [100, 100, 100];
+    let filterTypeSelection = 0;
 
     function main() {
         render();
@@ -121,6 +134,7 @@
     function render(boxTypesOverride = null) {
         let demo = document.getElementById('demo');
         demo.innerHTML = '';
+        demo.style.filter = 'opacity(100%)';
         boxTypesOverride = boxTypesOverride !== null ? boxTypesOverride : boxTypes;
         for (let color of colors[superSet]) {
             for (let boxType of boxTypesOverride) {
@@ -142,6 +156,12 @@
         render(new Array(boxTypeSelector[boxTypeSelection]));
     }
 
+    function switchFilterType() {
+        if (++filterTypeSelection === filterTypes.length) filterTypeSelection = 0;
+        let demo = document.getElementById('demo');
+        demo.style.filter = `${filterTypes[filterTypeSelection]}(${filterValues[filterTypeSelection]}%)`
+    }
+
     function addEventListeners() {
         let demo = document.getElementById('demo');
         demo.addEventListener('click', () => switchBoxType());
@@ -157,6 +177,9 @@
                 case 'T':
                 case 't':
                     switchBoxType();
+                    break;
+                case 'f':
+                    switchFilterType();
                     break;
             }
         });

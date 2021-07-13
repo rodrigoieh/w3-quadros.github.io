@@ -4,30 +4,31 @@
 
 ### Inheritance
 
-- [Cascade and inheritance - mozilla](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [mozilla: Cascade and inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 - [35 CSS Selectors to remember](https://www.csssolid.com/35-css-selectors-to-remember.html)
 
 ### Gradients
 
-- [Using_CSS_gradients - mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
+- [mozilla: Using_CSS_gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
 
 ### Linear Gradients
 
-- [linear-gradient() - mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
-- [linear-gradient() - w3schools](https://www.w3schools.com/cssref/func_linear-gradient.asp)
+- [mozilla: linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
+- [w3schools: linear-gradient()](https://www.w3schools.com/cssref/func_linear-gradient.asp)
 
 ### Radial Gradients
 
-- [radial-gradient() - mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient())
-- [radial-gradient() - w3schools](https://www.w3schools.com/css/css3_gradients_radial.asp)
+- [mozilla: radial-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient())
+- [w3schools: radial-gradient()](https://www.w3schools.com/css/css3_gradients_radial.asp)
 
 ### Positioning
 
-- [float - mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
+- [mozilla: float](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
 
 ### Filters
 
-- [CSS filter Property - w3schools](https://www.w3schools.com/cssref/css3_pr_filter.asp)
+- [w3schools: CSS filter Property](https://www.w3schools.com/cssref/css3_pr_filter.asp)
+- [mozilla: filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 
 ## Miscellaneous
 
@@ -45,7 +46,7 @@
 - https://www.w3schools.com/howto/howto_js_draggable.asp
 - https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop
 - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr
-- https://www.w3schools.com/howto/howto_css_style_hr.asp  
+- https://www.w3schools.com/howto/howto_css_style_hr.asp
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - []()

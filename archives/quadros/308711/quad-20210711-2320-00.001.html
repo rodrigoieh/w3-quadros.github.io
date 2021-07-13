@@ -137,6 +137,11 @@
         }
     }
 
+    function switchBoxType() {
+        if (++boxTypeSelection === boxTypeSelector.length) boxTypeSelection = 0;
+        render(new Array(boxTypeSelector[boxTypeSelection]));
+    }
+
     function addEventListeners() {
         let demo = document.getElementById('demo');
         demo.addEventListener('click', () => switchBoxType());
@@ -155,11 +160,6 @@
                     break;
             }
         });
-    }
-
-    function switchBoxType() {
-        if (++boxTypeSelection === boxTypeSelector.length) boxTypeSelection = 0;
-        render(new Array(boxTypeSelector[boxTypeSelection]));
     }
 
     document.addEventListener('mousemove', (event) => {

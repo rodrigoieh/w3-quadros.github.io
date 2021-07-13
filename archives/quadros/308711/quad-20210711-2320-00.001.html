@@ -139,8 +139,7 @@
 
     function addEventListeners() {
         let demo = document.getElementById('demo');
-        demo.addEventListener('click', (event) => {
-        });
+        demo.addEventListener('click', () => switchBoxType());
 
         document.addEventListener('keydown', event => {
             if (isDebugEnabled) console.debug(`key: [${event.key}]`);
@@ -152,11 +151,15 @@
                     break;
                 case 'T':
                 case 't':
-                    if (++boxTypeSelection === boxTypeSelector.length) boxTypeSelection = 0;
-                    render(new Array(boxTypeSelector[boxTypeSelection]));
+                    switchBoxType();
                     break;
             }
         });
+    }
+
+    function switchBoxType() {
+        if (++boxTypeSelection === boxTypeSelector.length) boxTypeSelection = 0;
+        render(new Array(boxTypeSelector[boxTypeSelection]));
     }
 
     document.addEventListener('mousemove', (event) => {

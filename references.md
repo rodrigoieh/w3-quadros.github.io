@@ -41,12 +41,14 @@
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 - https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a
 - https://en.wikipedia.org/wiki/Hue
+- https://en.wikipedia.org/wiki/Lacunarity
 - https://www.css3.info/preview/box-shadow/
 - https://www.w3schools.com/html/html5_draganddrop.asp
 - https://www.w3schools.com/howto/howto_js_draggable.asp
 - https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop
 - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr
 - https://www.w3schools.com/howto/howto_css_style_hr.asp
+- https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - []()
@@ -92,6 +94,7 @@
 
 - [INKSCAPE Draw Freely.](https://inkscape.org/)
 - [Using SVG](https://css-tricks.com/using-svg/)
+- [Applying SVG effects to HTML content](https://developer.mozilla.org/en-US/docs/Web/SVG/Applying_SVG_effects_to_HTML_content)
 
 ## Favicon
 

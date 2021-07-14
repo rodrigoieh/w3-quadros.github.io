@@ -11,9 +11,9 @@
         }
     </style>
 </head>
-<body onload="main()">
-<div id="demo" class="demo">
-</div>
+<body onload="preview();main();">
+<div id="preview" class="preview"></div>
+<div id="demo" class="demo"></div>
 <script>
     const isDebugEnabled = location.hostname === 'localhost';
     const boxTypes = ['a', 'b', 'c', 'd'];
@@ -126,6 +126,12 @@
     const filterValues = [100, 100, 100];
     let filterTypeSelection = 0;
 
+    function preview() {
+        const color = '#723A3D';
+        let preview = document.getElementById('preview');
+        addSamples(preview, color);
+    }
+
     function main() {
         render();
         addEventListeners();
@@ -137,17 +143,25 @@
         demo.style.filter = 'opacity(100%)';
         boxTypesOverride = boxTypesOverride !== null ? boxTypesOverride : boxTypes;
         for (let color of colors[superSet]) {
-            for (let boxType of boxTypesOverride) {
-                let box = document.createElement('div');
-                box.style.width = `${100 / boxTypesOverride.length}%`;
-                box.setAttribute('class', `box ${boxType}`);
-                for (let horizontalRule of horizontalRules) {
-                    const sample = document.createElement('hr');
-                    sample.style.borderTop = `${horizontalRule}px ${color} solid`;
-                    box.appendChild(sample);
-                }
-                demo.appendChild(box);
-            }
+            addBoxes(demo, color, boxTypesOverride);
+        }
+    }
+
+    function addBoxes(demo, color, boxTypes) {
+        for (let boxType of boxTypes) {
+            let box = document.createElement('div');
+            box.style.width = `${100 / boxTypes.length}%`;
+            box.setAttribute('class', `box ${boxType}`);
+            addSamples(box, color);
+            demo.appendChild(box);
+        }
+    }
+
+    function addSamples(box, color) {
+        for (let horizontalRule of horizontalRules) {
+            const sample = document.createElement('hr');
+            sample.style.borderTop = `${horizontalRule}px ${color} solid`;
+            box.appendChild(sample);
         }
     }
 
@@ -187,6 +201,8 @@
 
     document.addEventListener('mousemove', (event) => {
         let demo = document.getElementById('demo');
+        let preview = document.getElementById('preview');
+        preview.style.display = 'none';
         demo.style.display = 'inline';
     }, {once: true});
 </script>

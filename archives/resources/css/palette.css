@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+#preview {
+    background-color: black;
+}
+
 #demo:after {
     content: '';
     display: table;

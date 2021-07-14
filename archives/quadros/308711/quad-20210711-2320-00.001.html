@@ -127,9 +127,8 @@
     let filterTypeSelection = 0;
 
     function preview() {
-        const randomSuperSet = Math.floor(Math.random() * colors.length);
-        const randomSuperSetColor = Math.floor(Math.random() * colors[randomSuperSet].length);
-        const color = colors[randomSuperSet][randomSuperSetColor];
+        const superSetColorSelection = Math.floor(Math.random() * colors[superSetSelection].length);
+        const color = colors[superSetSelection][superSetColorSelection];
         let preview = document.getElementById('preview');
         addSamples(preview, color);
     }

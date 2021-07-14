@@ -4,6 +4,11 @@
 
 #preview {
     background-color: black;
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+    left: 30%;
+    right: 30%;
 }
 
 #demo:after {

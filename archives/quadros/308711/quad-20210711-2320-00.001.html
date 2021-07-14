@@ -109,7 +109,7 @@
     ];
 
     // colors arr index
-    const superSet = 5;
+    const superSetSelection = 5;
 
     // back to initial state or pseudo page reload
     const reset = render;
@@ -127,7 +127,9 @@
     let filterTypeSelection = 0;
 
     function preview() {
-        const color = '#723A3D';
+        const randomSuperSet = Math.floor(Math.random() * colors.length);
+        const randomSuperSetColor = Math.floor(Math.random() * colors[randomSuperSet].length);
+        const color = colors[randomSuperSet][randomSuperSetColor];
         let preview = document.getElementById('preview');
         addSamples(preview, color);
     }
@@ -142,7 +144,7 @@
         demo.innerHTML = '';
         demo.style.filter = 'opacity(100%)';
         boxTypesOverride = boxTypesOverride !== null ? boxTypesOverride : boxTypes;
-        for (let color of colors[superSet]) {
+        for (let color of colors[superSetSelection]) {
             addBoxes(demo, color, boxTypesOverride);
         }
     }

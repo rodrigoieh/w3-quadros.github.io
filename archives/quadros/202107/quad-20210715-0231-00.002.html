@@ -35,10 +35,18 @@
     n = 15, m = 15;
     let row = 0;
     let type = 0;
-    const buildBorder = (weight, color = 'transparent') => `${weight}px ${color} solid`;
+    const palette = [
+        'transparent',
+        '#c1c11a', '#333350ff', '#b4beb0',
+        '#c6d099', '#bec78a', '#c6d097ff',
+        '#cbcbcb', '#e50505ff', '#333350ff'
+    ];
+    const buildBorder = (weight, color = 'transparent', type = 'solid') => `${weight}px ${color} ${type}`;
+    const buildStyle = (color = 'transparent') => `--b:${color};`;
     const border = buildBorder;
-    const borders = {a: border(10, '#cbcbcb'), b: border(1), c: border(1)};
-    const colors = {a: '--b: #e50505ff;', b: '--b: #333350ff;', c: ''};
+    const color = buildStyle;
+    const borders = {a: border(10, palette[7]), b: border(1), c: border(1)};
+    const colors = {a: color(palette[8]), b: color(palette[9]), c: color()};
     const sides = {left: 'left', right: 'right', top: 'top', bottom: 'bottom'};
     const setCellStyle = (element, color, border, side) => {
         element.style = color.concat(`border-${side}: ${border}`);
@@ -64,7 +72,6 @@
         if (j === m - 1) row++;
     };
     main(n, m)
-    // palette: #c1c11a, #333350ff, #b4beb0, #c6d099, #bec78a, c6d097ff
 </script>
 </body>
 </html>

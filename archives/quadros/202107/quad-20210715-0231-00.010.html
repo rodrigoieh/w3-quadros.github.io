@@ -24,9 +24,8 @@
     }
 
     table {
-        --b: 3px transparent solid;
+        --b: 20px #333350ff;
         border: var(--b);
-        transform: rotate(90deg);
     }
 
     td {
@@ -37,27 +36,43 @@
 </style>
 <body>
 <script>
-    n = 16, m = 15;
+    n = 15, m = 15;
     let row = 0;
     let type = 0;
-    borders = {a: '3px #333350ff solid', b: '3px #c6d097ff solid'};
-    colors = {a: '--b: #c6d097ff;', b: '--b: #333350ff;'};
+    const palette = [
+        'transparent',
+        '#c1c11a', '#333350ff', '#b4beb0',
+        '#c6d099', '#bec78a', '#c6d097ff',
+        '#cbc1c1', '#3c709c', '#333350ff',
+        '#e50505ff', '#103d65', '#cbcbcb'
+    ];
+    const a = palette[8];
+    const b = palette[9];
+    document.body.style.background = b;
+    borders = {a: border(10, palette[7]), b: border(1), none: border(0), default: border(1)};
+    colors = {a: color(a), b: color(b), default: color()};
     setCellContentOverride = (td, i, j, y, x) => {
         if (row % 2 === 0) {
             row = 0;
             type = !type;
         }
         if (j % 2 === 0) {
-            if (type) setCellStyle(td, colors.a, borders.a, sides.left);
-            else setCellStyle(td, colors.b, borders.b, sides.right);
+            if (type) {
+                setCellStyle(td, colors.a, borders.a, sides.left);
+            } else {
+                setCellStyle(td, colors.b, borders.b, sides.right);
+            }
         } else {
-            if (type) setCellStyle(td, colors.a, borders.a, sides.left);
-            else setCellStyle(td, colors.b, borders.b, sides.right);
+            if (type) {
+                setCellStyle(td, colors.a, borders.a, sides.left);
+            } else {
+                setCellStyle(td, colors.b, borders.b, sides.right);
+            }
         }
         if (j === m - 1) row++;
     };
     main(n, m)
-    if (location.hostname) document.body.style.zoom = '.5';
+    if (location.hostname) document.body.style.zoom = '.6';
 </script>
 </body>
 </html>

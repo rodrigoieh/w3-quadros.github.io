@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    * {
+        zoom: 90%;
+    }
+
+    body {
+        background: #393935;
+    }
+
+    #demo {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: auto;
+        transform: rotate3d(0.1, 0.6, 0.99, -90deg);
+    }
+
+    table {
+        --b: 20px #393935 solid;
+        border: var(--b);
+    }
+
+    td {
+        --b: #f5f5f5ff;
+        text-align: center;
+        background-color: var(--b);
+    }
+</style>
+<body>
+<script>
+    n = 15, m = 15;
+    let row = 0;
+    let type = 0;
+    const palette = [
+        'transparent',
+        '#cbc1c1', '#3c709c', '#333350ff',
+        '#e50505ff', '#103d65', '#cbcbcb',
+        '#6d1c1c', '#466527', '#1a8d97',
+        '#7d6a24', '#b39214', '#b64f0a'
+    ];
+    const paletteColorSelection = getRandomInt(12, palette.length - 1);
+    const a = color(palette[paletteColorSelection]);
+    const b = color(palette[5]);
+    borders = {a: border(0, palette[1]), b: border(1, palette[1])};
+    colors = {a: a, b: b, default: color()};
+
+    setCellContentOverride = (td, i, j, y, x) => {
+        setCellStyle(td, colors.default, borders.a, sides.all);
+        if (row % 2 === 0) {
+            row = 0;
+            type = !type;
+        }
+        if (j % 2 === 0) {
+            if (type) {
+                setCellStyle(td, colors.a, borders.a, sides.left);
+            } else {
+                setCellStyle(td, colors.b, borders.b, sides.all);
+            }
+        } else {
+            if (type) {
+                setCellStyle(td, colors.a, borders.a, sides.left);
+            } else {
+                setCellStyle(td, colors.b, borders.b, sides.all);
+            }
+        }
+        if (j === m - 1) row++;
+    };
+    main(n, m)
+    if (location.hostname) document.body.style.zoom = '.6';
+</script>
+</body>
+</html>

@@ -17,3 +17,16 @@ function styleTransform(element, elementRotationInDegrees) {
     element.style.transform = rotation;
     element.style.webkitTransform = rotation;
 }
+
+/* Utils added for series quad-20210715-0231-00 */
+const buildBorder = (weight, color = 'transparent', type = 'solid') => `${weight}px ${color} ${type}`;
+const buildStyle = (color = 'transparent') => `--b:${color};`;
+const border = buildBorder;
+const color = buildStyle;
+const setCellStyle = (element, color = colors.default, border = borders.default, side = sides.default) => {
+    element.style = color.concat(`border${side}: ${border}`);
+};
+let borders = {a: border(1, 'black'), b: border(1), none: border(0), default: border(1)};
+let colors = {a: color('black'), b: color('white'), none: color('transparent'), default: color()};
+let sides = {left: '-left', right: '-right', top: '-top', bottom: '-bottom', all: '', default: ''};
+

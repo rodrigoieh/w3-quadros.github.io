@@ -32,6 +32,8 @@
 
 ## Miscellaneous
 
+- https://github.com/mdn
+- https://github.com/mdn/content
 - https://stackoverflow.com/questions/39048654
 - https://stackoverflow.com/questions/179355
 - https://stackoverflow.com/questions/1527803
@@ -39,6 +41,8 @@
 - https://stackoverflow.com/questions/53425836/css-square-background-image
 - https://www.30secondsofcode.org/js/s/parse-cookie
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d()
+- https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide
 - https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a
 - https://en.wikipedia.org/wiki/Hue
 - https://en.wikipedia.org/wiki/Lacunarity

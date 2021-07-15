@@ -33,23 +33,24 @@
 </style>
 <body>
 <script>
-    n = 16, m = 15;
+    n = 10, m = 11;
     let row = 0;
     let type = 0;
-    const border = '3px black solid';
+    const cellBorder = '3px black solid';
     setCellContentOverride = (td, i, j, y, x) => {
         if (row % 2 === 0) {
             row = 0;
             type = !type;
-            td.style.borderTop = border;
+            td.style.borderTop = cellBorder;
         }
         if (j % 2 === 0) {
-            if (type) td.style.borderLeft = border;
-            else td.style.borderRight = border;
+            if (type) td.style.borderLeft = cellBorder;
+            else td.style.borderRight = cellBorder;
         }
         if (j === m - 1) row++;
     };
     main(n, m)
+    if (location.hostname === 'localhost') document.body.style.zoom = '.9';
 </script>
 </body>
 </html>

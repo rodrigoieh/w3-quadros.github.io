@@ -8,6 +8,10 @@
     <title>table</title>
 </head>
 <style>
+    * {
+        zoom: 90%;
+    }
+
     body {
         background: #393935;
     }
@@ -42,6 +46,7 @@
         '#cbc1c1', '#3c709c', '#333350ff',
         '#e50505ff', '#103d65', '#cbcbcb'
     ];
+    const paletteColorSelection = Math.floor(Math.random() * palette.length);
     const buildBorder = (weight, color = 'transparent', type = 'solid') => `${weight}px ${color} ${type}`;
     const buildStyle = (color = 'transparent') => `--b:${color};`;
     const border = buildBorder;

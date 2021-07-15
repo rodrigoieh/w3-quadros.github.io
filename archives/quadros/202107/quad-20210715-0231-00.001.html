@@ -38,8 +38,9 @@
     let type = 0;
     const borders = {a: '3px #333350ff solid', b: '3px #c6d097ff solid', c: 'transparent'};
     const colors = {a: '--b: #c6d097ff;', b: '--b: #333350ff;', c: ''};
-    const setCellStyle = (element, color, border, section) => {
-        element.style = color.concat(`border-${section}: ${border}`);
+    const sides = {left: 'left', right: 'right', top: 'top', bottom: 'bottom'};
+    const setCellStyle = (element, color, border, side) => {
+        element.style = color.concat(`border-${side}: ${border}`);
     };
     setCellContentOverride = (td, i, j, y, x) => {
         if (row % 2 === 0) {
@@ -47,17 +48,12 @@
             type = !type;
         }
         if (j % 2 === 0) {
-            if (type) {
-                setCellStyle(td, colors.a, borders.a, 'left');
-            } else {
-                setCellStyle(td, colors.b, borders.b, 'right');
-            }
+            if (type) setCellStyle(td, colors.a, borders.a, sides.left);
+            else setCellStyle(td, colors.b, borders.b, sides.right);
         } else {
-            if (type) {
-                setCellStyle(td, colors.a, borders.a, 'left');
-            } else {
-                setCellStyle(td, colors.b, borders.b, 'right');
-            }
+            if (type) setCellStyle(td, colors.a, borders.a, sides.left);
+            else setCellStyle(td, colors.b, borders.b, sides.right);
+
         }
         if (j === m - 1) row++;
     };

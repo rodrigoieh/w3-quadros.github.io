@@ -18,7 +18,7 @@ function styleTransform(element, elementRotationInDegrees) {
     element.style.webkitTransform = rotation;
 }
 
-/* Ux01 utils added for series quad-20210715-0231-00 */
+/* Ux01 utils added for series quad-20210715-0231-00.xyz */
 const buildBorder = (weight, color = 'transparent', type = 'solid') => `${weight}px ${color} ${type}`;
 const buildStyle = (color = 'transparent') => `--b:${color};`;
 const border = buildBorder;

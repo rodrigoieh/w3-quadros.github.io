@@ -41,8 +41,8 @@ function render(y = n, x = m) {
             td.style.height = `${cellHeight}px`;
         }
     }
-    demo.setAttribute('id', 'demo');
-    table.setAttribute('id', 'table');
+    demo.id = 'demo';
+    table.id = 'table'
     demo.appendChild(table);
     body.appendChild(demo);
     styleSetPositionCenter(demo);

@@ -40,6 +40,15 @@
 - https://stackoverflow.com/questions/49547157
 - https://stackoverflow.com/questions/53425836/css-square-background-image
 - https://www.30secondsofcode.org/js/s/parse-cookie
+- https://drafts.csswg.org/css-variables/#defining-variables  
+- https://drafts.csswg.org/css-conditional-3/  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+- https://developer.mozilla.org/en-US/docs/Web/CSS/env()  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+- https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule#conditional_group_rules  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@media  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@supports  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/@document  
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 - https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d()
 - https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide

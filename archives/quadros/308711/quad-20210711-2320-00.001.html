@@ -2,209 +2,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
-    <link rel="stylesheet" href="../../resources/css/palette.css"/>
-    <title>palette</title>
-    <style>
-        .demo {
-            display: none;
-        }
-    </style>
+    <title>gradient</title>
 </head>
-<body onload="preview();main();">
-<div id="preview" class="preview"></div>
-<div id="demo" class="demo"></div>
+<style>
+    * {
+        --background: #c8c8b9;
+        --color-primary: black;
+        --color-secondary: #c8c8b9;
+        --color-tertiary: transparent;
+        --color-quaternary: transparent;
+        --color-quinary: transparent;
+        --ca: var(--color-primary, black);
+        --cb: var(--color-secondary, white);
+        --a: var(--chessboard);
+        --b: linear-gradient(0deg, var(--ca) 50%, var(--cb) 50%);
+        --c: linear-gradient(45deg, var(--ca) 50%, var(--cb) 50%);
+        --d: linear-gradient(90deg, var(--ca) 50%, var(--cb) 50%);
+        --e: linear-gradient(135deg, var(--ca) 50%, var(--cb) 50%);
+        --f: linear-gradient(180deg, var(--ca) 50%, var(--cb) 50%);
+        --g: linear-gradient(225deg, var(--ca) 50%, var(--cb) 50%);
+        --h: linear-gradient(225deg, var(--ca) 50%, var(--cb) 50%);
+        --i: linear-gradient(270deg, var(--ca) 50%, var(--cb) 50%);
+        --j: linear-gradient(315deg, var(--ca) 50%, var(--cb) 50%);
+        --k: linear-gradient(360deg, var(--ca) 50%, var(--cb) 50%);
+        --l: conic-gradient(var(--cb) 0% 25%, var(--ca) 25% 100%);
+        --m: conic-gradient(var(--cb) 0% 50%, var(--ca) 50% 100%);
+        --n: conic-gradient(var(--cb) 0% 75%, var(--ca) 75% 100%);
+        --o: conic-gradient(var(--cb) 0% 25%, var(--ca) 100%);
+        --p: conic-gradient(var(--cb) 0% 50%, var(--ca) 100%);
+        --q: conic-gradient(var(--cb) 0% 75%, var(--ca) 100%);
+        --r: conic-gradient(var(--cb) 0% 12.5%, var(--ca) 10% 87.5%, var(--cb) 87.5% 100%);
+        --s: conic-gradient(var(--ca) 0% 12.5%, var(--cb) 12.5% 37.5%, var(--ca) 37.5% 100%);
+        --t: conic-gradient(var(--ca) 0% 37.5%, var(--cb) 37.5% 62.5%, var(--ca) 50% 100%);
+        --u: conic-gradient(var(--ca) 0% 62.5%, var(--cb) 62.5% 87.5%, var(--ca) 87.5% 100%);
+        --v: conic-gradient(var(--ca) 0% 12.5%, var(--cb) 10% 87.5%, var(--ca) 87.5% 100%);
+        --w: conic-gradient(var(--cb) 0% 12.5%, var(--ca) 12.5% 37.5%, var(--cb) 37.5% 100%);
+        --x: conic-gradient(var(--cb) 0% 37.5%, var(--ca) 37.5% 62.5%, var(--cb) 50% 100%);
+        --y: conic-gradient(var(--cb) 0% 62.5%, var(--ca) 62.5% 87.5%, var(--cb) 87.5% 100%);
+        --z: conic-gradient(var(--cb) 0% 12.5%, var(--ca) 12.5% 37.5%, var(--cb) 0% 62.5%, var(--ca) 62.5% 87.5%, var(--cb) 87.5% 100%);
+        --chessboard: conic-gradient(var(--ca) 0.25turn, var(--cb) 0.25turn 0.5turn, var(--ca) 0.5turn 0.75turn, var(--cb) 0.75turn) top left / 25% 25% repeat;
+    }
+
+    body {
+        zoom: 80%;
+        background: var(--background);
+    }
+
+    #demo {
+        z-index: -1;
+    }
+
+    .vault {
+        display: none;
+    }
+
+    .container {
+        float: left;
+        z-index: 1;
+    }
+
+    .container:hover {
+        transform: scale(1.5) translate(20px, 20px);
+        opacity: 1;
+        z-index: 3;
+    }
+
+    .container.test {
+        --id: 'test';
+        --description: '';
+        background: var(--z);
+    }
+</style>
+<body>
 <script>
-    const isDebugEnabled = location.hostname === 'localhost';
-    const boxTypes = ['a', 'b', 'c', 'd'];
+    const nextChar = (c) => String.fromCharCode(c.charCodeAt(0) + 1);
+    const previousChar = (c) => String.fromCharCode(c.charCodeAt(0) - 1);
 
-    const colors = [
-        // Super Set 0x00
-        [
-            // Set 0x01
-            '#1d2755ff', '#1e1e20ff', '#2b262aff',
-            '#000000ff', '#1e1e2080', '#dca318ff',
-            '#907833ff', '#a89d00ff', '#5d512bff',
-            '#ac9d00ff', '#bfb400ff', '#9b900090',
-            '#9b9100ff', '#c4e5edff',
+    setCellContentOverride = (td, i, j, y, x) => td.style.backgroundColor = '#ffffff13';
+    main(10, 10);
 
-            // Set 0x02
-            '#cbcac4ff', '#0e0e0eff', '#262525ff',
-            '#d57d0eff', '#865718ff', '#714104ff',
-            '#8e5819ff', '#42371dff', '#6a5324ff',
-            '#a16903ff', '#ceb88cff', '#4c4a47ff',
-            '#898279ff', '#9c8f72ff', '#494944ff',
-            '#4e4e4cff', '#7f7f7bff', '#4e4e03ff',
-            '#3e3b3bff', '#072623f0', '#0e6868ef',
-            '#072623f0',
+    let k = 26;
+    let index = previousChar('a');
+    let vault = document.createElement('div');
 
-            // Set 0x03
-            '#5A3600', '#684400', '#351800',
-            '#141603', '#1D2100', '#141603',
-            '#737856', '#8D9572', '#484C2D',
-            '#B57300', '#FFFD5F', '#FFFD5F',
-            '#A5AD4B', '#6C7700', '#799F10',
-            '#597C12',
+    for (let i = 0; i < k; i++) {
+        index = nextChar(index);
 
-            // Set 0x04
-            '#A5AD4B', '#6C7700', '#5A3600',
+        // container css style
+        let style = document.createElement('style');
+        const styleContainerId = `--id:'${index}';`;
+        const styleContainerDescription = `--description:'${index}';`;
+        const styleContainerBackground = `background:var(--${index});`;
+        style.innerHTML = `.container.${index}{${styleContainerId}${styleContainerDescription}${styleContainerBackground}}`;
+        document.head.appendChild(style);
 
-            // Set 0x..
-            '#'
-        ],
-        // Super Set 0x01
-        [
-            // Set 0x01
-            '#4666FF',
-
-            // Set 0x04
-            '#A5AD4B', '#6C7700', '#5A3600',
-            '#8C6F00', '#15110C', '#B7869A',
-            '#'
-        ],
-        // Super Set 0x02
-        [
-            // Set 0x01
-            // HSLA - Hue-Saturation-Lightness-Alpha model
-            'hsla(100,100%,100%,0.9)', 'hsla(100,100%,100%,0.6)', 'hsla(100,100%,100%,0.3)',
-            'hsla(100,100%,75%,0.9)', 'hsla(100,100%,75%,0.6)', 'hsla(100,100%,75%,0.3)',
-            'hsla(100,100%,50%,0.9)', 'hsla(100,100%,50%,0.6)', 'hsla(100,100%,50%,0.3)',
-            'hsla(100,100%,25%,0.9)', 'hsla(100,100%,25%,0.6)', 'hsla(100,100%,25%,0.3)',
-            'hsla(100,100%,12%,0.9)', 'hsla(100,100%,12%,0.6)', 'hsla(100,100%,12%,0.3)',
-            'hsla(100,100%,0%,0.9)', 'hsla(100,100%,0%,0.6)', 'hsla(100,100%,0%,0.3)',
-
-            // Set 0x02
-            'hsla(100,100%,100%,0.9)', 'hsla(100,100%,100%,0.6)', 'hsla(100,100%,100%,0.3)',
-            'hsla(100,0%,100%,0.9)', 'hsla(100,0%,100%,0.6)', 'hsla(100,0%,100%,0.3)',
-
-        ],
-        // Super Set 0x03
-        [
-            'gainsboro', '#DCDCDC', 'rgb(220,220,220)',
-            'lightgray', 'lightgrey', '#D3D3D3', 'rgb(211,211,211)',
-            'silver', '#C0C0C0', 'rgb(192,192,192)',
-            'darkgray', 'darkgrey', '#A9A9A9', 'rgb(169,169,169)',
-            'gray', 'grey', '#808080', 'rgb(128,128,128)',
-            'dimgray', 'dimgrey', '#696969', 'rgb(105,105,105)',
-            'lightslategray', 'lightslategrey', '#778899', 'rgb(119,136,153)',
-            'slategray', 'slategrey', '#708090', 'rgb(112,128,144)',
-            'darkslategray', 'darkslategrey', '#2F4F4F', 'rgb(47,79,79)',
-            'black', '#000000', 'rgb(0,0,0)'
-        ],
-        // Super Set 0x04
-        [
-            '#83B8C1', '#48A2B3', '#12405B'
-        ],
-        // Super Set 0x05: Samples 202107
-        [
-            // Set 0x01
-            '#723A3D', '#1D436A', '#2F5788',
-            '#D8D4C9', '#5E696D',
-            // Set 0x02
-            '#223E54', '#4490C5', '#B80503', '#DE3B15',
-            // Set 0x3
-            '#b80503', '#de3b15', '#e5940c',
-            '#e8b007', '#9bad08', '#394204'
-        ]
-    ];
-
-    // colors arr index
-    const superSetSelection = 5;
-
-    // back to initial state or pseudo page reload
-    const reset = render;
-
-    // height of horizontal lines, hr tags
-    const horizontalRules = [1, 10, 20, 40];
-
-    // css classes
-    const boxTypeSelector = [...boxTypes];
-    let boxTypeSelection = 3;
-
-    // css filter properties
-    const filterTypes = ['invert', 'sepia', 'opacity'];
-    const filterValues = [100, 100, 100];
-    let filterTypeSelection = 0;
-
-    function preview() {
-        const superSetColorSelection = Math.floor(Math.random() * colors[superSetSelection].length);
-        const color = colors[superSetSelection][superSetColorSelection];
-        let preview = document.getElementById('preview');
-        addSamples(preview, color);
+        // container html div
+        let container = document.createElement('div');
+        container.id = `container-${index}`;
+        container.className = `container ${index}`;
+        container.style.width = '150px';
+        container.style.height = '150px';
+        container.style.margin = '20px';
+        container.style.border = '1px whitesmoke solid';
+        addLabel(container, index.toUpperCase());
+        vault.appendChild(container);
     }
 
-    function main() {
-        render();
-        addEventListeners();
+    function addLabel(element, text) {
+        let label = document.createElement('p');
+        label.innerHTML += text;
+        label.style.color = '#ffffff90';
+        label.style.textAlign = 'right';
+        label.style.marginRight = '10px';
+        label.style.marginTop = '5px';
+        element.appendChild(label);
     }
 
-    function render(boxTypesOverride = null) {
-        let demo = document.getElementById('demo');
-        demo.innerHTML = '';
-        demo.style.filter = 'opacity(100%)';
-        boxTypesOverride = boxTypesOverride !== null ? boxTypesOverride : boxTypes;
-        for (let color of colors[superSetSelection]) {
-            addBoxes(demo, color, boxTypesOverride);
-        }
-    }
-
-    function addBoxes(demo, color, boxTypes) {
-        for (let boxType of boxTypes) {
-            let box = document.createElement('div');
-            box.style.width = `${100 / boxTypes.length}%`;
-            box.setAttribute('class', `box ${boxType}`);
-            addSamples(box, color);
-            demo.appendChild(box);
-        }
-    }
-
-    function addSamples(box, color) {
-        for (let horizontalRule of horizontalRules) {
-            const sample = document.createElement('hr');
-            sample.style.borderTop = `${horizontalRule}px ${color} solid`;
-            box.appendChild(sample);
-        }
-    }
-
-    function switchBoxType() {
-        if (++boxTypeSelection === boxTypeSelector.length) boxTypeSelection = 0;
-        render(new Array(boxTypeSelector[boxTypeSelection]));
-    }
-
-    function switchFilterType() {
-        if (++filterTypeSelection === filterTypes.length) filterTypeSelection = 0;
-        let demo = document.getElementById('demo');
-        demo.style.filter = `${filterTypes[filterTypeSelection]}(${filterValues[filterTypeSelection]}%)`
-    }
-
-    function addEventListeners() {
-        let demo = document.getElementById('demo');
-        demo.addEventListener('click', () => switchBoxType());
-
-        document.addEventListener('keydown', event => {
-            if (isDebugEnabled) console.debug(`key: [${event.key}]`);
-            const key = event.key;
-            switch (key) {
-                case 'R':
-                case 'r':
-                    reset();
-                    break;
-                case 'T':
-                case 't':
-                    switchBoxType();
-                    break;
-                case 'f':
-                    switchFilterType();
-                    break;
-            }
-        });
-    }
-
+    vault.id = 'vault';
+    vault.className = 'vault';
+    document.body.appendChild(vault);
     document.addEventListener('mousemove', (event) => {
-        let demo = document.getElementById('demo');
-        let preview = document.getElementById('preview');
-        preview.style.display = 'none';
-        demo.style.display = 'inline';
+        vault.style.display = 'inline-block';
     }, {once: true});
 </script>
 </body>

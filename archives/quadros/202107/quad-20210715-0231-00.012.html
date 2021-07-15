@@ -35,10 +35,10 @@
 <script>
     n = 16, m = 15;
     let row = 0;
+    const background = '';
     let type = 0;
-    const a = 'background: conic-gradient(#333350ff 0% 33%, black 0% 66%, white 0% 100%);';
     borders = {a: '3px #333350ff solid', b: '3px #c6d097ff solid'};
-    colors = {a: a, b: '--b: #333350ff;', c: ''};
+    colors = {a: background, b: '--b: #333350ff;', c: ''};
     setCellContentOverride = (td, i, j, y, x) => {
         if (row % 2 === 0) {
             row = 0;
@@ -61,7 +61,7 @@
     };
     main(n, m)
     // palette: #c1c11a, #333350ff, #b4beb0, #c6d099, #bec78a, c6d097ff
-    if (location.hostname === 'localhost') document.body.style.zoom = '.6';
+    if (location.hostname === 'localhost') document.body.style.zoom = '.5';
 </script>
 </body>
 </html>

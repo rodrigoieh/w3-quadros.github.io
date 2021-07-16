@@ -43,8 +43,8 @@
     // let cellStyleBackgroundColors = {"r": 50, "g": 15, "b": 15, "a": 1};
     let cellStyleBackgroundColors = {"r": 245, "g": 245, "b": 245, "a": 1};
     let cellStyleBorderColors = {"r": 162, "g": 175, "b": 175, "a": 1};
-    let colors = cellStyleBackgroundColors;
-    let borders = cellStyleBorderColors;
+    borders = cellStyleBorderColors;
+    colors = cellStyleBackgroundColors;
     setCellContentOverride = (td, i, j, y, x) => {
         const cellType = (i > m / 2) ? 1 : 0;
         const colorAddition = j * -2;

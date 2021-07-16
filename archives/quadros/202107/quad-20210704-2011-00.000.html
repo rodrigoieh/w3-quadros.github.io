@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    * {
+        filter: grayscale(25%) brightness(140%) contrast(100%);
+    }
+
+    body {
+        --a: rgba(83, 7, 7, 0.5);
+        --b: rgba(16, 36, 73, 0.2);
+        --c: rgba(83, 7, 7, 0.5);
+        --d: rgba(0, 0, 0, .2);
+        --e: transparent;
+        background-color: #011323;
+
+        background-image: repeating-linear-gradient(
+                var(--e),
+                var(--e) 50px,
+                var(--a) 50px,
+                var(--a) 53px,
+                var(--e) 53px,
+                var(--e) 63px,
+                var(--a) 63px,
+                var(--a) 66px,
+                var(--e) 66px,
+                var(--e) 116px,
+                var(--b) 116px,
+                var(--b) 166px,
+                var(--c) 166px,
+                var(--c) 169px,
+                var(--b) 169px,
+                var(--b) 179px,
+                var(--c) 179px,
+                var(--c) 182px,
+                var(--b) 182px,
+                var(--b) 232px,
+                var(--e) 232px),
+        repeating-linear-gradient(
+                270deg,
+                var(--e),
+                var(--e) 50px,
+                var(--a) 50px,
+                var(--a) 53px,
+                var(--e) 53px,
+                var(--e) 63px,
+                var(--a) 63px,
+                var(--a) 66px,
+                var(--e) 66px,
+                var(--e) 116px,
+                var(--b) 116px,
+                var(--b) 166px,
+                var(--c) 166px,
+                var(--c) 169px,
+                var(--b) 169px,
+                var(--b) 179px,
+                var(--c) 179px,
+                var(--c) 182px,
+                var(--b) 182px,
+                var(--b) 232px,
+                var(--e) 232px),
+        repeating-linear-gradient(
+                45deg,
+                var(--e),
+                var(--e) 2px,
+                var(--d) 2px,
+                var(--d) 3px,
+                var(--e) 3px,
+                var(--e) 5px,
+                var(--d) 5px);
+    }
+
+    td {
+        text-align: center;
+    }
+
+    td.background {
+        background-color: transparent;
+    }
+</style>
+<body>
+<script>
+    const cellColor = 'background';
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main(10, 10);
+</script>
+</body>
+</html>

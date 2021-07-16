@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    * {
+        filter: grayscale(10%);
+        background: #4b0c0c;
+        --color-primary: #4b0c0c;
+        --color-secondary: #023850;
+        --ca: var(--color-primary, black);
+        --cb: var(--color-secondary, #c8c8b9);
+        --a: conic-gradient(var(--cb) 0% 12.5%, var(--ca) 12.5% 37.5%, var(--cb) 37.5% 100%);
+        --b: conic-gradient(var(--cb) 0% 62.5%, var(--ca) 62.5% 87.5%, var(--cb) 87.5% 100%);
+        /*border: 3px black solid;*/
+    }
+
+    #demo:hover {
+        filter: grayscale(80%);
+    }
+
+    table {
+        /*border: 1px black solid;*/
+        transform: rotate(45deg);
+    }
+
+
+    td {
+        transform: rotate(20deg);
+        /*border: 5px transparent solid;*/
+    }
+
+    td:hover {
+        border: 5px transparent solid;
+    }
+</style>
+<body>
+<script>
+    n = 10, m = 10;
+    const backgrounds = {
+        a: 'background: var(--a);',
+        b: 'background: var(--b);'
+    };
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (j % 2 === 0) td.style = backgrounds.a;
+        else td.style = backgrounds.b;
+    };
+    main(n, m)
+    if (location.hostname === 'localhost') document.body.style.zoom = '.9';
+</script>
+</body>
+</html>

@@ -7,50 +7,43 @@
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
     <title>quad</title>
     <style>
-        body {
-            /* ff 3.6+ */
-            background: -moz-linear-gradient(270deg, #040C38E8 13%, #054149 87%, #BE051AF5 94%);
-            /* safari 5.1+,chrome 10+ */
-            background: -webkit-linear-gradient(270deg, #040C38E8 13%, #054149 87%, #BE051AF5 94%);
-            /* opera 11.10+ */
-            background: -o-linear-gradient(270deg, #040C38E8 13%, #054149 87%, #BE051AF5 94%);
-            /* ie 6-9 */
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#040C38', endColorstr='#BE051A', GradientType=0);
-            /* ie 10+ */
-            background: -ms-linear-gradient(270deg, #040C38E8 13%, #054149 87%, #BE051AF5 94%);
-            /* global 94%+ browsers support */
-            background: linear-gradient(270deg, #040C38E8 13%, #054149 87%, #BE051AF5 94%);
+        * {
+            zoom: 80%;
+            opacity: 100%;
         }
 
         body {
-            background: linear-gradient(270deg, #040C38E8 13%, #054149 87%, #BE051AF5 94%);
-            background: linear-gradient(270deg, #00020DE8 13%, #054149 87%, #FF880AF5 94%);
-            background: linear-gradient(270deg, #00020DE8 13%, #054149 87%, #047809 94%);
-            background: linear-gradient(270deg, #00020DE8 13%, #054149 87%, #6d0f0f 94%);
-            opacity: 80%;
+            --a: 45deg;
+            --b: #01100c 7%;
+            --c: #268e6e 87%;
+            --d: #1fb183;
+            background: linear-gradient(var(--a), var(--b), var(--c), var(--d));
+            transform: rotate(4rad);
         }
 
         #demo {
             margin: auto;
             width: 600px;
             height: 600px;
-            border: 1px white solid;
             background-image: linear-gradient(
                     90deg,
-                    transparent 50%,
-                    transparent 50% /*#4c8527ff 50%*/
+                    #F5F5F530 50%,
+                    #F5F5F510 50% /*#4c8527ff 50%*/
             );
             background-size: 20% 20%;
             background-position: center;
-            opacity: 30%;
-            z-index: 1;
+            /*border: 1px #041304 solid;*/
         }
 
-        table {
-            border: 1px white solid;
-            background-color: transparent;
-            /*opacity: 30%;*/
-            z-index: 2;
+        #demo:hover {
+
+            border: 1px #de0b0b solid;
+
+        }
+
+        #table {
+            border: 5px #FFFFFF50 solid;
+            opacity: 10%;
         }
     </style>
 </head>

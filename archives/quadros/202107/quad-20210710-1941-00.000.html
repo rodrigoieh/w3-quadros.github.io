@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
     <title>quad</title>
     <style>
+        * {
+            filter: grayscale(25%);
+        }
+
         body {
             background: conic-gradient(
                     from 180deg at 50% 50%,
@@ -31,12 +35,13 @@
             background-size: 20% 20%;
             background-position: center;
             opacity: 30%;
+            transform: rotate(45deg);
             z-index: 1;
         }
 
         table {
             border: 1px white solid;
-            background-color: transparent;
+            background-color: #FFFFFF30;
             /*opacity: 30%;*/
             z-index: 2;
         }

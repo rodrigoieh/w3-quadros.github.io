@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    * {
+        filter: grayscale(10%);
+        background: #c8c8b9;
+        --color-primary: #cb1616;
+        --color-secondary: #c8c8b9;
+        --ca: var(--color-primary, black);
+        --cb: var(--color-secondary, #c8c8b9);
+        --a: conic-gradient(var(--cb) 0% 12.5%, var(--ca) 12.5% 37.5%, var(--cb) 37.5% 100%);
+        --b: conic-gradient(var(--cb) 0% 62.5%, var(--ca) 62.5% 87.5%, var(--cb) 87.5% 100%);
+        border: 1px #ffffffff solid;
+    }
+
+    table {
+        /*transform: rotate(90deg);*/
+        border-left: 1px #cb1616 solid;
+    }
+</style>
+<body>
+<script>
+    n = 7, m = 14;
+    let row = 0;
+    let type = 0;
+    const backgrounds = {
+        a: 'background: var(--a);',
+        b: 'background: var(--b);'
+    };
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (row % 2 === 0) {
+            row = 0;
+            type = !type;
+        }
+        if (j % 2 === 0) {
+            td.style = backgrounds.a;
+        } else {
+            td.style = backgrounds.b;
+        }
+        if (j === m - 1) row++;
+    }
+    main(n, m)
+</script>
+</body>
+</html>

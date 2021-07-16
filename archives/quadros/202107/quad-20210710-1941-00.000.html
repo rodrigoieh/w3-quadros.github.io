@@ -50,6 +50,12 @@
 <body>
 <script>
     main(10, 10);
+    let rotation = 45;
+    let demo = document.getElementById('demo');
+    document.addEventListener('wheel', (event) => {
+        const deltaY = event.deltaY / -50;
+        demo.style.transform = `rotate(${rotation += deltaY}deg)`;
+    });
     // CSS gradient from https://learnui.design/tools/gradient-generator.html
 </script>
 </body>

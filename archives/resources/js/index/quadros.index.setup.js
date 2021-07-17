@@ -2,7 +2,7 @@
 
 function GlobalSettings() {
     this.isDebugEnabled = location.hostname === 'localhost';
-    this.blockPageSize = 100;
+    this.blockPageSize = 2;
     this.blockPageRowSize = 3;
     // this.blockPageRowSizeMin = 1;
     // this.blockPageRowSizeMax = 100;
@@ -74,6 +74,7 @@ function setupCookies() {
 function setupGitHubApi() {
     const project = 'https://rodrigoieh.github.io/w3-quadros.github.io';
     const endpoint = 'https://api.github.com/repos/rodrigoieh/w3-quadros.github.io/contents';
+    const root = project + '/archives/';
     let targets = [
         '/archives/quadros/202106',
         '/archives/quadros/202107',
@@ -82,6 +83,7 @@ function setupGitHubApi() {
     const setupGitHubApi = {
         project: project,
         endpoint: endpoint,
+        root: root,
         targets: targets
     }
     document.cookie = `setupGitHubApi=${JSON.stringify(setupGitHubApi)}`;

@@ -117,6 +117,8 @@ function get(key) {
 
 function Settings() {
     // Configuration values from GlobalSetup
+    this.project = get('project');
+    this.root = get('root');
     this.apiKeys = JSON.parse(get('apiKey'));
     this.apiKey = (apiKeyIndex) => this.apiKeys[apiKeyIndex];
     this.apiKeysLength = () => this.apiKeys.length;
@@ -149,7 +151,7 @@ function Quadro(file) {
             if (settings.isPreviewEnabled) {
                 let a = document.createElement('a');
                 a.id = `preview-${this.filename}`;
-                a.href = this.url;
+                a.href = this.url.replace(settings.root, '');
                 a.title = this.filename;
                 let img = document.createElement('img');
                 img.id = `preview-img-${this.filename}`;

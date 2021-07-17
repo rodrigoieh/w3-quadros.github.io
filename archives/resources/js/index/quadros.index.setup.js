@@ -93,7 +93,11 @@ function setupPhantomJs() {
         'ak-6mfhv-yvhbm-0cs14-8fdqp-7b0vp',
         'ak-gzrtr-8akne-kz20p-ev265-tej7k',
         'ak-13j42-79z7r-4vgww-k62m1-g22j9',
-        'ak-dkvsb-xwb82-hyt9n-z89mr-szjwq'
+        'ak-dkvsb-xwb82-hyt9n-z89mr-szjwq',
+        'ak-ev70j-8v733-v3t4b-rvfkb-8snv8',
+        'ak-nmb48-n5bhy-0cr20-t979f-r18c9',
+        'ak-wnt9g-68y2y-zct7q-zd602-hh00b',
+        'ak-8cw66-7vbwv-cwvz2-rsjq3-x5hrq'
     ];
     const apiKeyIndex = 3;
     const zoomFactor = 1;

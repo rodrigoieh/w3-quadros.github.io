@@ -24,7 +24,7 @@ function playground() {
     console.info('playground exit');
 }
 
-/*** HTML elements builders ***/
+/*** HTML elements builders (legacy) deprecated, using node builders instead ***/
 
 function buildUnorderedList(innerHtml = '', isStyleEnabled = true, cssStyle = '') {
     const style = `style="${cssStyle !== '' ? cssStyle : 'list-style: none; padding-left: 0;"'}`;

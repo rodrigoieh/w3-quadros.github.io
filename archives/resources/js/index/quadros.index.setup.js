@@ -2,7 +2,7 @@
 
 function GlobalSettings() {
     this.isDebugEnabled = location.hostname === 'localhost';
-    this.blockPageSize = 2;
+    this.blockPageSize = 100;
     this.blockPageRowSize = 3;
     // this.blockPageRowSizeMin = 1;
     // this.blockPageRowSizeMax = 100;

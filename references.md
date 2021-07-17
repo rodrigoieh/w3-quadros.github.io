@@ -40,7 +40,7 @@
 - https://stackoverflow.com/questions/49547157
 - https://stackoverflow.com/questions/53425836/css-square-background-image
 - https://stackoverflow.com/questions/8714090/queryselector-wildcard-element-match/8714421
-- https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists  
+- https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists
 - https://www.30secondsofcode.org/js/s/parse-cookie
 - https://drafts.csswg.org/css-variables/#defining-variables
 - https://drafts.csswg.org/css-conditional-3/
@@ -56,7 +56,10 @@
 - https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
-- https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll  
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement#event_handlers
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function
 - https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a
 - https://en.wikipedia.org/wiki/Hue
 - https://en.wikipedia.org/wiki/Lacunarity
@@ -67,10 +70,30 @@
 - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr
 - https://www.w3schools.com/howto/howto_css_style_hr.asp
 - https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html
-- https://www.techiedelight.com/check-whether-image-is-loaded-with-javascript/  
+- https://www.techiedelight.com/check-whether-image-is-loaded-with-javascript/
+- http://sprymedia.co.uk/
+- http://sprymedia.co.uk/article/Secret
+- http://www.sprymedia.co.uk/integrity/
+- https://www.javascripttutorial.net/javascript-dom/javascript-onload/
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - []()
+
+## JavaScript
+
+### Events
+
+- [DataTables zero configuration enabled example](http://sprymedia.co.uk/VisualEvent/demo/)
+- []()
+- []()
+
+### Widgets
+
+- [DataTables Download](https://www.datatables.net/download/index)
+- [DataTables Installation](https://www.datatables.net/manual/installation)
+- [DataTables Compatibility](https://www.datatables.net/download/compatibility)
+- [DataTables Compatibility](https://www.datatables.net/download/compatibility)
+- [alert](http://sprymedia.co.uk/article/Alert+-+Javascript+dialogue+controls)
 
 ## HTML
 
@@ -107,6 +130,12 @@
 - [CSS Gradient Generator](https://www.css-gradient.com/)
 - [CSS Gradient](https://cssgradient.io/)
 - [Ultimate CSS Gradient Generator](https://www.colorzilla.com/gradient-editor/)
+
+## Libraries
+
+- [visual event](http://www.sprymedia.co.uk/article/Visual+Event)
+- [visual event 2](http://www.sprymedia.co.uk/article/Visual+Event+2)
+- [Conditional-CSS](http://www.conditional-css.com/index)
 - []()
 
 ## SVG

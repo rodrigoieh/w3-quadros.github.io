@@ -89,7 +89,7 @@ function setupGitHubApi() {
 
 function setupPhantomJs() {
     const apiKey = [
-        'ak-6mfhv-yvhbm-0cs14-8fdqp-7b0vp',
+        // 'ak-6mfhv-yvhbm-0cs14-8fdqp-7b0vp',
         'ak-gzrtr-8akne-kz20p-ev265-tej7k',
         'ak-13j42-79z7r-4vgww-k62m1-g22j9',
         'ak-dkvsb-xwb82-hyt9n-z89mr-szjwq',

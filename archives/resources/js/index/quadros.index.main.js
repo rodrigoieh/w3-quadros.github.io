@@ -69,7 +69,7 @@ function get(key) {
     try {
         if (null !== files && isNotUndefined(files)) {
             for (let file of files) {
-                if (blockCount <= settings.blockLimit) {
+                if (blockCount < settings.blockLimit) {
                     if (file.name.includes(settings.filenameExtension)) {
                         let quadro = new Quadro(file);
                         if (quadro.isValidFile(settings)) {
@@ -131,7 +131,7 @@ function Quadro(file) {
     this.preview = (settings) => {
         if (!settings.filenameExclusions.find(str => this.filename.includes(str))) {
             return settings.isPreviewEnabled
-                ? `<a id="preview-${this.filename}" href="${this.url}" title="${this.filename}"><img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://phantomjscloud.com/api/browser/v2/${settings.apiKeyRandom}/?request={url:%22${this.url}%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:${get('width')},height:${get('height')}},clipRectangle:{width:${get('width')},height:${get('height')}},zoomFactor:${get('zoomFactor')}},requestSettings:{doneWhen:[{event:%22domReady%22}]}}" width="${get('displayWidth')}" height="${get('displayHeight')}" alt="${this.filename}" loading="lazy"></a>`
+                ? `<a id="preview-${this.filename}" href="${this.url}" title="${this.filename}"><img id="preview-img-${this.filename}"  style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://phantomjscloud.com/api/browser/v2/${settings.apiKeyRandom}/?request={url:%22${this.url}%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:${get('width')},height:${get('height')}},clipRectangle:{width:${get('width')},height:${get('height')}},zoomFactor:${get('zoomFactor')}},requestSettings:{doneWhen:[{event:%22domReady%22}]}}" width="${get('displayWidth')}" height="${get('displayHeight')}" alt="${this.filename}" loading="lazy"></a>`
                 : '';
         } else return '';
     };

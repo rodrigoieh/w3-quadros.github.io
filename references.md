@@ -39,6 +39,8 @@
 - https://stackoverflow.com/questions/1527803
 - https://stackoverflow.com/questions/49547157
 - https://stackoverflow.com/questions/53425836/css-square-background-image
+- https://stackoverflow.com/questions/8714090/queryselector-wildcard-element-match/8714421
+- https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists  
 - https://www.30secondsofcode.org/js/s/parse-cookie
 - https://drafts.csswg.org/css-variables/#defining-variables
 - https://drafts.csswg.org/css-conditional-3/
@@ -54,6 +56,7 @@
 - https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll  
 - https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a
 - https://en.wikipedia.org/wiki/Hue
 - https://en.wikipedia.org/wiki/Lacunarity
@@ -64,6 +67,7 @@
 - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr
 - https://www.w3schools.com/howto/howto_css_style_hr.asp
 - https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html
+- https://www.techiedelight.com/check-whether-image-is-loaded-with-javascript/  
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - []()

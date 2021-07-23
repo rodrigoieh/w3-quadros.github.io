@@ -175,4 +175,5 @@
 - [How to Store Your App Photos in the Cloud Using Amazon S3 [tutorial and code samples]](https://aws.amazon.com/blogs/mobile/store-your-photos-in-the-cloud-using-amazon-s3/)
 - [Amplify Framework Documentation](https://docs.amplify.aws/)
 - [Welcome to the AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)
+- [Install the Amplify CLI](https://docs.amplify.aws/cli/start/install#install-the-amplify-cli)
 - []()

@@ -2,10 +2,10 @@
 [![license](https://img.shields.io/github/license/rodrigoieh/w3-quadros.github.io)](https://github.com/rodrigoieh/w3-quadros.github.io/blob/main/license.md)
 
 | service  	| status  	|
-|---	|:---	:|
-| [github][github] 	|  ✔	|
-| [vercel][vercel]	|  ✔	|
-| [amplify][amplify]	| ✔ 	|
+| --------------- | --------------- |
+| [github][github] 	|  ✔	|  
+| [vercel][vercel]	|  ✔	| 
+| [amplify][amplify]	| ✔ 	|  
 
 [github]: https://rodrigoieh.github.io/w3-quadros.github.io
 [vercel]: https://w3-quadros-github-io.vercel.app

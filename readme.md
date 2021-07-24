@@ -11,8 +11,8 @@
 ---
 [github]: https://rodrigoieh.github.io/w3-quadros.github.io
 [vercel]: https://w3-quadros-github-io.vercel.app
-[amplify]:  https://main.dd0vytdddu0dh.amplifyapp.com/archives
-[cloudflare]:  https://quadros.pages.dev/archives
+[amplify]:  https://main.dd0vytdddu0dh.amplifyapp.com
+[cloudflare]:  https://quadros.pages.dev
 
 
 <!--[![downloads](https://img.shields.io/github/downloads/rodrigoieh/w3-quadros.github.io/total.svg)](https://github.com/rodrigoieh/w3-quadros.github.io)-->

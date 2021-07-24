@@ -77,7 +77,7 @@ function setupCloudStorage() {
     const domainOwner = 'quad.xronos.cl';
     const fileExtensions = ['jpeg'];
     const fileExtension = fileExtensions[0];
-    const root = `http://${domainOwner}`;
+    const root = `https://${domainOwner}`;
     const setupCloudStorage = {
         cloudStorageRoot: root,
         cloudStoragePreviewFileExtension: fileExtension

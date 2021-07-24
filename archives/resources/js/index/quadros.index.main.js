@@ -2,7 +2,8 @@
 
 const registries = [
     'setupCheck', 'setupGlobal', 'setupFiles',
-    'setupCookies', 'setupPhantomJs', 'setupGitHubApi'
+    'setupCookies', 'setupPhantomJs', 'setupGitHubApi',
+    'setupCloudStorage'
 ];
 
 function setFilesInCookieRegistry(files, maxAgeInSeconds = 0) {
@@ -60,7 +61,7 @@ function get(key) {
     let previews = [];
     let previewsTmp = [];
     let blockCount = 0;
-    let apiKeyIndex = 1;
+    let apiKeyIndex = 0;
     let apiKeysLength = settings.apiKeysLength();
     const getApiKey = () => {
         const apiKeyUsageCount = previews.length + previewsTmp.length;
@@ -129,6 +130,8 @@ function Settings() {
     this.filenameExtension = get('filenameExtension');
     this.isPreviewEnabled = get('isPreviewEnabled');
     this.blockLimit = get('blockLimit');
+    this.cloudStorageRoot = get('cloudStorageRoot');
+    this.cloudStoragePreviewFileExtension = get('cloudStoragePreviewFileExtension');
 }
 
 /*** Spaghetti alla Quadra ***/
@@ -147,24 +150,53 @@ function Quadro(file) {
         return link;
     };
 
-    this.preview = (settings, apiKey) => {
+    this.getElementAnchor = (root = '') => {
+        let a = document.createElement('a');
+        a.id = `preview-${this.filename}`;
+        a.href = this.url.replace(root, '');
+        a.title = this.filename;
+        return a;
+    }
+
+    this.getElementImage = () => {
+        let img = document.createElement('img');
+        img.id = `preview-img-${this.filename}`;
+        img.alt = this.filename;
+        img.loading = 'lazy';
+        img.width = get('displayWidth');
+        img.height = get('displayHeight');
+        img.style.margin = 'auto';
+        img.style.cursor = 'zoom-in';
+        img.style.backgroundColor = 'hsl(0, 0%, 90%)';
+        img.style.transition = 'background-color 300ms';
+        img.style.webkitUserSelect = 'none';
+        return img;
+    };
+
+    this.setImageDebugger = (img, verbose = true) => {
+        const debugImageSource = (event) => {
+            switch (event.type) {
+                case 'error':
+                    console.error(event.type, img.id, verbose ? img.src : '', verbose ? event : '');
+                    break;
+                case 'abort':
+                    console.error(event.type, img.id, verbose ? img.src : '', verbose ? event : '');
+                    break;
+                default:
+                    let isImageLoaded = img.complete && img.naturalHeight !== 0;
+                    console.debug(event.type, img.id, isImageLoaded, verbose ? img.src : '', verbose ? event : '');
+            }
+        };
+        img.addEventListener('load', event => debugImageSource(event));
+        img.addEventListener('error', event => debugImageSource(event));
+        img.addEventListener('abort', event => debugImageSource(event));
+    };
+
+    this.previewWithPhantomJsCloud = (settings, apiKey) => {
         if (!settings.filenameExclusions.find(str => this.filename.includes(str))) {
             if (settings.isPreviewEnabled) {
-                let a = document.createElement('a');
-                a.id = `preview-${this.filename}`;
-                a.href = this.url.replace(settings.root, '');
-                a.title = this.filename;
-                let img = document.createElement('img');
-                img.id = `preview-img-${this.filename}`;
-                img.alt = this.filename;
-                img.loading = 'lazy';
-                img.width = get('displayWidth');
-                img.height = get('displayHeight');
-                img.style.margin = 'auto';
-                img.style.cursor = 'zoom-in';
-                img.style.backgroundColor = 'hsl(0, 0%, 90%)';
-                img.style.transition = 'background-color 300ms';
-                img.style.webkitUserSelect = 'none';
+                let a = this.getElementAnchor(settings.root);
+                let img = this.getElementImage();
                 let parameters = {
                     target: `https://phantomjscloud.com/api/browser/v2/${apiKey}/`,
                     request: `?request={url:%22${this.url}%22,`,
@@ -181,27 +213,37 @@ function Quadro(file) {
                     parameters.zoomFactor +
                     parameters.requestSettings;
                 img.src = buildSource();
-                const verbose = false;
-                const debugImageSource = (event) => {
-                    switch (event.type) {
-                        case 'error':
-                            console.error(event.type, img.id, verbose ? img.src : '', verbose ? event : '');
-                            break;
-                        case 'abort':
-                            console.error(event.type, img.id, verbose ? img.src : '', verbose ? event : '');
-                            break;
-                        default:
-                            let isImageLoaded = img.complete && img.naturalHeight !== 0;
-                            console.debug(event.type, img.id, isImageLoaded, verbose ? img.src : '', verbose ? event : '');
-                    }
-                };
-                img.addEventListener('load', event => debugImageSource(event));
-                img.addEventListener('error', event => debugImageSource(event));
-                img.addEventListener('abort', event => debugImageSource(event));
+                this.setImageDebugger(img, false);
                 a.appendChild(img);
                 return a;
             } else return undefined;
         }
+    };
+
+    this.previewWithCloudStorage = (settings) => {
+        if (!settings.filenameExclusions.find(str => this.filename.includes(str))) {
+            if (settings.isPreviewEnabled) {
+                let a = this.getElementAnchor(settings.root);
+                let img = this.getElementImage();
+                const url = this.url.split('/');
+                const buildSource = () =>
+                    settings.cloudStorageRoot + '/' +
+                    url[4] + '/' +
+                    url[5] + '/' +
+                    url[6] + '/' +
+                    url[7]
+                        .replace('.0', '-0')
+                        .replace('html', settings.cloudStoragePreviewFileExtension);
+                img.src = buildSource();
+                a.appendChild(img);
+                return a;
+            } else return undefined;
+        }
+    };
+
+    this.preview = (settings, apiKey) => {
+        return this.previewWithCloudStorage(settings);
+        // return this.previewWithPhantomJsCloud(settings, apiKey);
     };
 
     this.isValidFile = (settings) => {

@@ -2,7 +2,7 @@
 
 function GlobalSettings() {
     this.isDebugEnabled = location.hostname === 'localhost';
-    this.blockPageSize = 2;
+    this.blockPageSize = Number.MAX_VALUE;
     this.blockPageRowSize = 3;
     // this.blockPageRowSizeMin = 1;
     // this.blockPageRowSizeMax = 100;
@@ -16,6 +16,7 @@ function setup() {
             setupGlobal();
             setupCookies();
             setupPhantomJs();
+            setupCloudStorage();
             setupGitHubApi();
             // testSetup();
             go(true);
@@ -71,6 +72,19 @@ function setupCookies() {
     document.cookie = `setupCookies=${JSON.stringify(setupCookies)}`;
 }
 
+function setupCloudStorage() {
+    const domainProvider = 'storage.googleapis.com';
+    const domainOwner = 'quad.xronos.cl';
+    const fileExtensions = ['jpeg'];
+    const fileExtension = fileExtensions[0];
+    const root = `http://${domainOwner}`;
+    const setupCloudStorage = {
+        cloudStorageRoot: root,
+        cloudStoragePreviewFileExtension: fileExtension
+    }
+    document.cookie = `setupCloudStorage=${JSON.stringify(setupCloudStorage)}`;
+}
+
 function setupGitHubApi() {
     const project = 'https://rodrigoieh.github.io/w3-quadros.github.io';
     const endpoint = 'https://api.github.com/repos/rodrigoieh/w3-quadros.github.io/contents';
@@ -90,8 +104,8 @@ function setupGitHubApi() {
 }
 
 function setupPhantomJs() {
-    // const apiKey = ['ak-ghqf8-45zt5-ycx9g-827rz-f9wpy'];
-    const apiKey = [
+    const apiKey = ['ak-ghqf8-45zt5-ycx9g-827rz-f9wpy'];
+    const apiKeys = [
         'ak-6mfhv-yvhbm-0cs14-8fdqp-7b0vp',
         'ak-gzrtr-8akne-kz20p-ev265-tej7k',
         'ak-13j42-79z7r-4vgww-k62m1-g22j9',

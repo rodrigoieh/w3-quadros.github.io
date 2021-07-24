@@ -47,7 +47,7 @@
 - http://sprymedia.co.uk/article/Secret
 - http://www.sprymedia.co.uk/integrity/
 - https://www.javascripttutorial.net/javascript-dom/javascript-onload/
-- https://learn.shayhowe.com/html-css/setting-backgrounds-and-gradients/  
+- https://learn.shayhowe.com/html-css/setting-backgrounds-and-gradients/
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - [How To - Two Column Layout](https://www.w3schools.com/howto/howto_css_two_columns.asp)
@@ -165,3 +165,6 @@
 
 - [Hosting a static website using HTTP](https://cloud.google.com/storage/docs/hosting-static-website-http)
 - [Hosting a static website](https://cloud.google.com/storage/docs/hosting-static-website#storage-create-bucket-console)
+- [Copying, renaming, and moving objects](https://cloud.google.com/storage/docs/copying-renaming-moving-objects)
+- [Getting started with authentication](https://cloud.google.com/docs/authentication/getting-started)
+- [Creating a service account](https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create?supportedpurview=project)

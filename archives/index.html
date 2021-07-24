@@ -51,8 +51,8 @@
 <div id="main">
     <div id="error"></div>
     <div id="previews"></div>
-    <div class="light" id="index"></div>
-    <div class="light" id="reset">
+    <div class="light" id="index" style="display: none"></div>
+    <div class="light" id="reset" style="display: none">
         <a href="javascript:void(0);" onclick="reset()">_____</a><br>
     </div>
 </div>
@@ -64,5 +64,6 @@
 <script src="resources/js/index/quadros.index.setup.js"></script>
 <script src="resources/js/index/quadros.index.main.js"></script>
 <script>document.body.style.zoom = '80%';</script>
+<script>document.body.addEventListener('click', () => reset());</script>
 </body>
 </html>

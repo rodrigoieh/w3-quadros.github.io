@@ -90,6 +90,7 @@ function setupGitHubApi() {
 }
 
 function setupPhantomJs() {
+    // const apiKey = ['ak-ghqf8-45zt5-ycx9g-827rz-f9wpy'];
     const apiKey = [
         'ak-6mfhv-yvhbm-0cs14-8fdqp-7b0vp',
         'ak-gzrtr-8akne-kz20p-ev265-tej7k',
@@ -100,7 +101,7 @@ function setupPhantomJs() {
         'ak-wnt9g-68y2y-zct7q-zd602-hh00b',
         'ak-8cw66-7vbwv-cwvz2-rsjq3-x5hrq'
     ];
-    const apiKeyIndex = 3;
+    const apiKeyIndex = 0;
     const zoomFactor = 1;
     const height = 700;
     const width = 700;

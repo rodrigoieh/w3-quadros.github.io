@@ -47,6 +47,7 @@
 - http://sprymedia.co.uk/article/Secret
 - http://www.sprymedia.co.uk/integrity/
 - https://www.javascripttutorial.net/javascript-dom/javascript-onload/
+- https://learn.shayhowe.com/html-css/setting-backgrounds-and-gradients/  
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - [How To - Two Column Layout](https://www.w3schools.com/howto/howto_css_two_columns.asp)

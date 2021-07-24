@@ -61,16 +61,17 @@ function get(key) {
     let previewsTmp = [];
     let blockCount = 0;
     let apiKeyIndex = 1;
+    let apiKeysLength = settings.apiKeysLength();
     const getApiKey = () => {
         const apiKeyUsageCount = previews.length + previewsTmp.length;
-        if (apiKeyUsageCount % 3 === 0) {
+        if (apiKeysLength > 1 && apiKeyUsageCount % 3 === 0) {
             console.debug('rotating apikey index', settings.apiKey(apiKeyIndex), apiKeyIndex);
-            if (++apiKeyIndex === settings.apiKeysLength() - 1) apiKeyIndex = 0;
+            if (++apiKeyIndex === apiKeysLength - 1) apiKeyIndex = 0;
         }
         let apiKey = settings.apiKey(apiKeyIndex);
         if (typeof apiKey !== 'undefined') return apiKey;
         else {
-            console.error(apiKey, settings.apiKeysLength(), apiKeyIndex, apiKeyUsageCount);
+            console.error(apiKey, apiKeysLength, apiKeyIndex, apiKeyUsageCount);
             debugger;
         }
     };

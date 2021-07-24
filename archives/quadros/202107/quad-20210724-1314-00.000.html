@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>svg</title>
+</head>
+<style>
+    * {
+        --a: #d4db91;
+        --b: #585b3d;
+    }
+
+    body {
+        background: linear-gradient(to left, var(--b), var(--a));
+        /*background: linear-gradient(to right, var(--b), var(--a));*/
+    }
+
+    table {
+        background: linear-gradient(to left, var(--a), var(--b));
+        border: 0.15625em #cb5e00 solid;
+        border: 0.15625em #dbdbdb solid;
+    }
+
+    td.cell_style {
+        background-color: transparent;
+        /*border-left: 500px #ffffff10 double;*/
+        border-bottom: 0 transparent;
+        border-top: 0 transparent;
+        border-right: 0 transparent;
+    }
+
+</style>
+<body>
+<script>
+    const cellStyle = 'cell_style';
+    setCellContentOverride = (td, i, j, y, x) => td.className = `td ${cellStyle}`;
+    main(10, 10);
+</script>
+</body>
+</html>

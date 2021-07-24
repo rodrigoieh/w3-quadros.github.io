@@ -95,6 +95,24 @@
 - [DataTables Compatibility](https://www.datatables.net/download/compatibility)
 - [alert](http://sprymedia.co.uk/article/Alert+-+Javascript+dialogue+controls)
 
+### Utilities (third-party imports)
+
+- [html2canvas](https://html2canvas.hertzen.com/)
+
+```html
+<!-- https://cdnjs.com/libraries/html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"
+        integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"
+        integrity="sha512-jzL0FvPiDtXef2o2XZJWgaEpVAihqquZT/tT89qCVaxVuHwJ/1DFcJ+8TBMXplSJXE8gLbVAUv+Lj20qHpGx+A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+```
+
+### Pseudo-screenshots
+
+- [How to take screenshot of a div with JavaScript?](https://stackoverflow.com/questions/6887183/how-to-take-screenshot-of-a-div-with-javascript?rq=1)
+
 ## HTML
 
 - https://www.w3schools.com/jsref/met_document_addeventlistener.asp
@@ -168,12 +186,21 @@
 - [Can I use linear-gradient?](https://caniuse.com/?search=linear-gradient)
 - []()
 
-## AWS
+## Cloud
 
-### S3
+### AWS
+
+#### S3
 
 - [How to Store Your App Photos in the Cloud Using Amazon S3 [tutorial and code samples]](https://aws.amazon.com/blogs/mobile/store-your-photos-in-the-cloud-using-amazon-s3/)
 - [Amplify Framework Documentation](https://docs.amplify.aws/)
 - [Welcome to the AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)
 - [Install the Amplify CLI](https://docs.amplify.aws/cli/start/install#install-the-amplify-cli)
+- []()
+
+### GCP
+
+- []()
+- [Hosting a static website using HTTP](https://cloud.google.com/storage/docs/hosting-static-website-http)
+- [Hosting a static website](https://cloud.google.com/storage/docs/hosting-static-website#storage-create-bucket-console)
 - []()

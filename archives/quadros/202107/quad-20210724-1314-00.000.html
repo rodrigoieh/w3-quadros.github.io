@@ -52,7 +52,7 @@
     wrapper.appendChild(table);
     demo.appendChild(wrapper);
 
-    let i = 0;
+    let i = 0, j = -1;
     let limit = 720;
     let toggle = true;
     let speed = 60;
@@ -60,7 +60,7 @@
     function loop() {
         setTimeout(() => {
             console.debug(i);
-            table.style.transform = `rotate(${i * 33.5}deg)`;
+            table.style.transform = `rotate(${i * j * 33.5}deg)`;
             if (++i < limit) loop();
         }, (toggle) ? speed : speed + i * 0.5)
     }
@@ -68,8 +68,9 @@
     table.addEventListener('click', () => {
         let a = `#8e9070`;
         let b = `#585b3d`;
+        j = -1;
         if (toggle) {
-            i = 0;
+            i = 0, j *= -1;
             a = `#000000`;
             b = `#282828`;
         }

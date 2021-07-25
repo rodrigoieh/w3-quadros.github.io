@@ -5,7 +5,7 @@
     <script src="../../resources/js/quadros.commons.js"></script>
     <script src="../../resources/js/quadros.table.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
-    <title>svg</title>
+    <title>rotation</title>
 </head>
 <style>
     :root {
@@ -33,6 +33,7 @@
     }
 
     td.cell_style {
+        border: 1px white solid;
         background-color: transparent;
     }
 
@@ -40,8 +41,16 @@
 <body>
 <script>
     const vars = {"a": 'var(--a)', "b": 'var(--b)'};
+    const palette = [
+        {"a": `#8e9070`, "b": `#585b3d`},
+        {"a": `#000000`, "b": `#282828`}
+    ];
+
     const cellStyle = 'cell_style';
-    setCellContentOverride = (td, i, j, y, x) => td.className = `td ${cellStyle}`;
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (i + 1 === Math.floor(y / 2)) td.style.borderBottom = '1px red solid';
+        td.className = `td ${cellStyle}`;
+    }
     main(8, 8)
 
     let root = document.documentElement;
@@ -53,31 +62,26 @@
     demo.appendChild(wrapper);
 
     let i = 0, j = -1;
-    let limit = 720;
     let toggle = true;
-    let speed = 60;
+    const limit = 720;
+    const speed = 60;
+    const f = 0.5;
 
     function loop() {
         setTimeout(() => {
             console.debug(i);
-            table.style.transform = `rotate(${i * j * 33.5}deg)`;
+            table.style.transform = `rotate(${i * j}deg)`;
             if (++i < limit) loop();
-        }, (toggle) ? speed : speed + i * 0.5)
+        }, (toggle) ? speed : speed + i * f)
     }
 
     table.addEventListener('click', () => {
-        let a = `#8e9070`;
-        let b = `#585b3d`;
+        let p = 0;
         j = -1;
-        if (toggle) {
-            i = 0, j *= -1;
-            a = `#000000`;
-            b = `#282828`;
-        }
-        let r = b;
-        root.style.setProperty('--a', a);
-        root.style.setProperty('--b', b);
-        root.style.setProperty('--rotation', r);
+        if (toggle) i = 0, j *= -1, p = 1;
+        root.style.setProperty('--a', palette[p].a);
+        root.style.setProperty('--b', palette[p].b);
+        root.style.setProperty('--rotation', palette[p].b);
         toggle = !toggle;
     });
 

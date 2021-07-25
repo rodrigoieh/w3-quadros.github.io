@@ -174,10 +174,13 @@ function Quadro(file) {
     };
 
     this.setImageDebugger = (img, verbose = true) => {
+        let response = false;
         const debugImageSource = (event) => {
             switch (event.type) {
                 case 'error':
                     console.error(event.type, img.id, verbose ? img.src : '', verbose ? event : '');
+                    const apiKey = 'ak-ghqf8-45zt5-ycx9g-827rz-f9wpy';
+                    img.src = this.buildSourceForPhantomJsCloud(apiKey);
                     break;
                 case 'abort':
                     console.error(event.type, img.id, verbose ? img.src : '', verbose ? event : '');
@@ -185,35 +188,43 @@ function Quadro(file) {
                 default:
                     let isImageLoaded = img.complete && img.naturalHeight !== 0;
                     console.debug(event.type, img.id, isImageLoaded, verbose ? img.src : '', verbose ? event : '');
+                    response = true;
             }
         };
         img.addEventListener('load', event => debugImageSource(event));
         img.addEventListener('error', event => debugImageSource(event));
         img.addEventListener('abort', event => debugImageSource(event));
+        return response;
     };
+
+    this.buildSourceForPhantomJsCloud = (apiKey) => {
+        let parameters = {
+            target: `https://phantomjscloud.com/api/browser/v2/${apiKey}/`,
+            request: `?request={url:%22${this.url}%22,`,
+            renderType: `renderType:%22jpeg%22,`,
+            renderSettings: `renderSettings:{viewport:{width:${get('width')},height:${get('height')}},clipRectangle:{width:${get('width')},height:${get('height')}},`,
+            zoomFactor: `zoomFactor:${get('zoomFactor')}},`,
+            requestSettings: `requestSettings:{doneWhen:[{event:%22domReady%22}]}}`,
+        }
+        let buildSource = () =>
+            parameters.target +
+            parameters.request +
+            parameters.renderType +
+            parameters.renderSettings +
+            parameters.zoomFactor +
+            parameters.requestSettings;
+
+        return buildSource();
+    }
 
     this.previewWithPhantomJsCloud = (settings, apiKey) => {
         if (!settings.filenameExclusions.find(str => this.filename.includes(str))) {
             if (settings.isPreviewEnabled) {
                 let a = this.getElementAnchor(settings.root);
                 let img = this.getElementImage();
-                let parameters = {
-                    target: `https://phantomjscloud.com/api/browser/v2/${apiKey}/`,
-                    request: `?request={url:%22${this.url}%22,`,
-                    renderType: `renderType:%22jpeg%22,`,
-                    renderSettings: `renderSettings:{viewport:{width:${get('width')},height:${get('height')}},clipRectangle:{width:${get('width')},height:${get('height')}},`,
-                    zoomFactor: `zoomFactor:${get('zoomFactor')}},`,
-                    requestSettings: `requestSettings:{doneWhen:[{event:%22domReady%22}]}}`,
-                }
-                let buildSource = () =>
-                    parameters.target +
-                    parameters.request +
-                    parameters.renderType +
-                    parameters.renderSettings +
-                    parameters.zoomFactor +
-                    parameters.requestSettings;
-                img.src = buildSource();
-                this.setImageDebugger(img, false);
+                img.src = this.buildSourceForPhantomJsCloud(apiKey);
+                const response = this.setImageDebugger(img, false);
+                if (!response) console.debug('*');
                 a.appendChild(img);
                 return a;
             } else return undefined;
@@ -235,6 +246,7 @@ function Quadro(file) {
                         .replace('.0', '-0')
                         .replace('html', settings.cloudStoragePreviewFileExtension);
                 img.src = buildSource();
+                this.setImageDebugger(img, true);
                 a.appendChild(img);
                 return a;
             } else return undefined;

@@ -187,7 +187,7 @@ function Quadro(file) {
                     break;
                 default:
                     let isImageLoaded = img.complete && img.naturalHeight !== 0;
-                    if (isDebugEnabled) console.debug(event.type, img.id, isImageLoaded, verbose ? img.src : '', verbose ? event : '');
+                    if (globalSettings.isDebugEnabled) console.debug(event.type, img.id, isImageLoaded, verbose ? img.src : '', verbose ? event : '');
                     response = true;
             }
         };

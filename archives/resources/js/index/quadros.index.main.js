@@ -187,7 +187,7 @@ function Quadro(file) {
                     break;
                 default:
                     let isImageLoaded = img.complete && img.naturalHeight !== 0;
-                    console.debug(event.type, img.id, isImageLoaded, verbose ? img.src : '', verbose ? event : '');
+                    if (isDebugEnabled) console.debug(event.type, img.id, isImageLoaded, verbose ? img.src : '', verbose ? event : '');
                     response = true;
             }
         };
@@ -213,7 +213,6 @@ function Quadro(file) {
             parameters.renderSettings +
             parameters.zoomFactor +
             parameters.requestSettings;
-
         return buildSource();
     }
 

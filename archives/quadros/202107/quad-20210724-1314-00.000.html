@@ -110,6 +110,11 @@
             case 'r':
                 j *= -1;
                 break;
+            case ' ':
+            case 'L':
+            case 'l':
+                loop();
+                break;
         }
     });
     loop();

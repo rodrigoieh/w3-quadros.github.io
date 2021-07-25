@@ -8,18 +8,28 @@
     <title>svg</title>
 </head>
 <style>
-    * {
+    :root {
         --a: #8e9070;
         --b: #585b3d;
+        --c: #8e9070;
+        --d: #585b3d;
+        --rotation: var(--b);
     }
 
     body {
-        background: linear-gradient(to left, var(--b), var(--a));
+        background: linear-gradient(to left, var(--c), var(--d));
+    }
+
+    #demo {
+    }
+
+    #wrapper {
+        border: 3px var(--c) solid;
     }
 
     table {
-        background: linear-gradient(to left, var(--a), var(--b));
-        border: 3px var(--a) solid;
+        border-radius: 50%;
+        background: linear-gradient(var(--rotation), var(--a), var(--b));
     }
 
     td.cell_style {
@@ -29,9 +39,48 @@
 </style>
 <body>
 <script>
+    const vars = {"a": 'var(--a)', "b": 'var(--b)'};
     const cellStyle = 'cell_style';
     setCellContentOverride = (td, i, j, y, x) => td.className = `td ${cellStyle}`;
-    main(10, 10);
+    main(8, 8)
+
+    let root = document.documentElement;
+    let wrapper = document.createElement('div');
+    let table = document.getElementById('table');
+    let demo = document.getElementById('demo');
+    wrapper.id = 'wrapper';
+    wrapper.appendChild(table);
+    demo.appendChild(wrapper);
+
+    let i = 0;
+    let limit = 720;
+    let toggle = true;
+    let speed = 60;
+
+    function loop() {
+        setTimeout(() => {
+            console.debug(i);
+            table.style.transform = `rotate(${i * 33.5}deg)`;
+            if (++i < limit) loop();
+        }, (toggle) ? speed : speed + i * 0.5)
+    }
+
+    table.addEventListener('click', () => {
+        let a = `#8e9070`;
+        let b = `#585b3d`;
+        if (toggle) {
+            i = 0;
+            a = `#000000`;
+            b = `#282828`;
+        }
+        let r = b;
+        root.style.setProperty('--a', a);
+        root.style.setProperty('--b', b);
+        root.style.setProperty('--rotation', r);
+        toggle = !toggle;
+    });
+
+    loop();
 </script>
 </body>
 </html>

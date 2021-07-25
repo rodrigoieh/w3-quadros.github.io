@@ -15,6 +15,7 @@
 - https://www.30secondsofcode.org/js/s/parse-cookie
 - https://drafts.csswg.org/css-variables/#defining-variables
 - https://drafts.csswg.org/css-conditional-3/
+- https://developer.mozilla.org/en-US/docs/Web/CSS/:root  
 - https://developer.mozilla.org/en-US/docs/Web/CSS/var()
 - https://developer.mozilla.org/en-US/docs/Web/CSS/env()
 - https://developer.mozilla.org/en-US/docs/Web/CSS/--*

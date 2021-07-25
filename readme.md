@@ -14,7 +14,7 @@
 
 [vercel]: https://w3-quadros-github-io.vercel.app
 
-[amplify]:  https://main.dd0vytdddu0dh.amplifyapp.com/archives
+[amplify]:  https://amplify.xronos.cl
 
 [cloudflare]:  https://quadros.pages.dev/archives
 

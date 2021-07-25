@@ -13,7 +13,10 @@
         --b: #585b3d;
         --c: #8e9070;
         --d: #585b3d;
+        --circle: red;
         --rotation: var(--b);
+        --border: 0 transparent;
+        transform: rotate(90deg);
     }
 
     body {
@@ -24,17 +27,30 @@
     }
 
     #wrapper {
+        background-color: #e7dede15;
+        transform: rotate(180deg);
         border: 3px var(--c) solid;
     }
 
     table {
+        margin: 50px;
         border-radius: 50%;
         background: linear-gradient(var(--rotation), var(--a), var(--b));
     }
 
     td.cell_style {
-        border: 1px white solid;
+        border: var(--border);
         background-color: transparent;
+    }
+
+    td:hover {
+        border-radius: 100%;
+        background: radial-gradient(transparent 20%, var(--circle) 20% 22%, transparent 22%);
+        --border: 1px red solid;
+    }
+
+    table:hover, td:hover {
+        --border: 1px white solid;
     }
 
 </style>
@@ -42,23 +58,24 @@
 <script>
     const vars = {"a": 'var(--a)', "b": 'var(--b)'};
     const palette = [
-        {"a": `#8e9070`, "b": `#585b3d`},
-        {"a": `#000000`, "b": `#282828`}
+        {"a": `#8e9070ff`, "b": `#585b3dff`},
+        {"a": `#000000ff`, "b": `#282828ff`}
     ];
 
     const cellStyle = 'cell_style';
     setCellContentOverride = (td, i, j, y, x) => {
-        if (i + 1 === Math.floor(y / 2)) td.style.borderBottom = '1px red solid';
         td.className = `td ${cellStyle}`;
     }
     main(8, 8)
 
     let root = document.documentElement;
     let wrapper = document.createElement('div');
-    let table = document.getElementById('table');
+    let tableLeft = document.getElementById('table');
+    let tableRight = tableLeft.cloneNode(true);
     let demo = document.getElementById('demo');
     wrapper.id = 'wrapper';
-    wrapper.appendChild(table);
+    wrapper.appendChild(tableLeft);
+    wrapper.appendChild(tableRight);
     demo.appendChild(wrapper);
 
     let i = 0, j = -1;
@@ -70,12 +87,13 @@
     function loop() {
         setTimeout(() => {
             console.debug(i);
-            table.style.transform = `rotate(${i * j}deg)`;
+            tableLeft.style.transform = `rotate(${i * j * 33.5}deg)`;
+            tableRight.style.transform = `rotate(${i * j}deg)`;
             if (++i < limit) loop();
         }, (toggle) ? speed : speed + i * f)
     }
 
-    table.addEventListener('click', () => {
+    wrapper.addEventListener('click', () => {
         let p = 0;
         j = -1;
         if (toggle) i = 0, j *= -1, p = 1;
@@ -85,6 +103,15 @@
         toggle = !toggle;
     });
 
+    document.addEventListener('keydown', event => {
+        const key = event.key;
+        switch (key) {
+            case 'R':
+            case 'r':
+                j *= -1;
+                break;
+        }
+    });
     loop();
 </script>
 </body>

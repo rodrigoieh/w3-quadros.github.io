@@ -15,7 +15,7 @@
 - https://www.30secondsofcode.org/js/s/parse-cookie
 - https://drafts.csswg.org/css-variables/#defining-variables
 - https://drafts.csswg.org/css-conditional-3/
-- https://developer.mozilla.org/en-US/docs/Web/CSS/:root  
+- https://developer.mozilla.org/en-US/docs/Web/CSS/:root
 - https://developer.mozilla.org/en-US/docs/Web/CSS/var()
 - https://developer.mozilla.org/en-US/docs/Web/CSS/env()
 - https://developer.mozilla.org/en-US/docs/Web/CSS/--*
@@ -33,6 +33,8 @@
 - https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement#event_handlers
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function
 - https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a
+- https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js
+- https://www.w3schools.com/jsref/met_node_clonenode.asp
 - https://en.wikipedia.org/wiki/Hue
 - https://en.wikipedia.org/wiki/Lacunarity
 - https://www.css3.info/preview/box-shadow/

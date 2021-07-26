@@ -7,7 +7,6 @@
         document.getElementsByTagName('head')[0].appendChild(link);
     }
     link.href = '/resources/media/favicon/favicon.ico';
-    console.debug('favicon', link.href);
 }());
 
 // Returns the name of the webpage file without its extension

@@ -2,55 +2,62 @@
 
 ## Miscellaneous
 
-- https://github.com/mdn
-- https://github.com/mdn/content
-- https://css-tricks.com/css3-gradients/
-- https://stackoverflow.com/questions/39048654
-- https://stackoverflow.com/questions/179355
-- https://stackoverflow.com/questions/1527803
-- https://stackoverflow.com/questions/49547157
-- https://stackoverflow.com/questions/53425836/css-square-background-image
-- https://stackoverflow.com/questions/8714090/queryselector-wildcard-element-match/8714421
-- https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists
-- https://www.30secondsofcode.org/js/s/parse-cookie
-- https://drafts.csswg.org/css-variables/#defining-variables
-- https://drafts.csswg.org/css-conditional-3/
-- https://developer.mozilla.org/en-US/docs/Web/CSS/:root
-- https://developer.mozilla.org/en-US/docs/Web/CSS/var()
-- https://developer.mozilla.org/en-US/docs/Web/CSS/env()
-- https://developer.mozilla.org/en-US/docs/Web/CSS/--*
-- https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule#conditional_group_rules
-- https://developer.mozilla.org/en-US/docs/Web/CSS/@media
-- https://developer.mozilla.org/en-US/docs/Web/CSS/@supports
-- https://developer.mozilla.org/en-US/docs/Web/CSS/@document
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-- https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d()
-- https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide
-- https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event
-- https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
-- https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement
-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement#event_handlers
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function
-- https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a
-- https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js
-- https://www.w3schools.com/jsref/met_node_clonenode.asp
-- https://en.wikipedia.org/wiki/Hue
-- https://en.wikipedia.org/wiki/Lacunarity
-- https://www.css3.info/preview/box-shadow/
-- https://www.w3schools.com/html/html5_draganddrop.asp
-- https://www.w3schools.com/howto/howto_js_draggable.asp
-- https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop
-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr
-- https://www.w3schools.com/howto/howto_css_style_hr.asp
-- https://www.w3schools.com/jsref/met_document_addeventlistener.asp
-- https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html
-- https://www.techiedelight.com/check-whether-image-is-loaded-with-javascript/
-- http://sprymedia.co.uk/
-- http://sprymedia.co.uk/article/Secret
-- http://www.sprymedia.co.uk/integrity/
-- https://www.javascripttutorial.net/javascript-dom/javascript-onload/
-- https://learn.shayhowe.com/html-css/setting-backgrounds-and-gradients/
+- [](https://github.com/mdn                                                                         )
+- [](https://github.com/mdn/content                                                                 )
+- [](https://css-tricks.com/css3-gradients/                                                         )
+- [](https://stackoverflow.com/questions/39048654                                                   )
+- [](https://stackoverflow.com/questions/179355                                                     )
+- [](https://stackoverflow.com/questions/1527803                                                    )
+- [](https://stackoverflow.com/questions/49547157                                                   )
+- [](https://stackoverflow.com/questions/53425836/css-square-background-image                       )
+- [](https://stackoverflow.com/questions/8714090/queryselector-wildcard-element-match/8714421       )
+- [](https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists                )
+- [](https://www.30secondsofcode.org/js/s/parse-cookie                                              )
+- [](https://css-irl.info/building-the-zig-zag-gradient-lab/                                        )
+- [](https://dev.to/cchana/explained-creating-a-zigzag-pattern-with-just-css-13g1                   )
+- [](https://www.quackit.com/css/codes/patterns/zig-zag_background_patterns.cfm                     )
+- [](https://cssdeck.com/labs/l0vfnf9j                                                              )
+- [](https://plantpot.works/2816                                                                    )
+- [](https://drafts.csswg.org/css-variables/#defining-variables                                     )
+- [](https://drafts.csswg.org/css-conditional-3/                                                    )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/:root                                         )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/var()                                         )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/env()                                         )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/--*                                           )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule#conditional_group_rules               )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/@media                                        )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports                                     )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/@document                                     )
+- [](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random   )
+- [](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d()                 )
+- [](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide                    )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event                          )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event                           )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll                     )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement                              )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement#event_handlers                    )
+- [](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function     )
+- [](https://dev.to/cchana/explained-creating-a-zigzag-pattern-with-just-css-13g1                   )
+- [](https://bootcamp.uxdesign.cc/use-css-gradients-for-background-gradient-images-dc98c2b7848a     )
+- [](https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js                       )
+- [](https://www.w3schools.com/jsref/met_node_clonenode.asp                                         )
+- [](https://en.wikipedia.org/wiki/Hue                                                              )
+- [](https://en.wikipedia.org/wiki/Lacunarity                                                       )
+- [](https://www.css3.info/preview/box-shadow/                                                      )
+- [](https://www.w3schools.com/html/html5_draganddrop.asp                                           )
+- [](https://www.w3schools.com/howto/howto_js_draggable.asp                                         )
+- [](https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop                         )
+- [](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_style_hr                         )
+- [](https://www.w3schools.com/howto/howto_css_style_hr.asp                                         )
+- [](https://www.w3schools.com/jsref/met_document_addeventlistener.asp                              )
+- [](https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html                                 )
+- [](https://www.techiedelight.com/check-whether-image-is-loaded-with-javascript/                   )
+- [](http://sprymedia.co.uk/                                                                        )
+- [](http://sprymedia.co.uk/article/Secret                                                          )
+- [](http://www.sprymedia.co.uk/integrity/                                                          )
+- [](https://www.javascripttutorial.net/javascript-dom/javascript-onload/                           )
+- [](https://learn.shayhowe.com/html-css/setting-backgrounds-and-gradients/                         )
+- [](https://codepen.io/rodrigoieh/pen/abWEWGd                                                      )
 - [SMPTE color bars](https://en.wikipedia.org/wiki/SMPTE_color_bars)
 - [Scrimba - Soccer Field](https://scrimba.com/scrim/cKbw4Tg)
 - [How To - Two Column Layout](https://www.w3schools.com/howto/howto_css_two_columns.asp)
@@ -74,6 +81,30 @@
 - [html2canvas](https://html2canvas.hertzen.com/)
 
 ## CSS Cascading Style Sheets
+
+## Houdini
+
+- [](https://ishoudinireadyyet.com/                                                                )
+- [](https://lists.w3.org/Archives/Public/public-houdini/                                          )
+- [](https://github.com/w3c/css-houdini-drafts                                                     )
+- [](https://github.com/web-platform-tests/wpt                                                     )
+- [](https://github.com/GoogleChromeLabs/houdini-samples                                           )
+- [](https://github.com/w3c/css-houdini-drafts/wiki                                                )
+- [](https://github.com/WICG/animation-worklet                                                     )
+- [](https://developers.google.com/web/updates/2018/01/paintapi                                    )
+- [](https://developers.google.com/web/updates/2016/05/houdini                                     )
+- [](https://drafts.css-houdini.org/css-animation-worklet/                                         )
+- [](https://googlechromelabs.github.io/houdini-samples/                                           )
+- [](https://googlechromelabs.github.io/houdini-samples/animation-worklet/twitter-header/          )
+- [](https://googlechromelabs.github.io/houdini-samples/paint-worklet/parameter-checkerboard/      )
+- [](https://houdini.how/usage/                                                                    )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/Worklet/addModule                            )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API                             )
+- [](https://www.w3.org/TR/css-paint-api-1/                                                        )
+- [](https://css-houdini.rocks/                                                                    )
+- [](https://developers.google.com/web/updates/2018/01/paintapi                                    )
+- [](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API                             )
+- [](https://www.zhangxinxu.com/wordpress/2018/11/css-paint-api-canvas/                            )
 
 ### Inheritance
 
@@ -127,16 +158,16 @@
 
 ## GitHub
 
-- https://github.com/settings/applications/new
-- https://docs.github.com/en/rest/reference/repos#contents
+- [](https://github.com/settings/applications/new                                       )
+- [](https://docs.github.com/en/rest/reference/repos#contents                           )
 
 ### GitHub API
 
-- https://api.github.com/repos
-- https://api.github.com/rate_limit
-- https://api.github.com/repos/:user/:repo/contents/
-- https://api.github.com/repos/rodrigoieh/w3-quadros.github.io/contents
-- https://api.github.com/repos/rodrigoieh/w3-quadros.github.io/contents/archives
+- [](https://api.github.com/repos                                                       )
+- [](https://api.github.com/rate_limit                                                  )
+- [](https://api.github.com/repos/:user/:repo/contents/                                 )
+- [](https://api.github.com/repos/rodrigoieh/w3-quadros.github.io/contents              )
+- [](https://api.github.com/repos/rodrigoieh/w3-quadros.github.io/contents/archives     )
 
 ## Web Browsers
 
@@ -146,8 +177,8 @@
 
 ### Headless Browser: PhantomJsCloud
 
-- https://phantomjscloud.com
-- https://phantomjscloud.com/api/browser/v2/a-demo-key-with-low-quota-per-ip-address/?request={url:%22https://www.bbc.com/news%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:640,height:500},clipRectangle:{width:640,height:500},zoomFactor:0.45},requestSettings:{doneWhen:[{event:%22domReady%22}]}}
+- [](https://phantomjscloud.com)
+- [](https://phantomjscloud.com/api/browser/v2/a-demo-key-with-low-quota-per-ip-address/?request={url:%22https://www.bbc.com/news%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:640,height:500},clipRectangle:{width:640,height:500},zoomFactor:0.45},requestSettings:{doneWhen:[{event:%22domReady%22}]}})
 
 ## IDE
 

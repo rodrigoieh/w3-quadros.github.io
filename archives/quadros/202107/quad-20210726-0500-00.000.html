@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>houdini</title>
+    <style>
+        body {
+            /* Houdini */
+            background-image: paint(board);
+        }
+
+        td {
+            text-align: center;
+        }
+
+        td.quadro {
+            background-color: #ffffff80;
+            opacity: 50%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    <!-- Quadros -->
+    const cellColor = 'quadro';
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.setAttribute('class', `td ${cellColor}`);
+    }
+    main(10, 10);
+</script>
+<script>
+    <!-- Houdini   -->
+    if (location.protocol === 'http:' && location.hostname !== 'localhost')
+        location.protocol = 'https:';
+    if ('paintWorklet' in CSS) CSS.paintWorklet.addModule('../../resources/js/quadros.houdini.js');
+    else console.error('not supported');
+</script>
+</body>
+</html>

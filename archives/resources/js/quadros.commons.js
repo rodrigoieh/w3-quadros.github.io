@@ -1,3 +1,15 @@
+// Adds favicon
+(function () {
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = '/resources/media/favicon/favicon.ico';
+    console.debug('favicon', link.href);
+}());
+
 // Returns the name of the webpage file without its extension
 function getPageFilename() {
     return window.location.pathname

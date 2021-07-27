@@ -26,7 +26,7 @@ function ls(object) {
     } else {
         data.type = 'file';
         data.id = path.basename(object).split('.').slice(0, -1).join('.');
-        data.preview = storage.concat('/', object.replace('html', 'jpeg').replace('.00'));
+        data.preview = storage.concat('/', object.replace('html', 'jpeg').replace('.00', '-00'));
         data.filename = path.basename(object);
         data.extension = path.extname(object);
         data.directory = path.dirname(object);
@@ -50,7 +50,7 @@ function output(tree, type = 'javascript') {
 }
 
 if (module.parent == undefined) {
-    // usage: node resources/node/quadros.index.js . > resources/js/quadros.index.js|index.json
+    // usage: node resources/node/quadros.index.js quadros > resources/js/quadros.index.js
     let tree = util.inspect(ls(process.argv[2]), showHidden = false, depth = null, colorize = false);
     output(tree)
 }

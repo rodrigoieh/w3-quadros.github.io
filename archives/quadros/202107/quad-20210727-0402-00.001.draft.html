@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    :root {
+        --body-background: #393935;
+        --td-background: #e5e0e090;
+        --td-border: 1px black solid;
+        --table-border: 1px white solid;
+    }
+
+    body {
+        background: var(--body-background);
+    }
+
+    table {
+        border: var(--table-border);
+    }
+
+    td {
+        border: var(--td-border);
+        background: var(--td-background);
+    }
+
+    #elementInnerHtml {
+        margin: 5% 10% 20% 10%;
+        color: #5a5a58;
+    }
+</style>
+<body>
+<div id="elementInnerHtml"></div>
+<script>
+    'use strict';
+    n = 10;
+    m = 10;
+    let row = 0, type = 0;
+    const palette = {"a": "red", "b": "blue"};
+    let count = 1;
+    setCellContentOverride = (td, i, j, y, x) => {
+        debug(i, j, y, x, count, i & 1);
+        if (j === x - 1) warn();
+        if (i & 1 && count & 1)
+            td.style.background = palette.b;
+        if (j === x && i & 1) count++;
+    };
+    main(n, m)
+    // Background
+    // TODO, div square for text, make it proportional in size (font-size and dimensions) to demo tables.
+    let elementInnerHtml = document.getElementById('elementInnerHtml');
+    elementInnerHtml.innerText = demo.innerHTML;
+    styleSetPositionCenter(elementInnerHtml);
+</script>
+</body>
+</html>

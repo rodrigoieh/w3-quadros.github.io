@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    :root {
+        --body-background: #393935;
+        --td-background: #e5e0e090;
+        --td-border: 1px black solid;
+        --table-border: 1px white solid;
+    }
+
+    body {
+        background: var(--body-background);
+    }
+
+    table {
+        border: var(--table-border);
+    }
+
+    td {
+        border: var(--td-border);
+        background: var(--td-background);
+    }
+</style>
+<body>
+<script>
+    'use strict';
+    n = 11;
+    m = 11;
+    let row = 0, type = 0;
+    const palette = {"a": "red", "b": "blue"};
+
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (row % 2 === 0) {
+            row = 0;
+            type = !type;
+        }
+        if (!type) {
+            td.style.background = palette.b;
+        } else {
+            td.style.background = palette.a;
+        }
+        if (j === m - 1) row++;
+    };
+    main(n, m)
+</script>
+</body>
+</html>

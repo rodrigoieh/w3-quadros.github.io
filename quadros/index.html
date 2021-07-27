@@ -115,7 +115,7 @@
         const quadros = directory.collection;
         if (quadros !== undefined) {
             const k = quadros.length;
-            for (let i = 0; i < k; i++) {
+            for (let i = k - 1; i > 0; i--) {
                 const quadro = Quadro.class(quadros[i]);
                 if (quadro.visible) {
                     let a = getElementAnchor(quadro.id, quadro.path);

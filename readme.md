@@ -1,9 +1,11 @@
+<!--
 | service    | status    |
 | --------------- | --------------- |
 | [github][github]    |  ✔    |  
 | [vercel][vercel]    |  ✔    | 
 | [amplify][amplify]    | ✔    |  
 | [cloudflare][cloudflare]    |  	|  
+-->
 
 [![Lifecycle:experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![license](https://img.shields.io/github/license/rodrigoieh/w3-quadros.github.io)](https://github.com/rodrigoieh/w3-quadros.github.io/blob/main/license.md)

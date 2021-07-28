@@ -3,7 +3,7 @@ const fs = require('fs'),
     util = require("util");
 
 function ls(object) {
-    const storage = 'https://quad.xronos.cl/archives';
+    const storage = 'https://quad.xronos.cl';
     const exclusions = ['draft', 'hidden'];
     const isActive = (object) => (!exclusions.find(str => object.includes(str)));
     const lstat = fs.lstatSync(object),
@@ -26,7 +26,7 @@ function ls(object) {
     } else {
         data.type = 'file';
         data.id = path.basename(object).split('.').slice(0, -1).join('.');
-        data.preview = storage.concat('/', object.replace('html', 'jpeg').replace(/\./, '-'));
+        data.preview = storage.concat('/', object.replace('html', 'jpeg'));
         data.filename = path.basename(object);
         data.extension = path.extname(object);
         data.directory = path.dirname(object);

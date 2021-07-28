@@ -45,8 +45,12 @@
 <script src="../resources/js/quadros.index.js"></script>
 <script>document.body.style.zoom = '80%';</script>
 <script>
-    const jsHeapSizeLimit = window.performance.memory.jsHeapSizeLimit;
-    debug(jsHeapSizeLimit);
+    try {
+        const jsHeapSizeLimit = window.performance.memory.jsHeapSizeLimit;
+        debug(jsHeapSizeLimit);
+    } catch (error) {
+        console.error(error);
+    }
 
     class Quadro {
         constructor(id, type, path, preview, filename, extension, directory, visible) {

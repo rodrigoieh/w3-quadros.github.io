@@ -57,11 +57,8 @@
             this.visible = visible;
         }
 
-        static class(object) {
-            return new Quadro(
-                object.id, object.type, object.path,
-                object.preview, object.filename, object.extension,
-                object.directory, object.visible);
+        static class(o) {
+            return new Quadro(o.id, o.type, o.path, o.preview, o.filename, o.extension, o.directory, o.visible);
         }
     }
 
@@ -80,11 +77,7 @@
         img.alt = id;
         img.width = width;
         img.height = height;
-        img.style.margin = 'auto';
         img.style.cursor = 'zoom-in';
-        img.style.backgroundColor = 'hsl(0, 0%, 90%)';
-        img.style.transition = 'background-color 300ms';
-        img.style.webkitUserSelect = 'none';
         return img;
     };
 
@@ -96,10 +89,10 @@
             const k = quadros.length;
             for (let i = k - 1; i > 0; i--) {
                 const quadro = Quadro.class(quadros[i]);
-                    let a = getElementAnchor(quadro.id, quadro.path);
-                    const image = getElementImage(quadro.id, quadro.preview);
-                    a.appendChild(image);
-                    previews.appendChild(a);
+                let a = getElementAnchor(quadro.id, quadro.path);
+                const image = getElementImage(quadro.id, quadro.preview);
+                a.appendChild(image);
+                previews.appendChild(a);
             }
         }
     }

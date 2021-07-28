@@ -3,7 +3,7 @@ const fs = require('fs'),
     util = require("util");
 
 function ls(object) {
-    const storage = 'https://quad.xronos.cl';
+    const storage = 'http://localhost:8001';
     const exclusions = ['draft', 'hidden'];
     const isActive = (object) => (!exclusions.find(str => object.includes(str)));
     const lstat = fs.lstatSync(object),

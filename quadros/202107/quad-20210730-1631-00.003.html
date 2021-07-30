@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>background</title>
+</head>
+<style>
+    body {
+        --a: #c9b12d;
+        --b: #000000;
+        --x: 50%;
+        --y: var(--x);
+
+        background-color: var(--a);
+        background-image: linear-gradient(45deg, var(--b) 25%, transparent 25%, transparent 75%, var(--b) 75%, var(--b)),
+        linear-gradient(45deg, var(--b) 25%, transparent 25%, transparent 75%, var(--b) 75%, var(--b));
+        background-size: var(--x) var(--y);
+        background-position: 0 0, calc(var(--x) / 2) calc(var(--y) / 2);
+    }
+
+    table {
+        --a: #b72424;
+        --b: #ffffff;
+        border-radius: 50%;
+        background: conic-gradient(
+                var(--a) 0.25turn, var(--b) 0.25turn 0.5turn,
+                var(--a) 0.5turn 0.75turn, var(--b) 0.75turn) top left / 100% 100% repeat;
+        opacity: 90%;
+    }
+
+    td.cell {
+    }
+</style>
+<body>
+<script>
+    const cellStyle = 'cell';
+    setCellContentOverride = (td, i, j, y, x) => td.className = `td ${cellStyle}`;
+    main(10, 10);
+</script>
+</body>
+</html>

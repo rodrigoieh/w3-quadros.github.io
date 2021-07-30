@@ -178,7 +178,7 @@
 
 - [User Data Directory](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/user_data_dir.md)
 
-### Headless Browser: PhantomJsCloud
+### PhantomJsCloud 
 
 - [Web Browser as a Service](https://phantomjscloud.com)
 - [Demo](https://phantomjscloud.com/api/browser/v2/a-demo-key-with-low-quota-per-ip-address/?request={url:%22https://www.bbc.com/news%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:640,height:500},clipRectangle:{width:640,height:500},zoomFactor:0.45},requestSettings:{doneWhen:[{event:%22domReady%22}]}})

@@ -23,7 +23,7 @@ const getElementAnchor = (id, href, title = id) => {
     return a;
 }
 
-const getElementImage = (id, src, visible, width = 150, height = 150) => {
+const getElementImage = (id, src, width = 150, height = 150) => {
     let img = document.createElement('img');
     img.id = `preview-img-${id}`;
     img.src = src;
@@ -34,7 +34,6 @@ const getElementImage = (id, src, visible, width = 150, height = 150) => {
     img.style.color = '#c86023';
     img.style.backgroundColor = 'transparent';
     img.style.backgroundColor = 'hsl(206,42%,23%)';
-    img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
     return img;
 };
 

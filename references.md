@@ -34,6 +34,7 @@
 - [SOF - CSS Square background - image](https://stackoverflow.com/questions/53425836/css-square-background-image)
 - [SOF - querySelector, wildcard element match?](https://stackoverflow.com/questions/8714090/queryselector-wildcard-element-match/8714421)
 - [SOF - How to wait until an element exists?](https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists)
+- [SOF - How to add a custom right-click menu to a webpage?](https://stackoverflow.com/questions/4909167/how-to-add-a-custom-right-click-menu-to-a-webpage)
 - [W3S - HTML Drag and Drop API](https://www.w3schools.com/html/html5_draganddrop.asp)
 - [W3S - How TO - Create a Draggable HTML Element](https://www.w3schools.com/howto/howto_js_draggable.asp)
 - [W3S - Drag the W3Schools image into the rectangle](https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop)
@@ -43,6 +44,9 @@
 - [W3S - The font-style Property](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_font-style)
 - [W3S - CSS Fonts](https://www.w3schools.com/css/css_font.asp)
 - [W3S - HTML DOM cloneNode() Method](https://www.w3schools.com/jsref/met_node_clonenode.asp)
+- [W3S - HTML <img> Tag](https://www.w3schools.com/tags/tag_img.asp)
+- [W3S - The img longdesc attribute](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_img_longdesc)
+- [Mozilla - Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Mozilla - async function expression](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
 - [Mozilla - HTMLElement](https://developer.mozilla.org/en-US/docs/Web/CSS/var())
 - [Mozilla - HTMLImageElement](https://developer.mozilla.org/en-US/docs/Web/CSS/env())
@@ -182,6 +186,7 @@
 
 - [Web Browser as a Service](https://phantomjscloud.com)
 - [Demo](https://phantomjscloud.com/api/browser/v2/a-demo-key-with-low-quota-per-ip-address/?request={url:%22https://www.bbc.com/news%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:640,height:500},clipRectangle:{width:640,height:500},zoomFactor:0.45},requestSettings:{doneWhen:[{event:%22domReady%22}]}})
+- [Automation API Documentation](https://phantomjscloud.com/docs/http-api/automation/)
 
 ## IDE
 

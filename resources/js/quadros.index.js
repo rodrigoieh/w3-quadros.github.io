@@ -35,7 +35,7 @@ const getElementImage = (id, src, visible, width = 150, height = 150) => {
     img.style.backgroundColor = 'transparent';
     img.style.backgroundColor = 'hsl(206,42%,23%)';
     img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
-   return img;
+    return img;
 };
 
 let previews = document.getElementById('previews');
@@ -47,9 +47,11 @@ for (const directory of directories) {
         for (let i = k - 1; i > 0; i--) {
             const quadro = Quadro.class(quadros[i]);
             let a = getElementAnchor(quadro.id, quadro.path);
-            const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
-            a.appendChild(image);
-            previews.appendChild(a);
+            if (quadro.visible) {
+                const image = getElementImage(quadro.id, quadro.preview);
+                a.appendChild(image);
+                previews.appendChild(a);
+            }
         }
     }
 }

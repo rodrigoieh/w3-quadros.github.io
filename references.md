@@ -5,9 +5,6 @@
 - [MDN Web Docs](https://github.com/mdn)
 - [mdn/content](https://github.com/mdn/content)
 - [CSS Gradients](https://css-tricks.com/css3-gradients/)
-- [CSS Background Patterns From CodePen](https://freebiesupply.com/blog/css-background-patterns/)
-- [Transparent Textures](https://www.transparenttextures.com/)
-- [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/)
 - [30 seconds of code - parseCookie](https://www.30secondsofcode.org/js/s/parse-cookie)
 - [Building the Zig-Zag Gradient Lab](https://css-irl.info/building-the-zig-zag-gradient-lab/)
 - [Explained: Creating a zigzag pattern with just CSS](https://dev.to/cchana/explained-creating-a-zigzag-pattern-with-just-css-13g1)
@@ -22,8 +19,7 @@
 - [Wikipedia - Hue](https://en.wikipedia.org/wiki/Hue)
 - [Wikipedia - Lacunarity](https://en.wikipedia.org/wiki/Lacunarity)
 - [Box-shadow, one of CSS3’s best new features](https://www.css3.info/preview/box-shadow/)
-- [W3C - CSS Values and Units Module Level 3, calc](https://www.w3.org/TR/css3-values/#calc)
-- [W3O - Understanding Lacuna Value](https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html)
+- [Understanding Lacuna Value](https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html)
 - [Check whether an image is loaded with JavaScript](https://www.techiedelight.com/check-whether-image-is-loaded-with-javascript/)
 - [SpryMedia](http://sprymedia.co.uk/)
 - [SpryMedia - secret](http://sprymedia.co.uk/article/Secret)
@@ -51,7 +47,6 @@
 - [W3S - HTML DOM cloneNode() Method](https://www.w3schools.com/jsref/met_node_clonenode.asp)
 - [W3S - HTML <img> Tag](https://www.w3schools.com/tags/tag_img.asp)
 - [W3S - The img longdesc attribute](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_img_longdesc)
-- [W3S - CSS display Property](https://www.w3schools.com/cssref/pr_class_display.asp)
 - [Mozilla - Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Mozilla - async function expression](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
 - [Mozilla - HTMLElement](https://developer.mozilla.org/en-US/docs/Web/CSS/var())
@@ -61,7 +56,6 @@
 - [Mozilla - Element: scroll event](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
 - [Mozilla - Writing style guide](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
 - [Mozilla - Math.random()](https://developer.mozilla.org/en-US/docs/Web/CSS/@document)
-- [Mozilla - Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [Mozilla - @document](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 - [Mozilla - @supports](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d())
 - [Mozilla - @media](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide)
@@ -92,12 +86,10 @@
 - [DataTables Compatibility](https://www.datatables.net/download/compatibility)
 - [alert](http://sprymedia.co.uk/article/Alert+-+Javascript+dialogue+controls)
 - [html2canvas](https://html2canvas.hertzen.com/)
-- [CSS Naming Conventions that Will Save You Hours of Debugging](https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
-- [Can I use? mdn-api_css_paintworklet](https://caniuse.com/mdn-api_css_paintworklet)
 
 ## CSS Cascading Style Sheets
 
-### Houdini
+## Houdini
 
 - [W3 Playground - test-css-houdini/ref-01](https://w3-playground-github-io.vercel.app/test-css-houdini/ref-01)
 - [GitHub - w3c/css-houdini-drafts](https://github.com/w3c/css-houdini-drafts)
@@ -155,7 +147,7 @@
 - https://favicon.io/favicon-converter/
 - [Favicon checker](https://realfavicongenerator.net/favicon_checker?protocol=https&site=rodrigoieh.github.io%2Fw3-quadros.github.io%2Farchives%2F#.YOjN9hNKhXh)
 
-## Gradients Utils
+## Toolkit: Gradients
 
 - [HTML CSS Color Picker](https://www.htmlcsscolor.com)
 - [CSS3 Patterns Gallery](https://projects.verou.me/css3patterns/#cicada-stripes)
@@ -191,7 +183,7 @@
 
 - [User Data Directory](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/user_data_dir.md)
 
-### PhantomJsCloud 
+### Headless Browser: PhantomJsCloud
 
 - [Web Browser as a Service](https://phantomjscloud.com)
 - [Demo](https://phantomjscloud.com/api/browser/v2/a-demo-key-with-low-quota-per-ip-address/?request={url:%22https://www.bbc.com/news%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:640,height:500},clipRectangle:{width:640,height:500},zoomFactor:0.45},requestSettings:{doneWhen:[{event:%22domReady%22}]}})
@@ -205,14 +197,14 @@
 
 ## Cloud
 
-### AWS - S3
+### AWS: S3
 
 - [How to Store Your App Photos in the Cloud Using Amazon S3 [tutorial and code samples]](https://aws.amazon.com/blogs/mobile/store-your-photos-in-the-cloud-using-amazon-s3/)
 - [Amplify Framework Documentation](https://docs.amplify.aws/)
 - [Welcome to the AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)
 - [Install the Amplify CLI](https://docs.amplify.aws/cli/start/install#install-the-amplify-cli)
 
-### GCP - Cloud Storage
+### GCP: Cloud Storage
 
 - [Hosting a static website using HTTP](https://cloud.google.com/storage/docs/hosting-static-website-http)
 - [Hosting a static website](https://cloud.google.com/storage/docs/hosting-static-website#storage-create-bucket-console)

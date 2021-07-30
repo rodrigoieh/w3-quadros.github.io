@@ -1,5 +1,3 @@
-/*** Object for previews ***/
-
 class Quadro {
     constructor(id, type, path, preview, filename, extension, directory, visible) {
         this.id = id;
@@ -17,86 +15,6 @@ class Quadro {
     }
 }
 
-/*** Connects to PhantomCloudJS to get an image preview (snapshot) ***/
-
-const getElementImageSourceBackup = (img) => {
-    const apiKey = 'ak-08259-02jjr-yw60d-m1k8w-bev11';
-    const host = 'https://5e1010961d25.ngrok.io';
-    const url = `${host}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
-    const zoomFactor = 1;
-    const height = 700;
-    const width = 700;
-    const parameters = {
-        target: `https://phantomjscloud.com/api/browser/v2/${apiKey}/`,
-        request: `?request={url:%22${url}%22,`,
-        renderType: `renderType:%22jpeg%22,`,
-        renderSettings: `renderSettings:{viewport:{width:${width},height:${height}},clipRectangle:{width:${width},height:${height}},`,
-        zoomFactor: `zoomFactor:${zoomFactor}},`,
-        requestSettings: `requestSettings:{doneWhen:[{event:%22domReady%22}]}}`,
-    }
-    const buildSource = () =>
-        parameters.target +
-        parameters.request +
-        parameters.renderType +
-        parameters.renderSettings +
-        parameters.zoomFactor +
-        parameters.requestSettings;
-    return buildSource();
-}
-
-/*** Event handling functions ***/
-
-// Image source event handlers
-const debugPreviewImage = (event, img) => {
-    switch (event.type) {
-        case 'mouseover':
-            let tmp = img.cloneNode(true);
-            img.parentNode.replaceChild(tmp, img);
-            tmp.src = img.longdesc;
-            break;
-        case 'error':
-            console.error(img.src);
-            img.longdesc = getElementImageSourceBackup(img);
-            img.addEventListener('mouseover', event => debugPreviewImage(event, img));
-            break;
-        case 'abort':
-            break;
-        case 'load':
-        default:
-    }
-};
-
-// Toggles between display/hide, on images with id markers 'draft' and 'hidden'
-const toggleImageDisplay = () => {
-    let images = document.getElementsByTagName('img');
-    for (let i = 0; i < images.length; i++) {
-        let img = images[i];
-        if (img.id.includes('hidden')) {
-            let visible = img.style.display;
-            let display = 'none';
-            if (visible === display) display = 'inline';
-            img.style.display = display;
-        }
-    }
-};
-
-/*** Event listeners ***/
-
-const addEventListeners = () => {
-    // Handles key input events from clients keyboard
-    document.addEventListener('keydown', (event) => {
-        const key = event.key;
-        switch (key) {
-            case 'U':
-            case 'u':
-                toggleImageDisplay();
-                break;
-        }
-    });
-};
-
-/*** Html element builder/helper function for links ***/
-
 const getElementAnchor = (id, href, title = id) => {
     let a = document.createElement('a');
     a.id = `preview-a-${id}`;
@@ -105,11 +23,9 @@ const getElementAnchor = (id, href, title = id) => {
     return a;
 }
 
-/*** Html element builder/helper function for images ***/
-
 const getElementImage = (id, src, visible, width = 150, height = 150) => {
     let img = document.createElement('img');
-    img.id = `preview-img-${id}${visible ? '' : '-hidden'}`;
+    img.id = `preview-img-${id}`;
     img.src = src;
     img.alt = id;
     img.width = width;
@@ -118,31 +34,22 @@ const getElementImage = (id, src, visible, width = 150, height = 150) => {
     img.style.color = '#c86023';
     img.style.backgroundColor = 'transparent';
     img.style.backgroundColor = 'hsl(206,42%,23%)';
-    img.style.display = visible ? 'inherit' : 'none';
-    // img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
-    img.addEventListener('load', event => debugPreviewImage(event));
-    img.addEventListener('error', event => debugPreviewImage(event, img));
-    img.addEventListener('abort', event => debugPreviewImage(event));
-    return img;
+    img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
+   return img;
 };
 
-/*** Index main function ***/
-
-(function () {
-    let previews = document.getElementById('previews');
-    const directories = index.collection.reverse();
-    for (const directory of directories) {
-        const quadros = directory.collection;
-        if (quadros !== undefined) {
-            const k = quadros.length;
-            for (let i = k - 1; i >= 0; i--) {
-                const quadro = Quadro.class(quadros[i]);
-                let a = getElementAnchor(quadro.id, quadro.path);
-                const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
-                a.appendChild(image);
-                previews.appendChild(a);
-            }
+let previews = document.getElementById('previews');
+const directories = index.collection.reverse();
+for (const directory of directories) {
+    const quadros = directory.collection;
+    if (quadros !== undefined) {
+        const k = quadros.length;
+        for (let i = k - 1; i > 0; i--) {
+            const quadro = Quadro.class(quadros[i]);
+            let a = getElementAnchor(quadro.id, quadro.path);
+            const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
+            a.appendChild(image);
+            previews.appendChild(a);
         }
     }
-    addEventListeners();
-}());
+}

@@ -34,6 +34,8 @@
 - [SOF - CSS Square background - image](https://stackoverflow.com/questions/53425836/css-square-background-image)
 - [SOF - querySelector, wildcard element match?](https://stackoverflow.com/questions/8714090/queryselector-wildcard-element-match/8714421)
 - [SOF - How to wait until an element exists?](https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists)
+- [SOF - How to add a custom right-click menu to a webpage?](https://stackoverflow.com/questions/4909167/how-to-add-a-custom-right-click-menu-to-a-webpage)
+- [SOF - How do I iterate through table rows and cells in JavaScript?](https://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript)
 - [W3S - HTML Drag and Drop API](https://www.w3schools.com/html/html5_draganddrop.asp)
 - [W3S - How TO - Create a Draggable HTML Element](https://www.w3schools.com/howto/howto_js_draggable.asp)
 - [W3S - Drag the W3Schools image into the rectangle](https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop)
@@ -43,6 +45,9 @@
 - [W3S - The font-style Property](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_font-style)
 - [W3S - CSS Fonts](https://www.w3schools.com/css/css_font.asp)
 - [W3S - HTML DOM cloneNode() Method](https://www.w3schools.com/jsref/met_node_clonenode.asp)
+- [W3S - HTML <img> Tag](https://www.w3schools.com/tags/tag_img.asp)
+- [W3S - The img longdesc attribute](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_img_longdesc)
+- [Mozilla - Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Mozilla - async function expression](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
 - [Mozilla - HTMLElement](https://developer.mozilla.org/en-US/docs/Web/CSS/var())
 - [Mozilla - HTMLImageElement](https://developer.mozilla.org/en-US/docs/Web/CSS/env())
@@ -84,7 +89,7 @@
 
 ## CSS Cascading Style Sheets
 
-### Houdini
+## Houdini
 
 - [W3 Playground - test-css-houdini/ref-01](https://w3-playground-github-io.vercel.app/test-css-houdini/ref-01)
 - [GitHub - w3c/css-houdini-drafts](https://github.com/w3c/css-houdini-drafts)
@@ -142,7 +147,7 @@
 - https://favicon.io/favicon-converter/
 - [Favicon checker](https://realfavicongenerator.net/favicon_checker?protocol=https&site=rodrigoieh.github.io%2Fw3-quadros.github.io%2Farchives%2F#.YOjN9hNKhXh)
 
-## Gradients Utils
+## Toolkit: Gradients
 
 - [HTML CSS Color Picker](https://www.htmlcsscolor.com)
 - [CSS3 Patterns Gallery](https://projects.verou.me/css3patterns/#cicada-stripes)
@@ -178,10 +183,11 @@
 
 - [User Data Directory](https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/user_data_dir.md)
 
-### PhantomJsCloud 
+### Headless Browser: PhantomJsCloud
 
 - [Web Browser as a Service](https://phantomjscloud.com)
 - [Demo](https://phantomjscloud.com/api/browser/v2/a-demo-key-with-low-quota-per-ip-address/?request={url:%22https://www.bbc.com/news%22,renderType:%22jpeg%22,renderSettings:{viewport:{width:640,height:500},clipRectangle:{width:640,height:500},zoomFactor:0.45},requestSettings:{doneWhen:[{event:%22domReady%22}]}})
+- [Automation API Documentation](https://phantomjscloud.com/docs/http-api/automation/)
 
 ## IDE
 
@@ -191,14 +197,14 @@
 
 ## Cloud
 
-### AWS - S3
+### AWS: S3
 
 - [How to Store Your App Photos in the Cloud Using Amazon S3 [tutorial and code samples]](https://aws.amazon.com/blogs/mobile/store-your-photos-in-the-cloud-using-amazon-s3/)
 - [Amplify Framework Documentation](https://docs.amplify.aws/)
 - [Welcome to the AWS Amplify Console](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)
 - [Install the Amplify CLI](https://docs.amplify.aws/cli/start/install#install-the-amplify-cli)
 
-### GCP - Cloud Storage
+### GCP: Cloud Storage
 
 - [Hosting a static website using HTTP](https://cloud.google.com/storage/docs/hosting-static-website-http)
 - [Hosting a static website](https://cloud.google.com/storage/docs/hosting-static-website#storage-create-bucket-console)

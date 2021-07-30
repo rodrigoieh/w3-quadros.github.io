@@ -5,6 +5,9 @@
 - [MDN Web Docs](https://github.com/mdn)
 - [mdn/content](https://github.com/mdn/content)
 - [CSS Gradients](https://css-tricks.com/css3-gradients/)
+- [CSS Background Patterns From CodePen](https://freebiesupply.com/blog/css-background-patterns/)
+- [Transparent Textures](https://www.transparenttextures.com/)
+- [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/)
 - [30 seconds of code - parseCookie](https://www.30secondsofcode.org/js/s/parse-cookie)
 - [Building the Zig-Zag Gradient Lab](https://css-irl.info/building-the-zig-zag-gradient-lab/)
 - [Explained: Creating a zigzag pattern with just CSS](https://dev.to/cchana/explained-creating-a-zigzag-pattern-with-just-css-13g1)
@@ -19,7 +22,8 @@
 - [Wikipedia - Hue](https://en.wikipedia.org/wiki/Hue)
 - [Wikipedia - Lacunarity](https://en.wikipedia.org/wiki/Lacunarity)
 - [Box-shadow, one of CSS3’s best new features](https://www.css3.info/preview/box-shadow/)
-- [Understanding Lacuna Value](https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html)
+- [W3C - CSS Values and Units Module Level 3, calc](https://www.w3.org/TR/css3-values/#calc)
+- [W3O - Understanding Lacuna Value](https://lists.w3.org/Archives/Public/www-svg/2012Aug/0145.html)
 - [Check whether an image is loaded with JavaScript](https://www.techiedelight.com/check-whether-image-is-loaded-with-javascript/)
 - [SpryMedia](http://sprymedia.co.uk/)
 - [SpryMedia - secret](http://sprymedia.co.uk/article/Secret)
@@ -86,6 +90,7 @@
 - [DataTables Compatibility](https://www.datatables.net/download/compatibility)
 - [alert](http://sprymedia.co.uk/article/Alert+-+Javascript+dialogue+controls)
 - [html2canvas](https://html2canvas.hertzen.com/)
+- [CSS Naming Conventions that Will Save You Hours of Debugging](https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
 
 ## CSS Cascading Style Sheets
 

@@ -35,6 +35,7 @@
 - [SOF - querySelector, wildcard element match?](https://stackoverflow.com/questions/8714090/queryselector-wildcard-element-match/8714421)
 - [SOF - How to wait until an element exists?](https://stackoverflow.com/questions/5525071/how-to-wait-until-an-element-exists)
 - [SOF - How to add a custom right-click menu to a webpage?](https://stackoverflow.com/questions/4909167/how-to-add-a-custom-right-click-menu-to-a-webpage)
+- [SOF - How do I iterate through table rows and cells in JavaScript?](https://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript)
 - [W3S - HTML Drag and Drop API](https://www.w3schools.com/html/html5_draganddrop.asp)
 - [W3S - How TO - Create a Draggable HTML Element](https://www.w3schools.com/howto/howto_js_draggable.asp)
 - [W3S - Drag the W3Schools image into the rectangle](https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop)

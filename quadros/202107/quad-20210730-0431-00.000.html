@@ -39,15 +39,15 @@
         b: 'rgba(89,8,8,0.56)',
         c: 'rgba(101,86,86,0.5)'
     };
-    let countX = 0;
+    let rows = 0;
     let section = 4;
     setCellContentOverride = (td, i, j, y, x) => {
-        if (countX++ < section / 2) {
+        if (rows++ < section / 2) {
             td.style.background = palette.b;
         } else {
             td.style.background = palette.a
         }
-        if (countX === section) countX = 0;
+        if (rows === section) rows = 0;
         td.style.border = `1px ${palette.c} solid`;
     };
     main(n, m);

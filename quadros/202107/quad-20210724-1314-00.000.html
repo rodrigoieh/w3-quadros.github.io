@@ -38,7 +38,7 @@
         background: linear-gradient(var(--rotation), var(--a), var(--b));
     }
 
-    td.cell_style {
+    td.cell {
         border: var(--border);
         background-color: transparent;
     }
@@ -62,7 +62,7 @@
         {"a": `#000000ff`, "b": `#282828ff`}
     ];
 
-    const cellStyle = 'cell_style';
+    const cellStyle = 'cell';
     setCellContentOverride = (td, i, j, y, x) => {
         td.className = `td ${cellStyle}`;
     }

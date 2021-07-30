@@ -55,7 +55,7 @@
                 var(--db2));
     }
 
-    td.cell_style {
+    td.cell {
         background-color: white;
         border: 1px rgba(255, 255, 255, 0.1) solid;
         opacity: 20%;
@@ -63,7 +63,7 @@
 </style>
 <body>
 <script>
-    const cellStyle = 'cell_style';
+    const cellStyle = 'cell';
     setCellContentOverride = (td, i, j, y, x) => td.className = `td ${cellStyle}`;
     main(10, 10);
 </script>

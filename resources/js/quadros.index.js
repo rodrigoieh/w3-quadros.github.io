@@ -21,8 +21,8 @@ class Quadro {
 
 const getElementImageSourceBackup = (img) => {
     const apiKey = 'ak-08259-02jjr-yw60d-m1k8w-bev11';
-    const host = 'https://3757ef53f575.ngrok.io';
-    const url = `${host}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
+    const ngrok = 'https://3757ef53f575.ngrok.io';
+    const url = `${ngrok}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
     const zoomFactor = 1;
     const height = 700;
     const width = 700;
@@ -43,57 +43,6 @@ const getElementImageSourceBackup = (img) => {
         parameters.requestSettings;
     return buildSource();
 }
-
-/*** Event handling functions ***/
-
-// Image source event handlers
-const debugPreviewImage = (event, img) => {
-    switch (event.type) {
-        case 'mouseover':
-            let tmp = img.cloneNode(true);
-            img.parentNode.replaceChild(tmp, img);
-            tmp.src = img.longdesc;
-            break;
-        case 'error':
-            console.error(img.src);
-            img.longdesc = getElementImageSourceBackup(img);
-            img.addEventListener('mouseover', event => debugPreviewImage(event, img));
-            break;
-        case 'abort':
-            break;
-        case 'load':
-        default:
-    }
-};
-
-// Toggles between display/hide, on images with id markers 'draft' and 'hidden'
-const toggleImageDisplay = () => {
-    let images = document.getElementsByTagName('img');
-    for (let i = 0; i < images.length; i++) {
-        let img = images[i];
-        if (img.id.includes('hidden')) {
-            let visible = img.style.display;
-            let display = 'none';
-            if (visible === display) display = 'inline';
-            img.style.display = display;
-        }
-    }
-};
-
-/*** Event listeners ***/
-
-const addEventListeners = () => {
-    // Handles key input events from users keyboard
-    document.addEventListener('keydown', (event) => {
-        const key = event.key;
-        switch (key) {
-            case 'U':
-            case 'u':
-                toggleImageDisplay();
-                break;
-        }
-    });
-};
 
 /*** Html element builder/helper function for links ***/
 
@@ -128,21 +77,65 @@ const getElementImage = (id, src, visible, width = 150, height = 150) => {
 
 /*** Index main function ***/
 
-(function () {
-    let previews = document.getElementById('previews');
-    const directories = index.collection.reverse();
-    for (const directory of directories) {
-        const quadros = directory.collection;
-        if (quadros !== undefined) {
-            const k = quadros.length;
-            for (let i = k - 1; i > 0; i--) {
-                const quadro = Quadro.class(quadros[i]);
-                let a = getElementAnchor(quadro.id, quadro.path);
-                const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
-                a.appendChild(image);
-                previews.appendChild(a);
-            }
+let previews = document.getElementById('previews');
+const directories = index.collection.reverse();
+for (const directory of directories) {
+    const quadros = directory.collection;
+    if (quadros !== undefined) {
+        const k = quadros.length;
+        for (let i = k - 1; i > 0; i--) {
+            const quadro = Quadro.class(quadros[i]);
+            let a = getElementAnchor(quadro.id, quadro.path);
+            const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
+            a.appendChild(image);
+            previews.appendChild(a);
         }
     }
-    addEventListeners();
-}());
+}
+/*** Event handling functions ***/
+
+// Image source event handlers
+const debugPreviewImage = (event, img) => {
+    switch (event.type) {
+        case 'mouseover':
+            let tmp = img.cloneNode(true);
+            img.parentNode.replaceChild(tmp, img);
+            tmp.src = img.longdesc;
+            break;
+        case 'error':
+            console.error(img.src);
+            img.longdesc = getElementImageSourceBackup(img);
+            img.addEventListener('mouseover', event => debugPreviewImage(event, img));
+            break;
+        case 'abort':
+            break;
+        case 'load':
+        default:
+    }
+};
+
+// Toggles between display/hide, on images with id markers 'draft' and 'hidden'
+const toggleImageDisplay = () => {
+    let images = document.getElementsByTagName('img');
+    for (let i = 0; i < images.length; i++) {
+        let img = images[i];
+        if (img.id.includes('hidden')) {
+            let visible = img.style.display;
+            let display = 'none';
+            if (visible === display) display = 'inline';
+            img.style.display = display;
+        }
+    }
+}
+
+/*** Event listeners ***/
+
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    switch (key) {
+        case 'U':
+        case 'u':
+            toggleImageDisplay();
+            break;
+    }
+});

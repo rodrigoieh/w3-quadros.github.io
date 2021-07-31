@@ -51,6 +51,7 @@
 - [W3S - HTML DOM cloneNode() Method](https://www.w3schools.com/jsref/met_node_clonenode.asp)
 - [W3S - HTML <img> Tag](https://www.w3schools.com/tags/tag_img.asp)
 - [W3S - The img longdesc attribute](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_img_longdesc)
+- [W3S - CSS display Property](https://www.w3schools.com/cssref/pr_class_display.asp)
 - [Mozilla - Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Mozilla - async function expression](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
 - [Mozilla - HTMLElement](https://developer.mozilla.org/en-US/docs/Web/CSS/var())
@@ -91,6 +92,7 @@
 - [alert](http://sprymedia.co.uk/article/Alert+-+Javascript+dialogue+controls)
 - [html2canvas](https://html2canvas.hertzen.com/)
 - [CSS Naming Conventions that Will Save You Hours of Debugging](https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
+- [Can I use? mdn-api_css_paintworklet](https://caniuse.com/mdn-api_css_paintworklet)
 
 ## CSS Cascading Style Sheets
 

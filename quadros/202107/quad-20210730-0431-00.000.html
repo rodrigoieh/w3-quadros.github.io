@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    :root {
+        --body-background: #393935;
+        --td-background: #e5e0e090;
+        --td-border: 0px black solid;
+        --table-border: 0px white solid;
+    }
+
+    body {
+        background: var(--body-background);
+    }
+
+    table {
+        border: var(--table-border);
+    }
+
+    td {
+        border: var(--td-border);
+        background: var(--td-background);
+    }
+</style>
+<body>
+<script>
+    let transform = (n, m) => {
+        let demo = document.getElementById('demo');
+        let table = document.getElementById('table');
+        let tmp = document.createElement('table');
+        for (let i = 0, row; row = table.rows[i]; i++) {
+            const r1 = row.cloneNode(true);
+            const r2 = row.cloneNode(true);
+            tmp.appendChild(r1);
+            tmp.appendChild(r2);
+            // for (let j = 0, col; col = row.cells[j]; j++) console.debug(col);
+        }
+        demo.removeChild(table);
+        demo.appendChild(tmp);
+    };
+</script>
+<script>
+    'use strict';
+    const palette = {
+        a: 'rgba(187,183,183,0.5)',
+        b: 'rgba(89,8,8,0.56)',
+        c: 'rgba(101,86,86,0.5)'
+    };
+    const quads = 5;
+    n = quads;
+    m = quads * 2;
+    let colCount = 0;
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (colCount++ < 2) {
+            td.style.background = palette.b;
+        } else {
+            td.style.background = palette.a
+        }
+        if (colCount === 4) colCount = 0;
+        td.style.border = `1px ${palette.c} solid`;
+    };
+    main(n, m);
+    transform(n, m);
+</script>
+</body>
+</html>

@@ -21,8 +21,8 @@ class Quadro {
 
 const getElementImageSourceBackup = (img) => {
     const apiKey = 'ak-08259-02jjr-yw60d-m1k8w-bev11';
-    const ngrok = 'https://3757ef53f575.ngrok.io';
-    const url = `${ngrok}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
+    const host = 'https://3757ef53f575.ngrok.io';
+    const url = `${host}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
     const zoomFactor = 1;
     const height = 700;
     const width = 700;
@@ -67,7 +67,7 @@ const getElementImage = (id, src, visible, width = 150, height = 150) => {
     img.style.color = '#c86023';
     img.style.backgroundColor = 'transparent';
     img.style.backgroundColor = 'hsl(206,42%,23%)';
-    // img.style.display = visible ? 'inherit' : 'none';
+    img.style.display = visible ? 'inherit' : 'none';
     // img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
     img.addEventListener('load', event => debugPreviewImage(event));
     img.addEventListener('error', event => debugPreviewImage(event, img));

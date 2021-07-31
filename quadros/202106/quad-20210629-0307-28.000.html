@@ -2,7 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="../../resources/js/quadros.style.js"></script>
-    <script src="../../resources/js/quadros.chessboard.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
     <title>chessboard</title>
 </head>
@@ -46,6 +47,13 @@
         /*border: 1px solid #1E1E2080;*/
     }
 </style>
-<body onload="main()">
+<body>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.className = ((i + j) & 1) ? 'td a' : 'td b';
+    }
+    main(8, 8)
+    document.body.style.zoom = '100%';
+</script>
 </body>
 </html>

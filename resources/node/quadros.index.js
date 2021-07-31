@@ -27,6 +27,7 @@ function ls(object) {
         data.type = 'file';
         data.id = path.basename(object).split('.').slice(0, -1).join('.');
         data.preview = storage.concat('/', object.replace('html', 'jpeg'));
+        data.preview = data.preview.replace(/.draft|.hidden/, '');
         data.filename = path.basename(object);
         data.extension = path.extname(object);
         data.directory = path.dirname(object);

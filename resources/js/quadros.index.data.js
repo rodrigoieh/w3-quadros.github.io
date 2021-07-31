@@ -1089,7 +1089,7 @@ const index =  {
           filename: "quad-20210730-1631-00.002.html",
           extension: ".html",
           directory: "quadros/202107",
-          visible: true
+          visible: false
         },
         {
           id: "quad-20210730-1631-00.003",

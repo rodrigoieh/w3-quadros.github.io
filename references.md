@@ -61,6 +61,7 @@
 - [Mozilla - Element: scroll event](https://developer.mozilla.org/en-US/docs/Web/CSS/@media)
 - [Mozilla - Writing style guide](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
 - [Mozilla - Math.random()](https://developer.mozilla.org/en-US/docs/Web/CSS/@document)
+- [Mozilla - Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [Mozilla - @document](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 - [Mozilla - @supports](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d())
 - [Mozilla - @media](https://developer.mozilla.org/en-US/docs/MDN/Guidelines/Writing_style_guide)

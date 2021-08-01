@@ -83,7 +83,7 @@ const toggleImageDisplay = () => {
 /*** Event listeners ***/
 
 const addEventListeners = () => {
-    // Handles key input events from users keyboard
+    // Handles key input events from clients keyboard
     document.addEventListener('keydown', (event) => {
         const key = event.key;
         switch (key) {

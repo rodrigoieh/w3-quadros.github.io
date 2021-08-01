@@ -21,7 +21,7 @@ class Quadro {
 
 const getElementImageSourceBackup = (img) => {
     const apiKey = 'ak-08259-02jjr-yw60d-m1k8w-bev11';
-    const host = 'https://blocks.xronos.cl';
+    const host = 'https://3757ef53f575.ngrok.io';
     const url = `${host}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
     const zoomFactor = 1;
     const height = 700;
@@ -44,54 +44,6 @@ const getElementImageSourceBackup = (img) => {
     return buildSource();
 }
 
-/*** Html element builder/helper function for links ***/
-
-const getElementAnchor = (id, href, title = id) => {
-    let a = document.createElement('a');
-    a.id = `preview-a-${id}`;
-    a.title = title;
-    a.href = '/'.concat(href);
-    return a;
-}
-
-/*** Html element builder/helper function for images ***/
-
-const getElementImage = (id, src, visible, width = 150, height = 150) => {
-    let img = document.createElement('img');
-    img.id = `preview-img-${id}${visible ? '' : '-hidden'}`;
-    img.src = src;
-    img.alt = id;
-    img.width = width;
-    img.height = height;
-    img.style.cursor = 'zoom-in';
-    img.style.color = '#c86023';
-    img.style.backgroundColor = 'transparent';
-    img.style.backgroundColor = 'hsl(206,42%,23%)';
-    img.style.display = visible ? 'inherit' : 'none';
-    // img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
-    img.addEventListener('load', event => debugPreviewImage(event));
-    img.addEventListener('error', event => debugPreviewImage(event, img));
-    img.addEventListener('abort', event => debugPreviewImage(event));
-    return img;
-};
-
-/*** Index main function ***/
-
-let previews = document.getElementById('previews');
-const directories = index.collection.reverse();
-for (const directory of directories) {
-    const quadros = directory.collection;
-    if (quadros !== undefined) {
-        const k = quadros.length;
-        for (let i = k - 1; i > 0; i--) {
-            const quadro = Quadro.class(quadros[i]);
-            let a = getElementAnchor(quadro.id, quadro.path);
-            const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
-            a.appendChild(image);
-            previews.appendChild(a);
-        }
-    }
-}
 /*** Event handling functions ***/
 
 // Image source event handlers
@@ -126,16 +78,71 @@ const toggleImageDisplay = () => {
             img.style.display = display;
         }
     }
-}
+};
 
 /*** Event listeners ***/
 
-document.addEventListener('keydown', (event) => {
-    const key = event.key;
-    switch (key) {
-        case 'U':
-        case 'u':
-            toggleImageDisplay();
-            break;
+const addEventListeners = () => {
+    // Handles key input events from users keyboard
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        switch (key) {
+            case 'U':
+            case 'u':
+                toggleImageDisplay();
+                break;
+        }
+    });
+};
+
+/*** Html element builder/helper function for links ***/
+
+const getElementAnchor = (id, href, title = id) => {
+    let a = document.createElement('a');
+    a.id = `preview-a-${id}`;
+    a.title = title;
+    a.href = '/'.concat(href);
+    return a;
+}
+
+/*** Html element builder/helper function for images ***/
+
+const getElementImage = (id, src, visible, width = 150, height = 150) => {
+    let img = document.createElement('img');
+    img.id = `preview-img-${id}${visible ? '' : '-hidden'}`;
+    img.src = src;
+    img.alt = id;
+    img.width = width;
+    img.height = height;
+    img.style.cursor = 'zoom-in';
+    img.style.color = '#c86023';
+    img.style.backgroundColor = 'transparent';
+    img.style.backgroundColor = 'hsl(206,42%,23%)';
+    img.style.display = visible ? 'inherit' : 'none';
+    // img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
+    img.addEventListener('load', event => debugPreviewImage(event));
+    img.addEventListener('error', event => debugPreviewImage(event, img));
+    img.addEventListener('abort', event => debugPreviewImage(event));
+    return img;
+};
+
+/*** Index main function ***/
+
+(function () {
+    let previews = document.getElementById('previews');
+    const directories = index.collection.reverse();
+    for (const directory of directories) {
+        const quadros = directory.collection;
+        if (quadros !== undefined) {
+            const k = quadros.length;
+            for (let i = k - 1; i > 0; i--) {
+                const quadro = Quadro.class(quadros[i]);
+                let a = getElementAnchor(quadro.id, quadro.path);
+                const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
+                a.appendChild(image);
+                previews.appendChild(a);
+            }
+        }
     }
-});
+    addEventListeners();
+}());

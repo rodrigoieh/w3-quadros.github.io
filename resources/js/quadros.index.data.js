@@ -522,14 +522,14 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20210703-2108-00.000",
+          id: "quad-20210703-2108-00.000.hidden",
           type: "file",
-          path: "quadros/202107/quad-20210703-2108-00.000.html",
+          path: "quadros/202107/quad-20210703-2108-00.000.hidden.html",
           preview: "http://localhost:8001/quadros/202107/quad-20210703-2108-00.000.jpeg",
-          filename: "quad-20210703-2108-00.000.html",
+          filename: "quad-20210703-2108-00.000.hidden.html",
           extension: ".html",
           directory: "quadros/202107",
-          visible: true
+          visible: false
         },
         {
           id: "quad-20210703-2207-00.000",
@@ -852,24 +852,24 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20210711-2044-00.003",
+          id: "quad-20210711-2044-00.003.hidden",
           type: "file",
-          path: "quadros/202107/quad-20210711-2044-00.003.html",
+          path: "quadros/202107/quad-20210711-2044-00.003.hidden.html",
           preview: "http://localhost:8001/quadros/202107/quad-20210711-2044-00.003.jpeg",
-          filename: "quad-20210711-2044-00.003.html",
+          filename: "quad-20210711-2044-00.003.hidden.html",
           extension: ".html",
           directory: "quadros/202107",
-          visible: true
+          visible: false
         },
         {
-          id: "quad-20210711-2044-00.004",
+          id: "quad-20210711-2044-00.004.hidden",
           type: "file",
-          path: "quadros/202107/quad-20210711-2044-00.004.html",
+          path: "quadros/202107/quad-20210711-2044-00.004.hidden.html",
           preview: "http://localhost:8001/quadros/202107/quad-20210711-2044-00.004.jpeg",
-          filename: "quad-20210711-2044-00.004.html",
+          filename: "quad-20210711-2044-00.004.hidden.html",
           extension: ".html",
           directory: "quadros/202107",
-          visible: true
+          visible: false
         },
         {
           id: "quad-20210711-2044-00.005",

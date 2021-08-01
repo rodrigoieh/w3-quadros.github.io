@@ -1121,24 +1121,24 @@ const index =  {
           visible: false
         },
         {
-          id: "quad-20210711-2320-00.000",
+          id: "quad-20210711-2320-00.000.hidden",
           type: "file",
-          path: "quadros/308711/quad-20210711-2320-00.000.html",
+          path: "quadros/308711/quad-20210711-2320-00.000.hidden.html",
           preview: "https://quad.xronos.cl/quadros/308711/quad-20210711-2320-00.000.jpeg",
-          filename: "quad-20210711-2320-00.000.html",
+          filename: "quad-20210711-2320-00.000.hidden.html",
           extension: ".html",
           directory: "quadros/308711",
-          visible: true
+          visible: false
         },
         {
-          id: "quad-20210711-2320-00.001",
+          id: "quad-20210711-2320-00.001.hidden",
           type: "file",
-          path: "quadros/308711/quad-20210711-2320-00.001.html",
+          path: "quadros/308711/quad-20210711-2320-00.001.hidden.html",
           preview: "https://quad.xronos.cl/quadros/308711/quad-20210711-2320-00.001.jpeg",
-          filename: "quad-20210711-2320-00.001.html",
+          filename: "quad-20210711-2320-00.001.hidden.html",
           extension: ".html",
           directory: "quadros/308711",
-          visible: true
+          visible: false
         },
         {
           id: "quad-20210711-2320-01.000",

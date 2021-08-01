@@ -32,8 +32,8 @@
 
     function render(n, m) {
         let body = document.body,
-            table = document.createElement('table'),
-            demo = document.createElement('div');
+            demo = document.createElement('div'),
+            table = document.createElement('table');
         const random = Math.floor(Math.random() * 10) & 1;
         if (random)
             body.setAttribute('class', 'body a');

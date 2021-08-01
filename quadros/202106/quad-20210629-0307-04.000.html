@@ -47,17 +47,18 @@
 
     function load() {
         let body = document.body,
+            demo = document.createElement('div'),
             table = document.createElement('table');
-        table.addEventListener('click',  () => {
-            render(n, m)
-        });
-        table.setAttribute('id', 'demo');
-        body.appendChild(table);
-        styleSetPositionCenter(table);
+        table.addEventListener('click', () => render(n, m));
+        demo.setAttribute('id', 'demo');
+        table.setAttribute('id', 'table');
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
     }
 
     function render(n, m) {
-        let table = document.getElementById('demo');
+        let table = document.getElementById('table');
         table.innerHTML = '';
         for (let i = 0; i < n; i++) {
             let tr = table.insertRow();

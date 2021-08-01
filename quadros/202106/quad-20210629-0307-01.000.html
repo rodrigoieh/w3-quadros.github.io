@@ -32,6 +32,7 @@
 
     function load() {
         let body = document.body,
+            demo = document.createElement('div'),
             table = document.createElement('table');
         document.addEventListener('keydown', event => {
             const key = event.key;
@@ -47,9 +48,11 @@
             }
         });
         table.addEventListener('click', () => rotate());
-        table.setAttribute('id', 'demo');
-        body.appendChild(table);
-        styleSetPositionCenter(table);
+        demo.setAttribute('id', 'demo');
+        table.setAttribute('id', 'table');
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
     }
 
     function rotate(degrees = 90) {
@@ -60,7 +63,7 @@
     }
 
     function render(n, m, rotation = 0) {
-        let table = document.getElementById('demo');
+        let table = document.getElementById('table');
         table.innerHTML = '';
         for (let i = 0; i < n; i++) {
             let tr = table.insertRow();

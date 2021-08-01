@@ -135,7 +135,7 @@ const getElementImage = (id, src, visible, width = 150, height = 150) => {
         const quadros = directory.collection;
         if (quadros !== undefined) {
             const k = quadros.length;
-            for (let i = k - 1; i > 0; i--) {
+            for (let i = k - 1; i >= 0; i--) {
                 const quadro = Quadro.class(quadros[i]);
                 let a = getElementAnchor(quadro.id, quadro.path);
                 const image = getElementImage(quadro.id, quadro.preview, quadro.visible);

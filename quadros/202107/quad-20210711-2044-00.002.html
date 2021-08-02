@@ -8,32 +8,21 @@
     <title>gradient</title>
 </head>
 <style>
-    * {
-        filter: grayscale(50%);
-    }
-
     .background {
         margin: 0 auto;
         --g: transparent 0 calc(50px - 1px), #073155 0 50px;
-        background:
-                repeating-linear-gradient(to right, var(--g)),
-                repeating-linear-gradient(to bottom, var(--g)),
-                #cad4ce;
-                /*#cad4ca;*/
+        background: repeating-linear-gradient(to right, var(--g)),
+        repeating-linear-gradient(to bottom, var(--g)),
+        #cad4ce;
     }
 </style>
 <body class="background">
 <script>
     setCellContentOverride = (td, i, j, y, x) => {
-        if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
-            td.style.backgroundColor = `#ffffff33`;
-        else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1) {
-            td.style.backgroundColor = '#ffffff';
-            td.style.opacity = '33%';
-        }
+        if (i + j !== 0 && i - j !== 0 && i + j !== x - 1)
+            td.style.backgroundColor = '#5c3645';
     };
-    main(6, 7);
-    // Reference: https://stackoverflow.com/questions/53425836/css-square-background-image
+    main(10, 10);
 </script>
 </body>
 </html>

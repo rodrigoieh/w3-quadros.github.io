@@ -9,22 +9,43 @@
 </head>
 <body>
 <script>
-    let r = 232, g = 7, b = 13, a = 1;
     setCellContentOverride = (td, i, j, y, x) => {
         if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
-            td.style.backgroundColor = `rgba(${r++},${g++},${b++},${a})`;
+            td.style.backgroundColor = `#f00`;
         else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1)
             td.style.border = '1px white solid';
     };
-    y = 3, x = 3;
-    main(y, x);
+    let a = 11, b = 11;
+    main(a, b);
 
-    document.addEventListener('click', (event) => {
+    let reload = (p = a, q = b) => {
         let demo = document.getElementById('demo');
         document.body.removeChild(demo);
-        let a = getRandomInt(y, getRandomInt(y, Math.pow(y, 2)));
-        let b = getRandomInt(x, getRandomInt(x, Math.pow(x, 2)));
-        main(a, b);
+        if (p === 15) a = 5;
+        if (q === 15) b = 5;
+        main(p, q);
+    };
+
+    document.addEventListener('click', (event) => {
+        reload();
+    });
+
+    document.addEventListener('keydown', event => {
+        const key = event.key;
+        switch (key) {
+            case 'y':
+            case 'Y':
+                reload(++a, b);
+                break;
+            case 'x':
+            case 'X':
+                reload(a, ++b);
+                break;
+            case 'r':
+            case 'R':
+                reload(4, 5);
+                break;
+        }
     });
 </script>
 </body>

@@ -37,20 +37,84 @@
 <div id="elementInnerHtml"></div>
 <script>
     'use strict';
+    const arrows = {
+        B: '&#x2190;', R: '&#8595;', F: '&#8594;', L: '&#8593;',
+        W: '&#x2190;', N: '&#8593;', E: '&#8594;', S: '&#8595;',
+        NW: '&#8598;', NE: '&#8599;', SE: '&#8600;', SW: '&#8601;'
+    };
     n = 10;
     m = 10;
     let row = 0, type = 0;
-    const palette = {"a": "red", "b": "blue"};
+    const palette = {
+        a: "#f00",
+        b: "#0f0",
+        c: "#00f",
+        d: "#bbce1f"
+    };
     let count = 1;
     setCellContentOverride = (td, i, j, y, x) => {
-        debug(i, j, y, x, count, i & 1);
-        if (j === x - 1) warn();
+        td.id = `(${i},${j})`;
+        // console.debug(td.id);
+        // debug(i, j, y, x, count, i & 1);
+        // if (j === x - 1) warn();
         if (i & 1 && count & 1)
-            td.style.background = palette.b;
+            td.style.background = palette.d;
         if (j === x && i & 1) count++;
     };
     main(n, m)
-    // Background
+
+    let y = 0;
+    let x = 0;
+
+    const update = (td, backgroundColor, color, fontSize, innerHtml) => {
+        td.style.backgroundColor = backgroundColor;
+        td.style.color = color;
+        td.style.fontSize = fontSize;
+        td.innerHTML = innerHtml;
+    };
+
+    const getArrow = (key) => {
+        switch (key) {
+            case 'F':
+                return arrows.F;
+            case 'B':
+                return arrows.B;
+            case 'L':
+                return arrows.L;
+            case 'R':
+                return arrows.R;
+        }
+    };
+
+    const restore = (y, x) => {
+        let td = document.getElementById(`(${y},${x})`);
+        update(td, 'red', 'white', '20px', arrows.E)
+    };
+
+    const move = (y, x, key) => {
+        let td = document.getElementById(`(${y},${x})`);
+        update(td, 'red', 'white', '20px', getArrow(key))
+    };
+
+    document.addEventListener('keydown', event => {
+        const key = event.key.toUpperCase();
+        console.debug(key);
+        switch (key) {
+            case 'F':
+                move(y, ++x, key);
+                break;
+            case 'B':
+                move(y, --x, key);
+                break;
+            case 'L':
+                move(--y, x, key);
+                break;
+            case 'R':
+                move(++y, x, key);
+                break;
+        }
+    });
+
     // TODO, div square for text, make it proportional in size (font-size and dimensions) to demo tables.
     let elementInnerHtml = document.getElementById('elementInnerHtml');
     elementInnerHtml.innerText = demo.innerHTML;

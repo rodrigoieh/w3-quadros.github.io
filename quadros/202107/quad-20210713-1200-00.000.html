@@ -8,28 +8,21 @@
     <title>svg</title>
 </head>
 <style>
-    :root {
-        zoom: 1.5;
-        --svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='red'><circle cx='15' cy='15' r='7.5' /></svg>");
-    }
-
     body {
-        background: var(--svg);
-        background-color: #efeff9;
     }
 
-    #demo {
-        margin: auto;
-        width: 370px;
-        height: 200px;
-        border: 1px #ee0f24 dotted;
-        background: linear-gradient(-37deg, black 50%, transparent 50%);
-        opacity: 20%;
+    #demo{
+        background: linear-gradient(-15deg, #efe056 45%, white 50%, #6CA562 55%);
+    }
+
+    #table {
+        --svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' fill='red'><circle cx='15' cy='15' r='11' /></svg>");
+        background: var(--svg);
     }
 </style>
 <body>
 <script>
-    main(1, 1);
+    main(10, 10);
 </script>
 </body>
 </html>

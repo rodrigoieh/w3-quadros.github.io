@@ -152,7 +152,7 @@
 
 ### Favicon
 
-- https://favicon.io/favicon-converter/
+- [Favicon converter](https://favicon.io/favicon-converter)
 - [Favicon checker](https://realfavicongenerator.net/favicon_checker?protocol=https&site=rodrigoieh.github.io%2Fw3-quadros.github.io%2Farchives%2F#.YOjN9hNKhXh)
 
 ## Toolkit: Gradients

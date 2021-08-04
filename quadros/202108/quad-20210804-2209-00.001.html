@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <title>background</title>
+</head>
+<style>
+    :root {
+        --a: #a8afbe;
+        --b: #101317;
+        --x: 25px;
+        --g: transparent 0 calc(var(--x) - 1px), var(--a) 0 var(--x);
+        background: repeating-linear-gradient(to right, var(--g)),
+        repeating-linear-gradient(to bottom, var(--g)), var(--b);
+        margin: 0 auto;
+    }
+</style>
+<body>
+</body>
+</html>
+

@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+    <style>
+        :root {
+            opacity: 90%;
+        }
+
+        body {
+            background-color: #6163567f;
+        }
+    </style>
+</head>
+<body>
+<script>
+    selectors = [];
+    let index = previousChar('a');
+    const palette = [
+        '#ffffff', '#000000', '#7d7d7d80'
+    ];
+    for (let i = 0; i < palette.length; i++) selectors.push(index = nextChar(index));
+    styleSetSelectorsForElement('td', selectors, palette);
+    setCellContentOverride = (td, i, j, y, x) => {
+        let selection = 2;
+        if (i & 1 && j & 1) selection = 0;
+        else if (!(i & 1) && !(j & 1)) selection = 1;
+        td.className = `td ${selectors[selection]}`;
+    }
+    main(13, 13);
+</script>
+</body>
+</html>

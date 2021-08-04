@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    body {
+        background: #d2af23;
+        background: #9f8007;
+    }
+
+    table {
+        border: 1px white solid;
+        background: #d7ba13;
+        box-shadow: 0px 0px 50px 0px #d7ba13;
+        opacity: 90%;
+    }
+
+    td.line {
+        border-top: 80px rgb(8, 51, 90) solid;
+    }
+</style>
+<body>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (i === y - 2) td.setAttribute('class', `td line`);
+    };
+    main(10, 10);
+</script>
+</body>
+</html>

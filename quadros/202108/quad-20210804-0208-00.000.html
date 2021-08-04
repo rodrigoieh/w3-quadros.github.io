@@ -19,19 +19,38 @@
 </head>
 <body>
 <script>
+    const occurrences = (arr) => arr.reduce((a, b) => {
+        return a[b] ? ++a[b] : a[b] = 1, a
+    }, {});
+
+    selectors = [];
+    selections = [];
+    let index = previousChar('a');
+    let r = 34, g = 56, b = 30;
+    const N = 1;
+    const limit = 255;
+    const max = Math.max(Math.max(r, g), b);
     const palette = [
         '#22381e', '#585b3d', '#6a815b',
         '#4e5b4a', '#486044', '#677066'
     ];
-    selectors = [];
-    let index = previousChar('a');
+    // for (let i = max; i < limit; i++) palette.push(`rgb(${r += N},${g += N},${b += N})`);
     for (let i = 0; i < palette.length; i++) selectors.push(index = nextChar(index));
     styleSetSelectorsForElement('td', selectors, palette);
     setCellContentOverride = (td, i, j, y, x) => {
         const selection = Math.floor(Math.random() * selectors.length);
         td.className = `td ${selectors[selection]}`;
+        selections.push(selection);
     }
     main(20, 20);
+
+    debug = () => {
+        console.debug(r, g, b);
+        console.debug(selections.length);
+        console.debug(selections.sort((a, b) => a - b));
+        console.debug(occurrences(selections));
+        console.debug(palette);
+    };
 </script>
 </body>
 </html>

@@ -1129,6 +1129,66 @@ const index =  {
           extension: ".html",
           directory: "quadros/202108",
           visible: true
+        },
+        {
+          id: "quad-20210804-0627-00.000.draft",
+          type: "file",
+          path: "quadros/202108/quad-20210804-0627-00.000.draft.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210804-0627-00.000.jpeg",
+          filename: "quad-20210804-0627-00.000.draft.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: false
+        },
+        {
+          id: "quad-20210804-1200-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-1200-00.000.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210804-1200-00.000.jpeg",
+          filename: "quad-20210804-1200-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210804-1639-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-1639-00.000.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210804-1639-00.000.jpeg",
+          filename: "quad-20210804-1639-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210804-1645-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-1645-00.000.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210804-1645-00.000.jpeg",
+          filename: "quad-20210804-1645-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210804-1656-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-1656-00.000.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210804-1656-00.000.jpeg",
+          filename: "quad-20210804-1656-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210804-1700-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-1700-00.000.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210804-1700-00.000.jpeg",
+          filename: "quad-20210804-1700-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
         }
       ]
     },

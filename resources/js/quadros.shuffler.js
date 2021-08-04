@@ -15,7 +15,7 @@ function addEventListeners() {
     document.addEventListener('click', (event) => {
             const className = event.target.className;
             selection = selector.indexOf(className.split(' ').pop());
-            if (++selection === selector.length - 1) selection = 0;
+            if (++selection === selector.length) selection = 0;
             event.target.className = `${cellClass} ${selector[selection]}`;
         }
     );

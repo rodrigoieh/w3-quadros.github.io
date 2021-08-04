@@ -19,18 +19,22 @@
         td.b {
             background: #b35118;
         }
+
+        td.c {
+            background: #247a0a;
+        }
     </style>
 </head>
 <body>
 <script>
-    n = 12, m = 12;
     options = 'ab';
     selector = [...options];
+    selector.push(go() ? 'a' : 'b');
     setCellContentOverride = (td, i, j, y, x) => {
         const selection = Math.floor(Math.random() * selector.length);
         td.className = `td ${selector[selection]}`;
     }
-    main(n, m);
+    main(12, 12);
 </script>
 </body>
 </html>

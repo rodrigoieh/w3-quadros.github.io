@@ -17,6 +17,10 @@
 let debug = (...args) => console.debug('', ...args);
 let warn = (...args) => console.warn('', ...args);
 
+// Character accessors
+const nextChar = (c) => String.fromCharCode(c.charCodeAt(0) + 1);
+const previousChar = (c) => String.fromCharCode(c.charCodeAt(0) - 1);
+
 /*** Executed on-demand, functions: expanded ***/
 
 // Returns the name of the webpage file without its extension

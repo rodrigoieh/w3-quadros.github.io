@@ -8,15 +8,15 @@ const shuffler = () => {
 
 let cellClass = 'td';
 let options = 'ab';
-let selector = [...options];
+let selectors = [...options];
 let selection = 0;
 
 function addEventListeners() {
     document.addEventListener('click', (event) => {
             const className = event.target.className;
-            selection = selector.indexOf(className.split(' ').pop());
-            if (++selection === selector.length) selection = 0;
-            event.target.className = `${cellClass} ${selector[selection]}`;
+            selection = selectors.indexOf(className.split(' ').pop());
+            if (++selection === selectors.length) selection = 0;
+            event.target.className = `${cellClass} ${selectors[selection]}`;
         }
     );
 

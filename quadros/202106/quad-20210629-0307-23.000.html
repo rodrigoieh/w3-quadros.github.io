@@ -2,9 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
     <script src="../../resources/js/quadros.shuffler.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
-    <title></title>
+    <title>shuffle</title>
     <style>
         body {
             background-color: rgb(43, 43, 43);
@@ -19,6 +21,16 @@
         }
     </style>
 </head>
-<body onload="main()">
+<body>
+<script>
+    n = 12, m = 12;
+    options = 'ab';
+    selector = [...options];
+    setCellContentOverride = (td, i, j, y, x) => {
+        const selection = Math.floor(Math.random() * selector.length);
+        td.className = `td ${selector[selection]}`;
+    }
+    main(n, m);
+</script>
 </body>
 </html>

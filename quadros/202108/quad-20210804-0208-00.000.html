@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <script src="../../resources/js/quadros.shuffler.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>shuffle</title>
+    <style>
+        :root {
+            opacity: 80%;
+        }
+
+        body {
+            background-color: rgba(97, 99, 86, 0.5);
+        }
+    </style>
+</head>
+<body>
+<script>
+    const setStyles = (options, palette) => {
+        for (let i = 0; i < options.length; ++i) {
+            let style = document.createElement('style');
+            const styleSelector = `td.${options[i]}`;
+            const styleColor = `--color:${palette[i]};`;
+            const styleBackground = `background:var(--color);`;
+            // const styleBorder = `border:1px #ffffff solid;`;
+            style.innerHTML = `${styleSelector}{${styleColor}${styleBackground}}`;
+            document.head.appendChild(style);
+        }
+    }
+</script>
+<script>
+    const palette = [
+        '#22381e', '#585b3d', '#6a815b',
+        '#4e5b4a', '#486044', '#677066'
+    ];
+    options = 'abcdef';
+    selector = [...options];
+    setStyles(options, palette);
+    setCellContentOverride = (td, i, j, y, x) => {
+        const selection = Math.floor(Math.random() * selector.length);
+        td.className = `td ${selector[selection]}`;
+    }
+    main(20, 20);
+</script>
+</body>
+</html>

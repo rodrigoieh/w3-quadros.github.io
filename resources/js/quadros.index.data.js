@@ -1104,6 +1104,25 @@ const index =  {
       ]
     },
     {
+      id: "202108",
+      type: "folder",
+      path: "quadros/202108",
+      directory: "202108",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20210804-0208-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-0208-00.000.html",
+          preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-0208-00.000.jpeg",
+          filename: "quad-20210804-0208-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        }
+      ]
+    },
+    {
       id: "308711",
       type: "folder",
       path: "quadros/308711",

@@ -18,6 +18,18 @@ function styleTransform(element, elementRotationInDegrees) {
     element.style.webkitTransform = rotation;
 }
 
+const styleSetSelectorsForElement = (element, selectors, palette) => {
+    for (let i = 0; i < selectors.length; ++i) {
+        let style = document.createElement('style');
+        const styleSelector = `${element}.${selectors[i]}`;
+        const styleColor = `--color:${palette[i]};`;
+        const styleBackground = `background:var(--color);`;
+        // const styleBorder = `border:1px #ffffff solid;`;
+        style.innerHTML = `${styleSelector}{${styleColor}${styleBackground}}`;
+        document.head.appendChild(style);
+    }
+}
+
 /* Ux01 utils added for series quad-20210715-0231-00.xyz */
 const buildBorder = (weight, color = 'transparent', type = 'solid') => `${weight}px ${color} ${type}`;
 const buildStyle = (color = 'transparent') => `--b:${color};`;
@@ -30,3 +42,5 @@ let borders = {a: border(1, 'black'), b: border(1), none: border(0), default: bo
 let colors = {a: color('black'), b: color('white'), none: color('transparent'), default: color()};
 let sides = {left: '-left', right: '-right', top: '-top', bottom: '-bottom', all: '', default: ''};
 /* Ux01 */
+
+

@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charSet="UTF-8">
     <script src="../../resources/js/quadros.style.js"></script>
     <script src="../../resources/js/quadros.commons.js"></script>
     <script src="../../resources/js/quadros.table.js"></script>
@@ -60,12 +60,13 @@
         if (sectionY % blockSize === 0) td.style.background = `#0000ff50`;
         if (sectionX % blockSize === 0) td.style.background = `#00ff0050`;
     };
-
+    // Table data style setter
     setCellContentOverride = (td, i, j, y, x) => {
-        if (debugEnabled) setTableDataMetadata(td, i, j);
         // Section tracking
         if (j % blockSize === 0 && j !== 0) sectionX++;
         if (i % blockSize === 0 && j === 0) sectionY++;
+        // Debugging info
+        if (debugEnabled) setTableDataMetadata(td, i, j);
         // Divisions by block size
         if ((j + 1) % blockSize === 0) {
             td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
@@ -74,7 +75,7 @@
             td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
             // Divisions for inner quads
             if (sectionX & 1) {
-                td.style.borderTop = `${borderSizes[0]} ${palette[3]} solid`;
+                // td.style.borderTop = `${borderSizes[0]} ${palette[3]} solid`;
             }
         }
         // TODO ..

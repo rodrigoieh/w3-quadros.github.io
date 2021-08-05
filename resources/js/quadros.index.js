@@ -28,11 +28,11 @@ const getElementImageSourceBackup = (img) => {
     const width = 700;
     const parameters = {
         target: `https://phantomjscloud.com/api/browser/v2/${apiKey}/`,
-        request: `?request={url:%22${url}%22,`,
-        renderType: `renderType:%22jpeg%22,`,
+        request: `?request={url:"${url}",`,
+        renderType: `renderType:"jpeg",`,
         renderSettings: `renderSettings:{viewport:{width:${width},height:${height}},clipRectangle:{width:${width},height:${height}},`,
         zoomFactor: `zoomFactor:${zoomFactor}},`,
-        requestSettings: `requestSettings:{doneWhen:[{event:%22domReady%22}]}}`,
+        requestSettings: `requestSettings:{doneWhen:[{event:"domReady"}]}}`,
     }
     const buildSource = () =>
         parameters.target +

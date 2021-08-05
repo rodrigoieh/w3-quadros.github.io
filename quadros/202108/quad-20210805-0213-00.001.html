@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>tiles</title>
+</head>
+<style>
+    :root {
+        --color: #000000ff;
+        --coordinate: inline;
+        --index: none;
+        opacity: 95%;
+    }
+
+    table:hover {
+        --coordinate: none;
+        --index: inline;
+    }
+
+    td {
+        background: #620b0b;
+    }
+
+    .coordinate {
+        color: var(--color);
+        display: var(--coordinate);
+    }
+
+    .index {
+        color: var(--color);
+        display: var(--index);
+    }
+</style>
+<body>
+<script>
+    const palette = ['#ffffffdd'];
+    const borderSizes = ['5px', '10px'];
+    const blockSize = 2;
+    const gridSize = 7;
+    const a = blockSize * gridSize;
+    const b = blockSize * gridSize;
+    let sectionX = 0;
+    let sectionY = 0;
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (j % blockSize === 0 && j !== 0) sectionX++;
+        if (i % blockSize === 0 && j === 0) sectionY++;
+        if ((j + 1) % blockSize === 0) {
+            td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
+        }
+        if ((i + 1) % blockSize === 0) {
+            td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
+        }
+        if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
+            if (j % (blockSize * 2) === 0) {
+                td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
+            }
+        } else if (sectionY % blockSize !== 0 && sectionX % blockSize !== 0) {
+            if ((j + 2) % (blockSize * 2) === 0) {
+                td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
+            }
+        } else if (sectionY % blockSize === 0 && sectionX % blockSize !== 0) {
+            if ((i + 2) % (blockSize * 2) === 0) {
+                td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
+            }
+        } else if (sectionY % blockSize !== 0 && sectionX % blockSize === 0) {
+            if (i % (blockSize * 2) === 0) {
+                td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
+            }
+        }
+        if (j === 0) td.style.borderLeft = `${borderSizes[1]} ${palette[0]} solid`;
+        else if (j === x - 1) td.style.borderRight = `${borderSizes[1]} ${palette[0]} solid`;
+        if (i === 0) td.style.borderTop = `${borderSizes[1]} ${palette[0]} solid`;
+        else if (i === y - 1) td.style.borderBottom = `${borderSizes[1]} ${palette[0]} solid`;
+    }
+    main(a, b, 0);
+</script>
+</body>
+</html>

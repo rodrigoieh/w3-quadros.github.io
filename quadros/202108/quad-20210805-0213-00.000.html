@@ -20,7 +20,6 @@
     }
 
     td {
-        /*background: #620b0b;*/
         background: transparent;
         border: 1px var(--color) solid;
     }
@@ -37,18 +36,19 @@
 </style>
 <body>
 <script>
+    // Configuration
     const palette = ['#fff', '#fff', '#000', 'grey', 'orange'];
     const borderSizes = ['5px', '10px'];
     const blockSize = 2;
     const gridSize = 7;
     const a = blockSize * gridSize;
     const b = blockSize * gridSize;
-    let debugEnabled = true;
+    let debugEnabled = false;
     let sectionX = 0;
     let sectionY = 0;
     let k = 0;
+    // Coordinates and indexes
     const setTableDataMetadata = (td, i, j) => {
-        // Coordinates and indexes
         let coordinate = document.createElement('p');
         let index = document.createElement('p');
         coordinate.className = 'coordinate';
@@ -58,7 +58,9 @@
         td.appendChild(coordinate);
         td.appendChild(index);
         if (sectionY % blockSize === 0) td.style.background = `#0000ff50`;
+        if (sectionY % blockSize !== 0) td.style.background = `#ff000050`;
         if (sectionX % blockSize === 0) td.style.background = `#00ff0050`;
+        // if (sectionX % blockSize !== 0) td.style.background = `#ff000050`;
     };
     // Table data style setter
     setCellContentOverride = (td, i, j, y, x) => {
@@ -73,15 +75,29 @@
         }
         if ((i + 1) % blockSize === 0) {
             td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
-            // Divisions for inner quads
-            if (sectionX & 1) {
-                // td.style.borderTop = `${borderSizes[0]} ${palette[3]} solid`;
-            }
         }
-        // TODO ..
+        // Quad double vertical
         if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
             if (j % (blockSize * 2) === 0) {
                 td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
+            }
+        }
+        // Quad double vertical
+        else if (sectionY % blockSize !== 0 && sectionX % blockSize !== 0) {
+            if ((j + 2) % (blockSize * 2) === 0) {
+                td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
+            }
+        }
+        // Quad double horizontal
+        else if (sectionY % blockSize === 0 && sectionX % blockSize !== 0) {
+            if ((i + 2) % (blockSize * 2) === 0) {
+                td.style.borderBottom = `${borderSizes[0]} ${palette[3]} solid`;
+            }
+        }
+        // Quad double horizontal
+        else if (sectionY % blockSize !== 0 && sectionX % blockSize === 0) {
+            if (i % (blockSize * 2) === 0) {
+                td.style.borderBottom = `${borderSizes[0]} ${palette[3]} solid`;
             }
         }
         // Outer grid limits/margins
@@ -90,13 +106,13 @@
         if (i === 0) td.style.borderTop = `${borderSizes[1]} ${palette[2]} solid`;
         else if (i === y - 1) td.style.borderBottom = `${borderSizes[1]} ${palette[2]} solid`;
     }
+    // Renderer
     main(a, b, 0);
-
     // Toggles debugging information
     document.addEventListener('click', () => {
         debugEnabled = !debugEnabled;
         document.body.removeChild(demo);
-        k = 0;
+        k = sectionX = sectionY = 0;
         main(a, b, 0);
     });
 </script>

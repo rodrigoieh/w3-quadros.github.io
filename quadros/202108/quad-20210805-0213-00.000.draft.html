@@ -43,6 +43,7 @@
     const gridSize = 7;
     const a = blockSize * gridSize;
     const b = blockSize * gridSize;
+    let debugEnabled = true;
     let sectionX = 0;
     let sectionY = 0;
     let k = 0;
@@ -56,16 +57,15 @@
         index.textContent = `${k++}`;
         td.appendChild(coordinate);
         td.appendChild(index);
+        if (sectionY % blockSize === 0) td.style.background = `#0000ff50`;
+        if (sectionX % blockSize === 0) td.style.background = `#00ff0050`;
     };
 
     setCellContentOverride = (td, i, j, y, x) => {
-        setTableDataMetadata(td, i, j);
+        if (debugEnabled) setTableDataMetadata(td, i, j);
         // Section tracking
         if (j % blockSize === 0 && j !== 0) sectionX++;
         if (i % blockSize === 0 && j === 0) sectionY++;
-        if (sectionY % blockSize === 0) td.style.background = `#0000ff50`;
-        if (sectionX % blockSize === 0) td.style.background = `#00ff0050`;
-
         // Divisions by block size
         if ((j + 1) % blockSize === 0) {
             td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
@@ -78,8 +78,10 @@
             }
         }
         // TODO ..
-        if (j % (blockSize * 2) === 0) {
-            td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
+        if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
+            if (j % (blockSize * 2) === 0) {
+                td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
+            }
         }
         // Outer grid limits/margins
         if (j === 0) td.style.borderLeft = `${borderSizes[1]} ${palette[2]} solid`;
@@ -88,6 +90,14 @@
         else if (i === y - 1) td.style.borderBottom = `${borderSizes[1]} ${palette[2]} solid`;
     }
     main(a, b, 0);
+
+    // Toggles debugging information
+    document.addEventListener('click', () => {
+        debugEnabled = !debugEnabled;
+        document.body.removeChild(demo);
+        k = 0;
+        main(a, b, 0);
+    });
 </script>
 </body>
 </html>

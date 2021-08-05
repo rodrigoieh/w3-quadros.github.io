@@ -35,11 +35,11 @@
     };
     main(10, 10);
 
-    table.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', (e) => {
         const h = table.clientHeight;
         const y = e.clientY;
         let root = document.querySelector(':root');
-        if (y < h) root.style.setProperty('--light', `${h - y + 10}px`);
+        root.style.setProperty('--light', `${h - y}px`);
     });
 </script>
 </body>

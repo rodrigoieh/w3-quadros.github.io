@@ -1251,6 +1251,16 @@ const index =  {
           visible: false
         },
         {
+          id: "quad-20210805-0213-00.001.draft",
+          type: "file",
+          path: "quadros/202108/quad-20210805-0213-00.001.draft.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210805-0213-00.001.jpeg",
+          filename: "quad-20210805-0213-00.001.draft.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: false
+        },
+        {
           id: "quad-20210805-1610-00.000",
           type: "file",
           path: "quadros/202108/quad-20210805-1610-00.000.html",

@@ -9,17 +9,34 @@
 </head>
 <style>
     :root {
-        background: black;
+        --coordinate: inline;
+        --index: none;
+    }
+
+    table:hover {
+        --coordinate: none;
+        --index: inline;
     }
 
     td {
-        background: #620b0b;
-        border: 1px #c50d0d solid;
+        /*background: #620b0b;*/
+        background: transparent;
+        border: 1px #000000ff solid;
+    }
+
+    .coordinate {
+        color: #000000ff;
+        display: var(--coordinate);
+    }
+
+    .index {
+        color: #000000ff;
+        display: var(--index);
     }
 </style>
 <body>
 <script>
-    const palette = ['#fff', '#fff', '#000', 'blue'];
+    const palette = ['#fff', '#fff', '#000', 'grey', 'orange'];
     const bs = ['5px', '10px'];
     const blockSize = 2;
     const gridSize = 7;
@@ -27,7 +44,18 @@
     const b = blockSize * gridSize;
     let sectionX = 0;
     let sectionY = 0;
+    let k = 0;
     setCellContentOverride = (td, i, j, y, x) => {
+        // Coordinates and indexes
+        let coordinate = document.createElement('p');
+        let index = document.createElement('p');
+        coordinate.className = 'coordinate';
+        coordinate.textContent = `(${i},${j})`;
+        index.className = 'index';
+        index.textContent = `${k++}`;
+        td.appendChild(coordinate);
+        td.appendChild(index);
+        // Section tracking
         if (j % 2 === 0) sectionX++;
         if (i % 2 === 0) sectionY++;
         // Divisions by block size

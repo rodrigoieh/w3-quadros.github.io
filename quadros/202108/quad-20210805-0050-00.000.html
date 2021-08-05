@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>tiles</title>
+</head>
+<style>
+    :root {
+        background: black;
+    }
+
+    table {
+        border: 1px white solid;
+        background: #d9d9cf;
+        box-shadow: 0 0 25px 0 #1c1b19;
+        opacity: 90%;
+    }
+</style>
+<body>
+<script>
+    const palette = ['#415e7260', '#415e7230', '#415e7260'];
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.style.borderRight = `20px ${palette[0]} solid`;
+        td.style.borderTop = `20px ${palette[1]} solid`;
+        if (j === 0) td.style.borderLeft = `30px ${palette[2]} solid`;
+        else if (j === x - 1) td.style.borderRight = `30px ${palette[2]} solid`;
+        if (i === 0) td.style.borderTop = `30px ${palette[2]} solid`;
+        else if (i === y - 1) td.style.borderBottom = `30px ${palette[2]} solid`;
+        td.style.boxShadow = '0 0 1px 0 #1c1b19';
+    }
+    main(9, 13);
+</script>
+</body>
+</html>

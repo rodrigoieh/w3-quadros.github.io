@@ -1161,11 +1161,21 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20210804-1645-00.000",
+          id: "quad-20210804-1645-00.000.hidden",
           type: "file",
-          path: "quadros/202108/quad-20210804-1645-00.000.html",
+          path: "quadros/202108/quad-20210804-1645-00.000.hidden.html",
           preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-1645-00.000.jpeg",
-          filename: "quad-20210804-1645-00.000.html",
+          filename: "quad-20210804-1645-00.000.hidden.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: false
+        },
+        {
+          id: "quad-20210804-1645-00.001",
+          type: "file",
+          path: "quadros/202108/quad-20210804-1645-00.001.html",
+          preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-1645-00.001.jpeg",
+          filename: "quad-20210804-1645-00.001.html",
           extension: ".html",
           directory: "quadros/202108",
           visible: true
@@ -1186,6 +1196,46 @@ const index =  {
           path: "quadros/202108/quad-20210804-1700-00.000.html",
           preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-1700-00.000.jpeg",
           filename: "quad-20210804-1700-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210804-2209-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-2209-00.000.html",
+          preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-2209-00.000.jpeg",
+          filename: "quad-20210804-2209-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210804-2209-00.001",
+          type: "file",
+          path: "quadros/202108/quad-20210804-2209-00.001.html",
+          preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-2209-00.001.jpeg",
+          filename: "quad-20210804-2209-00.001.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210804-2359-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210804-2359-00.000.html",
+          preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-2359-00.000.jpeg",
+          filename: "quad-20210804-2359-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210805-0050-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210805-0050-00.000.html",
+          preview: "https://quad.xronos.cl/quadros/202108/quad-20210805-0050-00.000.jpeg",
+          filename: "quad-20210805-0050-00.000.html",
           extension: ".html",
           directory: "quadros/202108",
           visible: true

@@ -107,7 +107,7 @@ const getElementAnchor = (id, href, title = id) => {
 
 /*** Html element builder/helper function for images ***/
 
-const getElementImage = (id, src, visible, width = 150, height = 150) => {
+const getElementImage = (id, src, visible, width = 100, height = 100) => {
     let img = document.createElement('img');
     img.id = `preview-img-${id}${visible ? '' : '-hidden'}`;
     img.src = src;

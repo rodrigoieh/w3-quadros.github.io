@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>tiles</title>
+</head>
+<style>
+    :root {
+        --angle: 180deg;
+        background: black;
+    }
+
+    td {
+        background-image: linear-gradient(var(--angle), #c9c8c3, #c9c8c3);
+    }
+</style>
+<body>
+<script>
+    const palette = ['#fff', '#fff', '#fff'];
+    const bs = ['1px', '1px'];
+    const blockSize = 2;
+    const gridSize = 7;
+    const a = blockSize * gridSize;
+    const b = blockSize * gridSize;
+    setCellContentOverride = (td, i, j, y, x) => {
+        // Main theme divisions
+        td.style.borderRight = `${bs[0]} ${palette[0]} solid`;
+        // Divisions by block size
+        if ((i + 1) % blockSize === 0) td.style.borderBottom = `${bs[0]} ${palette[0]} solid`;
+        // Outer grid limits/margins
+        if (j === 0) td.style.borderLeft = `${bs[1]} ${palette[2]} solid`;
+        else if (j === x - 1) td.style.borderRight = `${bs[1]} ${palette[2]} solid`;
+        if (i === 0) td.style.borderTop = `${bs[1]} ${palette[2]} solid`;
+        else if (i === y - 1) td.style.borderBottom = `${bs[1]} ${palette[2]} solid`;
+    }
+    main(a, b, 0);
+</script>
+</body>
+</html>

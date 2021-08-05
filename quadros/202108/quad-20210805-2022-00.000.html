@@ -9,20 +9,27 @@
     <title>table</title>
 </head>
 <style>
+    :root {
+        filter: invert(100%);
+    }
+
     body {
-        background: #d2af23;
-        background: #9f8007;
+        background: #d9d9cf;
     }
 
     table {
-        border: 1px white solid;
-        background: #d7ba13;
-        box-shadow: 0 0 50px 0 #d7ba13;
-        opacity: 90%;
+        border-radius: 5%;
+        background: #c4c4bb;
+        opacity: 80%;
+        filter: blur(2px);
+    }
+
+    table:hover {
+        filter: blur(0);
     }
 
     td.line {
-        border-top: 80px rgb(8, 51, 90) solid;
+        border-top: 80px #00ffffff solid;
     }
 </style>
 <body>

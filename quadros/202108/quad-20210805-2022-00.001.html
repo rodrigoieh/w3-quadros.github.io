@@ -9,20 +9,23 @@
     <title>table</title>
 </head>
 <style>
+    :root {
+        --light: 30px;
+    }
+
     body {
-        background: #d2af23;
-        background: #9f8007;
+        background: #000000ea;
     }
 
     table {
         border: 1px white solid;
-        background: #d7ba13;
-        box-shadow: 0 0 50px 0 #d7ba13;
+        background: #000000ea;
+        box-shadow: 0 0 var(--light) 0 #f6f4f1;
         opacity: 90%;
     }
 
     td.line {
-        border-top: 80px rgb(8, 51, 90) solid;
+        border-top: 80px #c9b12dff solid;
     }
 </style>
 <body>
@@ -31,6 +34,13 @@
         if (i === y - 2) td.setAttribute('class', `td line`);
     };
     main(10, 10);
+
+    document.addEventListener('mousemove', (e) => {
+        const h = table.clientHeight;
+        const y = e.clientY;
+        let root = document.querySelector(':root');
+        root.style.setProperty('--light', `${h - y}px`);
+    });
 </script>
 </body>
 </html>

@@ -52,6 +52,7 @@
 - [W3S - HTML <img> Tag](https://www.w3schools.com/tags/tag_img.asp)
 - [W3S - The img longdesc attribute](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_img_longdesc)
 - [W3S - CSS display Property](https://www.w3schools.com/cssref/pr_class_display.asp)
+- [W3S - CSS Change Variables With JavaScript](https://www.w3schools.com/css/css3_variables_javascript.asp)
 - [Mozilla - Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 - [Mozilla - async function expression](https://developer.mozilla.org/en-US/docs/Web/CSS/:root)
 - [Mozilla - HTMLElement](https://developer.mozilla.org/en-US/docs/Web/CSS/var())

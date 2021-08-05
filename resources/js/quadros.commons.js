@@ -1,5 +1,18 @@
 /*** Executed automatically ***/
 
+// Adds meta tags author and description to html head
+(function () {
+    let head = document.getElementsByTagName('head')[0];
+    let metaAuthor = document.createElement('meta');
+    let metaDescription = document.createElement('meta');
+    metaAuthor.name = 'author'
+    metaAuthor.content = 'rodrigoieh@xronos.cl'
+    metaDescription.name = 'description'
+    metaDescription.content = 'css study'
+    head.prepend(metaDescription);
+    head.prepend(metaAuthor);
+}());
+
 // Adds favicon if not exists in document
 (function () {
     let link = document.querySelector("link[rel~='icon']");

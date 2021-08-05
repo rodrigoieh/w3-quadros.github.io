@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="#quad,#qtype">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    :root {
+        --light: 100px;
+    }
+
+    body {
+        background: #000000ea;
+    }
+
+    table {
+        border: 1px white solid;
+        background: #000000ea;
+        box-shadow: 0 0 var(--light) 0 #f6f4f1;
+        opacity: 90%;
+    }
+
+    td.line {
+        border-top: 80px #c9b12dff solid;
+    }
+</style>
+<body>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (i === y - 2) td.setAttribute('class', `td line`);
+    };
+    main(10, 10);
+
+    document.addEventListener('mousemove', (e) => {
+        const h = table.clientHeight;
+        const y = e.clientY;
+        let root = document.querySelector(':root');
+        root.style.setProperty('--light', `${h - y}px`);
+    });
+</script>
+</body>
+</html>

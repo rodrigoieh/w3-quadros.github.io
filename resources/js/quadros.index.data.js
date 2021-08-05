@@ -1289,6 +1289,26 @@ const index =  {
           extension: ".html",
           directory: "quadros/202108",
           visible: true
+        },
+        {
+          id: "quad-20210805-2022-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210805-2022-00.000.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210805-2022-00.000.jpeg",
+          filename: "quad-20210805-2022-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
+        },
+        {
+          id: "quad-20210805-2022-00.001",
+          type: "file",
+          path: "quadros/202108/quad-20210805-2022-00.001.html",
+          preview: "http://localhost:8001/quadros/202108/quad-20210805-2022-00.001.jpeg",
+          filename: "quad-20210805-2022-00.001.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
         }
       ]
     },

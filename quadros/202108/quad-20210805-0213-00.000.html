@@ -41,18 +41,12 @@
     const borderSizes = ['5px', '10px'];
     const blockSize = 2;
     const gridSize = 7;
-    const blockSizeDoubled = blockSize * 2;
-    const gridSizeMin = 4;
-    const gridSizeMax = 400;
-    let a = blockSize * gridSize;
-    let b = blockSize * gridSize;
-    let debugModeEnabled = false;
-    let glitchModeEnabled = false;
+    const a = blockSize * gridSize;
+    const b = blockSize * gridSize;
+    let debugEnabled = false;
     let sectionX = 0;
     let sectionY = 0;
     let k = 0;
-    const gridBorder = 1;
-    const getTableDataBorder = (b = 0, p = 0) => `${borderSizes[b]} ${palette[p]} solid`;
     // Coordinates and indexes
     const setTableDataMetadata = (td, i, j) => {
         let coordinate = document.createElement('p');
@@ -74,84 +68,52 @@
         if (j % blockSize === 0 && j !== 0) sectionX++;
         if (i % blockSize === 0 && j === 0) sectionY++;
         // Debugging info
-        if (debugModeEnabled) setTableDataMetadata(td, i, j);
+        if (debugEnabled) setTableDataMetadata(td, i, j);
         // Divisions by block size
         if ((j + 1) % blockSize === 0) {
-            td.style.borderRight = getTableDataBorder();
+            td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
         }
         if ((i + 1) % blockSize === 0) {
-            td.style.borderBottom = getTableDataBorder();
+            td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
         }
         // Quad double vertical
         if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
-            if (j % blockSizeDoubled === 0) {
-                td.style.borderRight = getTableDataBorder(0, 4);
+            if (j % (blockSize * 2) === 0) {
+                td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
             }
         }
         // Quad double vertical
         else if (sectionY % blockSize !== 0 && sectionX % blockSize !== 0) {
-            if ((j + 2) % blockSizeDoubled === 0) {
-                td.style.borderRight = getTableDataBorder(0, 4);
+            if ((j + 2) % (blockSize * 2) === 0) {
+                td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
             }
         }
         // Quad double horizontal
         else if (sectionY % blockSize === 0 && sectionX % blockSize !== 0) {
-            if ((i + 2) % blockSizeDoubled === 0) {
-                td.style.borderBottom = getTableDataBorder(0, 3);
+            if ((i + 2) % (blockSize * 2) === 0) {
+                td.style.borderBottom = `${borderSizes[0]} ${palette[3]} solid`;
             }
         }
         // Quad double horizontal
         else if (sectionY % blockSize !== 0 && sectionX % blockSize === 0) {
-            if (i % blockSizeDoubled === 0) {
-                td.style.borderBottom = getTableDataBorder(0, 3);
+            if (i % (blockSize * 2) === 0) {
+                td.style.borderBottom = `${borderSizes[0]} ${palette[3]} solid`;
             }
         }
         // Outer grid limits/margins
-        if (j === 0) td.style.borderLeft = getTableDataBorder(gridBorder);
-        else if (j === x - 1) td.style.borderRight = getTableDataBorder(gridBorder);
-        if (i === 0) td.style.borderTop = getTableDataBorder(gridBorder);
-        else if (i === y - 1) td.style.borderBottom = getTableDataBorder(gridBorder);
+        if (j === 0) td.style.borderLeft = `${borderSizes[1]} ${palette[2]} solid`;
+        else if (j === x - 1) td.style.borderRight = `${borderSizes[1]} ${palette[2]} solid`;
+        if (i === 0) td.style.borderTop = `${borderSizes[1]} ${palette[2]} solid`;
+        else if (i === y - 1) td.style.borderBottom = `${borderSizes[1]} ${palette[2]} solid`;
     }
     // Renderer
     main(a, b, 0);
-    // Reset
-    const reset = (c = a, d = b, toggleDebugMode = true) => {
-        if (toggleDebugMode) debugModeEnabled = !debugModeEnabled;
-        document.querySelectorAll('#demo').forEach(x => x.remove());
-        k = sectionX = sectionY = 0;
-        main(c, d, 0);
-    };
     // Toggles debugging information
     document.addEventListener('click', () => {
-        reset();
-    });
-    // Resizes grid
-    document.addEventListener('keydown', (event) => {
-        const key = event.key;
-        switch (key) {
-            case '+':
-                if (a * b === gridSizeMax) break;
-                if (glitchModeEnabled) main(++a, ++b, 0);
-                else reset(a += 2, b += 2, false);
-                break;
-            case '-':
-                if (a * b === gridSizeMin) break;
-                if (glitchModeEnabled) main(--a, --b, 0);
-                else reset(a -= 2, b -= 2, false);
-                break;
-            case 'r':
-            case 'R':
-                reset(blockSize * gridSize, blockSize * gridSize, false);
-                break;
-            case 'g':
-            case 'G':
-                glitchModeEnabled = !glitchModeEnabled;
-                break;
-            case 'd':
-            case 'D':
-                reset();
-                break;
-        }
+        debugEnabled = !debugEnabled;
+        document.body.removeChild(demo);
+        k = sectionX = sectionY = 0;
+        main(a, b, 0);
     });
 </script>
 </body>

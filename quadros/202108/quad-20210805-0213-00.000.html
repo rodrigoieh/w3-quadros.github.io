@@ -42,6 +42,8 @@
     const blockSize = 2;
     const gridSize = 7;
     const blockSizeDoubled = blockSize * 2;
+    const gridSizeMin = 4;
+    const gridSizeMax = 400;
     let a = blockSize * gridSize;
     let b = blockSize * gridSize;
     let debugModeEnabled = false;
@@ -113,9 +115,9 @@
     // Renderer
     main(a, b, 0);
     // Reset
-    const reset = (c = a, d = b) => {
-        debugModeEnabled = !debugModeEnabled;
-        document.body.removeChild(demo);
+    const reset = (c = a, d = b, toggleDebugMode = true) => {
+        if (toggleDebugMode) debugModeEnabled = !debugModeEnabled;
+        document.querySelectorAll('#demo').forEach(x => x.remove());
         k = sectionX = sectionY = 0;
         main(c, d, 0);
     };
@@ -128,16 +130,27 @@
         const key = event.key;
         switch (key) {
             case '+':
+                if (a * b === gridSizeMax) break;
                 if (glitchModeEnabled) main(++a, ++b, 0);
-                else reset(a += 2, b += 2, 0);
+                else reset(a += 2, b += 2, false);
                 break;
             case '-':
+                if (a * b === gridSizeMin) break;
                 if (glitchModeEnabled) main(--a, --b, 0);
-                else reset(a -= 2, b -= 2, 0);
+                else reset(a -= 2, b -= 2, false);
+                break;
+            case 'r':
+            case 'R':
+                reset(blockSize * gridSize, blockSize * gridSize, false);
                 break;
             case 'g':
             case 'G':
                 glitchModeEnabled = !glitchModeEnabled;
+                break;
+            case 'd':
+            case 'D':
+                reset();
+                break;
         }
     });
 </script>

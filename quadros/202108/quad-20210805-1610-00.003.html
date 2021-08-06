@@ -36,8 +36,8 @@
     main(14, 14);
     const l = 0.6;
     const k = 100 / l;
-    let gradient = 'conic-gradient(from 0turn at 50% 10%,';
     const g = (i, x = 0) => i * l + x;
+    let gradient = 'conic-gradient(from 0turn at 50% 10%,';
     for (let i = 0; i < k - 2; i += 2) {
         gradient = gradient.concat(`var(--a) ${g(i)}% ${g(i, 1)}%,`);
         gradient = gradient.concat(`var(--b) ${g(i, 1)}% ${g(i, 2)}%,`);

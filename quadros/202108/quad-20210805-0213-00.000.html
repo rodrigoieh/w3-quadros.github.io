@@ -48,6 +48,8 @@
     let sectionX = 0;
     let sectionY = 0;
     let k = 0;
+    const gridBorder = 1;
+    const getTableDataBorder = (b = 0, p = 0) => `${borderSizes[b]} ${palette[p]} solid`;
     // Coordinates and indexes
     const setTableDataMetadata = (td, i, j) => {
         let coordinate = document.createElement('p');
@@ -72,40 +74,40 @@
         if (debugEnabled) setTableDataMetadata(td, i, j);
         // Divisions by block size
         if ((j + 1) % blockSize === 0) {
-            td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
+            td.style.borderRight = getTableDataBorder();
         }
         if ((i + 1) % blockSize === 0) {
-            td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
+            td.style.borderBottom = getTableDataBorder();
         }
         // Quad double vertical
         if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
             if (j % (blockSize * 2) === 0) {
-                td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
+                td.style.borderRight = getTableDataBorder(0, 4);
             }
         }
         // Quad double vertical
         else if (sectionY % blockSize !== 0 && sectionX % blockSize !== 0) {
             if ((j + 2) % (blockSize * 2) === 0) {
-                td.style.borderRight = `${borderSizes[0]} ${palette[4]} solid`;
+                td.style.borderRight = getTableDataBorder(0, 4);
             }
         }
         // Quad double horizontal
         else if (sectionY % blockSize === 0 && sectionX % blockSize !== 0) {
             if ((i + 2) % (blockSize * 2) === 0) {
-                td.style.borderBottom = `${borderSizes[0]} ${palette[3]} solid`;
+                td.style.borderBottom = getTableDataBorder(0, 3);
             }
         }
         // Quad double horizontal
         else if (sectionY % blockSize !== 0 && sectionX % blockSize === 0) {
             if (i % (blockSize * 2) === 0) {
-                td.style.borderBottom = `${borderSizes[0]} ${palette[3]} solid`;
+                td.style.borderBottom = getTableDataBorder(0, 3);
             }
         }
         // Outer grid limits/margins
-        if (j === 0) td.style.borderLeft = `${borderSizes[1]} ${palette[2]} solid`;
-        else if (j === x - 1) td.style.borderRight = `${borderSizes[1]} ${palette[2]} solid`;
-        if (i === 0) td.style.borderTop = `${borderSizes[1]} ${palette[2]} solid`;
-        else if (i === y - 1) td.style.borderBottom = `${borderSizes[1]} ${palette[2]} solid`;
+        if (j === 0) td.style.borderLeft = getTableDataBorder(gridBorder);
+        else if (j === x - 1) td.style.borderRight = getTableDataBorder(gridBorder);
+        if (i === 0) td.style.borderTop = getTableDataBorder(gridBorder);
+        else if (i === y - 1) td.style.borderBottom = getTableDataBorder(gridBorder);
     }
     // Renderer
     main(a, b, 0);

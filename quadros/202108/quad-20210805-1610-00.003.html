@@ -34,19 +34,33 @@
 <body>
 <script>
     main(14, 14);
-    const l = 0.6;
-    const k = 100 / l;
-    const g = (i, x = 0) => i * l + x;
-    let gradient = 'conic-gradient(from 0turn at 50% 10%,';
-    for (let i = 0; i < k - 2; i += 2) {
-        gradient = gradient.concat(`var(--a) ${g(i)}% ${g(i, 1)}%,`);
-        gradient = gradient.concat(`var(--b) ${g(i, 1)}% ${g(i, 2)}%,`);
-    }
-    gradient = gradient.concat(`var(--a) ${k * l}%`);
-    gradient = gradient.concat(')');
-    let root = document.querySelector(':root');
-    root.style.setProperty('--gradient', gradient);
-    console.debug(gradient);
+    const paint = (l = 1) => {
+        const k = 100 / l;
+        const g = (i, x = 0) => i * l + x;
+        let gradient = 'conic-gradient(from 0turn at 50% 10%,';
+        for (let i = 0; i < k - 2; i += 2) {
+            gradient = gradient.concat(`var(--a) ${g(i)}% ${g(i, 1)}%,`);
+            gradient = gradient.concat(`var(--b) ${g(i, 1)}% ${g(i, 2)}%,`);
+        }
+        gradient = gradient.concat(`var(--a) ${k * l}%`);
+        gradient = gradient.concat(')');
+        let root = document.querySelector(':root');
+        root.style.setProperty('--gradient', gradient);
+    };
+    (function () {
+        let i = 10;
+        let j = 0;
+        const limit = 0.6;
+        const speed = 60;
+        const loop = () => {
+            setTimeout(() => {
+                paint(i);
+                i -= 0.1;
+                if (i > limit) loop();
+            }, speed + j++)
+        }
+        loop();
+    }());
 </script>
 </body>
 </html>

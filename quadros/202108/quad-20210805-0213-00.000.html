@@ -42,10 +42,12 @@
     const blockSize = 2;
     const gridSize = 7;
     const blockSizeDoubled = blockSize * 2;
+    const gridSizeMin = 4;
+    const gridSizeMax = 400;
     let a = blockSize * gridSize;
     let b = blockSize * gridSize;
-    let debugEnabled = false;
-    let glitchMode = false;
+    let debugModeEnabled = false;
+    let glitchModeEnabled = false;
     let sectionX = 0;
     let sectionY = 0;
     let k = 0;
@@ -72,7 +74,7 @@
         if (j % blockSize === 0 && j !== 0) sectionX++;
         if (i % blockSize === 0 && j === 0) sectionY++;
         // Debugging info
-        if (debugEnabled) setTableDataMetadata(td, i, j);
+        if (debugModeEnabled) setTableDataMetadata(td, i, j);
         // Divisions by block size
         if ((j + 1) % blockSize === 0) {
             td.style.borderRight = getTableDataBorder();
@@ -113,9 +115,9 @@
     // Renderer
     main(a, b, 0);
     // Reset
-    const reset = (c = a, d = b) => {
-        debugEnabled = !debugEnabled;
-        document.body.removeChild(demo);
+    const reset = (c = a, d = b, toggleDebugMode = true) => {
+        if (toggleDebugMode) debugModeEnabled = !debugModeEnabled;
+        document.querySelectorAll('#demo').forEach(x => x.remove());
         k = sectionX = sectionY = 0;
         main(c, d, 0);
     };
@@ -128,16 +130,27 @@
         const key = event.key;
         switch (key) {
             case '+':
-                if (glitchMode) main(++a, ++b, 0);
-                else reset(a += 2, b += 2, 0);
+                if (a * b === gridSizeMax) break;
+                if (glitchModeEnabled) main(++a, ++b, 0);
+                else reset(a += 2, b += 2, false);
                 break;
             case '-':
-                if (glitchMode) main(--a, --b, 0);
-                else reset(a -= 2, b -= 2, 0);
+                if (a * b === gridSizeMin) break;
+                if (glitchModeEnabled) main(--a, --b, 0);
+                else reset(a -= 2, b -= 2, false);
+                break;
+            case 'r':
+            case 'R':
+                reset(blockSize * gridSize, blockSize * gridSize, false);
                 break;
             case 'g':
             case 'G':
-                glitchMode = !glitchMode;
+                glitchModeEnabled = !glitchModeEnabled;
+                break;
+            case 'd':
+            case 'D':
+                reset();
+                break;
         }
     });
 </script>

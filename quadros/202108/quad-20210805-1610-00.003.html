@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+</head>
+<style>
+
+    :root {
+        --a: #030303ff;
+        --b: #ffffffff;
+        --gradient: white;
+    }
+
+    body {
+        background: var(--a);
+    }
+
+    table {
+        border-radius: 50%;
+        background: var(--gradient);
+        transform: rotateX(60deg);
+    }
+
+    table:hover {
+        --b: #023a2c;
+        --gradient: conic-gradient(from 0turn at 50% 10%, var(--a) 0% 1%, var(--b) 1% 2%, var(--a) 2% 3%, var(--b) 3% 4%, var(--a) 4% 5%, var(--b) 5% 6%, var(--a) 6% 7%, var(--b) 7% 8%, var(--a) 8% 9%, var(--b) 9% 10%, var(--a) 10% 11%, var(--b) 11% 12%, var(--a) 12% 13%, var(--b) 13% 14%, var(--a) 14% 15%, var(--b) 15% 16%, var(--a) 16% 17%, var(--b) 17% 18%, var(--a) 18% 19%, var(--b) 19% 20%, var(--a) 20% 21%, var(--b) 21% 22%, var(--a) 22% 23%, var(--b) 23% 24%, var(--a) 24% 25%, var(--b) 25% 26%, var(--a) 26% 27%, var(--b) 27% 28%, var(--a) 28% 29%, var(--b) 29% 30%, var(--a) 30% 31%, var(--b) 31% 32%, var(--a) 32% 33%, var(--b) 33% 34%, var(--a) 34% 35%, var(--b) 35% 36%, var(--a) 36% 37%, var(--b) 37% 38%, var(--a) 38% 39%, var(--b) 39% 40%, var(--a) 40% 41%, var(--b) 41% 42%, var(--a) 42% 43%, var(--b) 43% 44%, var(--a) 44% 45%, var(--b) 45% 46%, var(--a) 46% 47%, var(--b) 47% 48%, var(--a) 48% 49%, var(--b) 49% 50%, var(--a) 50% 51%, var(--b) 51% 52%, var(--a) 52% 53%, var(--b) 53% 54%, var(--a) 54% 55%, var(--b) 55% 56%, var(--a) 56% 57%, var(--b) 57% 58%, var(--a) 58% 59%, var(--b) 59% 60%, var(--a) 60% 61%, var(--b) 61% 62%, var(--a) 62% 63%, var(--b) 63% 64%, var(--a) 64% 65%, var(--b) 65% 66%, var(--a) 66% 67%, var(--b) 67% 68%, var(--a) 68% 69%, var(--b) 69% 70%, var(--a) 70% 71%, var(--b) 71% 72%, var(--a) 72% 73%, var(--b) 73% 74%, var(--a) 74% 75%, var(--b) 75% 76%, var(--a) 76% 77%, var(--b) 77% 78%, var(--a) 78% 79%, var(--b) 79% 80%, var(--a) 80% 81%, var(--b) 81% 82%, var(--a) 82% 83%, var(--b) 83% 84%, var(--a) 84% 85%, var(--b) 85% 86%, var(--a) 86% 87%, var(--b) 87% 88%, var(--a) 88% 89%, var(--b) 89% 90%, var(--a) 90% 91%, var(--b) 91% 92%, var(--a) 92% 93%, var(--b) 93% 94%, var(--a) 94% 95%, var(--b) 95% 96%, var(--a) 96% 97%, var(--b) 97% 98%, var(--a) 100%);
+        filter: brightness(150%) contrast(120%);
+    }
+</style>
+<body>
+<script>
+    main(14, 14);
+    const l = 0.6;
+    const k = 100 / l;
+    let gradient = 'conic-gradient(from 0turn at 50% 10%,';
+    const g = (i, x = 0) => i * l + x;
+    for (let i = 0; i < k - 2; i += 2) {
+        gradient = gradient.concat(`var(--a) ${g(i)}% ${g(i, 1)}%,`);
+        gradient = gradient.concat(`var(--b) ${g(i, 1)}% ${g(i, 2)}%,`);
+    }
+    gradient = gradient.concat(`var(--a) ${k * l}%`);
+    gradient = gradient.concat(')');
+    let root = document.querySelector(':root');
+    root.style.setProperty('--gradient', gradient);
+    console.debug(gradient);
+</script>
+</body>
+</html>

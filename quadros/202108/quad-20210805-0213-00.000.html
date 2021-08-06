@@ -41,9 +41,10 @@
     const borderSizes = ['5px', '10px'];
     const blockSize = 2;
     const gridSize = 7;
-    const a = blockSize * gridSize;
-    const b = blockSize * gridSize;
+    let a = blockSize * gridSize;
+    let b = blockSize * gridSize;
     let debugEnabled = false;
+    let glitchMode = false;
     let sectionX = 0;
     let sectionY = 0;
     let k = 0;
@@ -108,12 +109,33 @@
     }
     // Renderer
     main(a, b, 0);
-    // Toggles debugging information
-    document.addEventListener('click', () => {
+    // Reset
+    const reset = (c = a, d = b) => {
         debugEnabled = !debugEnabled;
         document.body.removeChild(demo);
         k = sectionX = sectionY = 0;
-        main(a, b, 0);
+        main(c, d, 0);
+    };
+    // Toggles debugging information
+    document.addEventListener('click', () => {
+        reset();
+    });
+    // Resizes grid
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        switch (key) {
+            case '+':
+                if (glitchMode) main(++a, ++b, 0);
+                else reset(a += 2, b += 2, 0);
+                break;
+            case '-':
+                if (glitchMode) main(--a, --b, 0);
+                else reset(a -= 2, b -= 2, 0);
+                break;
+            case 'g':
+            case 'G':
+                glitchMode = !glitchMode;
+        }
     });
 </script>
 </body>

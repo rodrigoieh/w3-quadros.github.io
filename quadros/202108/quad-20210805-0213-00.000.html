@@ -44,7 +44,7 @@
     const blockSizeDoubled = blockSize * 2;
     let a = blockSize * gridSize;
     let b = blockSize * gridSize;
-    let debugEnabled = false;
+    let debugMode = false;
     let glitchMode = false;
     let sectionX = 0;
     let sectionY = 0;
@@ -72,7 +72,7 @@
         if (j % blockSize === 0 && j !== 0) sectionX++;
         if (i % blockSize === 0 && j === 0) sectionY++;
         // Debugging info
-        if (debugEnabled) setTableDataMetadata(td, i, j);
+        if (debugMode) setTableDataMetadata(td, i, j);
         // Divisions by block size
         if ((j + 1) % blockSize === 0) {
             td.style.borderRight = getTableDataBorder();
@@ -114,7 +114,7 @@
     main(a, b, 0);
     // Reset
     const reset = (c = a, d = b) => {
-        debugEnabled = !debugEnabled;
+        debugMode = !debugMode;
         document.body.removeChild(demo);
         k = sectionX = sectionY = 0;
         main(c, d, 0);

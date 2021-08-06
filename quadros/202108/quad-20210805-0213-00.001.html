@@ -38,8 +38,9 @@
 <script>
     const palette = ['#ffffffdd'];
     const borderSizes = ['5px', '10px'];
-    const blockSize = 2;
     const gridSize = 7;
+    const blockSize = 2;
+    const blockSizeDoubled = blockSize * 2;
     const a = blockSize * gridSize;
     const b = blockSize * gridSize;
     let sectionX = 0;
@@ -56,19 +57,19 @@
             td.style.borderBottom = getTableDataBorder();
         }
         if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
-            if (j % (blockSize * 2) === 0) {
+            if (j % blockSizeDoubled === 0) {
                 td.style.borderRight = getTableDataBorder();
             }
         } else if (sectionY % blockSize !== 0 && sectionX % blockSize !== 0) {
-            if ((j + 2) % (blockSize * 2) === 0) {
+            if ((j + 2) % blockSizeDoubled === 0) {
                 td.style.borderRight = getTableDataBorder();
             }
         } else if (sectionY % blockSize === 0 && sectionX % blockSize !== 0) {
-            if ((i + 2) % (blockSize * 2) === 0) {
+            if ((i + 2) % blockSizeDoubled === 0) {
                 td.style.borderBottom = getTableDataBorder();
             }
         } else if (sectionY % blockSize !== 0 && sectionX % blockSize === 0) {
-            if (i % (blockSize * 2) === 0) {
+            if (i % blockSizeDoubled === 0) {
                 td.style.borderBottom = getTableDataBorder();
             }
         }

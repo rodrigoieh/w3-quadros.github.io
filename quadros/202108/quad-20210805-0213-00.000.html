@@ -41,6 +41,7 @@
     const borderSizes = ['5px', '10px'];
     const blockSize = 2;
     const gridSize = 7;
+    const blockSizeDoubled = blockSize * 2;
     let a = blockSize * gridSize;
     let b = blockSize * gridSize;
     let debugEnabled = false;
@@ -81,25 +82,25 @@
         }
         // Quad double vertical
         if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
-            if (j % (blockSize * 2) === 0) {
+            if (j % blockSizeDoubled === 0) {
                 td.style.borderRight = getTableDataBorder(0, 4);
             }
         }
         // Quad double vertical
         else if (sectionY % blockSize !== 0 && sectionX % blockSize !== 0) {
-            if ((j + 2) % (blockSize * 2) === 0) {
+            if ((j + 2) % blockSizeDoubled === 0) {
                 td.style.borderRight = getTableDataBorder(0, 4);
             }
         }
         // Quad double horizontal
         else if (sectionY % blockSize === 0 && sectionX % blockSize !== 0) {
-            if ((i + 2) % (blockSize * 2) === 0) {
+            if ((i + 2) % blockSizeDoubled === 0) {
                 td.style.borderBottom = getTableDataBorder(0, 3);
             }
         }
         // Quad double horizontal
         else if (sectionY % blockSize !== 0 && sectionX % blockSize === 0) {
-            if (i % (blockSize * 2) === 0) {
+            if (i % blockSizeDoubled === 0) {
                 td.style.borderBottom = getTableDataBorder(0, 3);
             }
         }

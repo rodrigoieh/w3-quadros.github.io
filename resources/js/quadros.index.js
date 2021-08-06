@@ -129,6 +129,7 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
 /*** Index main function ***/
 
 (function () {
+    const quadSize = isMobileNavigator() ? 150 : 100;
     let previews = document.getElementById('previews');
     const directories = index.collection.reverse();
     for (const directory of directories) {
@@ -138,7 +139,7 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
             for (let i = k - 1; i >= 0; i--) {
                 const quadro = Quadro.class(quadros[i]);
                 let a = getElementAnchor(quadro.id, quadro.path);
-                const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
+                const image = getElementImage(quadro.id, quadro.preview, quadro.visible, quadSize, quadSize);
                 a.appendChild(image);
                 previews.appendChild(a);
             }

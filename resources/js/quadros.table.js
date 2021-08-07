@@ -4,6 +4,8 @@ let tableWidth;
 let tableHeight;
 let cellWidth;
 let cellHeight;
+let cellWidthOverride = 0;
+let cellHeightOverride = 0;
 
 let setCellContentOverride = undefined;
 const setCellContent = (td, i, j, y = n, x = m) => {
@@ -37,8 +39,8 @@ function render(y = n, x = m) {
             let td = tr.insertCell();
             td.appendChild(document.createTextNode(''));
             setCellContent(td, i, j, y, x);
-            td.style.width = `${cellWidth}px`;
-            td.style.height = `${cellHeight}px`;
+            td.style.width = cellWidthOverride === 0 ? `${cellWidth}px` : cellWidthOverride;
+            td.style.height = cellHeightOverride === 0 ? `${cellHeight}px` : cellHeightOverride;
         }
     }
     demo.id = 'demo';

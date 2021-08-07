@@ -20,8 +20,8 @@
         cellHeightOverride = '180px';
         const pos = getRandomInt(0, 1);
         const deg = getRandomInt(1, 180) * f[pos];
-        const a = palette[pos ? 1 : 0];
-        const b = palette[pos ? 0 : 1];
+        const a = palette[pos ^ 1];
+        const b = palette[pos & 1];
         td.style.backgroundImage = `linear-gradient(${deg}deg,${a},${b})`;
     }
     main(6, 24, 0);

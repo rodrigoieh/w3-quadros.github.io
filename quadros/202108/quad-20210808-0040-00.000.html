@@ -17,15 +17,26 @@
         bottom: -40%;
         left: -20%;
         transform: rotate(130deg);
-        /* text/symbols */
+        /* paragraph style */
         font-family: "Courier New", Times, serif;
         font-size: 60em;
         color: #c86023;
     }
+
+    #demo:hover {
+        bottom: -40%;
+        left: 70%;
+        transform: rotate(35deg);
+    }
 </style>
 <body>
-<div id="demo" class="demo">
-    <b><</b>
-</div>
+<script>
+    let demo = document.createElement('div'),
+        symbol = document.createElement('b');
+    symbol.innerHTML = '<';
+    demo.id = 'demo';
+    demo.appendChild(symbol);
+    document.body.appendChild(demo);
+</script>
 </body>
 </html>

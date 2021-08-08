@@ -12,20 +12,40 @@
         background-image: linear-gradient(315deg, #012479ff, #0c7ec8 50%, #62b0f0);
     }
 
-    #demo {
+    .demo {
         position: fixed;
         bottom: -40%;
         left: -20%;
         transform: rotate(130deg);
-        /* text/symbols */
+
+    }
+
+    .demo:hover {
+        bottom: -40%;
+        left: 70%;
+        transform: rotate(35deg);
+    }
+
+    .symbol {
+        /* bold object style */
         font-family: "Courier New", Times, serif;
         font-size: 60em;
         color: #c86023;
     }
 </style>
 <body>
-<div id="demo" class="demo">
-    <b><</b>
-</div>
+<script>
+    const demoId = 'demo';
+    const symbolId = 'symbol';
+    let demo = document.createElement('div'),
+        symbol = document.createElement('b');
+    symbol.id = symbolId;
+    symbol.className = symbolId;
+    symbol.innerHTML = '<';
+    demo.id = demoId;
+    demo.className = demoId;
+    demo.appendChild(symbol);
+    document.body.appendChild(demo);
+</script>
 </body>
 </html>

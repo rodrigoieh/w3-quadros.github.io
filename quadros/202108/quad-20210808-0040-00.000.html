@@ -17,10 +17,7 @@
         bottom: -40%;
         left: -20%;
         transform: rotate(130deg);
-        /* bold object style */
-        font-family: "Courier New", Times, serif;
-        font-size: 60em;
-        color: #c86023;
+
     }
 
     .demo:hover {
@@ -28,12 +25,22 @@
         left: 70%;
         transform: rotate(35deg);
     }
+
+    .symbol {
+        /* bold object style */
+        font-family: "Courier New", Times, serif;
+        font-size: 60em;
+        color: #c86023;
+    }
 </style>
 <body>
 <script>
     const demoId = 'demo';
+    const symbolId = 'symbol';
     let demo = document.createElement('div'),
         symbol = document.createElement('b');
+    symbol.id = symbolId;
+    symbol.className = symbolId;
     symbol.innerHTML = '<';
     demo.id = demoId;
     demo.className = demoId;

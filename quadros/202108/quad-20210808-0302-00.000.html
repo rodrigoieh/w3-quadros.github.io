@@ -46,9 +46,9 @@
     setCellContentOverride = (td, i, j, y, x) => {
         const q = quads[i][j];
         if (q.top) td.style.borderTop = quadBorder;
-        if (q.left) td.style.borderLeft = quadBorder;
-        if (q.bottom) td.style.borderBottom = quadBorder;
         if (q.right) td.style.borderRight = quadBorder;
+        if (q.bottom) td.style.borderBottom = quadBorder;
+        if (q.left) td.style.borderLeft = quadBorder;
         td.style.background = palette[3];
     }
     main(ny, nx);

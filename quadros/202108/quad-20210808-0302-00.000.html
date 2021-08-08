@@ -42,13 +42,13 @@
         quads.push(tmp);
     }
     const palette = ['#626161', '#626161', '#ffffff', '#c86023'];
-    const borderQuad = `1px ${palette[2]} solid`;
+    const quadBorder = `1px ${palette[2]} solid`;
     setCellContentOverride = (td, i, j, y, x) => {
         const q = quads[i][j];
-        if (q.top) td.style.borderTop = borderQuad;
-        if (q.left) td.style.borderLeft = borderQuad;
-        if (q.bottom) td.style.borderBottom = borderQuad;
-        if (q.right) td.style.borderRight = borderQuad;
+        if (q.top) td.style.borderTop = quadBorder;
+        if (q.left) td.style.borderLeft = quadBorder;
+        if (q.bottom) td.style.borderBottom = quadBorder;
+        if (q.right) td.style.borderRight = quadBorder;
         td.style.background = palette[3];
     }
     main(ny, nx);

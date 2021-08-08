@@ -12,7 +12,7 @@
         background-image: linear-gradient(315deg, #012479ff, #0c7ec8 50%, #62b0f0);
     }
 
-    #demo {
+    .demo {
         position: fixed;
         bottom: -40%;
         left: -20%;
@@ -23,7 +23,7 @@
         color: #c86023;
     }
 
-    #demo:hover {
+    .demo:hover {
         bottom: -40%;
         left: 70%;
         transform: rotate(35deg);
@@ -31,10 +31,12 @@
 </style>
 <body>
 <script>
+    const demoId = 'demo';
     let demo = document.createElement('div'),
         symbol = document.createElement('b');
     symbol.innerHTML = '<';
-    demo.id = 'demo';
+    demo.id = demoId;
+    demo.className = demoId;
     demo.appendChild(symbol);
     document.body.appendChild(demo);
 </script>

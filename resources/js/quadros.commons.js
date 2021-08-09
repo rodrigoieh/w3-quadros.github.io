@@ -34,9 +34,9 @@ let warn = (...args) => console.warn('', ...args);
 const nextChar = (c) => String.fromCharCode(c.charCodeAt(0) + 1);
 const previousChar = (c) => String.fromCharCode(c.charCodeAt(0) - 1);
 
-// Set of alphabetic identifiers
+// Set of alphabetic identifiers, supports up to 26 chars
 const getSelectors = (k, index = previousChar('a')) => {
-    if (k < 1) return [];
+    if (k < 1 || 26 < k) return [];
     let selectors = [];
     for (let i = 0; i < k; i++) selectors.push(index = nextChar(index));
     return selectors;

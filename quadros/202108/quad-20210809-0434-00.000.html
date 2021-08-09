@@ -9,22 +9,47 @@
 </head>
 <style>
     #grid {
+        /*border: 1px white solid;*/
         display: grid;
         height: 100%;
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(3, 1fr);
+        width: 100%;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "a a a a"
+            "b b b b"
+            "c c c c"
+            "e d d d";
     }
 
     #a {
+        grid-area: a;
         background-color: #06253b95;
+        grid-row: 1 / 2;
     }
 
     #b {
+        grid-area: b;
         background-color: #c86023;
+        grid-row: 2 / 4;
     }
 
     #c {
+        grid-area: c;
         background-color: #ffffff95;
+        grid-row: span 1 / 6;
+    }
+
+    #d {
+        grid-area: d;
+        background-color: #75794c;
+        grid-row: 6;
+    }
+
+    #e {
+        grid-area: e;
+        background-color: #dfb360;
+        grid-row: 6;
     }
 
     td {
@@ -37,11 +62,13 @@
     <div id="a"></div>
     <div id="b"></div>
     <div id="c"></div>
+    <div id="d"></div>
+    <div id="e"></div>
 </div>
 <script>
     setCellContentOverride = (td, i, j, y, x) => {
     }
-    main(12, 12);
+    main(8, 8);
 </script>
 </body>
 </html>

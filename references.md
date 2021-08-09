@@ -98,10 +98,11 @@
 
 ## CSS Cascading Style Sheets
 
-### Grids 
+### Grids
 
-- [Mozilla - grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
+- [Mozilla - Grid Areas](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Areas)
 - [Mozilla - grid-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
+- [Mozilla - grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
 
 ### Houdini
 

@@ -22,8 +22,8 @@ const styleSetSelectorsForElement = (element, selectors, palette, context = '') 
     for (let i = 0; i < selectors.length; ++i) {
         let style = document.createElement('style');
         const styleSelector = `${element}.${selectors[i]}`;
-        const styleColor = `--color:${palette[i]};`;
-        const styleBackground = `background:var(--color);`;
+        const styleColor = `--palette:${palette[i]};`;
+        const styleBackground = `background:var(--palette);`;
         // const styleBorder = `border:1px #ffffff solid;`;
         let styleFromContext = '';
         if (context !== '') {

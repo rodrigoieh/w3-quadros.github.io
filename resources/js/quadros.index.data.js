@@ -1349,6 +1349,16 @@ const index =  {
           extension: ".html",
           directory: "quadros/202108",
           visible: true
+        },
+        {
+          id: "quad-20210809-0434-00.000",
+          type: "file",
+          path: "quadros/202108/quad-20210809-0434-00.000.html",
+          preview: "https://quad.xronos.cl/quadros/202108/quad-20210809-0434-00.000.jpeg",
+          filename: "quad-20210809-0434-00.000.html",
+          extension: ".html",
+          directory: "quadros/202108",
+          visible: true
         }
       ]
     },

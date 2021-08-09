@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>grid</title>
+</head>
+<style>
+    #grid {
+        /*border: 1px white solid;*/
+        color: white;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        /*grid-template-rows: 10% 10% 10%;*/
+        /*grid-template-rows: 10% 10% 10% 10%;*/
+        /*grid-template-rows: repeat(6, 1fr);*/
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "a a a a"
+            "b b b b"
+            "c c c c"
+            "e d d d";
+    }
+
+    #a {
+        grid-row: 1 / 2;
+    }
+
+    #b {
+        grid-row: 3 / 3;
+    }
+
+    #c {
+        grid-row: span 2;
+    }
+
+    #d {
+        grid-row: 4;
+    }
+
+    #e {
+        grid-row: 4;
+    }
+
+    #table {
+        border-radius: 50%;
+        background-image: linear-gradient(to bottom, #d8d4c9 50%, #c9b12d 50%);
+        filter: invert(100%) grayscale(90%) opacity(95%);
+    }
+</style>
+<body>
+<script>
+    // Grid
+    const k = 5;
+    let grid = document.createElement('div');
+    let gridElementId = previousChar('a');
+    let gridElements = [];
+    for (let i = 0; i < k; i++) {
+        let gridElement = document.createElement('div');
+        gridElement.id = gridElement.className = gridElementId = nextChar(gridElementId);
+        gridElements.push(gridElement);
+    }
+    gridElements.forEach(e => grid.appendChild(e));
+    grid.id = 'grid';
+    document.body.appendChild(grid);
+
+    // CSS
+    const palette = [
+        '#06253b95', '#c86023', '#ffffff95',
+        '#75794c', '#dfb360', '#FFA500D8'
+    ];
+    const selectors = getSelectors(k);
+    styleSetSelectorsForElement('div', selectors, palette, context = 'grid');
+
+    // Table
+    setCellContentOverride = (td, i, j, y, x) => {
+    }
+    main(1, 1, 300);
+</script>
+</body>
+</html>

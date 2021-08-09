@@ -101,6 +101,7 @@
 ### Grids
 
 - [Mozilla - Grid Areas](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Areas)
+- [Mozilla - grid-area](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area)
 - [Mozilla - grid-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
 - [Mozilla - grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
 

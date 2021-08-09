@@ -27,52 +27,59 @@
     }
 
     #a {
-        grid-area: a;
-        background-color: #06253b95;
-        /*grid-row: 1 / 2;*/
+        grid-row: 1 / 2;
     }
 
     #b {
-        grid-area: b;
-        background-color: #c86023;
-        /*grid-row: 2 / 4;*/
+        grid-row: 3 / 3;
     }
 
     #c {
-        grid-area: c;
-        background-color: #ffffff95;
-        /*grid-row: span 1 / 6;*/
+        grid-row: span 2;
     }
 
     #d {
-        grid-area: d;
-        background-color: #75794c;
-        /*grid-row: 6;*/
+        grid-row: 4;
     }
 
     #e {
-        grid-area: e;
-        background-color: #dfb360;
-        /*grid-row: 6;*/
+        grid-row: 4;
     }
 
-    td {
-        background: #FFA500D8;
-        border: 1px black solid;
+    #table {
+        border-radius: 50%;
+        background-image: linear-gradient(to bottom, #d8d4c9 50%, #c9b12d 50%);
+        filter: invert(100%) grayscale(90%) opacity(95%);
     }
 </style>
 <body>
-<div id="grid">
-    <div id="a">a</div>
-    <div id="b">b</div>
-    <div id="c">c</div>
-    <div id="d">d</div>
-    <div id="e">e</div>
-</div>
 <script>
+    // Grid
+    const k = 5;
+    let grid = document.createElement('div');
+    let gridElementId = previousChar('a');
+    let gridElements = [];
+    for (let i = 0; i < k; i++) {
+        let gridElement = document.createElement('div');
+        gridElement.id = gridElement.className = gridElementId = nextChar(gridElementId);
+        gridElements.push(gridElement);
+    }
+    gridElements.forEach(e => grid.appendChild(e));
+    grid.id = 'grid';
+    document.body.appendChild(grid);
+
+    // CSS
+    const palette = [
+        '#06253b95', '#c86023', '#ffffff95',
+        '#75794c', '#dfb360', '#FFA500D8'
+    ];
+    const selectors = getSelectors(k);
+    styleSetSelectorsForElement('div', selectors, palette, context = 'grid');
+
+    // Table
     setCellContentOverride = (td, i, j, y, x) => {
     }
-    main(8, 8);
+    main(1, 1, 300);
 </script>
 </body>
 </html>

@@ -34,6 +34,15 @@ let warn = (...args) => console.warn('', ...args);
 const nextChar = (c) => String.fromCharCode(c.charCodeAt(0) + 1);
 const previousChar = (c) => String.fromCharCode(c.charCodeAt(0) - 1);
 
+// Set of alphabetic identifiers
+const getSelectors = (k, index = previousChar('a')) => {
+    if (k < 1) return [];
+    let selectors = [];
+    for (let i = 0; i < k; i++) selectors.push(index = nextChar(index));
+    return selectors;
+}
+
+// Check if navigator simulates or is a mobile device
 const isMobileNavigator = window.mobileCheck = () => {
     let isMobile = false;
     (function (nav) {

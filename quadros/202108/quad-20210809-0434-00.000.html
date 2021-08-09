@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>grid</title>
+</head>
+<style>
+    #grid {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 50% 1fr;
+    }
+
+    #a {
+        background-color: #06253b95;
+    }
+
+    #b {
+        background-color: #c86023;
+    }
+
+    #c {
+        background-color: #ffffff95;
+    }
+
+    td {
+        background: #FFA500D8;
+        border: 1px black solid;
+    }
+</style>
+<body>
+<div id="grid">
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+</div>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+    }
+    main(12, 12);
+</script>
+</body>
+</html>

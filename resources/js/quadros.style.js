@@ -18,14 +18,23 @@ function styleTransform(element, elementRotationInDegrees) {
     element.style.webkitTransform = rotation;
 }
 
-const styleSetSelectorsForElement = (element, selectors, palette) => {
+const styleSetSelectorsForElement = (element, selectors, palette, context = '') => {
     for (let i = 0; i < selectors.length; ++i) {
         let style = document.createElement('style');
         const styleSelector = `${element}.${selectors[i]}`;
         const styleColor = `--color:${palette[i]};`;
         const styleBackground = `background:var(--color);`;
         // const styleBorder = `border:1px #ffffff solid;`;
-        style.innerHTML = `${styleSelector}{${styleColor}${styleBackground}}`;
+        let styleFromContext = '';
+        if (context !== '') {
+            switch (context) {
+                case 'grid':
+                    const gridArea = `grid-area:${selectors[i]};`;
+                    styleFromContext += gridArea;
+                    break;
+            }
+        }
+        style.innerHTML = `${styleSelector}{${styleColor}${styleBackground}${styleFromContext}`;
         document.head.appendChild(style);
     }
 }

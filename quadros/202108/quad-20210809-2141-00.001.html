@@ -8,6 +8,16 @@
     <title>grid</title>
 </head>
 <style>
+    :root {
+        --a: #d5c6a1;
+        --b: #034d44;
+    }
+
+    body:hover {
+        --a: #c86023;
+        --b: #127a8d;
+    }
+
     #grid {
         display: grid;
         height: 100%;
@@ -18,15 +28,14 @@
     }
 
     #b {
-        background-image: linear-gradient(to bottom, #c86023, #127a8d);
+        background-image: linear-gradient(to bottom, var(--a), var(--b));
     }
 
     #table {
         border-radius: 50%;
-        background-image: linear-gradient(to bottom, #127a8d, #c86023);
+        background-image: linear-gradient(to bottom, var(--b), var(--a));
         filter: opacity(90%);
     }
-
 </style>
 <body>
 <script>
@@ -45,7 +54,7 @@
     document.body.appendChild(grid);
 
     // CSS
-    const palette = ['#c86023', '#fff', '#127a8d'];
+    const palette = ['var(--a)', 'transparent', 'var(--b)'];
     const selectors = getSelectors(k);
     styleSetSelectorsForElement('div', selectors, palette, context = 'grid');
 

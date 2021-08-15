@@ -14,19 +14,15 @@
         }
 
         td.b {
-            background: #970606;
-        }
-
-        td.c {
-            background: #1a5a09;
-        }
-
-        td.d {
             background: #b35118;
         }
 
-        td.e {
-            background: #ffb72e;
+        td.c {
+            background: #970606;
+        }
+
+        td.d {
+            background: #1a5a09;
         }
     </style>
 </head>
@@ -35,9 +31,10 @@
     const n = 10;
     const m = 10;
 
-    const options = ' a';
+    const options = ' ab';
     let selector = [...options];
-    selector.push(go() ? go() ? 'b' : 'c' : go() ? 'd' : 'e');
+    selector.push(go() ? 'c' : 'd');
+    if (go()) selector.push(' ');
 
     function main() {
         load();

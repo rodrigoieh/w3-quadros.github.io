@@ -6,28 +6,24 @@
     <title></title>
     <style>
         body {
-            background-color: rgba(111, 141, 40, 0.5);
-            /*background-color: rgba(97, 132, 40, 1);*/
+            background-color: #bcb5a0;
         }
 
         td.a {
-            background: rgba(15, 72, 133, 1);
+            background: #0f8385;
         }
 
         td.b {
-            background: #b35118;
+            background: #0b0e15;
         }
     </style>
-    <title></title>
 </head>
 <body onload="main()">
 <script>
     const n = 10;
     const m = 10;
-
     let rotations = [0, 180];
-    const randomRotation = Math.floor(Math.random() * rotations.length);
-    let rotation = rotations[randomRotation];
+    let rotation = rotations[new Date().getSeconds() & 1];
 
     function main() {
         load();

@@ -6,27 +6,33 @@
     <title></title>
     <style>
         body {
-            background-color: rgba(97, 99, 86, 0.5);
+            background-color: rgb(62, 90, 44);
         }
 
         td.a {
-            background: rgba(15, 72, 133, 1);
+            background-color: rgb(252, 236, 196);
+            background-color: rgb(116, 212, 52);
+            background-color: rgb(62, 90, 44);
+            background-color: rgb(204, 188, 148);
+            background-color: rgb(154, 173, 85);
+            background-color: rgb(76, 133, 39);
         }
 
         td.b {
-            background: #970606;
+            background-color: rgb(213, 43, 30);
         }
 
         td.c {
-            background: #1a5a09;
+            background-color: rgb(9, 83, 173);
+            background-color: rgb(0, 57, 166);
         }
 
-        td.d {
-            background: #b35118;
+        .x {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        td.e {
-            background: #ffb72e;
+        .y {
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
@@ -34,42 +40,45 @@
 <script>
     const n = 10;
     const m = 10;
-
-    const options = 'a';
-    let selector = [...options];
-    selector.push(go() ? go() ? 'b' : 'c' : go() ? 'd' : 'e');
+    let variant = -1;
+    let selector = [...'aaaaa'];
 
     function main() {
+        if (variant === -1) {
+            variant = Math.round(Math.random()) === 1 ? 'b' : 'c';
+            selector.push(variant);
+        }
         load();
         render(n, m);
     }
 
-    function go() {
-        return Math.round(Math.random()) === 1;
-    }
-
     function load() {
         let body = document.body,
-            demo = document.createElement('div'),
-            table = document.createElement('table');
-        table.addEventListener('click', () => render(n, m));
-        demo.setAttribute('id', 'demo');
-        table.setAttribute('id', 'table');
+            table = document.createElement('table'),
+            demo = document.createElement('div');
+        table.addEventListener('click', (event) => {
+            const className = event.target.className;
+            console.debug(className);
+            event.target.className = className === 'td b' ? 'td a' : className === 'td a' ? 'td c' : 'td b';
+        });
+        table.setAttribute('id', 'demo');
         demo.appendChild(table);
         body.appendChild(demo);
         styleSetPositionCenter(demo);
     }
 
     function render(n, m) {
-        let table = document.getElementById('table');
-        table.innerHTML = '';
+        let table = document.getElementById('demo');
         for (let i = 0; i < n; i++) {
             let tr = table.insertRow();
             for (let j = 0; j < m; j++) {
                 let td = tr.insertCell();
                 td.appendChild(document.createTextNode(''));
-                const selection = Math.floor(Math.random() * selector.length);
-                td.setAttribute('class', `td ${selector[selection]}`);
+                const selection = Math.floor(Math.random() * selector.length)
+                if (i === n - 2 || i === 0) {
+                    td.setAttribute('class', `td ${selector[selection]} x`);
+                } else td.setAttribute('class', `td ${selector[selection]}`);
+
             }
         }
     }

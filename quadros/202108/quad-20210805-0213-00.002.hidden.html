@@ -17,7 +17,7 @@
     const f = [-1, 1];
     const palette = ['#c9c8c3', '#afafaa'];
     setCellContentOverride = (td, i, j, y, x) => {
-        cellHeightOverride = '180px';
+        cellHeightOverride = 180;
         const pos = getRandomInt(0, 1);
         const deg = getRandomInt(1, 180) * f[pos];
         const a = palette[pos ^ 1];

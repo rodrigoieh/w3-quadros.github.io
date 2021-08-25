@@ -4,6 +4,7 @@ let tableHeight;
 let tableWidthOverride = 0;
 let tableHeightOverride = 0;
 let tableSizeUnit = 'px';
+let tableSizeUnitOverride = '';
 let cellWidth;
 let cellHeight;
 let cellWidthOverride = 0;
@@ -12,9 +13,10 @@ let cellSize = 60;
 let cellSizeUnit = 'px';
 let cellSizeUnitOverride = '';
 let cellContent = 'black';
-let setCellContentOverride = undefined;
 const getTableDimension = (d) => `${d}${tableSizeUnit}`;
 const getCellDimension = (d) => `${d}${cellSizeUnit}`;
+
+let setCellContentOverride = undefined;
 const setCellContent = (td, i, j, y = n, x = m) => {
     if (typeof setCellContentOverride === 'function')
         return setCellContentOverride(td, i, j, y, x);
@@ -36,6 +38,7 @@ function setup(y = n, x = m, cellSizeOverride) {
     cellHeight = tableHeight / y;
     cellSize = Math.min(Math.min(cellWidth, cellHeight), cellSize);
     cellSizeUnit = (cellSizeUnitOverride === '') ? cellSizeUnit : cellSizeUnitOverride;
+    tableSizeUnit = (tableSizeUnitOverride === '') ? tableSizeUnit : tableSizeUnitOverride;
 }
 
 function render(y = n, x = m) {

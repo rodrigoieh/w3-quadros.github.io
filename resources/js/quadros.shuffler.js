@@ -1,6 +1,9 @@
 const go = () => Math.round(Math.random()) === 1;
-const reset = () => render();
-const shuffle = () => render();
+const reset = () => shuffle();
+const shuffle = () => {
+    document.getElementById('demo').remove();
+    render();
+}
 const shuffler = () => {
     for (let i = 15; i > 0; i--)
         setTimeout(shuffle, 60 * i);

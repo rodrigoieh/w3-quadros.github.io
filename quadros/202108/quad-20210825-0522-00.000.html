@@ -3,28 +3,42 @@
     <meta charset="UTF-8">
     <script src="../../resources/js/quadros.style.js"></script>
     <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.shuffler.js"></script>
     <script src="../../resources/js/quadros.table.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
     <title>tiles</title>
 </head>
 <style>
+    body {
+        background-color: #082942;
+    }
+
+    table {
+        border: 1px #74aace solid;
+        box-shadow: 0 0 10px 0 #3d80bb;
+        opacity: 90%;
+    }
+
     td {
-        border: 2px #d2d2ce solid;
+        border: 0 #c0910e solid;
     }
 </style>
 <body>
 <script>
     const f = [-1, 1];
-    const palette = ['#c9c8c3', '#afafaa'];
+    const deg = 90;
+    const palette = ['#083d6e', '#124e85'];
+    tableHeightOverride = 80;
+    tableWidthOverride = 1000;
+    cellHeightOverride = 40;
+    cellWidthOverride = 300;
     setCellContentOverride = (td, i, j, y, x) => {
-        cellHeightOverride = '180px';
         const pos = getRandomInt(0, 1);
-        const deg = getRandomInt(1, 180) * f[pos];
         const a = palette[pos ^ 1];
         const b = palette[pos & 1];
         td.style.backgroundImage = `linear-gradient(${deg}deg,${a},${b})`;
     }
-    main(6, 24, 0);
+    main(20, 6, 0);
 </script>
 </body>
 </html>

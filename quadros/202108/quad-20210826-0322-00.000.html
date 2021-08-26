@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>tiles</title>
+    <style>
+        body {
+            background-image: linear-gradient(33deg, #ad8210 66%, #c1ad67);
+        }
+    </style>
+</head>
+<body>
+<script>
+    class Q {
+        constructor(t, r, b, l) {
+            this.top = t;
+            this.right = r;
+            this.bottom = b;
+            this.left = l;
+        }
+
+        isClosed = () => this.top & this.right & this.bottom & this.left;
+
+        static new(top, right, bottom, left) {
+            return new Q(top, right, bottom, left);
+        }
+    }
+
+    const quad = [
+        [Q.new(1, 1, 0, 1), Q.new(1, 0, 1, 1), Q.new(1, 1, 1, 0)],
+        [Q.new(0, 1, 1, 1), Q.new(1, 1, 1, 1), Q.new(1, 1, 0, 1)],
+        [Q.new(1, 0, 1, 1), Q.new(1, 1, 1, 0), Q.new(0, 1, 1, 1)]
+    ];
+
+    const repetitions = 4;
+    const quadLength = quad.length
+    const qy = quadLength;
+    const qx = quadLength;
+    const ny = repetitions * qy;
+    const nx = repetitions * qx;
+    let quads = [];
+    for (let i = 0; i < ny; i++) {
+        let tmp = [];
+        for (let j = 0; j < nx; j++) {
+            const q = quad[i % qy][j % qx];
+            tmp.push(q);
+        }
+        quads.push(tmp);
+    }
+    const palette = [
+        '#626161', '#626161', '#2e79d7',
+        'transparent', '#000000', '#ffffff'
+    ];
+    const quadColorBackground = 3;
+    const quadColorBorder = palette[2];
+    const quadBorder = `2px ${quadColorBorder} solid`;
+    setCellContentOverride = (td, i, j, y, x) => {
+        const q = quads[i][j];
+        if (q.top) td.style.borderTop = quadBorder;
+        if (q.right) td.style.borderRight = quadBorder;
+        if (q.bottom) td.style.borderBottom = quadBorder;
+        if (q.left) td.style.borderLeft = quadBorder;
+        td.style.background = q.isClosed() ? palette[quadColorBackground] : palette[quadColorBackground + 1];
+    }
+    main(ny, nx);
+</script>
+</body>
+</html>

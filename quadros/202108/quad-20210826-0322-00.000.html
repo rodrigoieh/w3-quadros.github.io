@@ -23,13 +23,11 @@
         }
 
         isClosed = () => this.top & this.right & this.bottom & this.left;
-        isSquare = this.isClosed;
 
         static new(top, right, bottom, left) {
             return new Q(top, right, bottom, left);
         }
     }
-
 
     const quad = [
         [Q.new(1, 1, 0, 1), Q.new(1, 0, 1, 1), Q.new(1, 1, 1, 0)],
@@ -65,7 +63,7 @@
         if (q.right) td.style.borderRight = quadBorder;
         if (q.bottom) td.style.borderBottom = quadBorder;
         if (q.left) td.style.borderLeft = quadBorder;
-        td.style.background = q.isSquare() ? palette[quadColorBackground] : palette[quadColorBackground + 1];
+        td.style.background = q.isClosed() ? palette[quadColorBackground] : palette[quadColorBackground + 1];
     }
     main(ny, nx);
 </script>

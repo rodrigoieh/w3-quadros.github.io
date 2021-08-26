@@ -54,7 +54,7 @@
         '#626161', '#626161', '#2e79d7',
         'transparent', '#000000', '#ffffff'
     ];
-    const quadColorBackground = 3;
+    const quadColorBackground = 4;
     const quadColorBorder = palette[2];
     const quadBorder = `2px ${quadColorBorder} solid`;
     setCellContentOverride = (td, i, j, y, x) => {
@@ -63,7 +63,7 @@
         if (q.right) td.style.borderRight = quadBorder;
         if (q.bottom) td.style.borderBottom = quadBorder;
         if (q.left) td.style.borderLeft = quadBorder;
-        td.style.background = q.isClosed() ? palette[quadColorBackground] : palette[quadColorBackground + 1];
+        td.style.background = q.isClosed() ? 'transparent' : palette[quadColorBackground];
     }
     main(ny, nx);
 </script>

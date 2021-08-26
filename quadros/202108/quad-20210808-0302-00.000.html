@@ -42,14 +42,16 @@
         quads.push(tmp);
     }
     const palette = ['#626161', '#626161', '#ffffff', '#c86023'];
-    const quadBorder = `1px ${palette[2]} solid`;
+    const quadColorBackground = palette[3];
+    const quadColorBorder = palette[2];
+    const quadBorder = `1px ${quadColorBorder} solid`;
     setCellContentOverride = (td, i, j, y, x) => {
         const q = quads[i][j];
         if (q.top) td.style.borderTop = quadBorder;
         if (q.right) td.style.borderRight = quadBorder;
         if (q.bottom) td.style.borderBottom = quadBorder;
         if (q.left) td.style.borderLeft = quadBorder;
-        td.style.background = palette[3];
+        td.style.background = quadColorBackground;
     }
     main(ny, nx);
 </script>

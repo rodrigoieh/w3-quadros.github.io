@@ -28,11 +28,11 @@ const getElementImageSourceBackup = (img) => {
     const width = 700;
     const parameters = {
         target: `https://phantomjscloud.com/api/browser/v2/${apiKey}/`,
-        request: `?request={url:%22${url}%22,`,
-        renderType: `renderType:%22jpeg%22,`,
+        request: `?request={url:"${url}",`,
+        renderType: `renderType:"jpeg",`,
         renderSettings: `renderSettings:{viewport:{width:${width},height:${height}},clipRectangle:{width:${width},height:${height}},`,
         zoomFactor: `zoomFactor:${zoomFactor}},`,
-        requestSettings: `requestSettings:{doneWhen:[{event:%22domReady%22}]}}`,
+        requestSettings: `requestSettings:{doneWhen:[{event:"domReady"}]}}`,
     }
     const buildSource = () =>
         parameters.target +
@@ -107,7 +107,7 @@ const getElementAnchor = (id, href, title = id) => {
 
 /*** Html element builder/helper function for images ***/
 
-const getElementImage = (id, src, visible, width = 150, height = 150) => {
+const getElementImage = (id, src, visible, width = 100, height = 100) => {
     let img = document.createElement('img');
     img.id = `preview-img-${id}${visible ? '' : '-hidden'}`;
     img.src = src;
@@ -129,16 +129,17 @@ const getElementImage = (id, src, visible, width = 150, height = 150) => {
 /*** Index main function ***/
 
 (function () {
+    const quadSize = isMobileNavigator() ? 150 : 100;
     let previews = document.getElementById('previews');
     const directories = index.collection.reverse();
     for (const directory of directories) {
         const quadros = directory.collection;
         if (quadros !== undefined) {
             const k = quadros.length;
-            for (let i = k - 1; i > 0; i--) {
+            for (let i = k - 1; i >= 0; i--) {
                 const quadro = Quadro.class(quadros[i]);
                 let a = getElementAnchor(quadro.id, quadro.path);
-                const image = getElementImage(quadro.id, quadro.preview, quadro.visible);
+                const image = getElementImage(quadro.id, quadro.preview, quadro.visible, quadSize, quadSize);
                 a.appendChild(image);
                 previews.appendChild(a);
             }

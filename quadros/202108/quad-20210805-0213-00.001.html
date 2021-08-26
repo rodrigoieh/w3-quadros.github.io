@@ -21,7 +21,7 @@
     }
 
     td {
-        background: #620b0b;
+        background: #072e3f;
     }
 
     .coordinate {
@@ -38,42 +38,45 @@
 <script>
     const palette = ['#ffffffdd'];
     const borderSizes = ['5px', '10px'];
-    const blockSize = 2;
     const gridSize = 7;
+    const blockSize = 2;
+    const blockSizeDoubled = blockSize * 2;
     const a = blockSize * gridSize;
     const b = blockSize * gridSize;
     let sectionX = 0;
     let sectionY = 0;
+    const gridBorder = 1;
+    const getTableDataBorder = (b = 0, p = 0) => `${borderSizes[b]} ${palette[p]} solid`;
     setCellContentOverride = (td, i, j, y, x) => {
         if (j % blockSize === 0 && j !== 0) sectionX++;
         if (i % blockSize === 0 && j === 0) sectionY++;
         if ((j + 1) % blockSize === 0) {
-            td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
+            td.style.borderRight = getTableDataBorder();
         }
         if ((i + 1) % blockSize === 0) {
-            td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
+            td.style.borderBottom = getTableDataBorder();
         }
         if (sectionY % blockSize === 0 && sectionX % blockSize === 0) {
-            if (j % (blockSize * 2) === 0) {
-                td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
+            if (j % blockSizeDoubled === 0) {
+                td.style.borderRight = getTableDataBorder();
             }
         } else if (sectionY % blockSize !== 0 && sectionX % blockSize !== 0) {
-            if ((j + 2) % (blockSize * 2) === 0) {
-                td.style.borderRight = `${borderSizes[0]} ${palette[0]} solid`;
+            if ((j + 2) % blockSizeDoubled === 0) {
+                td.style.borderRight = getTableDataBorder();
             }
         } else if (sectionY % blockSize === 0 && sectionX % blockSize !== 0) {
-            if ((i + 2) % (blockSize * 2) === 0) {
-                td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
+            if ((i + 2) % blockSizeDoubled === 0) {
+                td.style.borderBottom = getTableDataBorder();
             }
         } else if (sectionY % blockSize !== 0 && sectionX % blockSize === 0) {
-            if (i % (blockSize * 2) === 0) {
-                td.style.borderBottom = `${borderSizes[0]} ${palette[0]} solid`;
+            if (i % blockSizeDoubled === 0) {
+                td.style.borderBottom = getTableDataBorder();
             }
         }
-        if (j === 0) td.style.borderLeft = `${borderSizes[1]} ${palette[0]} solid`;
-        else if (j === x - 1) td.style.borderRight = `${borderSizes[1]} ${palette[0]} solid`;
-        if (i === 0) td.style.borderTop = `${borderSizes[1]} ${palette[0]} solid`;
-        else if (i === y - 1) td.style.borderBottom = `${borderSizes[1]} ${palette[0]} solid`;
+        if (j === 0) td.style.borderLeft = getTableDataBorder(gridBorder);
+        else if (j === x - 1) td.style.borderRight = getTableDataBorder(gridBorder);
+        if (i === 0) td.style.borderTop = getTableDataBorder(gridBorder);
+        else if (i === y - 1) td.style.borderBottom = getTableDataBorder(gridBorder);
     }
     main(a, b, 0);
 </script>

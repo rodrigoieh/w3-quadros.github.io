@@ -36,7 +36,7 @@
     for (let i = 0; i < k; i++) {
         Array.prototype.push.apply(lines, patternLines);
         Array.prototype.push.apply(separators, patternSeparators);
-        separators.push(patternSeparator);
+        if (i !== k - 1) separators.push(patternSeparator);
     }
     const patternColor = '#c9b12d';
     const patternBackground = 'var(--patternBackground)';
@@ -53,6 +53,7 @@
         td.style.borderBottom = `${separators[i] * separatorFactor}${separatorSizeUnit} ${patternBackground} ${separatorType}`;
     }
     main(h, 1);
+    document.body.style.zoom = '100%';
 </script>
 </body>
 </html>

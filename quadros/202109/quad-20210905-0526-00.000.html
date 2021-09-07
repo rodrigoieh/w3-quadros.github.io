@@ -9,6 +9,7 @@
     <style>
         :root {
             --background: #223e54;
+            --patternColor: #c9b12d;
             --patternBackground: var(--background);
         }
 
@@ -38,7 +39,7 @@
         Array.prototype.push.apply(separators, patternSeparators);
         if (i !== k - 1) separators.push(patternSeparator);
     }
-    const patternColor = '#c9b12d';
+    const patternColor = 'var(--patternColor)';
     const patternBackground = 'var(--patternBackground)';
     const separatorFactor = 2;
     const separatorSizeUnit = 'px';

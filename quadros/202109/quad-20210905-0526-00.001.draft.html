@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>stripes</title>
+    <style>
+        :root {
+            --background: #223e54;
+            --patternColor: #ec0909;
+            --patternBreak: 1px white solid;
+            --patternBackground: var(--background);
+        }
+
+        body {
+            background: var(--background);
+        }
+    </style>
+</head>
+<body>
+<script>
+    const repetitions = 5;
+    const patternLineTypes = {
+        "thin": 1,
+        "normal": 3,
+        "thick": 35,
+        "separator": 1
+    }
+    let patternLines = [];
+    let patternLinesWeight = 0;
+    const p = patternLineTypes;
+    const patternLineBreak = -1;
+    const patternLinesLimit = p.thin * 16 + p.normal * 2 + p.thick;
+    const patternSeparators = [];
+    for (let i = 0; ; i++) {
+        let patternLineType = getRandomProperty(patternLineTypes);
+        patternLinesWeight += patternLineType;
+        if (patternLinesWeight <= patternLinesLimit) {
+            patternLines.push(patternLineType);
+            patternSeparators.push(patternLineTypes.separator);
+        } else break;
+    }
+    console.debug(patternLines.reduce((a, b) => a + b, 0));
+    let lines = [];
+    let separators = [];
+    for (let i = 1; i <= repetitions; i++) {
+        Array.prototype.push.apply(lines, patternLines);
+        Array.prototype.push.apply(separators, patternSeparators);
+        separators.push(patternLineBreak);
+    }
+    const patternColor = 'var(--patternColor)';
+    const patternBackground = 'var(--patternBackground)';
+    const patternBreak = 'var(--patternBreak)';
+    const separatorFactor = 2;
+    const separatorSizeUnit = 'px';
+    const separatorType = 'solid';
+    const h = lines.length;
+    const w = window.innerWidth / 2;
+    tableHeightOverride = h;
+    tableWidthOverride = w;
+    setCellContentOverride = (td, i, j, y, x) => {
+        cellHeight = lines[i];
+        td.style.background = patternColor;
+        if (separators[i] < 0)
+            td.style.borderBottom = patternBreak;
+        else td.style.borderBottom = `${separators[i] * separatorFactor}${separatorSizeUnit} ${patternBackground} ${separatorType}`;
+    }
+    main(h, 1);
+    document.body.style.zoom = '150%';
+</script>
+</body>
+</html>

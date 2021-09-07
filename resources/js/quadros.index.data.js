@@ -1403,6 +1403,25 @@ const index =  {
       ]
     },
     {
+      id: "202109",
+      type: "folder",
+      path: "quadros/202109",
+      directory: "202109",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20210905-0526-00.000",
+          type: "file",
+          path: "quadros/202109/quad-20210905-0526-00.000.html",
+          preview: "http://localhost:8001/quadros/202109/quad-20210905-0526-00.000.jpeg",
+          filename: "quad-20210905-0526-00.000.html",
+          extension: ".html",
+          directory: "quadros/202109",
+          visible: true
+        }
+      ]
+    },
+    {
       id: "308711",
       type: "folder",
       path: "quadros/308711",

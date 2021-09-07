@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>tiles</title>
+    <style>
+        :root {
+            --background: #223e54;
+            --patternBackground: var(--background);
+        }
+
+        body {
+            background: var(--background);
+        }
+    </style>
+</head>
+<body>
+<script>
+    const patternLines = [
+        1, 1, 1, 1, 1, 1, 1, 1,
+        1, 20, 1, 10, 1, 20, 1,
+        1, 1, 1, 1, 1, 1, 1, 1
+    ];
+    const patternSeparators = [
+        1, 1, 1, 1, 1, 1, 1, 10,
+        1, 1, 1, 1, 1, 1, 10,
+        1, 1, 1, 1, 1, 1, 1
+    ];
+    const k = 3;
+    const patternSeparator = 20;
+    let lines = [];
+    let separators = [];
+    for (let i = 0; i < k; i++) {
+        Array.prototype.push.apply(lines, patternLines);
+        Array.prototype.push.apply(separators, patternSeparators);
+        separators.push(patternSeparator);
+    }
+    const patternColor = '#c9b12d';
+    const patternBackground = 'var(--patternBackground)';
+    const separatorFactor = 2;
+    const separatorSizeUnit = 'px';
+    const separatorType = 'solid';
+    const h = lines.length;
+    const w = window.innerWidth / 2;
+    tableHeightOverride = h;
+    tableWidthOverride = w;
+    setCellContentOverride = (td, i, j, y, x) => {
+        cellHeight = lines[i];
+        td.style.background = patternColor;
+        td.style.borderBottom = `${separators[i] * separatorFactor}${separatorSizeUnit} ${patternBackground} ${separatorType}`;
+    }
+    main(h, 1);
+</script>
+</body>
+</html>

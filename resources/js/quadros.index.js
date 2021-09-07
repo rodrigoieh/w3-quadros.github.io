@@ -1,7 +1,8 @@
 /*** Quadros ***/
-const version = '1.0.0';
-const author = 'rodrigoieh@xronos.cl';
+
 const info = () => {
+    const version = '1.0.0';
+    const author = 'rodrigoieh@xronos.cl';
     const colors = [
         '#073447', '#073447', '#073447',
         '#e5520d', '#e5520d', '#e5520d'

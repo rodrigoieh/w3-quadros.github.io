@@ -1,3 +1,24 @@
+/*** Quadros ***/
+const version = '1.0.0';
+const author = 'rodrigoieh@xronos.cl';
+const info = () => {
+    const colors = [
+        '#073447', '#073447', '#073447',
+        '#e5520d', '#e5520d', '#e5520d'
+    ];
+    const background = `background-image: linear-gradient(to bottom, ${colors.join()});`;
+    console.log('%c\n' + '\n' + '\n' +
+        ' ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗  ██████╗ ███████╗\n' +
+        '██╔═══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔════╝\n' +
+        '██║   ██║██║   ██║███████║██║  ██║██████╔╝██║   ██║███████╗\n' +
+        '██║▄▄ ██║██║   ██║██╔══██║██║  ██║██╔══██╗██║   ██║╚════██║\n' +
+        '╚██████╔╝╚██████╔╝██║  ██║██████╔╝██║  ██║╚██████╔╝███████║\n' +
+        '╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝'
+        , background);
+    console.log(`version: ${version}`);
+    console.log(`author:  ${author}`);
+};
+
 /*** Object for previews ***/
 
 class Quadro {
@@ -146,4 +167,5 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
         }
     }
     addEventListeners();
+    info();
 }());

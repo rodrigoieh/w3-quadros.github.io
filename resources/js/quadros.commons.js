@@ -51,6 +51,12 @@ const isMobileNavigator = window.mobileCheck = () => {
     return isMobile;
 };
 
+// Returns a random value from a key/value pair (properties)
+const getRandomProperty = (obj) => {
+    const reg = Object.keys(obj);
+    return obj[reg[reg.length * Math.random() << 0]];
+};
+
 /*** Executed on-demand, functions: expanded ***/
 
 // Returns the name of the webpage file without its extension

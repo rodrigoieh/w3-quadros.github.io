@@ -1420,14 +1420,14 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20210905-0526-00.001",
+          id: "quad-20210905-0526-00.001.draft",
           type: "file",
-          path: "quadros/202109/quad-20210905-0526-00.001.html",
+          path: "quadros/202109/quad-20210905-0526-00.001.draft.html",
           preview: "http://localhost:8001/quadros/202109/quad-20210905-0526-00.001.jpeg",
-          filename: "quad-20210905-0526-00.001.html",
+          filename: "quad-20210905-0526-00.001.draft.html",
           extension: ".html",
           directory: "quadros/202109",
-          visible: true
+          visible: false
         }
       ]
     },

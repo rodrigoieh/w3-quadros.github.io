@@ -1141,14 +1141,14 @@ const index =  {
           visible: false
         },
         {
-          id: "quad-20210804-1200-00.000",
+          id: "quad-20210804-1200-00.000.hidden",
           type: "file",
-          path: "quadros/202108/quad-20210804-1200-00.000.html",
+          path: "quadros/202108/quad-20210804-1200-00.000.hidden.html",
           preview: "https://quad.xronos.cl/quadros/202108/quad-20210804-1200-00.000.jpeg",
-          filename: "quad-20210804-1200-00.000.html",
+          filename: "quad-20210804-1200-00.000.hidden.html",
           extension: ".html",
           directory: "quadros/202108",
-          visible: true
+          visible: false
         },
         {
           id: "quad-20210804-1639-00.000",

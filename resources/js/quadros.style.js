@@ -24,7 +24,6 @@ const styleSetSelectorsForElement = (element, selectors, palette, context = '') 
         const styleSelector = `${element}.${selectors[i]}`;
         const styleColor = `--palette:${palette[i]};`;
         const styleBackground = `background:var(--palette);`;
-        // const styleBorder = `border:1px #ffffff solid;`;
         let styleFromContext = '';
         if (context === 'grid') styleFromContext += `grid-area:${selectors[i]};`;
         style.innerHTML = `${styleSelector}{${styleColor}${styleBackground}${styleFromContext}`;

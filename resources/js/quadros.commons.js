@@ -38,8 +38,7 @@ const previousChar = (c) => String.fromCharCode(c.charCodeAt(0) - 1);
 const getSelectors = (k, index = previousChar('a')) => {
     if (k < 1 || 26 < k) return [];
     let selectors = [];
-    index = nextChar(index);
-    for (let i = 0; i < k; i++) selectors.push(nextChar(index));
+    for (let i = 0; i < k; i++) selectors.push(index = nextChar(index));
     return selectors;
 }
 

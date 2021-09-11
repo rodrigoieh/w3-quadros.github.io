@@ -14,6 +14,7 @@ let isBorderHidden = true;
 
 // functions
 let classNameOverride = undefined;
+const demo = addEventListeners;
 const reset = render;
 const clear = () => render(false);
 const borderDisplayTimeout = () => {
@@ -27,7 +28,8 @@ const borderDisplayTimeout = () => {
  * Functions onLoad Page Event
  */
 
-function main() {
+function main(modeOverride = '') {
+    if (modeOverride !== '') mode = modeOverride;
     load();
     render();
     borderDisplayTimeout();

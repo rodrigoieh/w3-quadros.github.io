@@ -106,6 +106,9 @@
 - [html2canvas](https://html2canvas.hertzen.com/)
 - [CSS Naming Conventions that Will Save You Hours of Debugging](https://www.freecodecamp.org/news/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849/)
 - [Can I use? mdn-api_css_paintworklet](https://caniuse.com/mdn-api_css_paintworklet)
+- [Bansai.io patterns css, web][https://bansal.io/pattern-css#introduction]
+- [Bansai.io patterns css, git][https://github.com/bansal-io/pattern.css]
+- [MagicPattern CSS Background Patterns][https://www.magicpattern.design/tools/css-backgrounds]
 
 ## CSS Cascading Style Sheets
 

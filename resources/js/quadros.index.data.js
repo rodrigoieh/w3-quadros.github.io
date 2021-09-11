@@ -1428,6 +1428,46 @@ const index =  {
           extension: ".html",
           directory: "quadros/202109",
           visible: false
+        },
+        {
+          id: "quad-20210911-1838-00.000.hidden",
+          type: "file",
+          path: "quadros/202109/quad-20210911-1838-00.000.hidden.html",
+          preview: "https://quad.xronos.cl/quadros/202109/quad-20210911-1838-00.000.jpeg",
+          filename: "quad-20210911-1838-00.000.hidden.html",
+          extension: ".html",
+          directory: "quadros/202109",
+          visible: false
+        },
+        {
+          id: "quad-20210911-1838-00.001",
+          type: "file",
+          path: "quadros/202109/quad-20210911-1838-00.001.html",
+          preview: "https://quad.xronos.cl/quadros/202109/quad-20210911-1838-00.001.jpeg",
+          filename: "quad-20210911-1838-00.001.html",
+          extension: ".html",
+          directory: "quadros/202109",
+          visible: true
+        },
+        {
+          id: "quad-20210911-1838-00.002.hidden",
+          type: "file",
+          path: "quadros/202109/quad-20210911-1838-00.002.hidden.html",
+          preview: "https://quad.xronos.cl/quadros/202109/quad-20210911-1838-00.002.jpeg",
+          filename: "quad-20210911-1838-00.002.hidden.html",
+          extension: ".html",
+          directory: "quadros/202109",
+          visible: false
+        },
+        {
+          id: "quad-20210911-1838-00.003",
+          type: "file",
+          path: "quadros/202109/quad-20210911-1838-00.003.html",
+          preview: "https://quad.xronos.cl/quadros/202109/quad-20210911-1838-00.003.jpeg",
+          filename: "quad-20210911-1838-00.003.html",
+          extension: ".html",
+          directory: "quadros/202109",
+          visible: true
         }
       ]
     },

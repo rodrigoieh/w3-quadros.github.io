@@ -49,26 +49,6 @@ function load() {
             isDrawing = false;
         }
     });
-    canvas.addEventListener('ontouchstart', e => {
-        x = e.offsetX;
-        y = e.offsetY;
-        isDrawing = true;
-    });
-    canvas.addEventListener('ontouchmove', e => {
-        if (isDrawing === true) {
-            draw(context, x, y, e.offsetX, e.offsetY);
-            x = e.offsetX;
-            y = e.offsetY;
-        }
-    });
-    canvas.addEventListener('ontouchend', e => {
-        if (isDrawing === true) {
-            draw(context, x, y, e.offsetX, e.offsetY);
-            x = 0;
-            y = 0;
-            isDrawing = false;
-        }
-    });
     document.addEventListener('keydown', event => {
         const key = event.key;
         switch (key) {

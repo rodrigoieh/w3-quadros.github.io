@@ -52,6 +52,6 @@ function output(tree, type = 'javascript') {
 
 if (module.parent == undefined) {
     // usage: node resources/node/quadros.index.js quadros > resources/js/quadros.index.js
-    let tree = util.inspect(ls(process.argv[2]), showHidden = false, depth = null, colorize = false);
+    let tree = util.inspect(ls(process.argv[2]), false, null, false);
     output(tree)
 }

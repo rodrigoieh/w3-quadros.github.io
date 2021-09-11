@@ -28,8 +28,7 @@ const borderDisplayTimeout = () => {
  * Functions onLoad Page Event
  */
 
-function main(modeOverride = '') {
-    if (modeOverride !== '') mode = modeOverride;
+function main() {
     load();
     render();
     borderDisplayTimeout();

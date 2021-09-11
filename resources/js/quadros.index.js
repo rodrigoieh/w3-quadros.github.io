@@ -91,13 +91,12 @@ const debugPreviewImage = (event, img) => {
 // Toggles between display/hide, on images with id markers 'draft' and 'hidden'
 const toggleImageDisplay = () => {
     let images = document.getElementsByTagName('img');
-    for (let i = 0; i < images.length; i++) {
-        let img = images[i];
-        if (img.id.includes('hidden')) {
-            let visible = img.style.display;
+    for (let image of images) {
+        if (image.id.includes('hidden')) {
+            let visible = image.style.display;
             let display = 'none';
             if (visible === display) display = 'inline';
-            img.style.display = display;
+            image.style.display = display;
         }
     }
 };

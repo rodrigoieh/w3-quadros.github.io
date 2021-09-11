@@ -14,7 +14,6 @@ let isBorderHidden = true;
 
 // functions
 let classNameOverride = undefined;
-const demo = addEventListeners;
 const reset = render;
 const clear = () => render(false);
 const borderDisplayTimeout = () => {

@@ -79,7 +79,7 @@ const debugPreviewImage = (event, img) => {
         case 'error':
             console.error(img.src);
             img.longdesc = getElementImageSourceBackup(img);
-            img.addEventListener('mouseover', event => debugPreviewImage(event, img));
+            img.addEventListener('mouseover', () => debugPreviewImage(event, img));
             break;
         case 'abort':
             break;
@@ -140,7 +140,6 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
     img.style.backgroundColor = 'transparent';
     img.style.backgroundColor = 'hsl(206,42%,23%)';
     img.style.display = visible ? 'inherit' : 'none';
-    // img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
     img.addEventListener('load', event => debugPreviewImage(event));
     img.addEventListener('error', event => debugPreviewImage(event, img));
     img.addEventListener('abort', event => debugPreviewImage(event));
@@ -152,7 +151,7 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
 (function () {
     const quadSize = isMobileNavigator() ? 150 : 100;
     let previews = document.getElementById('previews');
-    const directories = index.collection.reverse();
+    const directories = [...index.collection].reverse();
     for (const directory of directories) {
         const quadros = directory.collection;
         if (quadros !== undefined) {

@@ -43,7 +43,7 @@ class Quadro {
 
 const getElementImageSourceBackup = (img) => {
     const apiKey = 'ak-08259-02jjr-yw60d-m1k8w-bev11';
-    const host = 'https://b2cd-186-105-53-16.ngrok.io';
+    const host = 'https://6824-186-106-145-191.ngrok.io';
     const url = `${host}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
     const zoomFactor = 1;
     const height = 700;
@@ -79,7 +79,7 @@ const debugPreviewImage = (event, img) => {
         case 'error':
             console.error(img.src);
             img.longdesc = getElementImageSourceBackup(img);
-            img.addEventListener('mouseover', () => debugPreviewImage(event, img));
+            img.addEventListener('mouseover', event => debugPreviewImage(event, img));
             break;
         case 'abort':
             break;
@@ -91,12 +91,13 @@ const debugPreviewImage = (event, img) => {
 // Toggles between display/hide, on images with id markers 'draft' and 'hidden'
 const toggleImageDisplay = () => {
     let images = document.getElementsByTagName('img');
-    for (let image of images) {
-        if (image.id.includes('hidden')) {
-            let visible = image.style.display;
+    for (let i = 0; i < images.length; i++) {
+        let img = images[i];
+        if (img.id.includes('hidden')) {
+            let visible = img.style.display;
             let display = 'none';
             if (visible === display) display = 'inline';
-            image.style.display = display;
+            img.style.display = display;
         }
     }
 };
@@ -140,6 +141,7 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
     img.style.backgroundColor = 'transparent';
     img.style.backgroundColor = 'hsl(206,42%,23%)';
     img.style.display = visible ? 'inherit' : 'none';
+    // img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
     img.addEventListener('load', event => debugPreviewImage(event));
     img.addEventListener('error', event => debugPreviewImage(event, img));
     img.addEventListener('abort', event => debugPreviewImage(event));
@@ -151,7 +153,7 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
 (function () {
     const quadSize = isMobileNavigator() ? 150 : 100;
     let previews = document.getElementById('previews');
-    const directories = [...index.collection].reverse();
+    const directories = index.collection.reverse();
     for (const directory of directories) {
         const quadros = directory.collection;
         if (quadros !== undefined) {

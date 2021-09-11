@@ -13,7 +13,7 @@ function styleSetPositionCenter(element) {
 }
 
 function styleTransform(element, elementRotationInDegrees) {
-    const rotation = `rotate(${elementRotationInDegrees}deg)`;
+    rotation = `rotate(${elementRotationInDegrees}deg)`;
     element.style.transform = rotation;
     element.style.webkitTransform = rotation;
 }
@@ -24,8 +24,16 @@ const styleSetSelectorsForElement = (element, selectors, palette, context = '') 
         const styleSelector = `${element}.${selectors[i]}`;
         const styleColor = `--palette:${palette[i]};`;
         const styleBackground = `background:var(--palette);`;
+        // const styleBorder = `border:1px #ffffff solid;`;
         let styleFromContext = '';
-        if (context === 'grid') styleFromContext += `grid-area:${selectors[i]};`;
+        if (context !== '') {
+            switch (context) {
+                case 'grid':
+                    const gridArea = `grid-area:${selectors[i]};`;
+                    styleFromContext += gridArea;
+                    break;
+            }
+        }
         style.innerHTML = `${styleSelector}{${styleColor}${styleBackground}${styleFromContext}`;
         document.head.appendChild(style);
     }

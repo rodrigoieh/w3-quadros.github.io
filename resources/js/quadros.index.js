@@ -79,7 +79,7 @@ const debugPreviewImage = (event, img) => {
         case 'error':
             console.error(img.src);
             img.longdesc = getElementImageSourceBackup(img);
-            img.addEventListener('mouseover', () => debugPreviewImage(event, img));
+            img.addEventListener('mouseover', event => debugPreviewImage(event, img));
             break;
         case 'abort':
             break;

@@ -91,13 +91,12 @@ const debugPreviewImage = (event, img) => {
 // Toggles between display/hide, on images with id markers 'draft' and 'hidden'
 const toggleImageDisplay = () => {
     let images = document.getElementsByTagName('img');
-    for (let i = 0; i < images.length; i++) {
-        let img = images[i];
-        if (img.id.includes('hidden')) {
-            let visible = img.style.display;
+    for (let image of images) {
+        if (image.id.includes('hidden')) {
+            let visible = image.style.display;
             let display = 'none';
             if (visible === display) display = 'inline';
-            img.style.display = display;
+            image.style.display = display;
         }
     }
 };
@@ -141,7 +140,6 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
     img.style.backgroundColor = 'transparent';
     img.style.backgroundColor = 'hsl(206,42%,23%)';
     img.style.display = visible ? 'inherit' : 'none';
-    // img.style.filter = `grayscale(${visible ? 100 : 50}%)`;
     img.addEventListener('load', event => debugPreviewImage(event));
     img.addEventListener('error', event => debugPreviewImage(event, img));
     img.addEventListener('abort', event => debugPreviewImage(event));
@@ -153,7 +151,7 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
 (function () {
     const quadSize = isMobileNavigator() ? 150 : 100;
     let previews = document.getElementById('previews');
-    const directories = index.collection.reverse();
+    const directories = [...index.collection].reverse();
     for (const directory of directories) {
         const quadros = directory.collection;
         if (quadros !== undefined) {

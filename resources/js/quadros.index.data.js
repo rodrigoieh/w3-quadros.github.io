@@ -962,14 +962,14 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20210715-0231-00.013",
+          id: "quad-20210715-0231-00.013.hidden",
           type: "file",
-          path: "quadros/202107/quad-20210715-0231-00.013.html",
+          path: "quadros/202107/quad-20210715-0231-00.013.hidden.html",
           preview: "http://localhost:8001/quadros/202107/quad-20210715-0231-00.013.jpeg",
-          filename: "quad-20210715-0231-00.013.html",
+          filename: "quad-20210715-0231-00.013.hidden.html",
           extension: ".html",
           directory: "quadros/202107",
-          visible: true
+          visible: false
         },
         {
           id: "quad-20210715-0231-00.020",

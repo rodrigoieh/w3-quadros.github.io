@@ -4,7 +4,9 @@
 
 - [MDN Web Docs](https://github.com/mdn)
 - [mdn/content](https://github.com/mdn/content)
-- [CSS Gradients](https://css-tricks.com/css3-gradients/)
+- [CSS clip-path maker](https://bennettfeely.com/clippy/)
+- [CCS Tricks - CSS3 Gradients](https://css-tricks.com/css3-gradients/)
+- [CCS Tricks - Hexagons and Beyond: Flexible, Responsive Grid Patterns, Sans Media Queries](https://css-tricks.com/hexagons-and-beyond-flexible-responsive-grid-patterns-sans-media-queries/)
 - [CSS Background Patterns From CodePen](https://freebiesupply.com/blog/css-background-patterns/)
 - [Transparent Textures](https://www.transparenttextures.com/)
 - [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/)

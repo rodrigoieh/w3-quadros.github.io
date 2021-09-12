@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hexagons</title>
+    <style>
+        :root {
+            filter: opacity(90%) grayscale(30%);
+            --background: #223e54;
+            --a: #5e696d;
+            --b: #2f5788;
+        }
+
+        body {
+            background: var(--background);
+        }
+
+        .demo {
+            display: grid;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, calc(var(--s) + 2 * var(--mh)));
+            justify-content: center;
+
+            /* size 's' and ratio 'r' */
+            --s: 100px;
+            --r: 1;
+
+            /* clip-path */
+            --h: 1;
+            --v: 0.20;
+            --hc: calc(clamp(0, var(--h), 0.5) * var(--s));
+            --vc: calc(clamp(0, var(--v), 0.5) * var(--s) * var(--r));
+
+            /* margins 'mv' vertical, 'mh' horizontal and float */
+            --mv: 1px;
+            --mh: calc(var(--mv) + (var(--s) - 2 * var(--hc)) / 2);
+            --f: calc(2 * var(--s) * var(--r) + 4 * var(--mv) - 2 * var(--vc) - 2px);
+        }
+
+        .container {
+            grid-column: 1/-1;
+            font-size: 0;
+        }
+
+        .container div {
+            font-size: initial;
+            display: inline-block;
+            background: var(--a);
+            width: var(--s);
+            height: calc(var(--s) * var(--r));
+            margin: var(--mv) var(--mh);
+            margin-bottom: calc(var(--mv) - var(--vc));
+            clip-path: polygon(var(--hc) 0, calc(100% - var(--hc)) 0, 100% var(--vc), 100% calc(100% - var(--vc)), calc(100% - var(--hc)) 100%, var(--hc) 100%, 0 calc(100% - var(--vc)), 0 var(--vc));
+        }
+
+        .container div:nth-child(odd) {
+            background: var(--b);
+        }
+
+        .container::before {
+            content: "";
+            float: left;
+            width: calc(var(--s) / 2 + var(--mh));
+            height: 120%;
+            shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 2px), #000 0 var(--f));
+        }
+    </style>
+</head>
+<body>
+<script>
+    let k = 95;
+    const MIN = 1;
+    const MAX = 1024;
+    // html structure
+    const demoId = 'demo';
+    const containerId = 'container';
+    let demo = document.createElement('div'),
+        container = document.createElement('div');
+    demo.id = demoId;
+    demo.className = demoId;
+    container.id = containerId;
+    container.className = containerId;
+    demo.appendChild(container);
+    document.body.appendChild(demo);
+    // initial setup, adds k hexagons
+    for (let i = 0; i < k; i++) {
+        const div = document.createElement('div');
+        container.appendChild(div);
+    }
+    // create/remove hexagons
+    const containerIncrease = () => container.appendChild(document.createElement('div'));
+    const containerDecrease = () => container.removeChild(container.lastElementChild);
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        switch (key) {
+            case '+':
+                if (k < MAX) {
+                    k++;
+                    containerIncrease();
+                }
+                break;
+            case '-':
+                if (MIN < k) {
+                    k--;
+                    containerDecrease();
+                }
+                break;
+        }
+    });
+</script>
+</body>
+</html>

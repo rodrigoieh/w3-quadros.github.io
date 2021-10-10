@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>hexagons</title>
+    <style>
+        :root {
+            filter: opacity(90%) grayscale(30%);
+            --a: #223e54;
+            --b: #c9b12d;
+        }
+
+        body {
+            background: var(--a);
+        }
+
+        .hexagon {
+            background: var(--b);
+            clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+        }
+    </style>
+</head>
+<body>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.className = 'hexagon';
+    }
+    main(8, 8);
+    document.body.style.zoom = '100%';
+</script>
+</body>
+</html>

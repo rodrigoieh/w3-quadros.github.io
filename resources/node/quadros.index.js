@@ -3,7 +3,7 @@ const fs = require('fs'),
     util = require("util");
 
 function ls(object) {
-    const storage = 'https://rodrigoieh.github.io/w3-quadros.previews.github.io/';
+    const storage = 'https://rodrigoieh.github.io/w3-quadros.previews.github.io';
     const exclusions = ['draft', 'hidden'];
     const isActive = (object) => (!exclusions.find(str => object.includes(str)));
     const lstat = fs.lstatSync(object),

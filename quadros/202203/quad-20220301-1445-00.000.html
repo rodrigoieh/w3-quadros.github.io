@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>kv</title>
+    <style>
+        body {
+            background-color: #bcb5a0;
+        }
+
+        td.a {
+            background: #015BBB;
+        }
+
+        td.b {
+            background: #FED501;
+        }
+    </style>
+</head>
+<body onload="main()">
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.className = (i < y / 2) ? 'a' : 'b';
+    }
+    main(10, 14);
+    document.body.style.zoom = '100%';
+</script>
+</body>
+</html>

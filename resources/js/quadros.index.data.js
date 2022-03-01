@@ -1501,6 +1501,25 @@ const index =  {
       ]
     },
     {
+      id: "202203",
+      type: "folder",
+      path: "quadros/202203",
+      directory: "202203",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20220301-1445-00.000",
+          type: "file",
+          path: "quadros/202203/quad-20220301-1445-00.000.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io//quadros/202203/quad-20220301-1445-00.000.jpeg",
+          filename: "quad-20220301-1445-00.000.html",
+          extension: ".html",
+          directory: "quadros/202203",
+          visible: true
+        }
+      ]
+    },
+    {
       id: "308711",
       type: "folder",
       path: "quadros/308711",

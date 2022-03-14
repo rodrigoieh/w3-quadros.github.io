@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+</head>
+<style>
+    :root {
+        --a: rgba(37, 110, 161, 0.91);
+        --b: #031421;
+        --c: #ffffff;
+    }
+
+    table {
+        border-radius: 100%;
+        background: var(--c);
+    }
+</style>
+<body>
+<script>
+    main(12, 12);
+    const paint = (l = 1) => {
+        const k = 100 / l;
+        const g = (i, x = 0) => i * l + x;
+        let gradient = 'conic-gradient(from 0turn at 50% 50%,';
+        for (let i = 0; i < k - 2; i += 2) {
+            gradient = gradient.concat(`var(--a) ${g(i)}% ${g(i, 1)}%,`);
+            gradient = gradient.concat(`var(--b) ${g(i, 1)}% ${g(i, 2)}%,`);
+        }
+        gradient = gradient.concat(`var(--a) ${k * l}%`);
+        gradient = gradient.concat(')');
+        let root = document.querySelector(':root');
+        root.style.setProperty('--c', gradient);
+    };
+    paint(0.6000000000000187);
+    let x = 0;
+    let y = 0;
+    let degrees = 0;
+    let rotate = (d) => table.style.transform = `rotate(${degrees += d}deg)`
+    let rotateLeft = () => rotate(-5);
+    let rotateRight = () => rotate(5);
+    table.addEventListener('mousemove', (e) => {
+        if (e.pageX === x && e.pageY < y) {
+            console.debug('↑');
+        } else if (e.pageX === x && e.pageY > y) {
+            console.debug('↓');
+        } else if (e.pageY === y && e.pageX < x) {
+            console.debug('←');
+            rotateLeft();
+        } else {
+            console.debug('→');
+            rotateRight();
+        }
+        x = e.pageX;
+        y = e.pageY;
+    });
+</script>
+</body>
+</html>

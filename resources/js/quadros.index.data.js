@@ -1528,11 +1528,21 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20220313-1923-00.000",
+          id: "quad-20220313-2223-00.000",
           type: "file",
-          path: "quadros/202203/quad-20220313-1923-00.000.html",
-          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202203/quad-20220313-1923-00.000.jpeg",
-          filename: "quad-20220313-1923-00.000.html",
+          path: "quadros/202203/quad-20220313-2223-00.000.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202203/quad-20220313-2223-00.000.jpeg",
+          filename: "quad-20220313-2223-00.000.html",
+          extension: ".html",
+          directory: "quadros/202203",
+          visible: true
+        },
+        {
+          id: "quad-20220314-1605-00.000",
+          type: "file",
+          path: "quadros/202203/quad-20220314-1605-00.000.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202203/quad-20220314-1605-00.000.jpeg",
+          filename: "quad-20220314-1605-00.000.html",
           extension: ".html",
           directory: "quadros/202203",
           visible: true

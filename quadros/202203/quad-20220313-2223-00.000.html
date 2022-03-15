@@ -39,9 +39,9 @@
     let x = 0;
     let y = 0;
     let degrees = 0;
-    let rotate = (d) => table.style.transform = `rotate(${degrees += d}deg)`
-    let rotateLeft = () => rotate(-5);
-    let rotateRight = () => rotate(5);
+    const rotate = (d) => table.style.transform = `rotate(${degrees += d}deg)`
+    const rotateLeft = () => rotate(-5);
+    const rotateRight = () => rotate(5);
     table.addEventListener('mousemove', (e) => {
         if (e.pageX === x && e.pageY < y) {
             console.debug('↑');

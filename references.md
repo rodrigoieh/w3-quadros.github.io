@@ -155,7 +155,7 @@
 
 ### Gradients
 
-- [mozilla: Using_CSS_gradients](https://d eveloper.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
+- [mozilla: Using_CSS_gradients](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients)
 
 ### Linear Gradients
 

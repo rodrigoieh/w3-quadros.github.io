@@ -1558,34 +1558,34 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20220317-0246-00.000",
+          id: "quad-20220317-0246-00.000.hidden",
           type: "file",
-          path: "quadros/202203/quad-20220317-0246-00.000.html",
+          path: "quadros/202203/quad-20220317-0246-00.000.hidden.html",
           preview: "http://localhost:8001/quadros/202203/quad-20220317-0246-00.000.jpeg",
-          filename: "quad-20220317-0246-00.000.html",
+          filename: "quad-20220317-0246-00.000.hidden.html",
           extension: ".html",
           directory: "quadros/202203",
-          visible: true
+          visible: false
         },
         {
-          id: "quad-20220317-0301-00.000",
+          id: "quad-20220317-0301-00.000.hidden",
           type: "file",
-          path: "quadros/202203/quad-20220317-0301-00.000.html",
+          path: "quadros/202203/quad-20220317-0301-00.000.hidden.html",
           preview: "http://localhost:8001/quadros/202203/quad-20220317-0301-00.000.jpeg",
-          filename: "quad-20220317-0301-00.000.html",
+          filename: "quad-20220317-0301-00.000.hidden.html",
           extension: ".html",
           directory: "quadros/202203",
-          visible: true
+          visible: false
         },
         {
-          id: "quad-20220317-0301-00.001",
+          id: "quad-20220317-0301-00.001.hidden",
           type: "file",
-          path: "quadros/202203/quad-20220317-0301-00.001.html",
+          path: "quadros/202203/quad-20220317-0301-00.001.hidden.html",
           preview: "http://localhost:8001/quadros/202203/quad-20220317-0301-00.001.jpeg",
-          filename: "quad-20220317-0301-00.001.html",
+          filename: "quad-20220317-0301-00.001.hidden.html",
           extension: ".html",
           directory: "quadros/202203",
-          visible: true
+          visible: false
         }
       ]
     },

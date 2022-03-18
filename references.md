@@ -113,6 +113,7 @@
 - [Bansai.io patterns css, web][https://bansal.io/pattern-css#introduction]
 - [Bansai.io patterns css, git][https://github.com/bansal-io/pattern.css]
 - [MagicPattern CSS Background Patterns][https://www.magicpattern.design/tools/css-backgrounds]
+- [The Shapes of CSS][https://css-tricks.com/the-shapes-of-css]
 
 ## CSS Cascading Style Sheets
 

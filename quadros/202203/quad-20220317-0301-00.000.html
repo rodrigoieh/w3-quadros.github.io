@@ -12,15 +12,11 @@
         }
 
         td.a {
-            background: #26492d;
-        }
-
-        td.b {
             background: #032731;
         }
 
-        td.c {
-            background: #e5e0d9;
+        td.b {
+            background: #ccd3d7;
         }
     </style>
 </head>
@@ -28,18 +24,10 @@
 <script>
     let r = 8;
     let c = 8;
-    const mod = 3;
-    if (r % mod !== 0) r += mod - r % mod;
-    if (c % mod !== 0) c += mod - c % mod;
     setCellContentOverride = (td, i, j, y, x) => {
-        if (i < r / mod)
-            td.className = 'a';
-        else if (i < r / mod * 2)
-            td.className = 'b';
-        else
-            td.className = 'c';
+        td.className = (i === y / 2 - 2) ? 'b' : 'a';
     }
-    main(r,c);
+    main(r, c);
     document.body.style.zoom = '100%';
 </script>
 </body>

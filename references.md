@@ -114,6 +114,8 @@
 - [Bansai.io patterns css, git][https://github.com/bansal-io/pattern.css]
 - [MagicPattern CSS Background Patterns][https://www.magicpattern.design/tools/css-backgrounds]
 - [The Shapes of CSS][https://css-tricks.com/the-shapes-of-css]
+- [The Open Graph protocol][https://ogp.me/#types]
+- [SOF - Provide an image for WhatsApp link sharing][https://stackoverflow.com/questions/19778620/provide-an-image-for-whatsapp-link-sharing]
 
 ## CSS Cascading Style Sheets
 

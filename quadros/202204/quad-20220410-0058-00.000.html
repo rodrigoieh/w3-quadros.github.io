@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>desktop</title>
+    <style>
+        :root {
+            --a: #263f23;
+            --b: #3b6b38;
+            --c: #3e673a;
+            --d: #659464;
+        }
+
+        td {
+            border: 1px dashed #a9a928;
+        }
+
+        body {
+            background: linear-gradient(141deg, #41322c, #251d19);
+        }
+    </style>
+</head>
+<body>
+<script>
+    const quad = [['a', 'b'], ['c', 'd']];
+    const qy = 2;
+    const qx = 2;
+    const qs = 50;
+    const rep = 8;
+    const ny = qy * rep + 1;
+    const nx = qx * rep + 1;
+    let quads = [];
+    for (let i = 0; i < ny; i++) {
+        let tmp = [];
+        for (let j = 0; j < nx; j++) {
+            const q = quad[i % qy][j % qx];
+            tmp.push(q);
+        }
+        quads.push(tmp);
+    }
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.style.background = `var(--${quads[i][j]})`;
+    }
+    main(ny, nx, qs);
+</script>
+</body>
+</html>

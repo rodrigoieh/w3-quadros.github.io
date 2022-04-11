@@ -1518,16 +1518,6 @@ const index =  {
           visible: true
         },
         {
-          id: "quad-20220312-0000-00.027",
-          type: "file",
-          path: "quadros/202203/quad-20220312-0000-00.027.html",
-          preview: "http://localhost:8001/quadros/202203/quad-20220312-0000-00.027.jpeg",
-          filename: "quad-20220312-0000-00.027.html",
-          extension: ".html",
-          directory: "quadros/202203",
-          visible: true
-        },
-        {
           id: "quad-20220313-2223-00.000",
           type: "file",
           path: "quadros/202203/quad-20220313-2223-00.000.html",
@@ -1586,6 +1576,45 @@ const index =  {
           extension: ".html",
           directory: "quadros/202203",
           visible: false
+        }
+      ]
+    },
+    {
+      id: "202204",
+      type: "folder",
+      path: "quadros/202204",
+      directory: "202204",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20220410-0054-00.000.hidden",
+          type: "file",
+          path: "quadros/202204/quad-20220410-0054-00.000.hidden.html",
+          preview: "http://localhost:8001/quadros/202204/quad-20220410-0054-00.000.jpeg",
+          filename: "quad-20220410-0054-00.000.hidden.html",
+          extension: ".html",
+          directory: "quadros/202204",
+          visible: false
+        },
+        {
+          id: "quad-20220410-0058-00.000",
+          type: "file",
+          path: "quadros/202204/quad-20220410-0058-00.000.html",
+          preview: "http://localhost:8001/quadros/202204/quad-20220410-0058-00.000.jpeg",
+          filename: "quad-20220410-0058-00.000.html",
+          extension: ".html",
+          directory: "quadros/202204",
+          visible: true
+        },
+        {
+          id: "quad-20220410-0118-00.000",
+          type: "file",
+          path: "quadros/202204/quad-20220410-0118-00.000.html",
+          preview: "http://localhost:8001/quadros/202204/quad-20220410-0118-00.000.jpeg",
+          filename: "quad-20220410-0118-00.000.html",
+          extension: ".html",
+          directory: "quadros/202204",
+          visible: true
         }
       ]
     },

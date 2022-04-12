@@ -1615,6 +1615,16 @@ const index =  {
           extension: ".html",
           directory: "quadros/202204",
           visible: true
+        },
+        {
+          id: "quad-20220412-2051-00.000",
+          type: "file",
+          path: "quadros/202204/quad-20220412-2051-00.000.html",
+          preview: "http://localhost:8001/quadros/202204/quad-20220412-2051-00.000.jpeg",
+          filename: "quad-20220412-2051-00.000.html",
+          extension: ".html",
+          directory: "quadros/202204",
+          visible: true
         }
       ]
     },

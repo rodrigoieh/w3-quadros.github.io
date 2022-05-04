@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <meta property="og:url" content="https://quadros.xronos.cl/quadros/202204/quad-20220410-0058-00.000.html"/>
+    <meta property="og:image"
+          content="https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202204/quad-20220410-0058-00.000.jpeg"/>
+    <title>M</title>
+    <style>
+        :root {
+            --a: #c5bfb2;
+            --b: rgba(101, 35, 35, 0.54);
+            --c: #020f1e;
+            --d: rgba(37, 29, 25, 0.59);
+        }
+
+        table:hover {
+            --a: #9a9180;
+            --b: rgba(255, 255, 255, 0.75);
+        }
+
+        body {
+            background: linear-gradient(14deg, var(--c), var(--d));
+        }
+    </style>
+</head>
+<body>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.style.background = `var(--${(j & 1) === 1 ? 'a' : 'b'})`;
+    }
+    main(23, 23, 32);
+</script>
+</body>
+</html>

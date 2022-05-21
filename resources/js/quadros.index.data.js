@@ -1644,6 +1644,26 @@ const index =  {
           extension: ".html",
           directory: "quadros/202205",
           visible: true
+        },
+        {
+          id: "quad-20220520-2323-00.000",
+          type: "file",
+          path: "quadros/202205/quad-20220520-2323-00.000.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202205/quad-20220520-2323-00.000.jpeg",
+          filename: "quad-20220520-2323-00.000.html",
+          extension: ".html",
+          directory: "quadros/202205",
+          visible: true
+        },
+        {
+          id: "quad-20220520-2332-00.000",
+          type: "file",
+          path: "quadros/202205/quad-20220520-2332-00.000.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202205/quad-20220520-2332-00.000.jpeg",
+          filename: "quad-20220520-2332-00.000.html",
+          extension: ".html",
+          directory: "quadros/202205",
+          visible: true
         }
       ]
     },

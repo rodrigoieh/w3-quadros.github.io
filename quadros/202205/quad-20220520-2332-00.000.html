@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <title>quad</title>
+    <style>
+        :root {
+            --a: #a8afbe;
+            --b: 26px;
+            --c: 13px;
+            --g: transparent 0 calc(var(--b) - var(--c)), var(--a) 0 var(--b);
+            background: repeating-linear-gradient(to right, var(--g));
+            margin: 0 auto;
+        }
+
+        table {
+            background: #a8afbe90;
+            background: #e1ad0090;
+        }
+
+        td {
+            border: 1px black solid;
+        }
+
+        td.a:hover {
+            border-radius: 25px;
+            background: #ffcd1a;
+        }
+
+        td.b:hover {
+            border-radius: 25px;
+            background: #e1ad00;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    let r = 32;
+    let c = r;
+    let td = 23;
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.className = (j & 1) === 1 ? 'a' : 'b';
+    }
+    main(r, c, td);
+</script>
+</body>
+</html>
+

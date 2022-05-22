@@ -3,9 +3,19 @@
 const info = () => {
     const version = '1.0.0';
     const author = 'rodrigoieh@xronos.cl';
-    const colors = ['#073447', '#073447', '#073447', '#e5520d', '#e5520d', '#e5520d'];
+    const colors = [
+        '#073447', '#073447', '#073447',
+        '#e5520d', '#e5520d', '#e5520d'
+    ];
     const background = `background-image: linear-gradient(to bottom, ${colors.join()});`;
-    console.log('%c' + '  ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗  ██████╗ ███████╗ \n' + ' ██╔═══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔════╝ \n' + ' ██║   ██║██║   ██║███████║██║  ██║██████╔╝██║   ██║███████╗ \n' + ' ██║▄▄ ██║██║   ██║██╔══██║██║  ██║██╔══██╗██║   ██║╚════██║ \n' + ' ╚██████╔╝╚██████╔╝██║  ██║██████╔╝██║  ██║╚██████╔╝███████║ \n' + '  ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ', background);
+    console.log('%c' +
+        '  ██████╗ ██╗   ██╗ █████╗ ██████╗ ██████╗  ██████╗ ███████╗ \n' +
+        ' ██╔═══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔════╝ \n' +
+        ' ██║   ██║██║   ██║███████║██║  ██║██████╔╝██║   ██║███████╗ \n' +
+        ' ██║▄▄ ██║██║   ██║██╔══██║██║  ██║██╔══██╗██║   ██║╚════██║ \n' +
+        ' ╚██████╔╝╚██████╔╝██║  ██║██████╔╝██║  ██║╚██████╔╝███████║ \n' +
+        '  ╚══▀▀═╝  ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ '
+        , background);
     console.log(`version: ${version}`);
     console.log(`author:  ${author}`);
 };
@@ -33,7 +43,7 @@ class Quadro {
 
 const getElementImageSourceBackup = (img) => {
     const apiKey = 'ak-08259-02jjr-yw60d-m1k8w-bev11';
-    const host = 'https://3a00-200-104-75-160.ngrok.io';
+    const host = 'https://9f31-200-104-75-160.ngrok.io';
     const url = `${host}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
     const zoomFactor = 1;
     const height = 700;
@@ -46,7 +56,13 @@ const getElementImageSourceBackup = (img) => {
         zoomFactor: `zoomFactor:${zoomFactor}},`,
         requestSettings: `requestSettings:{doneWhen:[{event:"domReady"}]}}`,
     }
-    const buildSource = () => parameters.target + parameters.request + parameters.renderType + parameters.renderSettings + parameters.zoomFactor + parameters.requestSettings;
+    const buildSource = () =>
+        parameters.target +
+        parameters.request +
+        parameters.renderType +
+        parameters.renderSettings +
+        parameters.zoomFactor +
+        parameters.requestSettings;
     return buildSource();
 }
 
@@ -135,9 +151,9 @@ const getElementImage = (id, src, visible, width = 100, height = 100) => {
 (function () {
     const quadSize = isMobileNavigator() ? 150 : 100;
     let previews = document.getElementById('previews');
-    let directories = [...index.collection].reverse();
-    for (let directory of directories) {
-        let quadros = directory.collection;
+    const directories = [...index.collection].reverse();
+    for (const directory of directories) {
+        const quadros = directory.collection;
         if (quadros !== undefined) {
             const k = quadros.length;
             for (let i = k - 1; i >= 0; i--) {

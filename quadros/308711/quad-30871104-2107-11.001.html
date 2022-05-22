@@ -55,6 +55,10 @@
         background: var(--background);
     }
 
+    table{
+        background:conic-gradient(var(--cb) 0% 25%, var(--ca) 100%) ;
+    }
+
     #demo {
         z-index: -1;
     }
@@ -126,6 +130,7 @@
     vault.className = 'vault';
     document.body.appendChild(vault);
     document.addEventListener('mousemove', (event) => {
+        table.style.background = 'transparent';
         vault.style.display = 'inline-block';
     }, {once: true});
 </script>

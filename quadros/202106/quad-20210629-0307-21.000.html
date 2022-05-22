@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <script src="../../resources/js/quadros.shuffler.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>shuffle</title>
+    <style>
+        body {
+            background-color: rgba(97, 99, 86, 0.5);
+            filter: grayscale(100%);
+        }
+
+        td.a {
+            background: rgba(15, 72, 133, 1);
+        }
+
+        td.b {
+            background: #b35118;
+        }
+
+        td.c {
+            background: #970606;
+        }
+
+        td.d {
+            background: #1a5a09;
+        }
+
+        td.e, td.f {
+            background: transparent;
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    n = 12, m = 12;
+    options = 'abcde';
+    selectors = [...options];
+    if (go()) selectors.push('f');
+    setCellContentOverride = (td, i, j, y, x) => {
+        const selection = Math.floor(Math.random() * selectors.length);
+        td.className = `td ${selectors[selection]}`;
+    }
+    main(n, m);
+</script>
+</body>
+</html>

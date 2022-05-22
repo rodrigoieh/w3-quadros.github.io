@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>gradient</title>
+</head>
+<style>
+    .background {
+        margin: 0 auto;
+        --g: transparent 0 calc(50px - 1px), #073155 0 50px;
+        background: repeating-linear-gradient(to right, var(--g)),
+        repeating-linear-gradient(to bottom, var(--g)),
+        #cad4ce;
+    }
+</style>
+<body class="background">
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (i + j !== 0 && i - j !== 0 && i + j !== x - 1)
+            td.style.backgroundColor = '#5c3645';
+    };
+    main(10, 10);
+</script>
+</body>
+</html>
+

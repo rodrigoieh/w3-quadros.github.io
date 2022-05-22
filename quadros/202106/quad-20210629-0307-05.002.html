@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title></title>
+    <style>
+        body {
+            background-color: rgb(116, 212, 52);
+            background-color: rgb(252, 236, 196);
+            background-color: rgb(62, 90, 44);
+            background-color: rgb(204, 188, 148);
+            background-color: rgb(154, 173, 85);
+            background-color: rgb(76, 133, 39);
+            background-color: rgb(255, 255, 255);
+        }
+
+        td.a {
+            background-color: rgb(0, 57, 166);
+        }
+
+        td.b {
+            background-color: rgb(213, 43, 30);
+        }
+
+        td.c {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body onload="main()">
+<script>
+    const n = 10;
+    const m = 10;
+    let variant = -1;
+    let selector = [...'aa'];
+
+    function main() {
+        if (variant === -1) {
+            variant = Math.round(Math.random()) === 1 ? ' ' : 'b';
+            selector.push(variant);
+        }
+        load();
+        render(n, m);
+    }
+
+    function load() {
+        let body = document.body,
+            table = document.createElement('table'),
+            demo = document.createElement('div');
+        table.addEventListener('click',  (event) => {
+            render(n, m);
+        });
+        table.setAttribute('id', 'demo');
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
+    }
+
+    function render(n, m) {
+        let table = document.getElementById('demo');
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < m; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                const selection = Math.floor(Math.random() * selector.length)
+                td.setAttribute('class', `td ${selector[selection]}`);
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charSet="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>table</title>
+</head>
+<style>
+    * {
+        filter: grayscale(10%);
+        background: #c8c8b9;
+        --color-primary: #cb1616;
+        --color-secondary: #c8c8b9;
+        --ca: var(--color-primary, black);
+        --cb: var(--color-secondary, #c8c8b9);
+        --a: conic-gradient(var(--ca) 0% 12.5%, var(--cb) 10% 87.5%, var(--ca) 87.5% 100%);
+        --b: conic-gradient(var(--cb) 0% 12.5%, var(--ca) 12.5% 37.5%, var(--cb) 37.5% 100%);
+        --c: conic-gradient(var(--cb) 0% 37.5%, var(--ca) 37.5% 62.5%, var(--cb) 50% 100%);
+        --d: conic-gradient(var(--cb) 0% 62.5%, var(--ca) 62.5% 87.5%, var(--cb) 87.5% 100%);
+        border: 1px #ffffffff solid;
+    }
+
+    table {
+        border-left: 1px #cb1616 solid;
+    }
+</style>
+<body>
+<script>
+    n = 12, m = 12;
+    const backgrounds = {
+        a: 'background: var(--a);',
+        b: 'background: var(--b);',
+        c: 'background: var(--c);',
+        d: 'background: var(--d);'
+    };
+
+    // Randomness
+    let entropy = false;
+    let options = 'abcd';
+    let selector = [...options];
+
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (entropy) {
+            const selection = Math.floor(Math.random() * selector.length);
+            td.style = `background: var(--${selector[selection]});`;
+        } else {
+            if (j === 0) td.style = backgrounds.d;
+            else if (j === x - 1) td.style = backgrounds.b;
+            else if (i === y - 1) td.style = backgrounds.c;
+            else if (i === 0) td.style = backgrounds.a;
+            else if (j % 2 === 0) {
+                td.style = backgrounds.d;
+            } else {
+                td.style = backgrounds.b;
+            }
+        }
+    }
+
+    main(n, m)
+
+    document.addEventListener('click', () => {
+        table.innerHTML = '';
+        entropy = true;
+        // const k = 10;
+        // const a = Math.floor(Math.random() * k + 5);
+        // const b = Math.floor(Math.random() * k + 5);
+        main(n, m);
+    });
+</script>
+</body>
+</html>

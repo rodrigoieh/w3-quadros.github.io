@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>gradient</title>
+</head>
+<style>
+    .background {
+        --y: 99; /* rows    */
+        --x: 1;   /* columns */
+        --b: 2px; /* border  */
+
+        width:  400px;
+        height: 200px;
+        margin: 50px auto;
+
+        background:
+                repeating-linear-gradient(to right,
+                transparent 0 calc((100% - var(--b)*(var(--x) - 1))/var(--x)),
+                #979786 0 calc((100% - var(--b)*(var(--x) - 1))/var(--x) + var(--b))),
+                repeating-linear-gradient(to bottom,
+                transparent 0 calc((100% - var(--b)*(var(--y) - 1))/var(--y)),
+                #979786 0 calc((100% - var(--b)*(var(--y) - 1))/var(--y) + var(--b))),
+                #717165;
+    }
+</style>
+<body>
+<div id='a' class="background"></div>
+<div id='b' class="background" style="--y:4;--x:1;--b:1px"></div>
+<div id='c' class="background" style="--y:20;--x:1;--b:1px"></div>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
+            td.style.backgroundColor = `#ffffff33`;
+        else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1) {
+            td.style.backgroundColor = '#ffffff';
+            td.style.opacity = '10%';
+        }
+    };
+    main(6, 7);
+</script>
+</body>
+</html>
+

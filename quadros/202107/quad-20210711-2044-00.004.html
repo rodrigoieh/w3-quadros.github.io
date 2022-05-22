@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>gradient</title>
+</head>
+<style>
+    .background {
+        --y: 2;    /* rows    */
+        --x: 2;    /* columns */
+        --b: 1px;  /* border  */
+
+        width: 400px;
+        height: 200px;
+        margin: 50px auto;
+
+        --g:#fff calc(100% - var(--b)),transparent 0;
+        -webkit-mask:
+                linear-gradient(to right, var(--g)),
+                linear-gradient(to bottom,var(--g));
+        mask:
+                linear-gradient(to right, var(--g)),
+                linear-gradient(to bottom,var(--g));
+        -webkit-mask-size:
+                calc((100% - var(--b)*(var(--x) - 1))/var(--x) + var(--b)) 100%,
+                100% calc((100% - var(--b)*(var(--y) - 1))/var(--y) + var(--b));
+        mask-size:
+                calc((100% - var(--b)*(var(--x) - 1))/var(--x) + var(--b)) 100%,
+                100% calc((100% - var(--b)*(var(--y) - 1))/var(--y) + var(--b));
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+        background: #6f6f66;
+    }
+</style>
+<body>
+<div id='a' class="background"></div>
+<div id='b' class="background" style="--y:40;--x:40;--b:1px"></div>
+<div id='c' class="background" style="--y:80;--x:80;--b:1px"></div>
+<script>
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (m & 1 && i === Math.floor(y / 2) && j === Math.floor(x / 2))
+            td.style.backgroundColor = `#ffffff33`;
+        else if (i + j !== 0 && i - j !== 0 && i + j !== x - 1) {
+            td.style.backgroundColor = '#ffffff';
+            td.style.opacity = '10%';
+        }
+    };
+    main(6, 7);
+</script>
+</body>
+</html>
+

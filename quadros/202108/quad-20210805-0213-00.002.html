@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>tiles</title>
+</head>
+<style>
+    td {
+        border: 2px #d2d2ce solid;
+    }
+</style>
+<body>
+<script>
+    const f = [-1, 1];
+    const palette = ['#c9c8c3', '#afafaa'];
+    cellHeightOverride = 180;
+    setCellContentOverride = (td, i, j, y, x) => {
+        const pos = getRandomInt(0, 1);
+        const deg = getRandomInt(1, 180) * f[pos];
+        const a = palette[pos ^ 1];
+        const b = palette[pos & 1];
+        td.style.backgroundImage = `linear-gradient(${deg}deg,${a},${b})`;
+    }
+    main(6, 24, 0);
+</script>
+</body>
+</html>

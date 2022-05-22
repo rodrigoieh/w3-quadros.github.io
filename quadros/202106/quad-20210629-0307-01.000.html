@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title></title>
+    <style>
+        body {
+            background-color: rgba(111, 141, 40, 0.5);
+            /*background-color: rgba(97, 132, 40, 1);*/
+        }
+
+        td.a {
+            background: rgba(15, 72, 133, 1);
+        }
+
+        td.b {
+            background: #b35118;
+        }
+    </style>
+    <title></title>
+</head>
+<body onload="main()">
+<script>
+    const n = 10;
+    const m = 10;
+
+    let rotations = [0, 180];
+    const randomRotation = Math.floor(Math.random() * rotations.length);
+    let rotation = rotations[randomRotation];
+
+    function main() {
+        load();
+        render(n, m, rotation);
+    }
+
+    function load() {
+        let body = document.body,
+            demo = document.createElement('div'),
+            table = document.createElement('table');
+        document.addEventListener('keydown', event => {
+            const key = event.key;
+            switch (key) {
+                case 'R':
+                case 'r':
+                    rotate(90);
+                    break;
+                case 'L':
+                case 'l':
+                    rotate(-90);
+                    break;
+            }
+        });
+        table.addEventListener('click', () => rotate());
+        demo.setAttribute('id', 'demo');
+        table.setAttribute('id', 'table');
+        demo.appendChild(table);
+        body.appendChild(demo);
+        styleSetPositionCenter(demo);
+    }
+
+    function rotate(degrees = 90) {
+        rotation += degrees;
+        if (Math.abs(rotation) === 360)
+            rotation = 0;
+        render(n, m, rotation);
+    }
+
+    function render(n, m, rotation = 0) {
+        let table = document.getElementById('table');
+        table.innerHTML = '';
+        for (let i = 0; i < n; i++) {
+            let tr = table.insertRow();
+            for (let j = 0; j < m; j++) {
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(''));
+                let color;
+                switch (rotation) {
+                    case 90:
+                    case -270:
+                        color = j < n / 2 ? 'b' : 'a';
+                        break;
+                    case 180:
+                    case -180:
+                        color = i < n / 2 ? 'b' : 'a';
+                        break;
+                    case 270:
+                    case -90:
+                        color = j < n / 2 ? 'a' : 'b';
+                        break;
+                    default:
+                        color = i < n / 2 ? 'a' : 'b';
+                }
+                td.setAttribute('class', `td ${color}`);
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -13,6 +13,10 @@
         zoom: 80%;
     }
 
+    table {
+        background: linear-gradient(to top left, black, #6487b1);
+    }
+
     #demo {
         z-index: -1;
     }
@@ -234,6 +238,7 @@
     vault.className = 'vault';
     document.body.appendChild(vault);
     document.addEventListener('mousemove', (event) => {
+        table.style.background = 'transparent';
         vault.style.display = 'inline-block';
     }, {once: true});
 </script>

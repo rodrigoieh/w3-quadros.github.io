@@ -1715,11 +1715,11 @@ const index =  {
           visible: false
         },
         {
-          id: "quad-30871104-2107-13.000.hidden",
+          id: "quad-30871104-2107-13.000.draft",
           type: "file",
-          path: "quadros/308711/quad-30871104-2107-13.000.hidden.html",
+          path: "quadros/308711/quad-30871104-2107-13.000.draft.html",
           preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/308711/quad-30871104-2107-13.000.jpeg",
-          filename: "quad-30871104-2107-13.000.hidden.html",
+          filename: "quad-30871104-2107-13.000.draft.html",
           extension: ".html",
           directory: "quadros/308711",
           visible: false

@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+    <style>
+        body:hover {
+            background-image: linear-gradient(-213deg, #031e26 66%, #031e26, #031e26, #f2eee2);
+        }
+
+        td:hover {
+            border: 1px #f2eee2 solid;
+        }
+
+        table {
+            border-radius: 7%;
+            background-image: linear-gradient(-39deg, #00516a 57%, #f2eee2, #fa553f, #b23220, #fa553f);
+        }
+
+        td.a {
+            background-image: linear-gradient(#b23220 30%, transparent 20%);
+        }
+
+        td.b {
+            background-image: linear-gradient(to right, #b23220 30%, transparent 20%);
+        }
+
+        td.c {
+            background-image: conic-gradient(#00516a 0% 75%, #b23220 75% 100%);
+        }
+
+    </style>
+</head>
+<body>
+<script>
+    let r = 8;
+    let c = 8;
+    setCellContentOverride = (td, i, j, y, x) => {
+        // if (i === y - 1 && j !== x - 1) td.className = 'a';
+        // else if (j === x - 1 && i !== y - 1) td.className = 'b';
+        // else if (j === x - 1 && i === y - 1) td.className = 'c';
+    }
+    main(r, c, r * c);
+    document.body.style.zoom = '90%';
+</script>
+</body>
+</html>

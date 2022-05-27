@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+    <style>
+        table {
+            transform: rotate(180deg);
+        }
+        td {
+            background: #e8e8e8;
+        }
+
+        td.a {
+            background-image: linear-gradient(#031e26 30%, #e8e8e8 20%);
+        }
+
+
+    </style>
+</head>
+<body>
+<script>
+    let r = 61;
+    let c = 61;
+    let td = 10;
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (i > 0 && ((i + 2) % 7 === 0 || (i + 1) % 7 === 0 || i % 7 === 0)) {
+            td.className = 'a';
+        }
+    }
+    main(r, c, td);
+    document.body.style.zoom = '90%';
+</script>
+</body>
+</html>

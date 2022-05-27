@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>chessboard</title>
+</head>
+<style>
+    body {
+        background: #093f50;
+    }
+
+    td.a {
+        background-color: #084f8a;
+    }
+
+    td.b {
+        background-color: #e58310;
+    }
+</style>
+<body>
+<script>
+    const r = 23, c = 23, td = 23;
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.className = ((i + j) & 1) ? 'a' : 'b';
+    }
+    main(r, c, td);
+    document.body.style.zoom = '100%';
+</script>
+</body>
+</html>

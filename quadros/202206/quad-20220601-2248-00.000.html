@@ -8,11 +8,14 @@
     <title>quad</title>
     <style>
         body {
-            background-image: linear-gradient(-213deg, #031e26 66%, #031e26, #031e26, #f2eee2);
+            background: #031e26;
         }
 
-        td:hover {
-            border: 1px #f2eee2 solid;
+        table {
+            border: 1px #b23220 solid;
+            background: #b23220;
+            box-shadow: 0 0 25px 0 #b23220;
+            opacity: 80%;
         }
 
         td {
@@ -25,9 +28,6 @@
     let r = 8;
     let c = 8;
     setCellContentOverride = (td, i, j, y, x) => {
-        // if (i === y - 1 && j !== x - 1) td.className = 'a';
-        // else if (j === x - 1 && i !== y - 1) td.className = 'b';
-        // else if (j === x - 1 && i === y - 1) td.className = 'c';
     }
     main(r, c, r * c);
     document.body.style.zoom = '90%';

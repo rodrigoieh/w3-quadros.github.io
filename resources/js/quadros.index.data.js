@@ -1754,16 +1754,6 @@ const index =  {
       visible: true,
       collection: [
         {
-          id: "quad-20220809-0000-00.000.hidden",
-          type: "file",
-          path: "quadros/202208/quad-20220809-0000-00.000.hidden.html",
-          preview: "http://localhost:8001/quadros/202208/quad-20220809-0000-00.000.jpeg",
-          filename: "quad-20220809-0000-00.000.hidden.html",
-          extension: ".html",
-          directory: "quadros/202208",
-          visible: false
-        },
-        {
           id: "quad-20220809-0000-00.001",
           type: "file",
           path: "quadros/202208/quad-20220809-0000-00.001.html",

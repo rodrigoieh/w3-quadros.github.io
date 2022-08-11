@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>chessboard</title>
+</head>
+<style>
+    body {
+        background-color: #3b313a;
+    }
+
+    td.a {
+        background-color: #501919;
+        background-color: #5b1b1b;
+        background-color: #d00101;
+        background-color: #7e0606;
+        background-color: #5d1a1a;
+    }
+
+    td.b {
+        background-color: #3b313a;
+    }
+
+    td.c {
+        background-color: #4d4b4b;
+    }
+
+    td.d {
+        background-color: #4d4b4b;
+    }
+</style>
+<body>
+<script>
+    const r = 25, c = 27, td = 23;
+    let tdc = (i, j) => {
+        if (j >= c - 1) return 0;
+        if (i % 2 === 0) {
+            if (i === 0 || i % 4 === 0) return 0;
+            if ((j + 5) % 4 === 0) return 1;
+            if (j > 0 && j % 2 === 0) return 1;
+        } else return 0;
+    };
+    let tdd = (i, j) => {
+        if (i % 4 === 0) {
+            if (j % 4 === 0) return 1;
+            if ((j + 1) % 4 === 0) return 0;
+            else return 1;
+        } else return 0;
+    };
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (j % 2 === 0) td.className = 'a';
+        if (j % 2 === 1) td.className = 'b';
+        if (tdc(i, j) === 1) td.className = 'c';
+        if (tdd(i, j) === 1) td.className = 'd';
+    }
+    main(r, c, td);
+    document.body.style.zoom = '100%';
+</script>
+</body>
+</html>

@@ -44,7 +44,6 @@
     // 2 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     // 3 [0,0,1,1,1,0,1,1,1,0,1,1,1,0,0]
     // 4 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-
     const dbg = true;
     let r = 23, c = 23, td = 26, k = 4;
     let kc = 0, kd = 0;
@@ -56,6 +55,8 @@
     };
     const tdd = (i, j) => {
         // 4 [0,0,1,1,1,0,1,1,1,0,1,1,1,0,0]
+        // scan diagonal TL->DR (top-left -> down-right)
+        // skip even rows and if there's a 1, then insert another 1
         return 0;
     };
     setCellContentOverride = (td, i, j, y, x) => {

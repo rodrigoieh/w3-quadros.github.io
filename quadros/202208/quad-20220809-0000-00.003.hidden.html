@@ -14,7 +14,7 @@
 
     td {
         color: #e3dddd30;
-        font-size: 0.8em;
+        font-size: 1em;
         /*border: #e3dddd80 1px solid;*/
     }
 
@@ -40,22 +40,29 @@
 </style>
 <body>
 <script>
-    const dbg = false;
+    // 1 [1,1,1,0,1,1,1,0,1,1,1,0,1,1,1]
+    // 2 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    // 3 [0,0,1,1,1,0,1,1,1,0,1,1,1,0,0]
+    // 4 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+    const dbg = true;
     let r = 23, c = 23, td = 26, k = 4;
     let kc = 0, kd = 0;
     const tdc = (i, j) => {
+        // 1 [1,1,1,0,1,1,1,0,1,1,1,0,1,1,1]
         if (++kc === k) kc = 0;
         if (i % k === 0 && kc !== 0) return 1;
         return 0;
     };
     const tdd = (i, j) => {
+        // 4 [0,0,1,1,1,0,1,1,1,0,1,1,1,0,0]
         return 0;
     };
     setCellContentOverride = (td, i, j, y, x) => {
         td.className = (j % 2 === 0) ? 'a' : 'b';
         if (tdc(i, j) === 1) td.className = 'c';
         if (tdd(i, j) === 1) td.className = 'd';
-        if (dbg) td.innerHTML = j;
+        if (dbg) td.innerHTML = String.fromCharCode(97 + i % 26);
     }
     const fixParameters = (...p) => {
         r += p[0];

@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>gm</title>
+</head>
+<style>
+    body {
+        background-color: #3b313a;
+    }
+
+    td {
+        color: #e3dddd30;
+        font-size: 0.8em;
+        /*border: #e3dddd80 1px solid;*/
+    }
+
+    td.a {
+        background-color: #5d1a1a;
+    }
+
+    td.a:hover {
+        background-color: #d00101;
+    }
+
+    td.b {
+        background-color: #3b313a;
+    }
+
+    td.c {
+        background-color: #4d4b4b;
+    }
+
+    td.d {
+        background-color: #4d4b4b;
+    }
+</style>
+<body>
+<script>
+    const dbg = true;
+    let r = 23, c = 23, td = 26, k = 4;
+    const tdc = (i, j) => {
+        if (j === 0 || j >= c - 1 || i % k === 0) return 0;
+        if ((i & 1) !== 1) {
+            if ((j + k + 1) % k === 0) return 1;
+            if ((j & 1) !== 1) return 1;
+        } else return 0;
+    };
+    const tdd = (i, j) => {
+        if (i % k === 0) {
+            if (j % k === 0) return 1;
+            if ((j + 1) % k === 0) return 0;
+            else return 1;
+        } else return 0;
+    };
+    setCellContentOverride = (td, i, j, y, x) => {
+        if (j % 2 === 0) td.className = 'a';
+        if (j % 2 === 1) td.className = 'b';
+        if (tdc(i, j) === 1) td.className = 'c';
+        if (tdd(i, j) === 1) td.className = 'd';
+        if (dbg) td.innerHTML = j;
+    }
+    const fixParameters = (...p) => {
+        r += p[0];
+        c += p[1];
+        k += p[3];
+        td = Math.max(10, Math.min(30, td + p[2]));
+        if (dbg) console.log(p, r, c, td, k)
+    };
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        switch (key) {
+            case '+':
+                fixParameters(1, 2, -1, 1);
+                reload();
+                break;
+            case '-':
+                fixParameters(-1, -2, 1, -1);
+                reload();
+                break;
+        }
+    });
+    const reload = () => {
+        let demo = document.getElementById('demo');
+        document.body.removeChild(demo);
+        main(r, c, td);
+    };
+    main(r, c, td);
+    document.body.style.zoom = '100%';
+</script>
+</body>
+</html>

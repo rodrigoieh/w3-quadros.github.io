@@ -47,8 +47,7 @@
         } else return 0;
     };
     setCellContentOverride = (td, i, j, y, x) => {
-        if (j % 2 === 0) td.className = 'a';
-        if (j % 2 === 1) td.className = 'b';
+        td.className = (j % 2 === 0) ? 'a' : 'b';
         if (tdc(i, j) === 1) td.className = 'c';
         if (tdd(i, j) === 1) td.className = 'd';
     }

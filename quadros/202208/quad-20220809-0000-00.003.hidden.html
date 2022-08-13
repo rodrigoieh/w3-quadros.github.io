@@ -23,7 +23,7 @@
     }
 
     td.a:hover {
-        background-color: #1573c5;
+        background-color: #84a1bb;
     }
 
     td.b {
@@ -42,19 +42,14 @@
 <script>
     const dbg = false;
     let r = 23, c = 23, td = 26, k = 4;
+    let kc = 0, kd = 0;
     const tdc = (i, j) => {
-        if (j === 0 || j >= c - 1 || i % k === 0) return 0;
-        if ((i & 1) !== 1) {
-            if ((j + k + 1) % k === 0) return 1;
-            if ((j & 1) !== 1) return 1;
-        } else return 0;
+        if (++kc === k) kc = 0;
+        if (i % k === 0 && kc !== 0) return 1;
+        return 0;
     };
     const tdd = (i, j) => {
-        if (i % k === 0) {
-            if (j % k === 0) return 1;
-            if ((j + 1) % k === 0) return 0;
-            else return 1;
-        } else return 0;
+        return 0;
     };
     setCellContentOverride = (td, i, j, y, x) => {
         td.className = (j % 2 === 0) ? 'a' : 'b';

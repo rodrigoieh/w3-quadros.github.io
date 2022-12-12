@@ -43,7 +43,7 @@ class Quadro {
 
 const getElementImageSourceBackup = (img) => {
     const apiKey = 'ak-08259-02jjr-yw60d-m1k8w-bev11';
-    const host = 'https://2b25-185-192-70-36.ngrok.io';
+    const host = 'https://c537-200-42-181-95.ngrok.io';
     const url = `${host}/quadros/${img.alt.split('-')[1].substr(0, 6)}/${img.alt}.html`;
     const zoomFactor = 1;
     const height = 700;

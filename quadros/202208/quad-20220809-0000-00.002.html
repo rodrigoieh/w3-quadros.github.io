@@ -32,14 +32,14 @@
 <script>
     const r = 25, c = 27, td = 23;
     let k = 5;
-    let tdc = (i, j) => {
+    const tdc = (i, j) => {
         if (j === 0 || j >= c - 1 || i % k === 0) return 0;
         if ((i & 1) !== 1) {
             if ((j + k + 1) % k === 0) return 1;
             if ((j & 1) !== 1) return 1;
         } else return 0;
     };
-    let tdd = (i, j) => {
+    const tdd = (i, j) => {
         if (i % k === 0) {
             if (j % k === 0) return 1;
             if ((j + 1) % k === 0) return 0;
@@ -47,8 +47,7 @@
         } else return 0;
     };
     setCellContentOverride = (td, i, j, y, x) => {
-        if (j % 2 === 0) td.className = 'a';
-        if (j % 2 === 1) td.className = 'b';
+        td.className = (j % 2 === 0) ? 'a' : 'b';
         if (tdc(i, j) === 1) td.className = 'c';
         if (tdd(i, j) === 1) td.className = 'd';
     }
@@ -66,7 +65,7 @@
         }
         console.log(k);
     });
-    let reload = () => {
+    const reload = () => {
         let demo = document.getElementById('demo');
         document.body.removeChild(demo);
         main(r, c, 30);

@@ -1772,6 +1772,35 @@ const index =  {
           extension: ".html",
           directory: "quadros/202208",
           visible: true
+        },
+        {
+          id: "quad-20220809-0000-00.003.hidden",
+          type: "file",
+          path: "quadros/202208/quad-20220809-0000-00.003.hidden.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202208/quad-20220809-0000-00.003.jpeg",
+          filename: "quad-20220809-0000-00.003.hidden.html",
+          extension: ".html",
+          directory: "quadros/202208",
+          visible: false
+        }
+      ]
+    },
+    {
+      id: "202212",
+      type: "folder",
+      path: "quadros/202212",
+      directory: "202212",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20221212-0002-00.000",
+          type: "file",
+          path: "quadros/202212/quad-20221212-0002-00.000.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202212/quad-20221212-0002-00.000.jpeg",
+          filename: "quad-20221212-0002-00.000.html",
+          extension: ".html",
+          directory: "quadros/202212",
+          visible: true
         }
       ]
     },

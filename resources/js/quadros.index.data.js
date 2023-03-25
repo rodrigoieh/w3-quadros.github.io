@@ -1805,6 +1805,35 @@ const index =  {
       ]
     },
     {
+      id: "202303",
+      type: "folder",
+      path: "quadros/202303",
+      directory: "202303",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20230323-0000-00.000",
+          type: "file",
+          path: "quadros/202303/quad-20230323-0000-00.000.html",
+          preview: "http://localhost:8001/quadros/202303/quad-20230323-0000-00.000.jpeg",
+          filename: "quad-20230323-0000-00.000.html",
+          extension: ".html",
+          directory: "quadros/202303",
+          visible: true
+        },
+        {
+          id: "quad-20230323-0000-00.001",
+          type: "file",
+          path: "quadros/202303/quad-20230323-0000-00.001.html",
+          preview: "http://localhost:8001/quadros/202303/quad-20230323-0000-00.001.jpeg",
+          filename: "quad-20230323-0000-00.001.html",
+          extension: ".html",
+          directory: "quadros/202303",
+          visible: true
+        }
+      ]
+    },
+    {
       id: "308711",
       type: "folder",
       path: "quadros/308711",

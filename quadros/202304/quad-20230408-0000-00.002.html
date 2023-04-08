@@ -35,7 +35,13 @@
     main(r, c, s);
     document.body.style.zoom = '90%';
 
-    const sample = (size, min, max) => {
+    const getColor = (indices, interval) => {
+        const colors = ["orange", "green", "red", "yellow", "white", "blue"];
+        const rnd = ~~(Math.random() * colors.length);
+        return colors[rnd];
+    };
+
+    const getSample = (size, min, max) => {
         let arr = Array(size);
         for (let i = 0; i < size; i++) {
             arr[i] = ~~(Math.random() * (max - 1) + min);
@@ -51,14 +57,24 @@
         return false;
     };
 
+    const off = (indices, interval) => {
+        setTimeout(function () {
+            for (let i = 0; i < indices.length; i++) {
+                const td = document.getElementById(String(indices[i]));
+                td.style.background = "black";
+            }
+        }, interval)
+    };
+
     const move = (i, scale, checkpoint, interval) => {
         setTimeout(function () {
             const sampleSize = ~~(t * t * s / scale);
-            const indices = sample(sampleSize, 1, zm);
+            const indices = getSample(sampleSize, 1, zm);
             for (let j = 0; j < sampleSize; j++) {
                 const td = document.getElementById(String(indices[j]));
-                td.style.background = "white";
+                td.style.background = getColor();
             }
+            off(indices, interval);
             if (i < checkpoint && go()) move(i++, scale, checkpoint, interval--);
         }, interval)
     };

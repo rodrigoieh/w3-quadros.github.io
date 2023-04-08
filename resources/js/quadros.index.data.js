@@ -1889,6 +1889,16 @@ const index =  {
           extension: ".html",
           directory: "quadros/202304",
           visible: true
+        },
+        {
+          id: "quad-20230408-0000-00.005.hidden",
+          type: "file",
+          path: "quadros/202304/quad-20230408-0000-00.005.hidden.html",
+          preview: "https://rodrigoieh.github.io/w3-quadros.previews.github.io/quadros/202304/quad-20230408-0000-00.005.jpeg",
+          filename: "quad-20230408-0000-00.005.hidden.html",
+          extension: ".html",
+          directory: "quadros/202304",
+          visible: false
         }
       ]
     },

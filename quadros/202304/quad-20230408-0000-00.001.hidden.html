@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="29192184126-211159"/>
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+    <style>
+        table {
+            border: rgba(10, 95, 95, 0.45);
+            background: #000000ea;
+            box-shadow: 0 0 75px 0 #ececec;
+            opacity: 80%;
+        }
+
+        td {
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const t = 8;
+    let r = t * t;
+    let c = t * t;
+    let s = 10;
+    let z = 1;
+    const zm = r * c + 1;
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.id = String(z++);
+        td.style.background = "black"
+    }
+    main(r, c, s);
+    document.body.style.zoom = '90%';
+
+    const sample = (size, min, max) => {
+        let arr = Array(size);
+        for (let i = 0; i < size; i++) {
+            arr[i] = ~~(Math.random() * (max - 1) + min);
+        }
+        return arr;
+    }
+
+    const go = () => {
+        for (let i = 1; i <= zm; i++) {
+            const td = document.getElementById(String(i));
+            if (td.style.background === "black") return true;
+        }
+        return false;
+    };
+
+    const move = (i, scale, checkpoint, interval) => {
+        setTimeout(function () {
+            const sampleSize = ~~(t * t * s / scale);
+            const indices = sample(sampleSize, 1, zm);
+            for (let j = 0; j < sampleSize; j++) {
+                const td = document.getElementById(String(indices[j]));
+                td.style.background = "white";
+            }
+            if (i < checkpoint && go()) move(i++, scale, checkpoint, interval--);
+        }, interval)
+    };
+    move(0, 3, 100, 1500);
+</script>
+</body>
+</html>

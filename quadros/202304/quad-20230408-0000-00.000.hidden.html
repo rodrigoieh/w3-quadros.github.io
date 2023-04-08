@@ -1,31 +1,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="29192184126-1121151"/>
+    <meta name="description" content="29192184126-211159"/>
     <script src="../../resources/js/quadros.style.js"></script>
     <script src="../../resources/js/quadros.commons.js"></script>
     <script src="../../resources/js/quadros.table.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
-    <title>mirror</title>
+    <title>quad</title>
     <style>
         table {
-            border: rgba(68, 33, 37, 0.45);
+            border: rgba(10, 95, 95, 0.45);
             background: #000000ea;
             box-shadow: 0 0 75px 0 #ececec;
             opacity: 80%;
         }
 
         td {
-            background: rgb(68, 33, 37);
+            background: black;
         }
     </style>
 </head>
 <body>
 <script>
-    let r = 10;
-    let c = 10;
-    let s = 64;
+    const t = 8;
+    let r = t * t;
+    let c = t * t;
+    let s = 10;
     setCellContentOverride = (td, i, j, y, x) => {
+        if ((i + j) % t === 0) td.style.background = "red";
+        if ((i - j) % t === 0) td.style.background = "blue";
     }
     main(r, c, s);
     document.body.style.zoom = '90%';

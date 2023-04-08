@@ -68,17 +68,18 @@
     }
 
     const rotate = (pid, i, j, n) => {
-        const loop = (pid, i, j, n) => {
+        const loop = () => {
             setTimeout(async () => {
-                setColor(i, getColor(i + 1));
                 if (i === n) {
                     i = j;
                     setColor(n, getColor(i + 1));
                 }
-                loop(pid, ++i, j, n);
+                setColor(i, getColor(i + 1));
+                i++;
+                loop();
             }, 10)
         }
-        loop(pid, i, j, n);
+        loop();
     };
 
     (function () {
@@ -90,12 +91,11 @@
                 setColor(i, color);
                 reg.set(i, color);
                 if (i % (c) === 0) {
-                    console.log("rotate", reg.size, i, j, i - c + 1);
+                    console.log("rotate", i, j, i - c + 1);
                     rotate(j, i - c + 1, i - c + 1, i);
                     j++;
                 }
-                i++;
-                if (i < zm) loop();
+                if (i++ < zm) loop();
             }, 0)
         }
         loop();

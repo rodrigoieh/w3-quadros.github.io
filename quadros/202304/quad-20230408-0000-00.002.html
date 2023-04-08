@@ -27,7 +27,8 @@
     let c = t * t;
     let s = 10;
     let z = 1;
-    const zm = r * c + 1;
+    const zm = r * c;
+
     setCellContentOverride = (td, i, j, y, x) => {
         td.id = String(z++);
         td.style.background = "black"
@@ -48,15 +49,6 @@
         }
         return arr;
     }
-
-    const go = () => {
-        for (let i = 1; i <= zm; i++) {
-            const td = document.getElementById(String(i));
-            if (td.style.background === "black") return true;
-        }
-        return false;
-    };
-
     const off = (indices, interval) => {
         setTimeout(function () {
             for (let i = 0; i < indices.length; i++) {
@@ -69,13 +61,13 @@
     const move = (i, scale, checkpoint, interval) => {
         setTimeout(function () {
             let sampleSize = ~~(t * t * s / scale);
-            const indices = getSample(sampleSize, 1, zm);
+            const indices = getSample(sampleSize, 1, zm + 1);
             for (let j = 0; j < sampleSize; j++) {
                 const td = document.getElementById(String(indices[j]));
                 td.style.background = getColor();
             }
             off(indices, interval);
-            if (i < checkpoint && go()) move(i++, scale, checkpoint, interval--);
+            if (i < checkpoint) move(i++, scale, checkpoint, interval--);
         }, interval)
     };
     move(0, 3, 100, 1500);

@@ -53,7 +53,6 @@
                 const td = document.getElementById(String(indices[j]));
                 td.style.background = "white";
                 reg.set(indices[j], 1);
-                console.log(reg.size, zm);
             }
             if (i < checkpoint && reg.size < zm) move(i++, scale, checkpoint, interval--);
         }, interval)

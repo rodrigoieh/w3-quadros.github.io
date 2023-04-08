@@ -45,7 +45,7 @@
         return arr;
     }
 
-    const move = (i, scale, checkpoint, interval) => {
+    const move = (i, scale, interval) => {
         setTimeout(function () {
             const sampleSize = ~~(t * t * s / scale);
             const indices = sample(sampleSize, 1, zm + 1);
@@ -54,10 +54,10 @@
                 td.style.background = "white";
                 reg.set(indices[j], 1);
             }
-            if (i < checkpoint && reg.size < zm) move(i++, scale, checkpoint, interval--);
+            if (reg.size < zm) move(i++, scale, interval--);
         }, interval)
     };
-    move(0, 3, 100, 1500);
+    move(0, 3, 1500);
 </script>
 </body>
 </html>

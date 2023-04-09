@@ -34,14 +34,13 @@
     let s = 10;
     let z = 1;
     const zm = r * c;
-
     setCellContentOverride = (td, i, j, y, x) => {
         td.id = String(z++);
         td.style.background = "black"
     }
     main(r, c, s);
-    document.body.style.zoom = '90%';
 
+    document.body.style.zoom = '90%';
     document.addEventListener('keydown', (event) => {
         const key = event.key;
         let brightness = getComputedStyle(document.documentElement).getPropertyValue('--brightness');
@@ -108,7 +107,6 @@
         }
         loop();
     }());
-
 </script>
 </body>
 </html>

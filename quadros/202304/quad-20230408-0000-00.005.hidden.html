@@ -29,11 +29,10 @@
     let z = 1;
     const zm = r * c;
     const reg = new Map();
-
     setCellContentOverride = (td, i, j, y, x) => {
         td.id = String(z++);
         td.style.background = "black"
-    }
+    };
     main(r, c, s);
     document.body.style.zoom = '90%';
 
@@ -52,20 +51,6 @@
         const td = document.getElementById(String(index));
         td.style.background = color;
     };
-
-    const reset = (indices, interval) => {
-        for (let i = 0; i < indices.length; i++) {
-            const td = document.getElementById(String(indices[i]));
-            td.style.background = "black";
-        }
-    };
-
-    const print = () => {
-        for (let i = 1; i <= r * c; i++) {
-            const td = document.getElementById(String(i));
-            console.log(i, td.style.background);
-        }
-    }
 
     const rotate = (pid, i, j, n) => {
         const loop = () => {

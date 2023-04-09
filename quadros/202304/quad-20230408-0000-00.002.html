@@ -61,6 +61,7 @@
 
     const move = (i, scale, checkpoint, interval) => {
         setTimeout(function () {
+            console.log(scale)
             let sampleSize = ~~(t * t * s / scale);
             const indices = getSample(sampleSize, 1, zm + 1);
             for (let j = 0; j < sampleSize; j++) {
@@ -68,7 +69,7 @@
                 td.style.background = getColor();
             }
             off(indices, interval);
-            if (i < checkpoint) move(i++, scale, checkpoint, interval--);
+            if (i < checkpoint) move(i++, ~~(Math.random() * 3 + 1), checkpoint, interval--);
         }, interval)
     };
     move(0, 3, 100, 1500);

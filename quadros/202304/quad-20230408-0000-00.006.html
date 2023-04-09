@@ -6,7 +6,7 @@
     <script src="../../resources/js/quadros.commons.js"></script>
     <script src="../../resources/js/quadros.table.js"></script>
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
-    <title>quad</title>
+    <title>glitch</title>
     <style>
         table {
             border: rgba(10, 95, 95, 0.45);
@@ -70,10 +70,7 @@
     const rotate = (pid, i, j, n) => {
         const loop = () => {
             setTimeout(async () => {
-                if (i === n) {
-                    i = j;
-                    setColor(n, getColor(i + 1));
-                }
+                if (i === n) i = j;
                 setColor(i, getColor(i + 1));
                 i++;
                 loop();

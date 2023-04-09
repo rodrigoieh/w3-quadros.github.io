@@ -70,10 +70,7 @@
     const rotate = (pid, i, j, n) => {
         const loop = () => {
             setTimeout(async () => {
-                if (i === n) {
-                    i = j;
-                    setColor(n, getColor(i + 1));
-                }
+                if (i === n) i = j;
                 setColor(i, getColor(i + 1));
                 i++;
                 loop();

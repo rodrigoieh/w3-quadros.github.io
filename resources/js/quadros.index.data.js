@@ -1881,14 +1881,14 @@ const index =  {
           visible: false
         },
         {
-          id: "quad-20230408-0000-00.004",
+          id: "quad-20230408-0000-00.004.hidden",
           type: "file",
-          path: "quadros/202304/quad-20230408-0000-00.004.html",
+          path: "quadros/202304/quad-20230408-0000-00.004.hidden.html",
           preview: "http://localhost:8001/quadros/202304/quad-20230408-0000-00.004.jpeg",
-          filename: "quad-20230408-0000-00.004.html",
+          filename: "quad-20230408-0000-00.004.hidden.html",
           extension: ".html",
           directory: "quadros/202304",
-          visible: true
+          visible: false
         },
         {
           id: "quad-20230408-0000-00.005.hidden",
@@ -1899,6 +1899,16 @@ const index =  {
           extension: ".html",
           directory: "quadros/202304",
           visible: false
+        },
+        {
+          id: "quad-20230408-0000-00.006",
+          type: "file",
+          path: "quadros/202304/quad-20230408-0000-00.006.html",
+          preview: "http://localhost:8001/quadros/202304/quad-20230408-0000-00.006.jpeg",
+          filename: "quad-20230408-0000-00.006.html",
+          extension: ".html",
+          directory: "quadros/202304",
+          visible: true
         }
       ]
     },

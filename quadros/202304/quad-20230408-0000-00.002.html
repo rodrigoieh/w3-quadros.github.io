@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="../../resources/css/quadros.css"/>
     <title>quad</title>
     <style>
+        :root {
+            --brightness: 0%;
+        }
+
         table {
             border: rgba(10, 95, 95, 0.45);
             background: #000000ea;
             box-shadow: 0 0 75px 0 #ececec;
             opacity: 80%;
+            filter: brightness(var(--brightness));
         }
 
         td {
@@ -36,6 +41,24 @@
     }
     main(r, c, s);
     document.body.style.zoom = '90%';
+
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        let brightness = getComputedStyle(document.documentElement).getPropertyValue('--brightness');
+        brightness = parseInt(brightness.replace('%', '').replace(' ', ''));
+        switch (key) {
+            case '+':
+                brightness += brightness < 100 ? 10 : 0;
+                document.documentElement.style.setProperty('--brightness', `${brightness}%`);
+                break;
+                c
+            case '-':
+                brightness -= brightness > 0 ? 10 : 0;
+                document.documentElement.style.setProperty('--brightness', `${brightness}%`);
+                break;
+        }
+        console.log(`brightness ${brightness}`);
+    });
 
     const getColor = () => {
         const colors = ["orange", "green", "red", "yellow", "blue", "black", "white", "white", "white", "white"];
@@ -71,7 +94,21 @@
             if (i < checkpoint) move(i++, ~~(Math.random() * 3 + 1), checkpoint, interval--);
         }, interval)
     };
+
     move(0, 3, 100, 1500);
+
+    (function () {
+        let i = 1;
+        const loop = () => {
+            setTimeout(() => {
+                if (i++ > 10) return;
+                document.dispatchEvent(new KeyboardEvent('keydown', {'key': '+'}));
+                loop();
+            }, 500)
+        }
+        loop();
+    }());
+
 </script>
 </body>
 </html>

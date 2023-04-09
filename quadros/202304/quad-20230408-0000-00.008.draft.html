@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="29192184126-211159"/>
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+    <style>
+        table {
+            border: rgba(10, 95, 95, 0.45);
+            background: #000000ea;
+            box-shadow: 0 0 75px 0 #ececec;
+            opacity: 80%;
+        }
+
+        td {
+            background: black;
+            border: 1px solid #111111;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const t = 8;
+    let r = t * t;
+    let c = t * t;
+    let s = 10;
+    setCellContentOverride = (td, i, j, y, x) => {
+        const a = i + j;
+        const b = i - j;
+        const color = "#382550"; // "#cdd787";
+        if (a > 0) if (a % t === 0) td.style.background = color;
+        else if (a % t - 1 === 0) td.style.background = color;
+        if (b > 0) if (b % t === 0) td.style.background = color;
+        else if (b % t - 1 === 0) td.style.background = color;
+    }
+    main(r, c, s);
+    document.body.style.zoom = '90%';
+</script>
+</body>
+</html>

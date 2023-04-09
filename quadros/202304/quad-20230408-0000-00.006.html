@@ -23,27 +23,31 @@
 <body>
 <script>
     const t = 8;
-    let r = t * t;
-    let c = t * t;
-    let s = 10;
-    let z = 1;
+    const s = 10;
+    const r = t * t;
+    const c = t * t;
     const zm = r * c;
     const reg = new Map();
+    const timeoutMax = 3000;
+    const timeoutMin = 10;
+    const timeoutIncrease = 10;
+    const timeoutDecrease = 10;
+    let z = 1;
     let timeout = 0;
     setCellContentOverride = (td, i, j, y, x) => {
         td.id = String(z++);
         td.style.background = "black"
     };
     main(r, c, s);
-    document.body.style.zoom = '90%';
+    document.body.style.zoom = '90%'; // overrides main's 80%
     document.addEventListener('keydown', (event) => {
         const key = event.key;
         switch (key) {
             case '+':
-                timeout += timeout < 3000 ? 10 : 0;
+                timeout += timeout < timeoutMax ? timeoutIncrease : 0;
                 break;
             case '-':
-                timeout -= timeout > 10 ? 10 : 0;
+                timeout -= timeout > timeoutMin ? timeoutDecrease : 0;
                 break;
         }
         console.log(`timeout ${timeout}`);

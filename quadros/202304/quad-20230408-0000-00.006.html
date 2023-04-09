@@ -29,6 +29,7 @@
     let z = 1;
     const zm = r * c;
     const reg = new Map();
+    let timeout = 0;
 
     setCellContentOverride = (td, i, j, y, x) => {
         td.id = String(z++);
@@ -93,10 +94,23 @@
                     j++;
                 }
                 if (i++ < zm) loop();
-            }, 0)
+            }, timeout)
         }
         loop();
     }());
+
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        switch (key) {
+            case '+':
+                timeout += timeout < 3000 ? 10 : 0;
+                break;
+            case '-':
+                timeout -= timeout > 10 ? 10 : 0;
+                break;
+        }
+        console.log(`timeout ${timeout}`);
+    });
 </script>
 </body>
 </html>

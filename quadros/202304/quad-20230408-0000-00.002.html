@@ -37,7 +37,7 @@
     setCellContentOverride = (td, i, j, y, x) => {
         td.id = String(z++);
         td.style.background = "black"
-    }
+    };
     main(r, c, s);
 
     document.body.style.zoom = '90%';
@@ -50,7 +50,6 @@
                 brightness += brightness < 100 ? 10 : 0;
                 document.documentElement.style.setProperty('--brightness', `${brightness}%`);
                 break;
-                c
             case '-':
                 brightness -= brightness > 0 ? 10 : 0;
                 document.documentElement.style.setProperty('--brightness', `${brightness}%`);

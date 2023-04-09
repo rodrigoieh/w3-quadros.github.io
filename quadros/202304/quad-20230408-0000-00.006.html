@@ -35,7 +35,6 @@
         td.style.background = "black"
     };
     main(r, c, s);
-
     document.body.style.zoom = '90%';
     document.addEventListener('keydown', (event) => {
         const key = event.key;
@@ -66,7 +65,7 @@
         td.style.background = color;
     };
 
-    const play = (pid, i, j, n) => {
+    const slide = (pid, i, j, n) => {
         const loop = () => {
             setTimeout(async () => {
                 if (i === n) i = j;
@@ -78,7 +77,7 @@
         loop();
     };
 
-    (function () {
+    const play = () => {
         let i = 1;
         let j = 1;
         const loop = () => {
@@ -88,14 +87,16 @@
                 reg.set(i, color);
                 if (i % (c) === 0) {
                     console.log("play", i, j, i - c + 1);
-                    play(j, i - c + 1, i - c + 1, i);
+                    slide(j, i - c + 1, i - c + 1, i);
                     j++;
                 }
                 if (i++ < zm) loop();
             }, timeout)
         }
         loop();
-    }());
+    };
+
+    play();
 </script>
 </body>
 </html>

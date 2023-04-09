@@ -30,11 +30,10 @@
     let z = 1;
     const zm = r * c;
     const reg = new Map();
-
     setCellContentOverride = (td, i, j, y, x) => {
         td.id = String(z++);
         td.style.background = "black"
-    }
+    };
     main(r, c, s);
     document.body.style.zoom = '90%';
 

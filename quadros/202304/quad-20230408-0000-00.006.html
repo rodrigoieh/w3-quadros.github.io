@@ -54,21 +54,7 @@
         td.style.background = color;
     };
 
-    const reset = (indices, interval) => {
-        for (let i = 0; i < indices.length; i++) {
-            const td = document.getElementById(String(indices[i]));
-            td.style.background = "black";
-        }
-    };
-
-    const print = () => {
-        for (let i = 1; i <= r * c; i++) {
-            const td = document.getElementById(String(i));
-            console.log(i, td.style.background);
-        }
-    }
-
-    const rotate = (pid, i, j, n) => {
+    const play = (pid, i, j, n) => {
         const loop = () => {
             setTimeout(async () => {
                 if (i === n) i = j;
@@ -89,8 +75,8 @@
                 setColor(i, color);
                 reg.set(i, color);
                 if (i % (c) === 0) {
-                    console.log("rotate", i, j, i - c + 1);
-                    rotate(j, i - c + 1, i - c + 1, i);
+                    console.log("play", i, j, i - c + 1);
+                    play(j, i - c + 1, i - c + 1, i);
                     j++;
                 }
                 if (i++ < zm) loop();

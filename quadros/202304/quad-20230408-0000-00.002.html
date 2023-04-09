@@ -61,7 +61,7 @@
 
     const move = (i, scale, checkpoint, interval) => {
         setTimeout(function () {
-            let sampleSize = ~~(t * t * s / scale);
+            let sampleSize = ~~(t * t * s * s / scale);
             const indices = getSample(sampleSize, 1, zm + 1);
             for (let j = 0; j < sampleSize; j++) {
                 const td = document.getElementById(String(indices[j]));

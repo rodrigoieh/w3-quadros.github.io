@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="29192184126-211159"/>
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>quad</title>
+    <style>
+        table {
+            --color: #485741;
+            background: var(--color);
+            border-radius: 10px;
+            border: 10px solid var(--color);
+            box-shadow: 0 0 75px 0 #ececec;
+            opacity: 100%;
+        }
+
+        td {
+            background: black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const t = 4;
+    const r = t * t;
+    const c = t * t;
+    const s = 42;
+    const palette = [
+        "#a7b28e", "#000000", "#000000",
+        "#000000", "#032c2c", "#5886a1",
+        "#000000", "#c5c39a", "#b6b385",
+        "#e5e2a9", "#e5e2a9", "#dcdca1",
+        "#93a470", "#5c6b5a", "#485741",
+        "#25461d", "#5d6b5c", "#415041"
+    ];
+    const a = palette[0];
+    const b = palette[palette.length - 1];
+    setCellContentOverride = (td, i, j, y, x) => {
+        if ((i + j) & 1) td.style.background = a;
+        else td.style.background = b;
+    };
+    main(r, c, s);
+    document.body.style.zoom = '90%';
+</script>
+</body>
+</html>

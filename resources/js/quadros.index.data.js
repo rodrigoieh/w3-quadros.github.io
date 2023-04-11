@@ -1951,14 +1951,14 @@ const index =  {
           visible: false
         },
         {
-          id: "quad-20230410-0800-00.002",
+          id: "quad-20230410-0800-00.002.hidden",
           type: "file",
-          path: "quadros/202304/quad-20230410-0800-00.002.html",
+          path: "quadros/202304/quad-20230410-0800-00.002.hidden.html",
           preview: "http://localhost:8001/quadros/202304/quad-20230410-0800-00.002.jpeg",
-          filename: "quad-20230410-0800-00.002.html",
+          filename: "quad-20230410-0800-00.002.hidden.html",
           extension: ".html",
           directory: "quadros/202304",
-          visible: true
+          visible: false
         }
       ]
     },

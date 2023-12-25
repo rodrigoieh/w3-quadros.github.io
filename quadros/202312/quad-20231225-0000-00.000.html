@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="29192184126-211159"/>
+    <script src="../../resources/js/quadros.style.js"></script>
+    <script src="../../resources/js/quadros.commons.js"></script>
+    <script src="../../resources/js/quadros.table.js"></script>
+    <link rel="stylesheet" href="../../resources/css/quadros.css"/>
+    <title>sunshine</title>
+    <style>
+        table {
+            border: rgba(10, 95, 95, 0.45);
+            background: transparent;
+        }
+
+        td {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+<script>
+    const t = 6;
+    const r = 24;
+    const c = 24;
+    const s = 30;
+    const orange = "#b05d12";
+    let isOrangeSet = false;
+    let red = 23, green = 23, blue = 59;
+    setCellContentOverride = (td, i, j, y, x) => {
+        td.style.background = `rgba(${red}, ${green}, ${blue}, 1)`;
+        if ((i % 12) === 0) {
+            red++;
+            green++;
+            blue++;
+        }
+        if (!isOrangeSet) {
+            if (i + j === 0) td.style.background = orange;
+            td.style.borderBottom = "1px solid white";
+            isOrangeSet = true;
+        }
+    };
+    main(r, c, s);
+    document.body.style.zoom = '90%';
+</script>
+</body>
+</html>

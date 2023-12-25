@@ -1959,6 +1959,54 @@ const index =  {
           extension: ".html",
           directory: "quadros/202304",
           visible: false
+        },
+        {
+          id: "quad-20230423-2003-00.000.hidden",
+          type: "file",
+          path: "quadros/202304/quad-20230423-2003-00.000.hidden.html",
+          preview: "http://localhost:8001/quadros/202304/quad-20230423-2003-00.000.jpeg",
+          filename: "quad-20230423-2003-00.000.hidden.html",
+          extension: ".html",
+          directory: "quadros/202304",
+          visible: false
+        }
+      ]
+    },
+    {
+      id: "202305",
+      type: "folder",
+      path: "quadros/202305",
+      directory: "202305",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20230511-0000-00.000.hidden",
+          type: "file",
+          path: "quadros/202305/quad-20230511-0000-00.000.hidden.html",
+          preview: "http://localhost:8001/quadros/202305/quad-20230511-0000-00.000.jpeg",
+          filename: "quad-20230511-0000-00.000.hidden.html",
+          extension: ".html",
+          directory: "quadros/202305",
+          visible: false
+        }
+      ]
+    },
+    {
+      id: "202306",
+      type: "folder",
+      path: "quadros/202306",
+      directory: "202306",
+      visible: true,
+      collection: [
+        {
+          id: "quad-20230628-1300-00.000",
+          type: "file",
+          path: "quadros/202306/quad-20230628-1300-00.000.html",
+          preview: "http://localhost:8001/quadros/202306/quad-20230628-1300-00.000.jpeg",
+          filename: "quad-20230628-1300-00.000.html",
+          extension: ".html",
+          directory: "quadros/202306",
+          visible: true
         }
       ]
     },
